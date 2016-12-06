@@ -1,0 +1,147 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/tyler/hairfolio/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/lib/api_constraints.rb": [
+        1,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/authentication.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/provider.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/salon.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/home_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/controllers/concerns/authenticable.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/controllers/home_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/tyler/hairfolio/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1481061426
+  }
+}
