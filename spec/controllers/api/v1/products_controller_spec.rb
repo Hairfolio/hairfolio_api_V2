@@ -9,12 +9,12 @@ describe Api::V1::ProductsController do
   end
 
   describe "GET #index" do
-    it 'should display available tags' do
+    it 'should display available products' do
       get :index
       expect(json_response['products'].count).to eq(1)
     end
 
-    it 'should filter by tag by query' do
+    it 'should filter by products by query' do
       get :index, params: { q: product.name }
       expect(json_response['products'].count).to eq(1)
     end
