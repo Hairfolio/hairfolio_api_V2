@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207211233) do
+ActiveRecord::Schema.define(version: 20161207211658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(version: 20161207211233) do
     t.index ["follower_id"], name: "index_follows_on_follower_id", using: :btree
     t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true, using: :btree
     t.index ["following_id"], name: "index_follows_on_following_id", using: :btree
+  end
+
+  create_table "lines", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "brand_id"
+    t.integer  "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_lines_on_brand_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -146,6 +155,7 @@ ActiveRecord::Schema.define(version: 20161207211233) do
 
   add_foreign_key "authentications", "providers"
   add_foreign_key "authentications", "users"
+  add_foreign_key "lines", "brands"
   add_foreign_key "products", "tags"
   add_foreign_key "services", "brands"
   add_foreign_key "users", "salons"

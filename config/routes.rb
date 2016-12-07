@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index]
       resources :degrees, only: [:index, :show]
+      resources :lines, only: [:index, :show]
       resources :users, except: [:edit] do
         resources :follows, only: [:create, :destroy, :index]
         resources :notifications, only: [:index, :destroy]

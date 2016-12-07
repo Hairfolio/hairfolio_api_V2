@@ -95,6 +95,17 @@
         null,
         null
       ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/lines_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
       "/Users/tyler/hairfolio/app/controllers/api/v1/products_controller.rb": [
         1,
         null,
@@ -304,6 +315,13 @@
         1,
         null
       ],
+      "/Users/tyler/hairfolio/app/models/line.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/tyler/hairfolio/app/models/product.rb": [
         1,
         1,
@@ -360,6 +378,15 @@
       "/Users/tyler/hairfolio/app/serializers/degree_serializer.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/line_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/product_serializer.rb": [
@@ -578,6 +605,6 @@
         0
       ]
     },
-    "timestamp": 1481145204
+    "timestamp": 1481145770
   }
 }
