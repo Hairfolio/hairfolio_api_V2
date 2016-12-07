@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206215652) do
+ActiveRecord::Schema.define(version: 20161207192603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20161206215652) do
     t.datetime "updated_at",       null: false
     t.index ["provider_id"], name: "index_authentications_on_provider_id", using: :btree
     t.index ["user_id"], name: "index_authentications_on_user_id", using: :btree
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "following_id", null: false
+    t.integer  "follower_id",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["follower_id"], name: "index_follows_on_follower_id", using: :btree
+    t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true, using: :btree
+    t.index ["following_id"], name: "index_follows_on_following_id", using: :btree
   end
 
   create_table "providers", force: :cascade do |t|
@@ -46,6 +56,13 @@ ActiveRecord::Schema.define(version: 20161206215652) do
     t.string   "zip"
     t.string   "website"
     t.string   "phone"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "position",   default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
