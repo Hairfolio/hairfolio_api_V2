@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :products, only: [:index]
       resources :degrees, only: [:index, :show]
       resources :lines, only: [:index, :show]
+      resources :harmonies, only: [:index]
       resources :users, except: [:edit] do
         resources :follows, only: [:create, :destroy, :index]
         resources :notifications, only: [:index, :destroy]

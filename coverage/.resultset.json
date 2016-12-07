@@ -87,6 +87,17 @@
         null,
         null
       ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/harmonies_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
       "/Users/tyler/hairfolio/app/controllers/api/v1/home_controller.rb": [
         1,
         1,
@@ -302,6 +313,17 @@
         1,
         null
       ],
+      "/Users/tyler/hairfolio/app/models/color.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/tyler/hairfolio/app/models/degree.rb": [
         1,
         1,
@@ -309,6 +331,13 @@
       ],
       "/Users/tyler/hairfolio/app/models/follow.rb": [
         1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/harmony.rb": [
         1,
         1,
         1,
@@ -376,6 +405,12 @@
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/degree_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/harmony_serializer.rb": [
+        1,
         1,
         1,
         null
@@ -605,6 +640,6 @@
         0
       ]
     },
-    "timestamp": 1481145770
+    "timestamp": 1481148668
   }
 }
