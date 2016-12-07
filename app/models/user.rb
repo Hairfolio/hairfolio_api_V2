@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
+  has_many :contacts, dependent: :destroy
 
   def set_default_account_type
     self.account_type ||= 'consumer'

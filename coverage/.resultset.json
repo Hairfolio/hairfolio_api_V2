@@ -37,10 +37,10 @@
         1,
         null,
         1,
-        9,
+        16,
         1,
         null,
-        8,
+        15,
         null,
         null,
         null,
@@ -72,6 +72,51 @@
         null,
         1,
         1,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/contacts_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        4,
         null,
         null
       ],
@@ -324,7 +369,25 @@
         1,
         null
       ],
+      "/Users/tyler/hairfolio/app/models/contact.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/tyler/hairfolio/app/models/degree.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/email.rb": [
+        1,
+        1,
         1,
         1,
         null
@@ -345,6 +408,13 @@
         null
       ],
       "/Users/tyler/hairfolio/app/models/line.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/phone.rb": [
         1,
         1,
         1,
@@ -400,6 +470,24 @@
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/certificate_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/contact_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/email_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/phone_serializer.rb": [
         1,
         1,
         null
@@ -625,6 +713,7 @@
         0,
         0,
         0,
+        0,
         0
       ],
       "/Users/tyler/hairfolio/lib/api_constraints.rb": [
@@ -640,6 +729,6 @@
         0
       ]
     },
-    "timestamp": 1481148668
+    "timestamp": 1481153084
   }
 }
