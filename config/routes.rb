@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       resources :brands, only: [:index, :show]
       resources :services, only: [:index, :show]
       resources :tags, only: [:index]
-      resources :products
+      resources :categories, only: [:index]
+      resources :products, only: [:index]
       resources :users, except: [:edit] do
         resources :follows, only: [:create, :destroy, :index]
         resources :notifications, only: [:index, :destroy]
