@@ -13,5 +13,10 @@ RSpec.describe Service, type: :model do
       service.name = nil
       expect(service).to_not be_valid
     end
+
+    it 'a brand' do
+      service.brand = nil
+      expect(service).to_not be_valid
+    end
   end
 end

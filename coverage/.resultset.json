@@ -5,6 +5,63 @@
         1,
         null
       ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/brands_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/controllers/concerns/authenticable.rb": [
+        1,
+        null,
+        1,
+        9,
+        1,
+        null,
+        8,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/home_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/tyler/hairfolio/app/controllers/api/v1/sessions_controller.rb": [
         1,
         null,
@@ -115,42 +172,6 @@
         null,
         null
       ],
-      "/Users/tyler/hairfolio/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/controllers/concerns/authenticable.rb": [
-        1,
-        null,
-        1,
-        9,
-        1,
-        null,
-        8,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
       "/Users/tyler/hairfolio/app/models/authentication.rb": [
         1,
         1,
@@ -184,6 +205,12 @@
         null,
         null
       ],
+      "/Users/tyler/hairfolio/app/models/brand.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/tyler/hairfolio/app/models/follow.rb": [
         1,
         1,
@@ -207,6 +234,21 @@
       "/Users/tyler/hairfolio/app/models/service.rb": [
         1,
         1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/brand_serializer.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/service_serializer.rb": [
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/user_serializer.rb": [
@@ -267,14 +309,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/tyler/hairfolio/app/controllers/api/v1/home_controller.rb": [
         0,
         0,
         0,
@@ -421,6 +455,6 @@
         0
       ]
     },
-    "timestamp": 1481139196
+    "timestamp": 1481142121
   }
 }

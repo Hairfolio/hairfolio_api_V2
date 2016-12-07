@@ -1,7 +1,5 @@
 FactoryGirl.define do
-  factory :service do
+  factory :brand do
     name { Faker::Company.name }
-    association :brand
-    position 1
   end
 end
