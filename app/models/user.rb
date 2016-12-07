@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   belongs_to :salon
+  has_many :authentications
 
   enum account_type: [:consumer, :stylist, :brand, :owner]
 
@@ -27,9 +28,21 @@ class User < ApplicationRecord
     false
   end
 
-  def self.validate_insta_token(token)
+
+  def generate_social_authentication!(name, token, secret=nil, uid_name=nil)
+    Authentication.create_with(user: self, token: token, secret: secret, facebook_id: uid_name, provider: Provider.find_by(name: name)).find_or_create_by(user: self, provider: Provider.find_by(name: name))
+  end
+
+  def self.validate_instagram_token(token)
     Instagram.client(access_token: token).user
   rescue
     false
+  end
+
+  def self.create_from_social(response)
+    password = Devise.friendly_token
+    name = response['full_name'] ? response['full_name'] : response['name']
+    user = create(email: response['email'] ? response['email'] : "socialemail#{rand(0..83293)}@example.com", first_name: name.split(' ').first, last_name: name.split(' ').last, password: password, password_confirmation: password)
+    return user.valid? ? user : false
   end
 end

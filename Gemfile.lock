@@ -117,6 +117,9 @@ GEM
     jsonapi (0.1.1.beta2)
       json (~> 1.8)
     jwt (1.5.6)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     koala (2.4.0)
       addressable
       faraday
@@ -292,6 +295,7 @@ DEPENDENCIES
   faker
   figaro
   instagram
+  kaminari
   koala
   listen (~> 3.0.5)
   pg (~> 0.18)
