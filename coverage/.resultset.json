@@ -63,6 +63,30 @@
         null,
         null
       ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/certificates_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/controllers/api/v1/degrees_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/tyler/hairfolio/app/controllers/api/v1/home_controller.rb": [
         1,
         1,
@@ -262,6 +286,16 @@
         1,
         null
       ],
+      "/Users/tyler/hairfolio/app/models/certificate.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/degree.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/tyler/hairfolio/app/models/follow.rb": [
         1,
         1,
@@ -314,6 +348,16 @@
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/category_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/certificate_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/degree_serializer.rb": [
         1,
         1,
         null
@@ -534,6 +578,6 @@
         0
       ]
     },
-    "timestamp": 1481143842
+    "timestamp": 1481145204
   }
 }
