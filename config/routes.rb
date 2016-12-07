@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       root to: 'home#index', as: 'api_home'
       resources :brands, only: [:index, :show]
       resources :services, only: [:index, :show]
+      resources :tags, only: [:index]
       resources :users, except: [:edit] do
         resources :follows, only: [:create, :destroy, :index]
         resources :notifications, only: [:index, :destroy]
