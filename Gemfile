@@ -12,6 +12,7 @@ gem 'twitter'
 gem 'pinterest-api'
 gem 'tumblr_client'
 gem 'kaminari'
+gem 'jquery-rails'
 
 # APIs
 gem 'active_model_serializers'
