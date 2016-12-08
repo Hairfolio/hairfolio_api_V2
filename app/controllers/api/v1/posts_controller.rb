@@ -1,5 +1,6 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :authenticate_with_token, only: [:create, :update, :destroy]
+  before_action :authenticate_with_token!, only: [:create, :update, :destroy]
+  before_action :set_post, only: [:update, :destroy]
 
   def index
     posts = Post.where(nil).order('created_at desc')
@@ -36,7 +37,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:description)
+    params.require(:post).permit(:description, tag_ids: [], formulas_attributes: [:id, :_destroy, :service_id, :time, :weight, :volume, :post_id, treatments_attributes: [:color_id, :weight, :id, :_destroy]])
   end
 
 end
