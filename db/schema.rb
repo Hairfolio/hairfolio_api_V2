@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208214419) do
+ActiveRecord::Schema.define(version: 20161208223333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -146,6 +146,18 @@ ActiveRecord::Schema.define(version: 20161208214419) do
     t.index ["following_id"], name: "index_follows_on_following_id", using: :btree
   end
 
+  create_table "formulas", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "service_id"
+    t.integer  "weight"
+    t.integer  "volume"
+    t.integer  "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_formulas_on_post_id", using: :btree
+    t.index ["service_id"], name: "index_formulas_on_service_id", using: :btree
+  end
+
   create_table "harmonies", force: :cascade do |t|
     t.integer  "line_id"
     t.string   "name"
@@ -261,6 +273,16 @@ ActiveRecord::Schema.define(version: 20161208214419) do
     t.string   "url"
   end
 
+  create_table "treatments", force: :cascade do |t|
+    t.integer  "color_id"
+    t.integer  "formula_id"
+    t.integer  "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["color_id"], name: "index_treatments_on_color_id", using: :btree
+    t.index ["formula_id"], name: "index_treatments_on_formula_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -304,6 +326,8 @@ ActiveRecord::Schema.define(version: 20161208214419) do
   add_foreign_key "educations", "users"
   add_foreign_key "emails", "contacts"
   add_foreign_key "folios", "users"
+  add_foreign_key "formulas", "posts"
+  add_foreign_key "formulas", "services"
   add_foreign_key "harmonies", "lines"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
@@ -318,5 +342,7 @@ ActiveRecord::Schema.define(version: 20161208214419) do
   add_foreign_key "posts", "users"
   add_foreign_key "products", "tags"
   add_foreign_key "services", "brands"
+  add_foreign_key "treatments", "colors"
+  add_foreign_key "treatments", "formulas"
   add_foreign_key "users", "salons"
 end
