@@ -1,5 +1,6 @@
 class Api::V1::MessagesController < ApplicationController
   before_action :set_conversation
+  before_action :set_message, only: [:show, :update, :destroy]
 
   def index
     render json: @conversation.messages
@@ -10,7 +11,7 @@ class Api::V1::MessagesController < ApplicationController
   end
 
   def update
-    if @message.update(conversation_params)
+    if @message.update(message_params)
       render json: @message, status: 201
     else
       render json: { errors: @message.errors }, status: 422
@@ -19,6 +20,7 @@ class Api::V1::MessagesController < ApplicationController
 
   def create
     message = current_user.messages.build(message_params)
+    message.conversation = @conversation
     if message.save
       render json: message, status: 201
     else
@@ -41,7 +43,7 @@ class Api::V1::MessagesController < ApplicationController
     @conversation = Conversation.find(params[:conversation_id])
   end
 
-  def set_messages
+  def set_message
     @message = Message.find(params[:id])
   end
 end
