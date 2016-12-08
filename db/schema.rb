@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207222212) do
+ActiveRecord::Schema.define(version: 20161207233617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,20 @@ ActiveRecord::Schema.define(version: 20161207222212) do
     t.index ["user_id"], name: "index_contacts_on_user_id", using: :btree
   end
 
+  create_table "contacts_posts", id: false, force: :cascade do |t|
+    t.integer "contact_id"
+    t.integer "post_id"
+    t.index ["contact_id"], name: "index_contacts_posts_on_contact_id", using: :btree
+    t.index ["post_id"], name: "index_contacts_posts_on_post_id", using: :btree
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.string   "recipient_ids"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "degrees", force: :cascade do |t|
     t.string   "name"
     t.integer  "postion",    default: 0
@@ -115,6 +129,19 @@ ActiveRecord::Schema.define(version: 20161207222212) do
     t.index ["brand_id"], name: "index_lines_on_brand_id", using: :btree
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.boolean  "read"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+    t.index ["post_id"], name: "index_messages_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+  end
+
   create_table "phones", force: :cascade do |t|
     t.string   "number"
     t.integer  "phone_type"
@@ -122,6 +149,14 @@ ActiveRecord::Schema.define(version: 20161207222212) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_phones_on_contact_id", using: :btree
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -205,10 +240,16 @@ ActiveRecord::Schema.define(version: 20161207222212) do
   add_foreign_key "authentications", "users"
   add_foreign_key "colors", "harmonies"
   add_foreign_key "contacts", "users"
+  add_foreign_key "contacts_posts", "contacts"
+  add_foreign_key "contacts_posts", "posts"
   add_foreign_key "emails", "contacts"
   add_foreign_key "harmonies", "lines"
   add_foreign_key "lines", "brands"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "posts"
+  add_foreign_key "messages", "users"
   add_foreign_key "phones", "contacts"
+  add_foreign_key "posts", "users"
   add_foreign_key "products", "tags"
   add_foreign_key "services", "brands"
   add_foreign_key "users", "salons"
