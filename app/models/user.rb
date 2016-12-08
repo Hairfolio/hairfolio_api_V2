@@ -14,10 +14,12 @@ class User < ApplicationRecord
   has_many :folios, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :educations, dependent: :destroy
+  has_many :offerings, dependent: :destroy
 
 
   accepts_nested_attributes_for :salon, allow_destroy: true
   accepts_nested_attributes_for :educations, allow_destroy: true
+  accepts_nested_attributes_for :offerings, allow_destroy: true
 
   enum account_type: [:consumer, :stylist, :brand, :owner]
 

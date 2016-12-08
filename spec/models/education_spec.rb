@@ -14,11 +14,6 @@ RSpec.describe Education, type: :model do
       expect(education).to_not be_valid
     end
 
-    it 'a user' do
-      education.user = nil
-      expect(education).to_not be_valid
-    end
-
     it 'a degree' do
       education.degree = nil
       expect(education).to_not be_valid
