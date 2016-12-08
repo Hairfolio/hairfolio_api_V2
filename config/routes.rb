@@ -15,6 +15,11 @@ Rails.application.routes.draw do
       resources :experiences, only: [:index]
       resources :contacts, except: [:edit]
       resources :folios, only: [:index, :create, :destroy, :update]
+      resources :posts do
+        resources :likes, only: [:create, :index] do
+          collection { delete :destroy }
+        end
+      end
       resources :users, except: [:edit] do
         resources :follows, only: [:create, :destroy, :index]
         resources :notifications, only: [:index, :destroy]

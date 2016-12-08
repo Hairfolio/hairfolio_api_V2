@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208180606) do
+ActiveRecord::Schema.define(version: 20161208191951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,6 +142,15 @@ ActiveRecord::Schema.define(version: 20161208180606) do
     t.index ["line_id"], name: "index_harmonies_on_line_id", using: :btree
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+  end
+
   create_table "lines", force: :cascade do |t|
     t.string   "name"
     t.integer  "brand_id"
@@ -267,6 +276,8 @@ ActiveRecord::Schema.define(version: 20161208180606) do
   add_foreign_key "emails", "contacts"
   add_foreign_key "folios", "users"
   add_foreign_key "harmonies", "lines"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "lines", "brands"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "posts"
