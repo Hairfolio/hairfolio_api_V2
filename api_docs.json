@@ -1,0 +1,3251 @@
+{
+  "name": "Hairfolio API Docs",
+  "url": "https:\/\/api.hairfolio.tech",
+  "version": "1.0",
+  "copyright": "2016",
+  "description": "Optimize aims to create a social platform geared towards helping people OPTIMIZE their lives.",
+  "authentication": "For authenticated routes please pass the following header: \"Authorization: somerandomtoken\". To get an auth_token please see the session and user registration routes.",
+  "errors": {
+    "http_errors": [
+      {
+        "code": 200,
+        "text": "OK",
+        "description": "Success"
+      },
+      {
+        "code": 304,
+        "text": "Not Modified",
+        "description": "There was no new data to return."
+      },
+      {
+        "code": 400,
+        "text": "Bad Request",
+        "description": "The request was invalid or cannot be otherwise served"
+      }
+    ],
+    "api_errors": [
+      {
+        "code": 32,
+        "text": "Could not authenticate you",
+        "description": "Your call could not be completed as dialed"
+      },
+      {
+        "code": 34,
+        "text": "Sorry, that page does not exist",
+        "description": "Corresponds with an HTTP 404 - the specified resource was not found."
+      }
+    ]
+  },
+  "resources": {
+    "home": [
+      {
+        "action": "GET",
+        "uri": "\/",
+        "authentication" : true,
+        "description": "Root of the api.",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "message": "the dashwink api"
+        }
+      }
+    ],
+    "interests": [
+      {
+        "action": "GET",
+        "uri": "\/interests",
+        "authentication" : true,
+        "description": "Renders the interests",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": [
+          {
+            "id" :54,
+            "name" : "Fantastic Wooden Hat",
+            "created_at" : "2016-10-12T18:54:01.669Z",
+            "updated_at" :"2016-10-12T18:54:01.669Z"
+          }
+        ]
+      }
+    ],
+    "virtues": [
+      {
+        "action": "GET",
+        "uri": "\/virtues",
+        "authentication" : true,
+        "description": "Renders the available virtues",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": [
+          {
+            "id" :54,
+            "name" : "Fantastic Wooden Hat",
+            "created_at" : "2016-10-12T18:54:01.669Z",
+            "updated_at" :"2016-10-12T18:54:01.669Z"
+          }
+        ]
+      }
+    ],
+    "sessions": [
+      {
+        "action": "POST",
+        "uri": "\/sessions/",
+        "authentication" : false,
+        "description": "Signing in or creating a user from brianjohnson.me login credentials",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params": {
+          "session[name]": {
+            "type": "string",
+            "description": "The email or username of the user",
+            "required": true
+          },
+          "session[password]": {
+            "type": "string",
+            "description": "The password of the user",
+            "required": true
+          }
+        },
+        "response": {
+           "data":{
+              "id":"207",
+              "type":"users",
+              "attributes":{
+                 "email":"roberta@nitzsche.biz",
+                 "last-sign-in-at":null,
+                 "username":"april.johns",
+                 "first-name":"Audie",
+                 "last-name":"Halvorson",
+                 "bio":"Ut exercitationem totam perferendis consequatur dolorem veritatis dolorem. Rerum libero amet illo. Sit quisquam accusantium autem illum voluptate a facere. Quia quis molestiae doloremque quas nobis at quae.",
+                 "short-bio":"Ut exercitationem ",
+                 "location":null,
+                 "gender":"male",
+                 "birthday":"1986-10-07",
+                 "email-digest":"daily_digest",
+                 "email-notifications":"instantl_notifications",
+                 "auth-token":"_HV-S6qrdobecr-rr6gs",
+                 "avatar-large-2x":"/missing_avatar.png",
+                 "avatar-large":"/missing_avatar.png",
+                 "cover-desktop-2x":"/missing_cover.png",
+                 "cover-desktop":"/missing_cover.png",
+                 "cover-mobile-2x":"/missing_cover.png",
+                 "cover-mobile":"/missing_cover.png",
+                 "wp-id":null,
+                 "created-at":"2016-10-07T23:16:13.565Z",
+                 "updated-at":"2016-10-07T23:16:13.565Z"
+              },
+              "relationships":{
+                 "websites":{
+                    "data":[
+                       {
+                          "id":11,
+                          "url":"http://mohr.org/coy_rowe",
+                          "user-id":207,
+                          "created-at":"2016-10-07T23:16:13.651Z",
+                          "updated-at":"2016-10-07T23:16:13.651Z"
+                       }
+                    ]
+                 },
+                 "books":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Outdoors \u0026 Industrial",
+                          "image-url":"https://robohash.org/sitveritatisab.png?size=300x300\u0026set=set1",
+                          "author":"Meggie Balistreri",
+                          "created-at":"2016-10-07T23:16:13.629Z",
+                          "updated-at":"2016-10-07T23:16:13.629Z"
+                       }
+                    ]
+                 },
+                 "movies":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Movies, Home \u0026 Electronics",
+                          "image-url":"https://robohash.org/quiaarchitectoodit.png?size=300x300\u0026set=set1",
+                          "author":"Eveline Ziemann",
+                          "created-at":"2016-10-07T23:16:13.642Z",
+                          "updated-at":"2016-10-07T23:16:13.642Z"
+                       }
+                    ]
+                 },
+                 "interests":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Synergistic Aluminum Gloves",
+                          "created-at":"2016-10-07T23:16:13.596Z",
+                          "updated-at":"2016-10-07T23:16:13.596Z"
+                       }
+                    ]
+                 },
+                 "virtues":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "strengths":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "teachers":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 }
+              }
+           }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/sessions/facebook",
+        "authentication" : false,
+        "description": "Signing in or creating a user from facebook",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params": {
+          "facebook_token": {
+            "type": "string",
+            "description": "The facebook token returned from login",
+            "required": true
+          }
+        },
+        "response": {
+           "data":{
+              "id":"207",
+              "type":"users",
+              "attributes":{
+                 "email":"roberta@nitzsche.biz",
+                 "last-sign-in-at":null,
+                 "username":"april.johns",
+                 "first-name":"Audie",
+                 "last-name":"Halvorson",
+                 "bio":"Ut exercitationem totam perferendis consequatur dolorem veritatis dolorem. Rerum libero amet illo. Sit quisquam accusantium autem illum voluptate a facere. Quia quis molestiae doloremque quas nobis at quae.",
+                 "short-bio":"Ut exercitationem ",
+                 "location":null,
+                 "gender":"male",
+                 "birthday":"1986-10-07",
+                 "email-digest":"daily_digest",
+                 "email-notifications":"instantl_notifications",
+                 "auth-token":"_HV-S6qrdobecr-rr6gs",
+                 "avatar-large-2x":"/missing_avatar.png",
+                 "avatar-large":"/missing_avatar.png",
+                 "cover-desktop-2x":"/missing_cover.png",
+                 "cover-desktop":"/missing_cover.png",
+                 "cover-mobile-2x":"/missing_cover.png",
+                 "cover-mobile":"/missing_cover.png",
+                 "wp-id":null,
+                 "created-at":"2016-10-07T23:16:13.565Z",
+                 "updated-at":"2016-10-07T23:16:13.565Z"
+              },
+              "relationships":{
+                 "websites":{
+                    "data":[
+                       {
+                          "id":11,
+                          "url":"http://mohr.org/coy_rowe",
+                          "user-id":207,
+                          "created-at":"2016-10-07T23:16:13.651Z",
+                          "updated-at":"2016-10-07T23:16:13.651Z"
+                       }
+                    ]
+                 },
+                 "books":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Outdoors \u0026 Industrial",
+                          "image-url":"https://robohash.org/sitveritatisab.png?size=300x300\u0026set=set1",
+                          "author":"Meggie Balistreri",
+                          "created-at":"2016-10-07T23:16:13.629Z",
+                          "updated-at":"2016-10-07T23:16:13.629Z"
+                       }
+                    ]
+                 },
+                 "movies":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Movies, Home \u0026 Electronics",
+                          "image-url":"https://robohash.org/quiaarchitectoodit.png?size=300x300\u0026set=set1",
+                          "author":"Eveline Ziemann",
+                          "created-at":"2016-10-07T23:16:13.642Z",
+                          "updated-at":"2016-10-07T23:16:13.642Z"
+                       }
+                    ]
+                 },
+                 "interests":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Synergistic Aluminum Gloves",
+                          "created-at":"2016-10-07T23:16:13.596Z",
+                          "updated-at":"2016-10-07T23:16:13.596Z"
+                       }
+                    ]
+                 },
+                 "virtues":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "strengths":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "teachers":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 }
+              }
+           }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/sessions/google",
+        "authentication" : false,
+        "description": "Signing in or creating a user from google",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params": {
+          "google_token": {
+            "type": "string",
+            "description": "The google token returned from login",
+            "required": true
+          }
+        },
+        "response": {
+           "data":{
+              "id":"207",
+              "type":"users",
+              "attributes":{
+                 "email":"roberta@nitzsche.biz",
+                 "last-sign-in-at":null,
+                 "username":"april.johns",
+                 "first-name":"Audie",
+                 "last-name":"Halvorson",
+                 "bio":"Ut exercitationem totam perferendis consequatur dolorem veritatis dolorem. Rerum libero amet illo. Sit quisquam accusantium autem illum voluptate a facere. Quia quis molestiae doloremque quas nobis at quae.",
+                 "short-bio":"Ut exercitationem ",
+                 "location":null,
+                 "gender":"male",
+                 "birthday":"1986-10-07",
+                 "email-digest":"daily_digest",
+                 "email-notifications":"instantl_notifications",
+                 "auth-token":"_HV-S6qrdobecr-rr6gs",
+                 "avatar-large-2x":"/missing_avatar.png",
+                 "avatar-large":"/missing_avatar.png",
+                 "cover-desktop-2x":"/missing_cover.png",
+                 "cover-desktop":"/missing_cover.png",
+                 "cover-mobile-2x":"/missing_cover.png",
+                 "cover-mobile":"/missing_cover.png",
+                 "wp-id":null,
+                 "created-at":"2016-10-07T23:16:13.565Z",
+                 "updated-at":"2016-10-07T23:16:13.565Z"
+              },
+              "relationships":{
+                 "websites":{
+                    "data":[
+                       {
+                          "id":11,
+                          "url":"http://mohr.org/coy_rowe",
+                          "user-id":207,
+                          "created-at":"2016-10-07T23:16:13.651Z",
+                          "updated-at":"2016-10-07T23:16:13.651Z"
+                       }
+                    ]
+                 },
+                 "books":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Outdoors \u0026 Industrial",
+                          "image-url":"https://robohash.org/sitveritatisab.png?size=300x300\u0026set=set1",
+                          "author":"Meggie Balistreri",
+                          "created-at":"2016-10-07T23:16:13.629Z",
+                          "updated-at":"2016-10-07T23:16:13.629Z"
+                       }
+                    ]
+                 },
+                 "movies":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Movies, Home \u0026 Electronics",
+                          "image-url":"https://robohash.org/quiaarchitectoodit.png?size=300x300\u0026set=set1",
+                          "author":"Eveline Ziemann",
+                          "created-at":"2016-10-07T23:16:13.642Z",
+                          "updated-at":"2016-10-07T23:16:13.642Z"
+                       }
+                    ]
+                 },
+                 "interests":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Synergistic Aluminum Gloves",
+                          "created-at":"2016-10-07T23:16:13.596Z",
+                          "updated-at":"2016-10-07T23:16:13.596Z"
+                       }
+                    ]
+                 },
+                 "virtues":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "strengths":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "teachers":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 }
+              }
+           }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/sessions\/password_reset\/:email",
+        "authentication" : false,
+        "description": "Requesting a password reset email from the brianjohnson.me site.",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "email" : {
+            "type": "string",
+            "description": "The email of the user",
+            "required": true
+          }
+        },
+        "response": {
+          "message": "Password email resent"
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/sessions\/:id",
+        "authentication" : false,
+        "description": "Signing out a user and refreshing their auth-token",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "id" : {
+            "type": "string",
+            "description": "The current auth token of the user",
+            "required": true
+          }
+        },
+        "response": {
+          "message": "the dashwink api"
+        }
+      }
+    ],
+    "users": [
+      {
+        "action": "GET",
+        "uri": "\/users\/:id",
+        "authentication" : false,
+        "description": "Getting information about a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "id" : {
+            "type": "string",
+            "description": "The id of the user",
+            "required": true
+          }
+        },
+        "response": {
+           "data":{
+              "id":"207",
+              "type":"users",
+              "attributes":{
+                 "email":"roberta@nitzsche.biz",
+                 "last-sign-in-at":null,
+                 "username":"april.johns",
+                 "first-name":"Audie",
+                 "last-name":"Halvorson",
+                 "short-bio":"Ut exercitationem ",
+                 "bio":"Ut exercitationem totam perferendis consequatur dolorem veritatis dolorem. Rerum libero amet illo. Sit quisquam accusantium autem illum voluptate a facere. Quia quis molestiae doloremque quas nobis at quae.",
+                 "location":null,
+                 "gender":"male",
+                 "birthday":"1986-10-07",
+                 "email-digest":"daily_digest",
+                 "email-notifications":"instantl_notifications",
+                 "auth-token":"_HV-S6qrdobecr-rr6gs",
+                 "avatar-large-2x":"/missing_avatar.png",
+                 "avatar-large":"/missing_avatar.png",
+                 "cover-desktop-2x":"/missing_cover.png",
+                 "cover-desktop":"/missing_cover.png",
+                 "cover-mobile-2x":"/missing_cover.png",
+                 "cover-mobile":"/missing_cover.png",
+                 "wp-id":null,
+                 "created-at":"2016-10-07T23:16:13.565Z",
+                 "updated-at":"2016-10-07T23:16:13.565Z"
+              },
+              "relationships":{
+                 "websites":{
+                    "data":[
+                       {
+                          "id":11,
+                          "url":"http://mohr.org/coy_rowe",
+                          "user-id":207,
+                          "created-at":"2016-10-07T23:16:13.651Z",
+                          "updated-at":"2016-10-07T23:16:13.651Z"
+                       }
+                    ]
+                 },
+                 "books":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Outdoors \u0026 Industrial",
+                          "image-url":"https://robohash.org/sitveritatisab.png?size=300x300\u0026set=set1",
+                          "author":"Meggie Balistreri",
+                          "created-at":"2016-10-07T23:16:13.629Z",
+                          "updated-at":"2016-10-07T23:16:13.629Z"
+                       }
+                    ]
+                 },
+                 "movies":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Movies, Home \u0026 Electronics",
+                          "image-url":"https://robohash.org/quiaarchitectoodit.png?size=300x300\u0026set=set1",
+                          "author":"Eveline Ziemann",
+                          "created-at":"2016-10-07T23:16:13.642Z",
+                          "updated-at":"2016-10-07T23:16:13.642Z"
+                       }
+                    ]
+                 },
+                 "interests":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Synergistic Aluminum Gloves",
+                          "created-at":"2016-10-07T23:16:13.596Z",
+                          "updated-at":"2016-10-07T23:16:13.596Z"
+                       }
+                    ]
+                 },
+                 "virtues":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "features":{
+                   "data":[
+
+                   ]
+                 },
+                 "strengths":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "teachers":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 }
+              }
+           }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users",
+        "authentication" : true,
+        "description": "Creating a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "user[email]" : {
+            "type": "string",
+            "description": "The email of the user",
+            "required": true
+          },
+          "user[password]" : {
+            "type": "string",
+            "description": "The current password of the user",
+            "required": true
+          },
+          "user[first-name]" : {
+            "type": "string",
+            "description": "The first name of the user",
+            "required": true
+          },
+          "user[last-name]" : {
+            "type": "string",
+            "description": "The last name of the user",
+            "required": true
+          },
+          "user[username]" : {
+            "type": "string",
+            "description": "The username of the user",
+            "required": true
+          },
+          "user[bio]" : {
+            "type": "string",
+            "description": "The bio of the user",
+            "required": false
+          },
+          "user[short-bio]" : {
+            "type": "string",
+            "description": "The short bio of the user",
+            "required": false
+          },
+          "user[location]" : {
+            "type": "string",
+            "description": "The location of the user",
+            "required": false
+          },
+          "user[gender]" : {
+            "type": "string",
+            "description": "The gender of the user [male, female, other]",
+            "required": false
+          },
+          "user[birthday]" : {
+            "type": "string",
+            "description": "The birthday of the user (1986-10-07)",
+            "required": false
+          },
+          "user[email-digest]" : {
+            "type": "string",
+            "description": "The digest choice of the user [never_digest, daily_digest, weekly_digest]",
+            "required": false
+          },
+          "user[email-notifications]" : {
+            "type": "string",
+            "description": "The email notifications choice of the user [never_notifications, instant_notifications, daily_notifications]",
+            "required": false
+          },
+          "user[avatar-content]" : {
+            "type": "string",
+            "description": "Base 64 encoded string of the user avatar png",
+            "required": true
+          },
+          "user[cover-content]" : {
+            "type": "string",
+            "description": "Base 64 encoded string of the user cover image png",
+            "required": true
+          },
+          "user[books-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the book to be either created or added to the user (lookup by name)",
+            "required": true
+          },
+          "user[books-attributes][0][author]" : {
+            "type": "string",
+            "description": "The author of the book to be added to the user",
+            "required": true
+          },
+          "user[books-attributes][0][image-url]" : {
+            "type": "string",
+            "description": "The image url of the book",
+            "required": true
+          },
+          "user[interests-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the interest",
+            "required": true
+          },
+          "user[movies-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the movie",
+            "required": true
+          },
+          "user[movies-attributes][0][author]" : {
+            "type": "string",
+            "description": "The author of the movie",
+            "required": true
+          },
+          "user[movies-attributes][0][image-url]" : {
+            "type": "string",
+            "description": "The image url of the movie",
+            "required": true
+          },
+          "user[quotes-attributes][0][body]" : {
+            "type": "string",
+            "description": "The body of the quote",
+            "required": true
+          },
+          "user[quotes-attributes][0][author]" : {
+            "type": "string",
+            "description": "The author of the quote",
+            "required": true
+          },
+          "user[virtues-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the virtue",
+            "required": true
+          },
+          "user[websites-attributes][0][url]" : {
+            "type": "string",
+            "description": "The url of the website",
+            "required": true
+          }
+        },
+        "response": {
+           "data":{
+              "id":"207",
+              "type":"users",
+              "attributes":{
+                 "email":"roberta@nitzsche.biz",
+                 "last-sign-in-at":null,
+                 "username":"april.johns",
+                 "first-name":"Audie",
+                 "last-name":"Halvorson",
+                 "short-bio":"Ut exercitationem ",
+                 "bio":"Ut exercitationem totam perferendis consequatur dolorem veritatis dolorem. Rerum libero amet illo. Sit quisquam accusantium autem illum voluptate a facere. Quia quis molestiae doloremque quas nobis at quae.",
+                 "location":null,
+                 "gender":"male",
+                 "birthday":"1986-10-07",
+                 "email-digest":"daily_digest",
+                 "email-notifications":"instantl_notifications",
+                 "auth-token":"_HV-S6qrdobecr-rr6gs",
+                 "avatar-large-2x":"/missing_avatar.png",
+                 "avatar-large":"/missing_avatar.png",
+                 "cover-desktop-2x":"/missing_cover.png",
+                 "cover-desktop":"/missing_cover.png",
+                 "cover-mobile-2x":"/missing_cover.png",
+                 "cover-mobile":"/missing_cover.png",
+                 "wp-id":null,
+                 "created-at":"2016-10-07T23:16:13.565Z",
+                 "updated-at":"2016-10-07T23:16:13.565Z"
+              },
+              "relationships":{
+                 "websites":{
+                    "data":[
+                       {
+                          "id":11,
+                          "url":"http://mohr.org/coy_rowe",
+                          "user-id":207,
+                          "created-at":"2016-10-07T23:16:13.651Z",
+                          "updated-at":"2016-10-07T23:16:13.651Z"
+                       }
+                    ]
+                 },
+                 "books":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Outdoors \u0026 Industrial",
+                          "image-url":"https://robohash.org/sitveritatisab.png?size=300x300\u0026set=set1",
+                          "author":"Meggie Balistreri",
+                          "created-at":"2016-10-07T23:16:13.629Z",
+                          "updated-at":"2016-10-07T23:16:13.629Z"
+                       }
+                    ]
+                 },
+                 "movies":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Movies, Home \u0026 Electronics",
+                          "image-url":"https://robohash.org/quiaarchitectoodit.png?size=300x300\u0026set=set1",
+                          "author":"Eveline Ziemann",
+                          "created-at":"2016-10-07T23:16:13.642Z",
+                          "updated-at":"2016-10-07T23:16:13.642Z"
+                       }
+                    ]
+                 },
+                 "interests":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Synergistic Aluminum Gloves",
+                          "created-at":"2016-10-07T23:16:13.596Z",
+                          "updated-at":"2016-10-07T23:16:13.596Z"
+                       }
+                    ]
+                 },
+                 "virtues":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "features":{
+                   "data":[
+
+                   ]
+                 },
+                 "strengths":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 }
+              }
+           }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/users\/:id",
+        "authentication" : true,
+        "description": "Updating a user profile",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "user[current-password]" : {
+            "type": "string",
+            "description": "The current password of the user",
+            "required": true
+          },
+          "user[password]" : {
+            "type": "string",
+            "description": "The new password of the user",
+            "required": false
+          },
+          "user[email]" : {
+            "type": "string",
+            "description": "The email of the user",
+            "required": true
+          },
+          "user[first-name]" : {
+            "type": "string",
+            "description": "The first name of the user",
+            "required": true
+          },
+          "user[last-name]" : {
+            "type": "string",
+            "description": "The last name of the user",
+            "required": true
+          },
+          "user[username]" : {
+            "type": "string",
+            "description": "The username of the user",
+            "required": true
+          },
+          "user[bio]" : {
+            "type": "string",
+            "description": "The bio of the user",
+            "required": false
+          },
+          "user[short-bio]" : {
+            "type": "string",
+            "description": "The short bio of the user",
+            "required": false
+          },
+          "user[location]" : {
+            "type": "string",
+            "description": "The location of the user",
+            "required": false
+          },
+          "user[gender]" : {
+            "type": "string",
+            "description": "The gender of the user [male, female, other]",
+            "required": false
+          },
+          "user[birthday]" : {
+            "type": "string",
+            "description": "The birthday of the user (1986-10-07)",
+            "required": false
+          },
+          "user[email-digest]" : {
+            "type": "string",
+            "description": "The digest choice of the user [never_digest, daily_digest, weekly_digest]",
+            "required": false
+          },
+          "user[email-notifications]" : {
+            "type": "string",
+            "description": "The email notifications choice of the user [never_notifications, instant_notifications, daily_notifications]",
+            "required": false
+          },
+          "user[avatar-content]" : {
+            "type": "string",
+            "description": "Base 64 encoded string of the user avatar png",
+            "required": true
+          },
+          "user[cover-content]" : {
+            "type": "string",
+            "description": "Base 64 encoded string of the user cover image png",
+            "required": true
+          },
+          "user[books-attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the book to be modified or destroyed",
+            "required": false
+          },
+          "user[books-attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Setting the destroy flag will remove the book from the user",
+            "required": false
+          },
+          "user[books-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the book to be either created or added to the user (lookup by name)",
+            "required": true
+          },
+          "user[books-attributes][0][author]" : {
+            "type": "string",
+            "description": "The author of the book to be added to the user",
+            "required": true
+          },
+          "user[books-attributes][0][image-url]" : {
+            "type": "string",
+            "description": "The image url of the book",
+            "required": true
+          },
+          "user[interests-attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the interest to be modified or destroyed",
+            "required": false
+          },
+          "user[interests-attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Setting the destroy flag will remove the interest from the user",
+            "required": false
+          },
+          "user[interests-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the interest",
+            "required": true
+          },
+          "user[movies-attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the movie to be modified or destroyed",
+            "required": false
+          },
+          "user[movies-attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Setting the destroy flag will remove the movie from the user",
+            "required": false
+          },
+          "user[movies-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the movie",
+            "required": true
+          },
+          "user[movies-attributes][0][author]" : {
+            "type": "string",
+            "description": "The author of the movie",
+            "required": true
+          },
+          "user[movies-attributes][0][image-url]" : {
+            "type": "string",
+            "description": "The image url of the movie",
+            "required": true
+          },
+          "user[quotes-attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the quote to be modified or destroyed",
+            "required": false
+          },
+          "user[quotes-attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Setting the destroy flag will remove the quote from the user",
+            "required": false
+          },
+          "user[quotes-attributes][0][body]" : {
+            "type": "string",
+            "description": "The body of the quote",
+            "required": true
+          },
+          "user[quotes-attributes][0][author]" : {
+            "type": "string",
+            "description": "The author of the quote",
+            "required": true
+          },
+          "user[virtues-attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the virtue to be modified or destroyed",
+            "required": false
+          },
+          "user[virtues-attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Setting the destroy flag will remove the virtue from the user",
+            "required": false
+          },
+          "user[virtues-attributes][0][name]" : {
+            "type": "string",
+            "description": "The name of the virtue",
+            "required": true
+          },
+          "user[websites-attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the website to be modified or destroyed",
+            "required": false
+          },
+          "user[websites-attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Setting the destroy flag will remove the website from the user",
+            "required": false
+          },
+          "user[websites-attributes][0][url]" : {
+            "type": "string",
+            "description": "The url of the website",
+            "required": true
+          }
+        },
+        "response": {
+           "data":{
+              "id":"207",
+              "type":"users",
+              "attributes":{
+                 "email":"roberta@nitzsche.biz",
+                 "last-sign-in-at":null,
+                 "username":"april.johns",
+                 "first-name":"Audie",
+                 "last-name":"Halvorson",
+                 "short-bio":"Ut exercitationem ",
+                 "bio":"Ut exercitationem totam perferendis consequatur dolorem veritatis dolorem. Rerum libero amet illo. Sit quisquam accusantium autem illum voluptate a facere. Quia quis molestiae doloremque quas nobis at quae.",
+                 "location":null,
+                 "gender":"male",
+                 "birthday":"1986-10-07",
+                 "email-digest":"daily_digest",
+                 "email-notifications":"instantl_notifications",
+                 "auth-token":"_HV-S6qrdobecr-rr6gs",
+                 "avatar-large-2x":"/missing_avatar.png",
+                 "avatar-large":"/missing_avatar.png",
+                 "cover-desktop-2x":"/missing_cover.png",
+                 "cover-desktop":"/missing_cover.png",
+                 "cover-mobile-2x":"/missing_cover.png",
+                 "cover-mobile":"/missing_cover.png",
+                 "wp-id":null,
+                 "created-at":"2016-10-07T23:16:13.565Z",
+                 "updated-at":"2016-10-07T23:16:13.565Z"
+              },
+              "relationships":{
+                 "websites":{
+                    "data":[
+                       {
+                          "id":11,
+                          "url":"http://mohr.org/coy_rowe",
+                          "user-id":207,
+                          "created-at":"2016-10-07T23:16:13.651Z",
+                          "updated-at":"2016-10-07T23:16:13.651Z"
+                       }
+                    ]
+                 },
+                 "books":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Outdoors \u0026 Industrial",
+                          "image-url":"https://robohash.org/sitveritatisab.png?size=300x300\u0026set=set1",
+                          "author":"Meggie Balistreri",
+                          "created-at":"2016-10-07T23:16:13.629Z",
+                          "updated-at":"2016-10-07T23:16:13.629Z"
+                       }
+                    ]
+                 },
+                 "movies":{
+                    "data":[
+                       {
+                          "id":11,
+                          "name":"Movies, Home \u0026 Electronics",
+                          "image-url":"https://robohash.org/quiaarchitectoodit.png?size=300x300\u0026set=set1",
+                          "author":"Eveline Ziemann",
+                          "created-at":"2016-10-07T23:16:13.642Z",
+                          "updated-at":"2016-10-07T23:16:13.642Z"
+                       }
+                    ]
+                 },
+                 "interests":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Synergistic Aluminum Gloves",
+                          "created-at":"2016-10-07T23:16:13.596Z",
+                          "updated-at":"2016-10-07T23:16:13.596Z"
+                       }
+                    ]
+                 },
+                 "virtues":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "features":{
+                   "data":[
+
+                   ]
+                 },
+                 "strengths":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 },
+                 "teachers":{
+                    "data":[
+                       {
+                          "id":22,
+                          "name":"Ergonomic Wool Gloves",
+                          "created-at":"2016-10-07T23:16:13.582Z",
+                          "updated-at":"2016-10-07T23:16:13.582Z"
+                       }
+                    ]
+                 }
+              }
+           }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:id",
+        "authentication" : false,
+        "description": "Deleting a user account on oasis. Not brianjohnson.me.",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "posts": [
+      {
+        "action": "GET",
+        "uri": "\/posts",
+        "authentication" : true,
+        "description": "Show posts index",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "filter[user_id]" : {
+            "type": "integer",
+            "description": "The id user to filter posts to",
+            "required": false
+          },
+          "filter[following]" : {
+            "type": "boolean",
+            "description": "Filtering the feed by the user's followings",
+            "required": false
+          },
+          "filter[text]" : {
+            "type": "boolean",
+            "description": "Filtering the feed by text only posts",
+            "required": false
+          },
+          "filter[photos]" : {
+            "type": "boolean",
+            "description": "Filtering the feed to posts with photos",
+            "required": false
+          },
+          "filter[videos]" : {
+            "type": "boolean",
+            "description": "Filtering the feed to posts with videos",
+            "required": false
+          },
+          "filter[photos_videos]" : {
+            "type": "boolean",
+            "description": "Filtering the feed to posts with photos and videos",
+            "required": false
+          },
+          "filter[links]" : {
+            "type": "boolean",
+            "description": "Filtering the feed to posts with links",
+            "required": false
+          },
+          "filter[loved_today]" : {
+            "type": "boolean",
+            "description": "Filtering the feed and ordering by posts loved today",
+            "required": false
+          },
+          "filter[loved_this_week]" : {
+            "type": "boolean",
+            "description": "Filtering the feed and ordering by posts loved this week",
+            "required": false
+          },
+          "order[loved]" : {
+            "type": "boolean",
+            "description": "Ordering by likes count desc",
+            "required": false
+          },
+          "order[active]" : {
+            "type": "boolean",
+            "description": "Ordering by comments count desc",
+            "required": false
+          },
+          "order[hottest]" : {
+            "type": "boolean",
+            "description": "Ordering by likes and comments count desc",
+            "required": false
+          },
+          "limit[days]" : {
+            "type": "float",
+            "description": "Limiting to x days ago (eg 0.5, 2, 7)",
+            "required": false
+          },
+          "page[number]" : {
+            "type": "integer",
+            "description": "The number of the page for pagination",
+            "required": false
+          },
+          "page[size]" : {
+            "type": "integer",
+            "description": "The size of the page lot for pagination",
+            "required": false
+          }
+        },
+        "response": {
+          "data": [
+            {
+              "id": "399",
+              "type": "posts",
+              "attributes": {
+                "user": {
+                  "id": 1097,
+                  "email": "sandra@bartell.co",
+                  "last-sign-in-at": null,
+                  "username": "terry",
+                  "first-name": "Alisa",
+                  "last-name": "Rippin",
+                  "bio": "Velit mollitia accusamus. Vel praesentium quos fuga officia et occaecati quisquam.",
+                  "short-bio": "Sunt et quis. Quia fugit et laboriosam. Natus ratione rerum quasi.",
+                  "location": "West Charles",
+                  "gender": "male",
+                  "birthday": "1986-10-18",
+                  "email-digest": "daily_digest",
+                  "email-notifications": "instant_notifications",
+                  "auth-token": "dB-kUHmA1KTfizbw9yPr",
+                  "avatar-url": "\/Users\/tyler\/optimize\/lib\/avatar_blank@2x.png",
+                  "cover-url": "\/Users\/tyler\/optimize\/lib\/coverart_blank@2x.png",
+                  "wp-id": 3739,
+                  "created-at": "2016-10-18T14:39:18.949Z",
+                  "updated-at": "2016-10-18T14:39:18.949Z",
+                  "websites": [
+
+                  ],
+                  "books": [
+
+                  ],
+                  "movies": [
+
+                  ],
+                  "interests": [
+
+                  ],
+                  "virtues": [
+
+                  ],
+                  "quotes": [
+
+                  ],
+                  "strengths": [
+
+                  ],
+                  "teachers": [
+
+                  ],
+                  "features":{
+                    "data":[
+
+                    ]
+                  }
+                },
+                "body": "Inventore asperiores officiis quia. Provident ratione qui dicta saepe blanditiis similique dolorem. Suscipit omnis et porro velit repellat harum quia. Dolores saepe eos dolor reiciendis velit eum dolorum.",
+                "meta": {
+
+                },
+                "comments-count": 0,
+                "likes-count": 0
+              },
+              "relationships": {
+                "videos": {
+                  "data": [
+
+                  ]
+                },
+                "photos": {
+                  "data": [
+
+                  ]
+                }
+              }
+            },
+            {
+              "id": "398",
+              "type": "posts",
+              "attributes": {
+                "user": {
+                  "id": 1096,
+                  "email": "rafael@smithamsanford.name",
+                  "last-sign-in-at": null,
+                  "username": "omer",
+                  "first-name": "Ettie",
+                  "last-name": "Bailey",
+                  "bio": "Maiores nesciunt consequatur in veniam. In recusandae maiores quia sit. Ut nihil ipsa distinctio sed.",
+                  "short-bio": "Et quis mollitia dicta. Sint et sint. Maiores repellendus incidunt enim vero omnis omnis. Eos ut rem repellat.",
+                  "location": "Conroyside",
+                  "gender": "male",
+                  "birthday": "1986-10-18",
+                  "email-digest": "daily_digest",
+                  "email-notifications": "instant_notifications",
+                  "auth-token": "KDe5uMA15eyv_2DbDxW3",
+                  "avatar-url": "\/Users\/tyler\/optimize\/lib\/avatar_blank@2x.png",
+                  "cover-url": "\/Users\/tyler\/optimize\/lib\/coverart_blank@2x.png",
+                  "wp-id": 3739,
+                  "created-at": "2016-10-18T14:39:18.932Z",
+                  "updated-at": "2016-10-18T14:39:18.932Z",
+                  "websites": [
+
+                  ],
+                  "books": [
+
+                  ],
+                  "movies": [
+
+                  ],
+                  "interests": [
+
+                  ],
+                  "virtues": [
+
+                  ],
+                  "quotes": [
+
+                  ],
+                  "strengths": [
+
+                  ],
+                  "teachers": [
+
+                  ],
+                  "features":{
+                    "data":[
+
+                    ]
+                  }
+                },
+                "body": "Expedita et eius culpa ipsum. Pariatur sit animi provident deleniti necessitatibus esse. Tempore repellendus iste voluptatem.",
+                "meta": {
+
+                },
+                "comments-count": 0,
+                "likes-count": 0
+              },
+              "relationships": {
+                "videos": {
+                  "data": [
+
+                  ]
+                },
+                "photos": {
+                  "data": [
+
+                  ]
+                }
+              }
+            }
+          ],
+          "links": {
+            "self": "http:\/\/test.host\/posts?page%5Bnumber%5D=1&page%5Bsize%5D=2",
+            "next": "http:\/\/test.host\/posts?page%5Bnumber%5D=2&page%5Bsize%5D=2",
+            "last": "http:\/\/test.host\/posts?page%5Bnumber%5D=2&page%5Bsize%5D=2"
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/posts",
+        "authentication" : false,
+        "description": "Creating a post",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "post[body]" : {
+            "type": "text",
+            "description": "body of the post can include # tags or @ mentions of a username",
+            "required": true
+          },
+          "post[photos_attributes][0][image_data]" : {
+            "type": "attachment",
+            "description": "attached file in form field",
+            "required": false
+          },
+          "post[videos_attributes][0][movie_data]" : {
+            "type": "attachment",
+            "description": "attached file in form field",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "400",
+            "type": "posts",
+            "attributes": {
+              "user": {
+                "id": 1098,
+                "email": "uriah_lueilwitz@mohr.co",
+                "last-sign-in-at": null,
+                "username": "garrett.prosacco",
+                "first-name": "Lawson",
+                "last-name": "Hyatt",
+                "bio": "Quis et rem nemo. Necessitatibus mollitia soluta enim et accusantium. Sunt aut porro harum nostrum voluptas id et.",
+                "short-bio": "Quidem enim nihil tempora a omnis. Exercitationem quasi aut vel.",
+                "location": "Weissnattown",
+                "gender": "male",
+                "birthday": "1986-10-18",
+                "email-digest": "daily_digest",
+                "email-notifications": "instant_notifications",
+                "auth-token": "ZSJ5nLLBQrzKGpDPHQNA",
+                "avatar-url": "\/Users\/tyler\/optimize\/lib\/avatar_blank@2x.png",
+                "cover-url": "\/Users\/tyler\/optimize\/lib\/coverart_blank@2x.png",
+                "wp-id": 3739,
+                "created-at": "2016-10-18T14:41:45.048Z",
+                "updated-at": "2016-10-18T14:41:45.048Z",
+                "websites": [
+
+                ],
+                "books": [
+
+                ],
+                "movies": [
+
+                ],
+                "interests": [
+
+                ],
+                "virtues": [
+
+                ],
+                "quotes": [
+
+                ],
+                "strengths": [
+
+                ],
+                "teachers": [
+
+                ],
+                "features":{
+                  "data":[
+
+                  ]
+                }
+              },
+              "body": "Et est fuga veritatis dolor quos qui. Itaque provident vel a qui. Quae at et numquam ullam qui ut. Facilis aut et eos non aliquid. Et excepturi qui et repellat ratione.",
+              "meta": {
+
+              },
+              "photos": [
+
+              ],
+              "videos": [
+
+              ],
+              "likes-count": 0,
+              "comments": [
+
+              ],
+              "likes": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/posts\/:id",
+        "authentication" : false,
+        "description": "Updating a post",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "post[body]" : {
+            "type": "text",
+            "description": "body of the post can include # tags or @ mentions of a username",
+            "required": true
+          },
+          "post[photos_attributes][0][image_data]" : {
+            "type": "attachment",
+            "description": "attached file in form field",
+            "required": false
+          },
+          "post[videos_attributes][0][movie_data]" : {
+            "type": "attachment",
+            "description": "attached file in form field",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "400",
+            "type": "posts",
+            "attributes": {
+              "user": {
+                "id": 1098,
+                "email": "uriah_lueilwitz@mohr.co",
+                "last-sign-in-at": null,
+                "username": "garrett.prosacco",
+                "first-name": "Lawson",
+                "last-name": "Hyatt",
+                "bio": "Quis et rem nemo. Necessitatibus mollitia soluta enim et accusantium. Sunt aut porro harum nostrum voluptas id et.",
+                "short-bio": "Quidem enim nihil tempora a omnis. Exercitationem quasi aut vel.",
+                "location": "Weissnattown",
+                "gender": "male",
+                "birthday": "1986-10-18",
+                "email-digest": "daily_digest",
+                "email-notifications": "instant_notifications",
+                "auth-token": "ZSJ5nLLBQrzKGpDPHQNA",
+                "avatar-url": "\/Users\/tyler\/optimize\/lib\/avatar_blank@2x.png",
+                "cover-url": "\/Users\/tyler\/optimize\/lib\/coverart_blank@2x.png",
+                "wp-id": 3739,
+                "created-at": "2016-10-18T14:41:45.048Z",
+                "updated-at": "2016-10-18T14:41:45.048Z",
+                "websites": [
+
+                ],
+                "books": [
+
+                ],
+                "movies": [
+
+                ],
+                "interests": [
+
+                ],
+                "virtues": [
+
+                ],
+                "quotes": [
+
+                ],
+                "strengths": [
+
+                ],
+                "teachers": [
+
+                ],
+                "features":{
+                  "data":[
+
+                  ]
+                }
+              },
+              "body": "Et est fuga veritatis dolor quos qui. Itaque provident vel a qui. Quae at et numquam ullam qui ut. Facilis aut et eos non aliquid. Et excepturi qui et repellat ratione.",
+              "meta": {
+
+              },
+              "photos": [
+
+              ],
+              "videos": [
+
+              ],
+              "likes-count": 0,
+              "comments": [
+
+              ],
+              "likes": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/posts\/:id",
+        "authentication" : true,
+        "description": "Showing extended info on a post",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "response": {
+          "data": {
+            "id": "401",
+            "type": "posts",
+            "attributes": {
+              "user": {
+                "id": 1100,
+                "email": "taryn_hartmann@legros.io",
+                "last-sign-in-at": null,
+                "username": "jeanette",
+                "first-name": "Hollis",
+                "last-name": "Herzog",
+                "bio": "A sapiente natus quas. Rerum numquam animi nisi deserunt illum asperiores. Et saepe deserunt ad.",
+                "short-bio": "Distinctio doloremque perferendis aut impedit dolorem nihil harum. Porro doloribus earum odit. Eius sapiente et libero et nam.",
+                "location": "Smithamborough",
+                "gender": "male",
+                "birthday": "1986-10-18",
+                "email-digest": "daily_digest",
+                "email-notifications": "instant_notifications",
+                "auth-token": "QrcVdSizTfnsJTeERcXf",
+                "avatar-url": "\/Users\/tyler\/optimize\/lib\/avatar_blank@2x.png",
+                "cover-url": "\/Users\/tyler\/optimize\/lib\/coverart_blank@2x.png",
+                "wp-id": 3739,
+                "created-at": "2016-10-18T14:47:24.669Z",
+                "updated-at": "2016-10-18T14:47:24.669Z",
+                "websites": [
+
+                ],
+                "books": [
+
+                ],
+                "movies": [
+
+                ],
+                "interests": [
+
+                ],
+                "virtues": [
+
+                ],
+                "quotes": [
+
+                ],
+                "strengths": [
+
+                ],
+                "teachers": [
+
+                ],
+                "features":{
+                  "data":[
+
+                  ]
+                }
+              },
+              "body": "Dolor error doloribus consequatur aut. Dignissimos alias sequi.",
+              "meta": {
+
+              },
+              "photos": [
+
+              ],
+              "videos": [
+
+              ],
+              "likes-count": 1,
+              "comments": [
+                {
+                  "id": 69,
+                  "body": "Iure cupiditate sint odit quidem minima modi alias. Quam accusamus laudantium nobis quisquam et vel quo. Quis asperiores officia cum suscipit minus nostrum quasi. Id sint nobis odio et suscipit sit qui. Eos aspernatur possimus sed nam.",
+                  "created-at": "2016-10-18T14:47:24.768Z",
+                  "commentable-id": 401,
+                  "commentable-type": "Post",
+                  "likes": [
+
+                  ]
+                }
+              ],
+              "likes": [
+                {
+                  "id": 87,
+                  "likeable_type": "Post",
+                  "likeable_id": 401,
+                  "user_id": 1101,
+                  "created_at": "2016-10-18T14:47:24.716Z",
+                  "updated_at": "2016-10-18T14:47:24.716Z"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/posts\/:id",
+        "authentication" : false,
+        "description": "Deleting a post.",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "comments": [
+      {
+        "action": "POST",
+        "uri": "\/comments",
+        "authentication" : true,
+        "description": "Creating a comment",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "comment[commentable_type]" : {
+            "type": "string",
+            "description": "The type of the object to comment on (Post, PhilosopherNote, MasterClass, MicroClass, Interview, Question)",
+            "required": true
+          },
+          "comment[commentable_id]" : {
+            "type": "integer",
+            "description": "The id of the object to comment on ",
+            "required": false
+          },
+          "comment[body]" : {
+            "type": "text",
+            "description": "the body of the comment with # tags or @ mentions",
+            "required": false
+          }
+        },
+          "response": {
+          "data": {
+            "id": "70",
+            "type": "comments",
+            "attributes": {
+              "body": "This post was awesome",
+              "created-at": "2016-10-18T14:57:39.563Z",
+              "commentable-id": 402,
+              "commentable-type": "Post",
+              "likes": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/comments\/:id",
+        "authentication" : true,
+        "description": "Deleting a comment",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "response": {
+          "status": 204
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/comments\/:id",
+        "authentication" : true,
+        "description": "Updating a comment",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "comment[body]" : {
+            "type": "text",
+            "description": "the body of the comment with # tags or @ mentions",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "70",
+            "type": "comments",
+            "attributes": {
+              "body": "This post was awesome",
+              "created-at": "2016-10-18T14:57:39.563Z",
+              "commentable-id": 402,
+              "commentable-type": "Post",
+              "likes": [
+
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "likes": [
+      {
+        "action": "POST",
+        "uri": "\/likes",
+        "authentication" : true,
+        "description": "Creating a like of an object",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "like[likeable_type]" : {
+            "type": "text",
+            "description": "the type of the object to be liked (Post, Comment, PhilosopherNote, MasterClass, MicroClass, Interview, Question)",
+            "required": false
+          },
+          "like[likeable_id]" : {
+            "type": "text",
+            "description": "the id of the object to be liked",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "89",
+            "type": "likes",
+            "attributes": {
+              "created-at": "2016-10-18T15:04:15.137Z",
+              "likeable-id": 404,
+              "likeable-type": "Post"
+            }
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/likes",
+        "authentication" : false,
+        "description": "Root of the api.",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "like[likeable_type]" : {
+            "type": "text",
+            "description": "the type of the object to be unliked (Post, Comment, Interview, etc.)",
+            "required": false
+          },
+          "like[likeable_id]" : {
+            "type": "text",
+            "description": "the id of the object to be unliked",
+            "required": false
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "follows": [
+      {
+        "action": "GET",
+        "uri": "\/users\/:id",
+        "authentication" : true,
+        "description": "get the followers of a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "params" : {
+          "page[number]" : {
+            "type": "integer",
+            "description": "the number of the paginated page",
+            "required": false
+          },
+          "page[size]" : {
+            "type": "integer",
+            "description": "the size of the paginated page",
+            "required": false
+          }
+        },
+        "response": {
+          "data": [
+            {
+              "id": "49",
+              "type": "follows",
+              "attributes": {
+                "follower": {
+                  "id": 1109,
+                  "email": "jeffery@labadie.io",
+                  "created_at": "2016-10-18T15:08:39.401Z",
+                  "updated_at": "2016-10-18T15:08:39.401Z",
+                  "username": "delmer.schuppe",
+                  "first_name": "Jeanette",
+                  "last_name": "Corkery",
+                  "bio": "Maxime nisi dolor consequatur quo. Odit praesentium qui. Et possimus est doloremque vel.",
+                  "location": "Schadenport",
+                  "gender": "male",
+                  "birthday": "1986-10-18",
+                  "email_digest": "daily_digest",
+                  "email_notifications": "instant_notifications",
+                  "auth_token": "ELsUJg5zosA8sGxCjUgd",
+                  "avatar_file_name": null,
+                  "avatar_content_type": null,
+                  "avatar_file_size": null,
+                  "avatar_updated_at": null,
+                  "cover_file_name": null,
+                  "cover_content_type": null,
+                  "cover_file_size": null,
+                  "cover_updated_at": null,
+                  "wp_id": 3739,
+                  "short_bio": "Modi suscipit in eligendi itaque aliquid. Quia nulla excepturi fugit aliquid est. Fuga doloremque earum consectetur quasi incidunt doloribus."
+                },
+                "followable": {
+                  "id": 1110,
+                  "email": "krista@gorczany.co",
+                  "created_at": "2016-10-18T15:08:39.418Z",
+                  "updated_at": "2016-10-18T15:08:39.418Z",
+                  "username": "gia_kling",
+                  "first_name": "Pansy",
+                  "last_name": "Bogisich",
+                  "bio": "Expedita iste asperiores eligendi. Voluptatum ut autem quo exercitationem recusandae est non. Saepe alias et temporibus optio ut officiis laborum.",
+                  "location": "Alessiaborough",
+                  "gender": "male",
+                  "birthday": "1986-10-18",
+                  "email_digest": "daily_digest",
+                  "email_notifications": "instant_notifications",
+                  "auth_token": "u8Q8V2s4QFyQXApsGaPJ",
+                  "avatar_file_name": null,
+                  "avatar_content_type": null,
+                  "avatar_file_size": null,
+                  "avatar_updated_at": null,
+                  "cover_file_name": null,
+                  "cover_content_type": null,
+                  "cover_file_size": null,
+                  "cover_updated_at": null,
+                  "wp_id": 3739,
+                  "short_bio": "Non error explicabo harum architecto. Eum corporis architecto ex quo pariatur. Aut aspernatur deleniti quae in omnis expedita. Numquam ullam at aliquam aut."
+                },
+                "created-at": "2016-10-18T15:08:39.454Z",
+                "updated-at": "2016-10-18T15:08:39.454Z"
+              }
+            }
+          ],
+          "links": {
+
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users\/:id\/follows",
+        "authentication" : false,
+        "description": "Following a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "response": {
+          "data":
+            {
+              "id": "49",
+              "type": "follows",
+              "attributes": {
+                "follower": {
+                  "id": 1109,
+                  "email": "jeffery@labadie.io",
+                  "created_at": "2016-10-18T15:08:39.401Z",
+                  "updated_at": "2016-10-18T15:08:39.401Z",
+                  "username": "delmer.schuppe",
+                  "first_name": "Jeanette",
+                  "last_name": "Corkery",
+                  "bio": "Maxime nisi dolor consequatur quo. Odit praesentium qui. Et possimus est doloremque vel.",
+                  "location": "Schadenport",
+                  "gender": "male",
+                  "birthday": "1986-10-18",
+                  "email_digest": "daily_digest",
+                  "email_notifications": "instant_notifications",
+                  "auth_token": "ELsUJg5zosA8sGxCjUgd",
+                  "avatar_file_name": null,
+                  "avatar_content_type": null,
+                  "avatar_file_size": null,
+                  "avatar_updated_at": null,
+                  "cover_file_name": null,
+                  "cover_content_type": null,
+                  "cover_file_size": null,
+                  "cover_updated_at": null,
+                  "wp_id": 3739,
+                  "short_bio": "Modi suscipit in eligendi itaque aliquid. Quia nulla excepturi fugit aliquid est. Fuga doloremque earum consectetur quasi incidunt doloribus."
+                },
+                "followable": {
+                  "id": 1110,
+                  "email": "krista@gorczany.co",
+                  "created_at": "2016-10-18T15:08:39.418Z",
+                  "updated_at": "2016-10-18T15:08:39.418Z",
+                  "username": "gia_kling",
+                  "first_name": "Pansy",
+                  "last_name": "Bogisich",
+                  "bio": "Expedita iste asperiores eligendi. Voluptatum ut autem quo exercitationem recusandae est non. Saepe alias et temporibus optio ut officiis laborum.",
+                  "location": "Alessiaborough",
+                  "gender": "male",
+                  "birthday": "1986-10-18",
+                  "email_digest": "daily_digest",
+                  "email_notifications": "instant_notifications",
+                  "auth_token": "u8Q8V2s4QFyQXApsGaPJ",
+                  "avatar_file_name": null,
+                  "avatar_content_type": null,
+                  "avatar_file_size": null,
+                  "avatar_updated_at": null,
+                  "cover_file_name": null,
+                  "cover_content_type": null,
+                  "cover_file_size": null,
+                  "cover_updated_at": null,
+                  "wp_id": 3739,
+                  "short_bio": "Non error explicabo harum architecto. Eum corporis architecto ex quo pariatur. Aut aspernatur deleniti quae in omnis expedita. Numquam ullam at aliquam aut."
+                },
+                "created-at": "2016-10-18T15:08:39.454Z",
+                "updated-at": "2016-10-18T15:08:39.454Z"
+              }
+            }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:id\/follows",
+        "authentication" : false,
+        "description": "Unfollowing a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "an auth token"
+        },
+        "response": {
+          "status" : 204
+        }
+      }
+    ],
+    "interviews": [
+      {
+        "action": "GET",
+        "uri": "\/interviews\/:wp_id",
+        "authentication" : true,
+        "description": "Getting an interview wordpress id and its comment thread",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "interviews",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/interviews",
+        "authentication" : true,
+        "description": "Creating an interview object via its wordpress id",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "interview[wp_id]" : {
+            "type": "integer",
+            "description": "the wordpress id of the interview",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "interviews",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "master_classes": [
+      {
+        "action": "GET",
+        "uri": "\/master_classes\/:wp_id",
+        "authentication" : true,
+        "description": "Getting a master_classes wordpress id and its comment thread",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "master_class",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/master_classes",
+        "authentication" : true,
+        "description": "Creating a master_class object via its wordpress id",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "master_class[wp_id]" : {
+            "type": "integer",
+            "description": "the wordpress id of the master_class",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "master_class",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "micro_classes": [
+      {
+        "action": "GET",
+        "uri": "\/micro_classes\/:wp_id",
+        "authentication" : true,
+        "description": "Getting a micro_class wordpress id and its comment thread",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "micro_class",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/micro_classes",
+        "authentication" : true,
+        "description": "Creating a micro_class object via its wordpress id",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "micro_class[wp_id]" : {
+            "type": "integer",
+            "description": "the wordpress id of the micro_class",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "micro_class",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "philosopher_notes": [
+      {
+        "action": "GET",
+        "uri": "\/philosopher_notes\/:wp_id",
+        "authentication" : true,
+        "description": "Getting a philosopher_note wordpress id and its comment thread",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "philosopher_note",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/philosopher_notes",
+        "authentication" : true,
+        "description": "Creating a philosopher_note object via its wordpress id",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "philosopher_note[wp_id]" : {
+            "type": "integer",
+            "description": "the wordpress id of the philosopher_note",
+            "required": false
+          }
+        },
+        "response": {
+          "data": {
+            "id": "31",
+            "type": "philosopher_note",
+            "attributes": {
+              "wp-id": "60607-3542",
+              "created-at": "2016-10-18T23:21:03.157Z",
+              "updated-at": "2016-10-18T23:21:03.157Z",
+              "comments": [
+
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "conversations": [
+      {
+        "action": "GET",
+        "uri": "\/conversations",
+        "authentication" : true,
+        "description": "Getting a the current user's conversations",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "29dj298d3j8d2938d82938jd98"
+        },
+        "response": {
+           "data":[
+              {
+                 "id":"86",
+                 "type":"conversations",
+                 "attributes":{
+                    "sender":{
+                       "id":1725,
+                       "email":"willard.runte@wintheisermurray.biz",
+                       "created_at":"2016-11-08T01:40:39.424Z",
+                       "updated_at":"2016-11-08T01:40:39.424Z",
+                       "username":"minnie.cummings",
+                       "first_name":"Reta",
+                       "last_name":"Haley",
+                       "bio":"Neque expedita eius voluptas et nihil est. Reprehenderit totam dolor voluptatem consequuntur ut dolor. Quia qui qui. Modi molestiae assumenda exercitationem unde expedita.",
+                       "location":"East Ezekielview",
+                       "gender":"male",
+                       "birthday":"1986-11-07",
+                       "email_digest":"daily_digest",
+                       "email_notifications":"instant_notifications",
+                       "auth_token":"UgDvW1-ejgs49CEssF_Z",
+                       "avatar_file_name":null,
+                       "avatar_content_type":null,
+                       "avatar_file_size":null,
+                       "avatar_updated_at":null,
+                       "cover_file_name":null,
+                       "cover_content_type":null,
+                       "cover_file_size":null,
+                       "cover_updated_at":null,
+                       "wp_id":3739,
+                       "short_bio":"Recusandae est vitae et sed in minus. Quod quo reprehenderit. Nulla quas ut illo. Necessitatibus sit vel vel est itaque laudantium.",
+                       "suggested":false
+                    },
+                    "recipient":{
+                       "id":1723,
+                       "email":"william.heathcote@kelerhills.com",
+                       "created_at":"2016-11-08T01:40:39.354Z",
+                       "updated_at":"2016-11-08T01:40:39.354Z",
+                       "username":"conrad.stiedemann",
+                       "first_name":"Milton",
+                       "last_name":"Friesen",
+                       "bio":"Ipsam et excepturi explicabo odio eligendi accusamus non. Id animi in voluptatum eum hic. Distinctio nam voluptatibus mollitia delectus doloribus ad molestiae.",
+                       "location":"South Lindseyside",
+                       "gender":"male",
+                       "birthday":"1986-11-07",
+                       "email_digest":"daily_digest",
+                       "email_notifications":"instant_notifications",
+                       "auth_token":"2MzdTVjDKz58qTL1kZ5a",
+                       "avatar_file_name":null,
+                       "avatar_content_type":null,
+                       "avatar_file_size":null,
+                       "avatar_updated_at":null,
+                       "cover_file_name":null,
+                       "cover_content_type":null,
+                       "cover_file_size":null,
+                       "cover_updated_at":null,
+                       "wp_id":3739,
+                       "short_bio":"Ipsam consequatur consequuntur deleniti. Ut rem placeat sed voluptatibus doloremque qui id.",
+                       "suggested":false
+                    },
+                    "last-message":null,
+                    "created-at":"2016-11-08T01:40:39.431Z"
+                 }
+              },
+              {
+                 "id":"85",
+                 "type":"conversations",
+                 "attributes":{
+                    "sender":{
+                       "id":1723,
+                       "email":"william.heathcote@kelerhills.com",
+                       "created_at":"2016-11-08T01:40:39.354Z",
+                       "updated_at":"2016-11-08T01:40:39.354Z",
+                       "username":"conrad.stiedemann",
+                       "first_name":"Milton",
+                       "last_name":"Friesen",
+                       "bio":"Ipsam et excepturi explicabo odio eligendi accusamus non. Id animi in voluptatum eum hic. Distinctio nam voluptatibus mollitia delectus doloribus ad molestiae.",
+                       "location":"South Lindseyside",
+                       "gender":"male",
+                       "birthday":"1986-11-07",
+                       "email_digest":"daily_digest",
+                       "email_notifications":"instant_notifications",
+                       "auth_token":"2MzdTVjDKz58qTL1kZ5a",
+                       "avatar_file_name":null,
+                       "avatar_content_type":null,
+                       "avatar_file_size":null,
+                       "avatar_updated_at":null,
+                       "cover_file_name":null,
+                       "cover_content_type":null,
+                       "cover_file_size":null,
+                       "cover_updated_at":null,
+                       "wp_id":3739,
+                       "short_bio":"Ipsam consequatur consequuntur deleniti. Ut rem placeat sed voluptatibus doloremque qui id.",
+                       "suggested":false
+                    },
+                    "recipient":{
+                       "id":1724,
+                       "email":"kacey@lueilwitz.net",
+                       "created_at":"2016-11-08T01:40:39.394Z",
+                       "updated_at":"2016-11-08T01:40:39.394Z",
+                       "username":"lucienne",
+                       "first_name":"Mariana",
+                       "last_name":"Miller",
+                       "bio":"Dolores quidem architecto vel et est. Qui explicabo consequatur voluptatem et quia qui similique.",
+                       "location":"West Paolo",
+                       "gender":"male",
+                       "birthday":"1986-11-07",
+                       "email_digest":"daily_digest",
+                       "email_notifications":"instant_notifications",
+                       "auth_token":"Ebo661pptZ96hTszyrau",
+                       "avatar_file_name":null,
+                       "avatar_content_type":null,
+                       "avatar_file_size":null,
+                       "avatar_updated_at":null,
+                       "cover_file_name":null,
+                       "cover_content_type":null,
+                       "cover_file_size":null,
+                       "cover_updated_at":null,
+                       "wp_id":3739,
+                       "short_bio":"Necessitatibus et hic. Voluptatibus quia sit similique aspernatur.",
+                       "suggested":false
+                    },
+                    "last-message":null,
+                    "created-at":"2016-11-08T01:40:39.407Z"
+                 }
+              }
+           ],
+           "links":{
+
+           }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/conversations",
+        "authentication" : true,
+        "description": "Starting a conversation with a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "29dj298d3j8d2938d82938jd98"
+        },
+        "params" : {
+          "conversation[sender_id]" : {
+            "type": "integer",
+            "description": "the id of the initiator",
+            "required": true
+          },
+          "conversation[recipient_id]" : {
+            "type": "integer",
+            "description": "the id of the recipient",
+            "required": true
+          }
+        },
+        "response": {
+          "data": {
+             "id":"85",
+             "type":"conversations",
+             "attributes":{
+                "sender":{
+                   "id":1723,
+                   "email":"william.heathcote@kelerhills.com",
+                   "created_at":"2016-11-08T01:40:39.354Z",
+                   "updated_at":"2016-11-08T01:40:39.354Z",
+                   "username":"conrad.stiedemann",
+                   "first_name":"Milton",
+                   "last_name":"Friesen",
+                   "bio":"Ipsam et excepturi explicabo odio eligendi accusamus non. Id animi in voluptatum eum hic. Distinctio nam voluptatibus mollitia delectus doloribus ad molestiae.",
+                   "location":"South Lindseyside",
+                   "gender":"male",
+                   "birthday":"1986-11-07",
+                   "email_digest":"daily_digest",
+                   "email_notifications":"instant_notifications",
+                   "auth_token":"2MzdTVjDKz58qTL1kZ5a",
+                   "avatar_file_name":null,
+                   "avatar_content_type":null,
+                   "avatar_file_size":null,
+                   "avatar_updated_at":null,
+                   "cover_file_name":null,
+                   "cover_content_type":null,
+                   "cover_file_size":null,
+                   "cover_updated_at":null,
+                   "wp_id":3739,
+                   "short_bio":"Ipsam consequatur consequuntur deleniti. Ut rem placeat sed voluptatibus doloremque qui id.",
+                   "suggested":false
+                },
+                "recipient":{
+                   "id":1724,
+                   "email":"kacey@lueilwitz.net",
+                   "created_at":"2016-11-08T01:40:39.394Z",
+                   "updated_at":"2016-11-08T01:40:39.394Z",
+                   "username":"lucienne",
+                   "first_name":"Mariana",
+                   "last_name":"Miller",
+                   "bio":"Dolores quidem architecto vel et est. Qui explicabo consequatur voluptatem et quia qui similique.",
+                   "location":"West Paolo",
+                   "gender":"male",
+                   "birthday":"1986-11-07",
+                   "email_digest":"daily_digest",
+                   "email_notifications":"instant_notifications",
+                   "auth_token":"Ebo661pptZ96hTszyrau",
+                   "avatar_file_name":null,
+                   "avatar_content_type":null,
+                   "avatar_file_size":null,
+                   "avatar_updated_at":null,
+                   "cover_file_name":null,
+                   "cover_content_type":null,
+                   "cover_file_size":null,
+                   "cover_updated_at":null,
+                   "wp_id":3739,
+                   "short_bio":"Necessitatibus et hic. Voluptatibus quia sit similique aspernatur.",
+                   "suggested":false
+                },
+                "last-message":null,
+                "created-at":"2016-11-08T01:40:39.407Z"
+             }
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/conversations\/:id",
+        "authentication" : true,
+        "description": "Deleting a conversation with a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "29dj298d3j8d2938d82938jd98"
+        },
+        "params" : {
+          "id" : {
+            "type": "integer",
+            "description": "the id of the conversation",
+            "required": true
+          }
+        },
+        "response" : {
+          "status" : 204
+        }
+      }
+    ],
+    "messages": [
+      {
+        "action": "GET",
+        "uri": "\/conversations\/:conversation_id\/messages",
+        "authentication" : true,
+        "description": "Getting the messages in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "29dj298d3j8d2938d82938jd98"
+        },
+        "response": {
+           "data":[
+              {
+                 "id":"34",
+                 "type":"messages",
+                 "attributes":{
+                    "user":{
+                       "id":1735,
+                       "email":"helene.rath@jenkins.name",
+                       "created_at":"2016-11-08T01:49:59.156Z",
+                       "updated_at":"2016-11-08T01:49:59.156Z",
+                       "username":"royal_pacocha",
+                       "first_name":"Nettie",
+                       "last_name":"Jones",
+                       "bio":"Eius ipsa dicta tempore. Et error ullam rerum dolores et asperiores.",
+                       "location":"Jennieside",
+                       "gender":"male",
+                       "birthday":"1986-11-07",
+                       "email_digest":"daily_digest",
+                       "email_notifications":"daily_notifications",
+                       "auth_token":"G-4ty4STt3x_HEcfxiyF",
+                       "avatar_file_name":null,
+                       "avatar_content_type":null,
+                       "avatar_file_size":null,
+                       "avatar_updated_at":null,
+                       "cover_file_name":null,
+                       "cover_content_type":null,
+                       "cover_file_size":null,
+                       "cover_updated_at":null,
+                       "wp_id":3739,
+                       "short_bio":"Ad qui eius. Sed provident sunt ullam impedit quasi. Aut laudantium molestiae facilis et et. Ipsam in rerum voluptatibus corporis ut assumenda ipsum.",
+                       "suggested":false
+                    },
+                    "body":"Quia ut aliquid quo dolorem. Qui voluptate natus ea. Unde numquam et consequatur necessitatibus. Incidunt et fuga est dolor consectetur recusandae aut. Possimus adipisci dolores accusamus.",
+                    "conversation-id":91,
+                    "created-at":"2016-11-08T01:49:59.555Z"
+                 }
+              },
+              {
+                 "id":"33",
+                 "type":"messages",
+                 "attributes":{
+                    "user":{
+                       "id":1735,
+                       "email":"helene.rath@jenkins.name",
+                       "created_at":"2016-11-08T01:49:59.156Z",
+                       "updated_at":"2016-11-08T01:49:59.156Z",
+                       "username":"royal_pacocha",
+                       "first_name":"Nettie",
+                       "last_name":"Jones",
+                       "bio":"Eius ipsa dicta tempore. Et error ullam rerum dolores et asperiores.",
+                       "location":"Jennieside",
+                       "gender":"male",
+                       "birthday":"1986-11-07",
+                       "email_digest":"daily_digest",
+                       "email_notifications":"daily_notifications",
+                       "auth_token":"G-4ty4STt3x_HEcfxiyF",
+                       "avatar_file_name":null,
+                       "avatar_content_type":null,
+                       "avatar_file_size":null,
+                       "avatar_updated_at":null,
+                       "cover_file_name":null,
+                       "cover_content_type":null,
+                       "cover_file_size":null,
+                       "cover_updated_at":null,
+                       "wp_id":3739,
+                       "short_bio":"Ad qui eius. Sed provident sunt ullam impedit quasi. Aut laudantium molestiae facilis et et. Ipsam in rerum voluptatibus corporis ut assumenda ipsum.",
+                       "suggested":false
+                    },
+                    "body":"Corrupti tempora ex ipsum similique eveniet esse. Officiis doloribus vitae assumenda quia et. Atque aut nostrum voluptatum id.",
+                    "conversation-id":91,
+                    "created-at":"2016-11-08T01:49:59.271Z"
+                 }
+              }
+           ],
+           "links":{
+
+           }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/conversations\/:conversation_id\/messages",
+        "authentication" : true,
+        "description": "Starting adding a message to a conversation",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "29dj298d3j8d2938d82938jd98"
+        },
+        "params" : {
+          "message[body]" : {
+            "type": "text",
+            "description": "the body of the message",
+            "required": true
+          },
+          "conversation[user_id]" : {
+            "type": "integer",
+            "description": "the id of the creator",
+            "required": true
+          }
+        },
+        "response": {
+           "data":{
+              "id":"31",
+              "type":"messages",
+              "attributes":{
+                 "user":{
+                    "id":1728,
+                    "email":"maxine@walter.io",
+                    "created_at":"2016-11-08T01:48:53.965Z",
+                    "updated_at":"2016-11-08T01:48:53.965Z",
+                    "username":"allie_ratke",
+                    "first_name":"Janessa",
+                    "last_name":"Wintheiser",
+                    "bio":"Quasi ipsam beatae inventore accusantium nulla sed ducimus. Sint eum aspernatur error iure fugiat. Hic consectetur quis. Voluptas quia expedita vero autem tempore.",
+                    "location":"North Delbertfurt",
+                    "gender":"male",
+                    "birthday":"1986-11-07",
+                    "email_digest":"daily_digest",
+                    "email_notifications":"daily_notifications",
+                    "auth_token":"vQaxYM4PatQ8FWsYLyw4",
+                    "avatar_file_name":null,
+                    "avatar_content_type":null,
+                    "avatar_file_size":null,
+                    "avatar_updated_at":null,
+                    "cover_file_name":null,
+                    "cover_content_type":null,
+                    "cover_file_size":null,
+                    "cover_updated_at":null,
+                    "wp_id":3739,
+                    "short_bio":"Itaque eaque repudiandae. Molestiae veniam sapiente nihil.",
+                    "suggested":false
+                 },
+                 "body":"Corporis ipsa aut nam earum omnis quo. Ab exercitationem sit. In quaerat rem. Sed iusto aut corporis inventore quam labore assumenda.",
+                 "conversation-id":88,
+                 "created-at":"2016-11-08T01:48:54.063Z"
+              }
+           }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id",
+        "authentication" : true,
+        "description": "Deleting a message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "29dj298d3j8d2938d82938jd98"
+        },
+        "params" : {
+          "id" : {
+            "type": "integer",
+            "description": "the id of the message",
+            "required": true
+          }
+        },
+        "response" : {
+          "status" : 204
+        }
+      }
+    ],
+    "questions": [
+      {
+        "action": "GET",
+        "uri": "\/questions",
+        "authentication" : true,
+        "description": "Getting questions of the day",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "order[loved]" : {
+            "type": "boolean",
+            "description": "Ordering by likes count desc",
+            "required": false
+          },
+          "order[active]" : {
+            "type": "boolean",
+            "description": "Ordering by comments count desc",
+            "required": false
+          },
+          "order[hottest]" : {
+            "type": "boolean",
+            "description": "Ordering by likes and comments count desc",
+            "required": false
+          },
+          "limit[days]" : {
+            "type": "float",
+            "description": "Limiting to x days ago (eg 0.5, 2, 7)",
+            "required": false
+          },
+          "page[number]" : {
+            "type": "integer",
+            "description": "The number of the page for pagination",
+            "required": false
+          },
+          "page[size]" : {
+            "type": "integer",
+            "description": "The size of the page lot for pagination",
+            "required": false
+          }
+        },
+        "response" : {
+          "data":
+            [
+              {
+                "id":"11",
+                "type":"questions",
+                "attributes": {
+                  "body":"Eveniet veritatis ad optio. Quia laboriosam voluptas blanditiis fugiat voluptatum provident. Sunt minima est incidunt doloribus et reprehenderit quidem.",
+                  "start-time" : "2016-11-15T16:35:31.854Z",
+                  "end-time" : "2016-11-15T16:35:31.854Z",
+                  "likes":
+                    [
+
+                      ],
+                  "comments":
+                    [
+
+                      ],
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            }
+          ],
+        "links":
+          {
+
+            }
+        }
+
+      },
+      {
+        "action": "GET",
+        "uri": "\/questions\/:id",
+        "authentication" : true,
+        "description": "Getting a question of the day",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "data":
+              {
+                "id":"11",
+                "type":"questions",
+                "attributes": {
+                  "body":"Eveniet veritatis ad optio. Quia laboriosam voluptas blanditiis fugiat voluptatum provident. Sunt minima est incidunt doloribus et reprehenderit quidem.",
+                  "start-time" : "2016-11-15T16:35:31.854Z",
+                  "end-time" : "2016-11-15T16:35:31.854Z",
+                  "likes":
+                    [
+
+                      ],
+                  "comments":
+                    [
+
+                      ],
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            },
+        "links":
+          {
+
+            }
+        }
+
+      },
+      {
+        "action": "GET",
+        "uri": "\/questions\/current",
+        "authentication" : true,
+        "description": "Getting the current question of the day",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "data":
+              {
+                "id":"11",
+                "type":"questions",
+                "attributes": {
+                  "body":"Eveniet veritatis ad optio. Quia laboriosam voluptas blanditiis fugiat voluptatum provident. Sunt minima est incidunt doloribus et reprehenderit quidem.",
+                  "start-time" : "2016-11-15T16:35:31.854Z",
+                  "end-time" : "2016-11-15T16:35:31.854Z",
+                  "likes":
+                    [
+
+                      ],
+                  "comments":
+                    [
+
+                      ],
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            },
+        "links":
+          {
+
+            }
+        }
+
+      }
+    ],
+    "quotes": [
+      {
+        "action": "GET",
+        "uri": "\/quotes",
+        "authentication" : true,
+        "description": "Getting quotes of the day",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "order[loved]" : {
+            "type": "boolean",
+            "description": "Ordering by likes count desc",
+            "required": false
+          },
+          "order[active]" : {
+            "type": "boolean",
+            "description": "Ordering by comments count desc",
+            "required": false
+          },
+          "order[hottest]" : {
+            "type": "boolean",
+            "description": "Ordering by likes and comments count desc",
+            "required": false
+          },
+          "limit[days]" : {
+            "type": "float",
+            "description": "Limiting to x days ago (eg 0.5, 2, 7)",
+            "required": false
+          },
+          "page[number]" : {
+            "type": "integer",
+            "description": "The number of the page for pagination",
+            "required": false
+          },
+          "page[size]" : {
+            "type": "integer",
+            "description": "The size of the page lot for pagination",
+            "required": false
+          }
+        },
+        "response" : {
+          "data":
+            [
+              {
+                "id":"11",
+                "type":"quotes",
+                "attributes": {
+                  "body":"Eveniet veritatis ad optio. Quia laboriosam voluptas blanditiis fugiat voluptatum provident. Sunt minima est incidunt doloribus et reprehenderit quidem.",
+                  "author": "Apple James",
+                  "start-time" : "2016-11-15T16:35:31.854Z",
+                  "end-time" : "2016-11-15T16:35:31.854Z",
+                  "featured" : true,
+                  "likes":
+                    [
+
+                      ],
+                  "comments":
+                    [
+
+                      ],
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            }
+          ],
+        "links":
+          {
+
+            }
+        }
+
+      },
+      {
+        "action": "GET",
+        "uri": "\/quotes\/:id",
+        "authentication" : true,
+        "description": "Getting a quote of the day",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "data":
+              {
+                "id":"11",
+                "type":"quotes",
+                "attributes": {
+                  "body":"Eveniet veritatis ad optio. Quia laboriosam voluptas blanditiis fugiat voluptatum provident. Sunt minima est incidunt doloribus et reprehenderit quidem.",
+                  "author": "Apple James",
+                  "start-time" : "2016-11-15T16:35:31.854Z",
+                  "end-time" : "2016-11-15T16:35:31.854Z",
+                  "featured" : true,
+                  "likes":
+                    [
+
+                      ],
+                  "comments":
+                    [
+
+                      ],
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            },
+        "links":
+          {
+
+            }
+        }
+
+      },
+      {
+        "action": "GET",
+        "uri": "\/quotes\/current",
+        "authentication" : true,
+        "description": "Getting the current quote of the day",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "data":
+              {
+                "id":"11",
+                "type":"quotes",
+                "attributes": {
+                  "body":"Eveniet veritatis ad optio. Quia laboriosam voluptas blanditiis fugiat voluptatum provident. Sunt minima est incidunt doloribus et reprehenderit quidem.",
+                  "author": "Apple James",
+                  "start-time" : "2016-11-15T16:35:31.854Z",
+                  "end-time" : "2016-11-15T16:35:31.854Z",
+                  "featured" : true,
+                  "likes":
+                    [
+
+                      ],
+                  "comments":
+                    [
+
+                      ],
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            },
+        "links":
+          {
+
+            }
+        }
+
+      }
+    ],
+    "teachers": [
+      {
+        "action": "GET",
+        "uri": "\/teachers",
+        "authentication" : true,
+        "description": "Getting teachers",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "page[number]" : {
+            "type": "integer",
+            "description": "The number of the page for pagination",
+            "required": false
+          },
+          "page[size]" : {
+            "type": "integer",
+            "description": "The size of the page lot for pagination",
+            "required": false
+          }
+        },
+        "response" : {
+          "data":
+            [
+              {
+                "id":"11",
+                "type":"teachers",
+                "attributes": {
+                  "name":"Eveniet veritatis",
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            }
+          ]
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users\/:user_id\/teachers",
+        "authentication" : true,
+        "description": "Adding a teacher to a user will find or create",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "teacher[name]" : {
+            "type": "string",
+            "description": "The name of the teacher",
+            "required": true
+          }
+        },
+        "response" : {
+          "data":
+            [
+              {
+                "id":"11",
+                "type":"teachers",
+                "attributes": {
+                  "name":"Eveniet veritatis",
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:user_id\/teachers\/:id",
+        "authentication" : true,
+        "description": "Removing a teacher from a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "id" : {
+            "type": "string",
+            "description": "The id of the teacher",
+            "required": true
+          },
+          "user_id" : {
+            "type": "string",
+            "description": "The id of the user",
+            "required": true
+          }
+        },
+        "response" : {
+          "data":
+            [
+          ]
+        }
+      }
+    ],
+    "strengths": [
+      {
+        "action": "GET",
+        "uri": "\/strengths",
+        "authentication" : true,
+        "description": "Getting strengths",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "page[number]" : {
+            "type": "integer",
+            "description": "The number of the page for pagination",
+            "required": false
+          },
+          "page[size]" : {
+            "type": "integer",
+            "description": "The size of the page lot for pagination",
+            "required": false
+          }
+        },
+        "response" : {
+          "data":
+            [
+              {
+                "id":"11",
+                "type":"strengths",
+                "attributes": {
+                  "name":"Eveniet veritatis",
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            }
+          ]
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users\/:user_id\/strengths",
+        "authentication" : true,
+        "description": "Adding a strength to a user will find or create",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "strength[name]" : {
+            "type": "string",
+            "description": "The name of the strength",
+            "required": true
+          }
+        },
+        "response" : {
+          "data":
+            [
+              {
+                "id":"11",
+                "type":"strengths",
+                "attributes": {
+                  "name":"Eveniet veritatis",
+                  "created-at":"2016-11-15T16:35:31.854Z"
+                }
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:user_id\/strengths\/:id",
+        "authentication" : true,
+        "description": "Removing a strength from a user",
+        "headers": {
+          "Accept": "application\/vnd.optimize.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "id" : {
+            "type": "string",
+            "description": "The id of the strength",
+            "required": true
+          },
+          "user_id" : {
+            "type": "string",
+            "description": "The id of the user",
+            "required": true
+          }
+        },
+        "response" : {
+          "data":
+            [
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -6,9 +6,4 @@ class Conversation < ApplicationRecord
   scope :participant, -> (user) { joins(:messages).where(messages: { user: user}) }
   serialize :recipient_ids
 
-
-  def participants
-    User.find(messages.map { |m| m.user_id })
-  end
-
 end
