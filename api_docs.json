@@ -38,6 +38,56 @@
   },
   "resources": {
     "brands": [
+      {
+        "action" : "GET",
+        "uri" : "\/brands",
+        "authentication" : true,
+        "description" : "Getting available brands",
+        "response" : {
+          "brands" :
+            [
+              {
+                "id":84,
+                "created_at":"2016-12-08T20:32:14.486Z",
+                "updated_at":"2016-12-08T20:32:14.486Z",
+                "name":"Heller-Murphy",
+                "services":
+                  [
+                    {
+                      "id":13,
+                      "created_at":"2016-12-08T20:32:14.519Z",
+                      "name":"Konopelski and Sons",
+                      "position":1
+                    }
+                  ]
+                }
+              ]
+          }
+        },
+        {
+          "action" : "GET",
+          "uri" : "\/brands\/:id",
+          "authentication" : true,
+          "description" : "Getting the brand details",
+          "response" : {
+            "brand" :
+              {
+                "id":84,
+                "created_at":"2016-12-08T20:32:14.486Z",
+                "updated_at":"2016-12-08T20:32:14.486Z",
+                "name":"Heller-Murphy",
+                "services":
+                  [
+                    {
+                      "id":13,
+                      "created_at":"2016-12-08T20:32:14.519Z",
+                      "name":"Konopelski and Sons",
+                      "position":1
+                    }
+                  ]
+                }
+            }
+          }
     ],
     "categories": [
     ],

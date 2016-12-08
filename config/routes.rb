@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :lines, only: [:index, :show]
       resources :harmonies, only: [:index]
       resources :experiences, only: [:index]
+      resources :salons, except: [:edit]
       resources :contacts, except: [:edit]
       resources :folios, only: [:index, :create, :destroy, :update]
       resources :posts do

@@ -3,16 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   belongs_to :salon
-  has_many :authentications
-
-  accepts_nested_attributes_for :salon, allow_destroy: true
-
-  enum account_type: [:consumer, :stylist, :brand, :owner]
-
-  before_create :generate_authentication_token!
-
-  before_validation :set_default_account_type
-
+  has_many :authentications, dependent: :destroy
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
   has_many :followers, through: :follower_relationships, source: :follower
 
@@ -22,6 +13,19 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :folios, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :educations, dependent: :destroy
+
+
+  accepts_nested_attributes_for :salon, allow_destroy: true
+  accepts_nested_attributes_for :educations, allow_destroy: true
+
+  enum account_type: [:consumer, :stylist, :brand, :owner]
+
+  before_create :generate_authentication_token!
+
+  before_validation :set_default_account_type
+
+
 
   def set_default_account_type
     self.account_type ||= 'consumer'
