@@ -80,6 +80,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.10)
     erubis (2.7.0)
+    execjs (2.7.0)
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.7.0)
@@ -272,6 +273,8 @@ GEM
       simple_oauth (~> 0.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (3.0.4)
+      execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
@@ -315,6 +318,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tumblr_client
   twitter
+  uglifier
   webmock
 
 BUNDLED WITH

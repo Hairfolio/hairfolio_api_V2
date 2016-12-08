@@ -58,6 +58,19 @@
     "harmonies": [
     ],
     "home": [
+      {
+        "action": "GET",
+        "uri": "\/",
+        "authentication" : true,
+        "description": "The API Welcome Message",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "message": "Welcome!"
+        }
+      }
     ],
     "likes": [
     ],

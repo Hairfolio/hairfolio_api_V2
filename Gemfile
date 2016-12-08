@@ -13,6 +13,7 @@ gem 'pinterest-api'
 gem 'tumblr_client'
 gem 'kaminari'
 gem 'jquery-rails'
+gem 'uglifier'
 
 # APIs
 gem 'active_model_serializers'
