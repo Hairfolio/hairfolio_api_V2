@@ -1,4 +1,5 @@
 class Api::V1::MessagesController < ApplicationController
+  before_action :authenticate_with_token!
   before_action :set_conversation
   before_action :set_message, only: [:show, :update, :destroy]
 

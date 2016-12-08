@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208003444) do
+ActiveRecord::Schema.define(version: 20161208180606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,21 @@ ActiveRecord::Schema.define(version: 20161208003444) do
     t.integer  "position",   default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "folios", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_folios_on_user_id", using: :btree
+  end
+
+  create_table "folios_posts", id: false, force: :cascade do |t|
+    t.integer "folio_id"
+    t.integer "post_id"
+    t.index ["folio_id"], name: "index_folios_posts_on_folio_id", using: :btree
+    t.index ["post_id"], name: "index_folios_posts_on_post_id", using: :btree
   end
 
   create_table "follows", force: :cascade do |t|
@@ -250,6 +265,7 @@ ActiveRecord::Schema.define(version: 20161208003444) do
   add_foreign_key "contacts_posts", "contacts"
   add_foreign_key "contacts_posts", "posts"
   add_foreign_key "emails", "contacts"
+  add_foreign_key "folios", "users"
   add_foreign_key "harmonies", "lines"
   add_foreign_key "lines", "brands"
   add_foreign_key "messages", "conversations"

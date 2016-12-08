@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :following, through: :following_relationships, source: :following
   has_many :contacts, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :folios, dependent: :destroy
 
   def set_default_account_type
     self.account_type ||= 'consumer'

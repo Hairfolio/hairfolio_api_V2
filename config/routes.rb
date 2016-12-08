@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :harmonies, only: [:index]
       resources :experiences, only: [:index]
       resources :contacts, except: [:edit]
+      resources :folios, only: [:index, :create, :destroy, :update]
       resources :users, except: [:edit] do
         resources :follows, only: [:create, :destroy, :index]
         resources :notifications, only: [:index, :destroy]
