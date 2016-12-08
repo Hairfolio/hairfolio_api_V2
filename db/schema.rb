@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208230828) do
+ActiveRecord::Schema.define(version: 20161208233145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,8 +152,12 @@ ActiveRecord::Schema.define(version: 20161208230828) do
     t.integer  "weight"
     t.integer  "volume"
     t.integer  "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "photo_id"
+    t.integer  "position_top"
+    t.integer  "position_left"
+    t.index ["photo_id"], name: "index_formulas_on_photo_id", using: :btree
     t.index ["post_id"], name: "index_formulas_on_post_id", using: :btree
     t.index ["service_id"], name: "index_formulas_on_service_id", using: :btree
   end
@@ -165,6 +169,17 @@ ActiveRecord::Schema.define(version: 20161208230828) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["line_id"], name: "index_harmonies_on_line_id", using: :btree
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "post_id"
+    t.integer  "position_top"
+    t.integer  "position_left"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["post_id"], name: "index_labels_on_post_id", using: :btree
+    t.index ["tag_id"], name: "index_labels_on_tag_id", using: :btree
   end
 
   create_table "likes", force: :cascade do |t|
@@ -217,6 +232,14 @@ ActiveRecord::Schema.define(version: 20161208230828) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_id"], name: "index_phones_on_contact_id", using: :btree
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "asset_url"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_photos_on_post_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -323,6 +346,14 @@ ActiveRecord::Schema.define(version: 20161208230828) do
     t.index ["salon_id"], name: "index_users_on_salon_id", using: :btree
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string   "asset_url"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_videos_on_post_id", using: :btree
+  end
+
   add_foreign_key "authentications", "providers"
   add_foreign_key "authentications", "users"
   add_foreign_key "colors", "harmonies"
@@ -333,9 +364,12 @@ ActiveRecord::Schema.define(version: 20161208230828) do
   add_foreign_key "educations", "users"
   add_foreign_key "emails", "contacts"
   add_foreign_key "folios", "users"
+  add_foreign_key "formulas", "photos"
   add_foreign_key "formulas", "posts"
   add_foreign_key "formulas", "services"
   add_foreign_key "harmonies", "lines"
+  add_foreign_key "labels", "posts"
+  add_foreign_key "labels", "tags"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "lines", "brands"
@@ -346,10 +380,12 @@ ActiveRecord::Schema.define(version: 20161208230828) do
   add_foreign_key "offerings", "services"
   add_foreign_key "offerings", "users"
   add_foreign_key "phones", "contacts"
+  add_foreign_key "photos", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "products", "tags"
   add_foreign_key "services", "brands"
   add_foreign_key "treatments", "colors"
   add_foreign_key "treatments", "formulas"
   add_foreign_key "users", "salons"
+  add_foreign_key "videos", "posts"
 end

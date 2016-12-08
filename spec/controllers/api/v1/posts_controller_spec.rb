@@ -9,19 +9,21 @@ describe Api::V1::PostsController do
 
   before :each do
     api_authorization_header(user.auth_token)
+    create(:label, post: postable)
+    create(:formula, post: postable)
   end
 
   describe "GET #index" do
     it 'should render the latest posts' do
       postable.reload
       get :index
-      expect(json_response['posts'].count).to eq(1)
+      expect(json_response['posts'].count).to eq(2)
     end
 
     it 'should filter the popular posts' do
       create(:like, post: postable)
       get :index, params: { popular: true }
-      expect(json_response['posts'].count).to eq(1)
+      expect(json_response['posts'].count).to eq(2)
     end
 
   end
@@ -30,12 +32,14 @@ describe Api::V1::PostsController do
     describe 'with valid fields' do
       it 'should create the post' do
         post_params = build(:post).attributes
+        post_params['labels_attributes'] = build(:label).attributes
         treatment_attributes = build(:treatment, color: color).attributes
         post_params['formulas_attributes'] = build(:formula, service: service).attributes
         post_params['formulas_attributes']['treatments_attributes'] = treatment_attributes
         post :create, params: { post: post_params }
         expect(json_response['post']['description']).to eq(post_params['description'])
         expect(json_response['post']['formulas'].count).to eq(1)
+        expect(json_response['post']['labels'].count).to eq(1)
         expect(json_response['post']['formulas'].first['treatments'].count).to eq(1)
       end
     end
@@ -51,9 +55,8 @@ describe Api::V1::PostsController do
   describe "PATCH #update" do
     describe 'with valid fields' do
       it 'should update the post' do
-        tag = create(:tag)
-        patch :update, params: { id: postable.id, post: { tag_ids: [tag.id]} }
-        expect(json_response['post']['tag_ids']).to eq([tag.id])
+        patch :update, params: { id: postable.id, post: { description: "hello" }}
+        expect(json_response['post']['description']).to eq("hello")
       end
 
       it 'should remove treatments in a formula' do

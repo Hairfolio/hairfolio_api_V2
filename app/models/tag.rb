@@ -1,4 +1,5 @@
 class Tag < ApplicationRecord
   validates_presence_of :name
-  has_and_belongs_to_many :posts, -> { distinct }
+  has_many :labels
+  has_many :posts, through: :labels
 end
