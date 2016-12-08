@@ -15,6 +15,7 @@ gem 'tumblr_client'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'uglifier'
+gem 'rails_admin', '~> 1.0'
 
 # APIs
 gem 'active_model_serializers'
