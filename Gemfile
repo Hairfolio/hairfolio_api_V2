@@ -16,7 +16,7 @@ gem 'kaminari'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'rails_admin', '~> 1.0'
-
+gem 'rails_admin_import'
 # APIs
 gem 'active_model_serializers'
 gem 'calamum', git: 'https://github.com/tylerhoran/calamum'

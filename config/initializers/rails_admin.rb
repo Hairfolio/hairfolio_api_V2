@@ -36,6 +36,11 @@ RailsAdmin.config do |config|
   # end
 
   config.actions do
+    all
+    import
+  end
+
+  config.actions do
     dashboard                     # mandatory
     index                         # mandatory
     new
