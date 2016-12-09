@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :contacts, except: [:edit]
       resources :folios, only: [:index, :create, :destroy, :update]
       resources :posts do
+        resources :comments, only: [:create, :destroy, :index, :update]
         resources :likes, only: [:create, :index] do
           collection { delete :destroy }
         end
