@@ -5,10 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Provider.create!([
-  { name: 'facebook' },
-  { name: 'twitter' },
-  { name: 'instagram' },
-  { name: 'tumblr' },
-  { name: 'pinterest' },
-  ])
+puts "loading providers..."
+load('db/seeds/providers.rb')
+puts "loading categories..."
+load('db/seeds/categories.rb')
+puts "loading experiences..."
+load('db/seeds/experiences.rb')
+puts "loading degrees..."
+load('db/seeds/degrees.rb')
+puts "loading brands..."
+load('db/seeds/brands.rb')
+puts "loading services..."
+load('db/seeds/services.rb')
+puts "loading lines..."
+load('db/seeds/lines.rb')
+puts "loading harmonies..."
+load('db/seeds/harmonies.rb')
+puts "loading colors..."
+load('db/seeds/colors.rb')
+puts "loading tags..."
+load('db/seeds/tags.rb')
