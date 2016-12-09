@@ -3,4 +3,9 @@ class Follow < ApplicationRecord
   belongs_to :following, foreign_key: 'following_id', class_name: 'User'
   validates_presence_of :follower, :following
   validates_uniqueness_of :follower_id, scope: :following_id
+  after_create :notify_following
+
+  def notify_following
+    Notification.create!(user: following, body: "#{follower.first_name} #{follower.last_name} is now following you.", notifiable: self)
+  end
 end

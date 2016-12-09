@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :educations, dependent: :destroy
   has_many :offerings, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
 
   accepts_nested_attributes_for :salon, allow_destroy: true

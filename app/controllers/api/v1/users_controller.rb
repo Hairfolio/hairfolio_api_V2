@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :set_user, only: [:update, :destroy, :show]
+  before_action :set_user, only: [:update, :destroy, :show, :posts]
   def index
     users = User.where(nil)
     users = users.where(account_type: params[:account_type]) if params[:account_type]
@@ -33,7 +33,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def posts
-
+    render json: @user.posts.order('created_at desc').page(params[:page]).per(20)
   end
 
   private

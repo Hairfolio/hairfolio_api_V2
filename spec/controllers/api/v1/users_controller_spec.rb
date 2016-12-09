@@ -87,6 +87,14 @@ describe Api::V1::UsersController do
     end
   end
 
+  describe 'GET #posts' do
+    it 'should render the user posts' do
+      create(:post, user: user)
+      get :posts, params: { id: user.id }
+      expect(json_response['posts'].count).to eq(1)
+    end
+  end
+
   describe "DELETE #destroy" do
     it 'should delete the user and the associations' do
       delete :destroy, params: { id: user.id }
