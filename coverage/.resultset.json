@@ -1318,6 +1318,7 @@
         2,
         2,
         2,
+        2,
         null,
         null,
         1,
@@ -2910,6 +2911,12 @@
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        14,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/spec/models/service_spec.rb": [
@@ -3275,6 +3282,6 @@
         null
       ]
     },
-    "timestamp": 1481326352
+    "timestamp": 1481327029
   }
 }

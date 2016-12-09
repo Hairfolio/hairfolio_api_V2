@@ -3,6 +3,7 @@ class Api::V1::SalonsController < ApplicationController
 
   def index
     salons = Salon.where(nil)
+    salons = salons.near([params[:latitude], params[:longitude]], params[:radius]) if (params[:latitude] && params[:longitude] && params[:radius])
     salons = salons.where("name ilike ?", "%#{params[:q]}%")
     render json: salons.page(params[:page]).per(20)
   end

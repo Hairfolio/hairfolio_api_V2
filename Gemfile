@@ -20,7 +20,7 @@ gem 'rails_admin_import'
 # APIs
 gem 'active_model_serializers'
 gem 'calamum', git: 'https://github.com/tylerhoran/calamum'
-
+gem 'geocoder'
 
 group :development, :test do
   gem 'faker'
