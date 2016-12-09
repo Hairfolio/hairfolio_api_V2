@@ -29,7 +29,9 @@ class User < ApplicationRecord
 
   before_validation :set_default_account_type
 
-
+  def following?(user)
+    self.following.include?(user)
+  end
 
   def set_default_account_type
     self.account_type ||= 'consumer'

@@ -74,10 +74,10 @@
         1,
         null,
         1,
-        75,
-        1,
+        101,
+        15,
         null,
-        74,
+        86,
         null,
         null,
         null,
@@ -1368,6 +1368,7 @@
         1,
         3,
         3,
+        3,
         null,
         null,
         1,
@@ -2046,7 +2047,7 @@
       "/Users/tyler/hairfolio/app/models/brand.rb": [
         1,
         1,
-        1,
+        7,
         null
       ],
       "/Users/tyler/hairfolio/spec/models/category_spec.rb": [
@@ -2900,18 +2901,13 @@
         null,
         1,
         null,
-        4,
+        3,
         null,
         1,
         1,
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        null,
-        null,
         1,
         1,
         1,
@@ -2949,6 +2945,11 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         1,
         25,
@@ -3033,7 +3034,6 @@
       "/Users/tyler/hairfolio/app/serializers/service_serializer.rb": [
         1,
         1,
-        1,
         null,
         null
       ],
@@ -3062,6 +3062,10 @@
         1,
         1,
         1,
+        null,
+        1,
+        36,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/contact_serializer.rb": [
@@ -3251,6 +3255,6 @@
         null
       ]
     },
-    "timestamp": 1481314974
+    "timestamp": 1481318898
   }
 }

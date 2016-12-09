@@ -6,7 +6,8 @@ describe Api::V1::BrandsController do
 
     it 'should display available brands and services' do
       brand = create(:brand)
-      service = create(:service, brand: brand)
+      service = create(:service)
+      brand.services << service
       get :index
       expect(json_response['brands'].count).to eq(1)
     end

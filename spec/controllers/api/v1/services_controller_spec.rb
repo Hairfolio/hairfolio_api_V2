@@ -3,9 +3,10 @@ require 'rails_helper'
 describe Api::V1::ServicesController do
 
   let(:brand) { create(:brand) }
-  let(:service) { create(:service, brand: brand) }
+  let(:service) { create(:service) }
 
   before :each do
+    brand.services << service
     brand.reload
     service.reload
   end
