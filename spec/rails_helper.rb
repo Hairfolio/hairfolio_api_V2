@@ -28,6 +28,17 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
+  if Bullet.enable?
+    config.before(:each) do
+      Bullet.start_request
+    end
+
+    config.after(:each) do
+      Bullet.perform_out_of_channel_notifications if Bullet.notification?
+      Bullet.end_request
+    end
+  end
+
   config.before :each do
     stub_request(:get, "https://graph.facebook.com/me?access_token=badtoken&fields=id,name,first_name,last_name,email,friends").to_return(:status => 200, :body => "", :headers => {})
     stub_request(:get, "https://graph.facebook.com/me?access_token=goodtoken&fields=id,name,first_name,last_name,email,friends").to_return(:status => 200, :body => "{\"id\":\"904260\",\"name\":\"Tyler Horan\",\"first_name\":\"Tyler\",\"last_name\":\"Horan\",\"email\":\"thebestemail@gmail.com\",\"friends\":{\"data\":[{\"name\":\"James Ioannidis\",\"id\":\"429246\"},{\"name\":\"Ben Dodson\",\"id\":\"601344\"},{\"name\":\"Jonathan Fung\",\"id\":\"927586\"},{\"name\":\"Brian Amanatullah\",\"id\":\"3407156\"},{\"name\":\"Matthias Wagner\",\"id\":\"1334702731\"}],\"paging\":{\"cursors\":{\"before\":\"QVFIUlpIUm5mSFJfQkNwdWo0TG01VnMxMmh5VHdJRzk0dmdnSUhPbDhPakozWUxuelFWNlJVRFZAfU2Q5aXZAQWW5idk0ZD\",\"after\":\"QVFIUklOWkNnMHZAmOEVrRGR5VXVPamg4UDBxei1yeXhjU3E0Y0JPREVYQlR6MDFma09GZA3FoMnczQlFQb25aRXM3eloZD\"}},\"summary\":{\"total_count\":613}},\"picture\":{\"data\":{\"is_silhouette\":false,\"url\":\"https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/1012444_10102453937950480_8626389580104630560_n.jpg?oh=be020691d9037c598569ecf28f9ed98a&oe=57F42A97\"}}}", :headers => {})

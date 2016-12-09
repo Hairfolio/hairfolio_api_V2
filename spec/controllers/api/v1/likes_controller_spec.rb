@@ -24,7 +24,7 @@ describe Api::V1::LikesController do
     describe 'with valid fields' do
       it 'should create a like' do
         post :create, params: { post_id: postable.id }
-        expect(json_response['like']['post_id']).to eq(postable.id)
+        expect(json_response['like']['post']['id']).to eq(postable.id)
       end
     end
 

@@ -2383,7 +2383,7 @@
         1,
         1,
         1,
-        7,
+        9,
         null
       ],
       "/Users/tyler/hairfolio/spec/models/follow_spec.rb": [
@@ -3109,6 +3109,23 @@
       "/Users/tyler/hairfolio/app/serializers/folio_serializer.rb": [
         1,
         1,
+        null,
+        1,
+        6,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/post_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        22,
+        null,
+        null,
+        1,
+        23,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/harmony_serializer.rb": [
@@ -3117,9 +3134,20 @@
         1,
         null
       ],
+      "/Users/tyler/hairfolio/app/serializers/color_serializer.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/tyler/hairfolio/app/serializers/like_serializer.rb": [
         1,
         1,
+        null,
+        1,
+        6,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/line_serializer.rb": [
@@ -3168,19 +3196,6 @@
         null,
         1,
         4,
-        null,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/serializers/post_serializer.rb": [
-        1,
-        1,
-        null,
-        1,
-        14,
-        null,
-        null,
-        1,
-        15,
         null,
         null
       ],
@@ -3236,6 +3251,6 @@
         null
       ]
     },
-    "timestamp": 1481314232
+    "timestamp": 1481314974
   }
 }

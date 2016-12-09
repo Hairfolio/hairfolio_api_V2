@@ -40,6 +40,7 @@ end
 group :test do
   gem 'webmock'
   gem 'simplecov'
+  gem 'bullet'
 end
 
 group :production do

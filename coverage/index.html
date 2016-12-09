@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-09T12:10:32-08:00">2016-12-09T12:10:32-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-09T12:22:55-08:00">2016-12-09T12:22:55-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.67
+         1.69
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>140</b> files in total.
-    <b>1713</b> relevant lines. 
-    <span class="green"><b>1702</b> lines covered</span> and
+    <b>141</b> files in total.
+    <b>1719</b> relevant lines. 
+    <span class="green"><b>1708</b> lines covered</span> and
     <span class="red"><b>11</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -437,7 +437,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>3.0</td>
       </tr>
       
       <tr>
@@ -661,6 +661,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#0742d125ade3336962a15f7a7c6e4f5285b0431d" class="src_link" title="app/serializers/color_serializer.rb">app/serializers/color_serializer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#48d5356b790b89370b28452335f2e9c26b8558e8" class="src_link" title="app/serializers/comment_serializer.rb">app/serializers/comment_serializer.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>7</td>
@@ -723,11 +733,11 @@
       <tr>
         <td class="strong"><a href="#31062f59a66afc6682deba9abf1ef4253474fedc" class="src_link" title="app/serializers/folio_serializer.rb">app/serializers/folio_serializer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>7</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -773,11 +783,11 @@
       <tr>
         <td class="strong"><a href="#555e4d1c2933fe33e11c12f4492b661404d164a5" class="src_link" title="app/serializers/like_serializer.rb">app/serializers/like_serializer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>9</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -827,7 +837,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>5.5</td>
+        <td>8.2</td>
       </tr>
       
       <tr>
@@ -6778,10 +6788,10 @@
           <code class="ruby">  validates_presence_of :user, :name</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="4">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="4">
+          <span class="hits">9</span>
           
-          <code class="ruby">  has_and_belongs_to_many :post, -&gt; { distinct }</code>
+          <code class="ruby">  has_and_belongs_to_many :posts, -&gt; { distinct }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -8006,6 +8016,42 @@
   </pre>
 </div>
       
+        <div class="source_table" id="0742d125ade3336962a15f7a7c6e4f5285b0431d">
+  <div class="header">
+    <h3>app/serializers/color_serializer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ColorSerializer &lt; ActiveModel::Serializer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attributes :id, :created_at, :harmony_id, :code, :start_hex, :end_hex</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="48d5356b790b89370b28452335f2e9c26b8558e8">
   <div class="header">
     <h3>app/serializers/comment_serializer.rb</h3>
@@ -8293,8 +8339,8 @@
     <h3>app/serializers/folio_serializer.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8311,10 +8357,34 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :created_at, :name, :post_ids</code>
+          <code class="ruby">  attributes :id, :created_at, :name, :posts</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def posts</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="5">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    object.posts.map { |p| PostSerializer.new(p).serializable_hash }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -8575,8 +8645,8 @@
     <h3>app/serializers/like_serializer.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8593,10 +8663,46 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :created_at, :post_id, :user_id</code>
+          <code class="ruby">  attributes :id, :created_at, :post, :user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def post</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="5">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    PostSerializer.new(object.post).serializable_hash</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -8944,8 +9050,8 @@
           <code class="ruby">  def formulas</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="5">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="22" data-linenumber="5">
+          <span class="hits">22</span>
           
           <code class="ruby">    object.formulas.map { |f| FormulaSerializer.new(f).serializable_hash }</code>
         </li>
@@ -8968,8 +9074,8 @@
           <code class="ruby">  def labels</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="9">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="23" data-linenumber="9">
+          <span class="hits">23</span>
           
           <code class="ruby">    object.labels.map { |f| LabelSerializer.new(f).serializable_hash }</code>
         </li>
@@ -11425,7 +11531,7 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(json_response[&#39;folio&#39;][&#39;post_ids&#39;]).to eq([postable.id])</code>
+          <code class="ruby">        expect(json_response[&#39;folio&#39;][&#39;posts&#39;].count).to eq(1)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
@@ -11539,7 +11645,7 @@
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(json_response[&#39;folio&#39;][&#39;post_ids&#39;]).to eq([postable.id])</code>
+          <code class="ruby">        expect(json_response[&#39;folio&#39;][&#39;posts&#39;].count).to eq(1)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
@@ -11581,7 +11687,7 @@
         <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(json_response[&#39;folio&#39;][&#39;post_ids&#39;]).to eq([])</code>
+          <code class="ruby">        expect(json_response[&#39;folio&#39;][&#39;posts&#39;].count).to eq(0)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="54">
@@ -12139,7 +12245,7 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(json_response[&#39;like&#39;][&#39;post_id&#39;]).to eq(postable.id)</code>
+          <code class="ruby">        expect(json_response[&#39;like&#39;][&#39;post&#39;][&#39;id&#39;]).to eq(postable.id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
