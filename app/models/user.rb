@@ -29,6 +29,8 @@ class User < ApplicationRecord
 
   before_validation :set_default_account_type
 
+  scope :search, -> (query) { includes(:salon).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
+
   def following?(user)
     self.following.include?(user)
   end
@@ -49,7 +51,6 @@ class User < ApplicationRecord
   rescue
     false
   end
-
 
   def generate_social_authentication!(name, token, secret=nil, uid_name=nil)
     Authentication.create_with(user: self, token: token, secret: secret, facebook_id: uid_name, provider: Provider.find_by(name: name)).find_or_create_by(user: self, provider: Provider.find_by(name: name))

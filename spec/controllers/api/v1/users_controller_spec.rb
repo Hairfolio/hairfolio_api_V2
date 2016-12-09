@@ -16,6 +16,20 @@ describe Api::V1::UsersController do
       get :index, params: { account_type: 'consumer' }
       expect(json_response['users'].count).to eq(1)
     end
+
+    it 'should search by user name' do
+      stylist = create(:user, account_type: 'stylist')
+      get :index, params: { account_type: 'stylist', q: stylist.first_name }
+      expect(json_response['users'].count).to eq(1)
+    end
+
+    it 'should search by salon name' do
+      salon = create(:salon)
+      stylist = create(:user, account_type: 'owner', salon: salon)
+
+      get :index, params: { account_type: 'owner', q: salon.name }
+      expect(json_response['users'].count).to eq(1)
+    end
   end
 
   describe "GET #show" do
