@@ -72,7 +72,7 @@ describe Api::V1::PostsController do
 
     describe 'with invalid fields' do
       it 'should render errors' do
-        post :create, params: { post: { description: ""} }
+        patch :update, params: { id: postable.id, post: { description: ""} }
         expect(json_response['errors']['description']).to include("can't be blank")
       end
     end
