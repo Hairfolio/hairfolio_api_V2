@@ -90,14 +90,184 @@
           }
     ],
     "categories": [
+      {
+        "action" : "GET",
+        "uri" : "\/categories\/",
+        "authentication" : true,
+        "description" : "Getting the available categories",
+        "response" : {
+          "categories" : [
+            {
+              "id":84,
+              "created_at":"2016-12-08T20:32:14.486Z",
+              "name":"Heller-Murphy"
+            }
+          ]
+        }
+      }
     ],
     "certificates": [
+      {
+        "action" : "GET",
+        "uri" : "\/certificates\/",
+        "authentication" : true,
+        "description" : "Getting the available certificates",
+        "response" : {
+          "certificates" : [
+            {
+              "id":84,
+              "created_at":"2016-12-08T20:32:14.486Z",
+              "name":"Heller-Murphy"
+            }
+          ]
+        }
+      },
+      {
+        "action" : "GET",
+        "uri" : "\/certificates\/:id",
+        "authentication" : true,
+        "description" : "Getting the information on a certificate",
+        "response" : {
+          "certificate" :
+          {
+            "id":84,
+            "created_at":"2016-12-08T20:32:14.486Z",
+            "name":"Heller-Murphy"
+          }
+        }
+      }
+    ],
+    "comments" : [
+      {
+        "action" : "GET",
+        "uri" : "\/posts\/:post_id\/comments",
+        "authentication" : false,
+        "description" : "Getting the comments on a post",
+        "response" : {
+           "comments":[
+              {
+                 "id":64,
+                 "body":"Minus eos sit qui eos error. Eveniet odio sunt repellendus et quo. Illum labore consequatur quia doloremque voluptas natus.",
+                 "created_at":"2016-12-09T23:51:16.769Z",
+                 "user":{
+                    "id":2234,
+                    "auth_token":"7pMp6qWKF_xycSMCreUu",
+                    "email":"elenora@mosciski.com",
+                    "first_name":"Rosendo",
+                    "last_name":"Rice",
+                    "account_type":"consumer",
+                    "is_following":false,
+                    "salon":null,
+                    "likes":[
+
+                    ],
+                    "educations":[
+
+                    ],
+                    "offerings":[
+
+                    ]
+                 }
+              }
+           ]
+        }
+      },
+      {
+        "action" : "POST",
+        "uri" : "\/posts\/:post_id\/comments",
+        "authentication" : false,
+        "description" : "Creating a comment on a post",
+        "params" : {
+          "comment[body]" : {
+            "type": "string",
+            "description": "The body of the comment",
+            "required": true
+          }
+        },
+        "response" : {
+          "comment" : {
+             "id":64,
+             "body":"Minus eos sit qui eos error. Eveniet odio sunt repellendus et quo. Illum labore consequatur quia doloremque voluptas natus.",
+             "created_at":"2016-12-09T23:51:16.769Z",
+             "user":{
+                "id":2234,
+                "auth_token":"7pMp6qWKF_xycSMCreUu",
+                "email":"elenora@mosciski.com",
+                "first_name":"Rosendo",
+                "last_name":"Rice",
+                "account_type":"consumer",
+                "is_following":false,
+                "salon":null,
+                "likes":[
+
+                ],
+                "educations":[
+
+                ],
+                "offerings":[
+
+                ]
+             }
+          }
+        }
+      },
+      {
+        "action" : "PUT",
+        "uri" : "\/posts\/:post_id\/comments\/:id",
+        "authentication" : false,
+        "description" : "Updating a comment on a post",
+        "params" : {
+          "comment[body]" : {
+            "type": "string",
+            "description": "The body of the comment",
+            "required": true
+          }
+        },
+        "response" : {
+          "comment" : {
+             "id":64,
+             "body":"Minus eos sit qui eos error. Eveniet odio sunt repellendus et quo. Illum labore consequatur quia doloremque voluptas natus.",
+             "created_at":"2016-12-09T23:51:16.769Z",
+             "user":{
+                "id":2234,
+                "auth_token":"7pMp6qWKF_xycSMCreUu",
+                "email":"elenora@mosciski.com",
+                "first_name":"Rosendo",
+                "last_name":"Rice",
+                "account_type":"consumer",
+                "is_following":false,
+                "salon":null,
+                "likes":[
+
+                ],
+                "educations":[
+
+                ],
+                "offerings":[
+
+                ]
+             }
+          }
+        }
+      },
+      {
+        "action" : "DELETE",
+        "uri" : "\/posts\/:post_id\/comments\/:id",
+        "authentication" : false,
+        "description" : "Deleting a comment from a post",
+        "response" : {
+          "status" : 204
+        }
+      }
     ],
     "contacts": [
     ],
     "conversations": [
     ],
     "degrees": [
+    ],
+    "errors" : [
+
     ],
     "experiences": [
     ],
@@ -128,9 +298,15 @@
     ],
     "messages": [
     ],
+    "notifications" : [
+
+    ],
     "posts": [
     ],
     "products": [
+    ],
+    "salons" : [
+
     ],
     "services": [
     ],

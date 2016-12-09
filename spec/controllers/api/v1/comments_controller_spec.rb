@@ -11,7 +11,7 @@ describe Api::V1::CommentsController do
 
   describe "GET #index" do
 
-    it 'should display current user contacts' do
+    it 'should display current user comments' do
       get :index, params: { post_id: comment.post_id }
       expect(json_response['comments'].count).to eq(1)
     end
