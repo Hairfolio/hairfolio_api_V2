@@ -2785,6 +2785,11 @@
         1,
         1,
         1,
+        1,
+        null,
+        1,
+        21,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/spec/models/treatment_spec.rb": [
@@ -3028,6 +3033,6 @@
         null
       ]
     },
-    "timestamp": 1481243822
+    "timestamp": 1481246558
   }
 }

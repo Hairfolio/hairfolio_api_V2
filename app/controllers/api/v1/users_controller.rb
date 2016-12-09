@@ -32,6 +32,10 @@ class Api::V1::UsersController < ApplicationController
     head 204
   end
 
+  def posts
+
+  end
+
   private
 
   def user_params
