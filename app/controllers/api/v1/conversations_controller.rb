@@ -1,4 +1,5 @@
 class Api::V1::ConversationsController < ApplicationController
+  before_action :authenticate_with_token!
   before_action :set_conversation, except: [:index, :create]
 
   def index

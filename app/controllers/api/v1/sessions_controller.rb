@@ -1,5 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
-
+  
   def facebook
     response = User.validate_facebook_token(params[:facebook_token])
     if response
