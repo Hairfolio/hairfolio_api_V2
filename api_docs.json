@@ -662,10 +662,54 @@
      }
     ],
     "degrees": [
-    ],
-    "errors" : [
+      {
+        "action" : "GET",
+        "uri" : "\/degrees",
+        "authentication" : false,
+        "description" : "Getting available degrees",
+        "response" : {
+          "degrees": [
+            {
+              "id":72,
+              "created_at":"2016-12-10T00:43:41.950Z",
+              "name":"Enormous Cotton Knife"
+            }
+          ]
+        }
+      },
+      {
+        "action" : "GET",
+        "uri" : "\/degrees\/:id",
+        "authentication" : false,
+        "description" : "Getting a single degree",
+        "response" : {
+          "degree":
+            {
+              "id":72,
+              "created_at":"2016-12-10T00:43:41.950Z",
+              "name":"Enormous Cotton Knife",
+              "position" : 1
+            }
+        }
+      }
     ],
     "experiences": [
+      {
+        "action" : "GET",
+        "uri" : "\/experiences",
+        "authentication" : false,
+        "description" : "Getting available experiences",
+        "response" : {
+          "degrees": [
+            {
+              "id":72,
+              "created_at":"2016-12-10T00:43:41.950Z",
+              "name":"Enormous Cotton Knife",
+              "position" : 1
+            }
+          ]
+        }
+      }
     ],
     "folios": [
     ],

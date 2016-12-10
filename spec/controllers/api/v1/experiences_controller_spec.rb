@@ -7,6 +7,7 @@ describe Api::V1::ExperiencesController do
     it 'should display available brands and services' do
       experience = create(:experience)
       get :index
+      puts response.body
       expect(json_response['experiences'].count).to eq(1)
     end
   end
