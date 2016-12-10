@@ -4,4 +4,8 @@ class ConversationSerializer < ActiveModel::Serializer
   def last_message
     MessageSerializer.new(object.messages.last).serializable_hash if object.messages.any?
   end
+
+  def recipient_ids
+    object.recipient_ids.map { |r| r.to_i }
+  end
 end

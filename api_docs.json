@@ -539,6 +539,127 @@
       }
     ],
    "conversations":[
+     {
+       "action" : "GET",
+       "uri" : "\/conversations",
+       "authentication" : false,
+       "description" : "Getting the conversations the current user is a participant of",
+       "response" : {
+          "conversations": [
+            {
+              "id": 153,
+              "sender_id": 2303,
+              "created_at": "2016-12-10T00:33:50.854Z",
+              "last_message": {
+                "id": 176,
+                "user": {
+                  "id": 2303,
+                  "auth_token": "k76MZ6f4K33Ksqx295P3",
+                  "email": "dejon@damore.com",
+                  "first_name": "Lukas",
+                  "last_name": "Abernathy",
+                  "account_type": "consumer",
+                  "is_following": false,
+                  "salon": null,
+                  "avatar_url": "https:\/\/robohash.org\/evenietdebitisvelit.png?size=300x300&set=set1",
+                  "avatar_cloudinary_id": "507",
+                  "share_facebook": false,
+                  "share_twitter": false,
+                  "share_instagram": false,
+                  "share_pinterest": false,
+                  "share_tumblr": false,
+                  "prof_desc": "Non magnam quibusdam recusandae quas officiis. Totam ut eos. Adipisci et ea corporis. Delectus ratione error provident. Praesentium aut eum et voluptatem deserunt esse vel.",
+                  "years_exp": 20,
+                  "career_opportunity": "Rerum adipisci assumenda natus. Delectus et incidunt perferendis culpa qui unde. Rerum dolorem enim laboriosam sequi.",
+                  "likes": [
+
+                  ],
+                  "educations": [
+
+                  ],
+                  "offerings": [
+
+                  ]
+                },
+                "created_at": "2016-12-10T00:33:50.927Z",
+                "conversation_id": 153,
+                "body": "MyText"
+              },
+              "recipient_ids": [
+                2304
+              ]
+            }
+          ]
+        }
+     },
+     {
+       "action" : "POST",
+       "uri" : "\/conversations",
+       "authentication" : false,
+       "description" : "Starting a conversation with users",
+       "params" : {
+         "conversation[recipient_ids]" : {
+           "type": "array",
+           "description": "Array of user ids in the conversation",
+           "required": true
+         }
+       },
+       "response" : {
+         "conversation":
+          {
+            "id":160,
+            "sender_id":2331,
+            "created_at":"2016-12-10T00:38:45.377Z",
+            "last_message":null,
+            "recipient_ids":
+              [
+                2333
+                ]
+              }
+          }
+     },
+     {
+       "action" : "POST",
+       "uri" : "\/conversations\/:id",
+       "authentication" : false,
+       "description" : "Updating a conversation to add or delete users",
+       "params" : {
+         "conversation[recipient_ids]" : {
+           "type": "array",
+           "description": "Array of user ids in the conversation",
+           "required": true
+         }
+       },
+       "response" : {
+         "conversation":
+          {
+            "id":160,
+            "sender_id":2331,
+            "created_at":"2016-12-10T00:38:45.377Z",
+            "last_message":null,
+            "recipient_ids":
+              [
+                2333, 2092
+                ]
+              }
+          }
+     },
+     {
+       "action" : "DELETE",
+       "uri" : "\/conversations\/:id",
+       "authentication" : false,
+       "description" : "Deleting a conversation and it's messages",
+       "params" : {
+         "conversation[recipient_ids]" : {
+           "type": "array",
+           "description": "Array of user ids in the conversation",
+           "required": true
+         }
+       },
+       "response" : {
+         "status": 204
+       }
+     }
     ],
     "degrees": [
     ],

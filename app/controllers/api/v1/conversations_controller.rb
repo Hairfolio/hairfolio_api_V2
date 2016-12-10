@@ -6,10 +6,6 @@ class Api::V1::ConversationsController < ApplicationController
     render json: Conversation.participant(current_user)
   end
 
-  def show
-    render json: @conversation.messages.order('created_at desc').page(params[:page]).per(20)
-  end
-
   def update
     if @conversation.update(conversation_params)
       render json: @conversation, status: 201

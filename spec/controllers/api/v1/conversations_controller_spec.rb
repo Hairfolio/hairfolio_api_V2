@@ -13,18 +13,8 @@ describe Api::V1::ConversationsController do
     it 'should display current user conversations' do
       conversation = create(:conversation, sender: user)
       get :index
-      puts response.body
       expect(json_response['conversations'].count).to eq(1)
       expect(json_response['conversations'].first['last_message']['body']).to eq(conversation.messages.last.body)
-    end
-  end
-
-  describe "GET #show" do
-
-    it 'should display the conversation messages' do
-      conversation = create(:conversation, sender: user)
-      get :show, params: { id: conversation.id }
-      expect(json_response['messages'].count).to eq(1)
     end
   end
 
@@ -57,7 +47,7 @@ describe Api::V1::ConversationsController do
         conversation = create(:conversation, sender: user)
         user_3 = create(:user)
         patch :update, params: { id: conversation.id, conversation: { recipient_ids: [user_3.id]} }
-        expect(json_response['conversation']['recipient_ids']).to eq([user_3.id.to_s])
+        expect(json_response['conversation']['recipient_ids']).to eq([user_3.id])
       end
     end
 

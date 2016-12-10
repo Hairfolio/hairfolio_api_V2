@@ -29,7 +29,7 @@ Rails.application.routes.draw do
         resources :follows, only: [:create, :destroy, :index]
         resources :notifications, only: [:index, :destroy]
       end
-      resources :conversations, except: [:edit] do
+      resources :conversations, except: [:edit, :show] do
         resources :messages, except: [:edit]
       end
       resources :sessions, only: [:create, :destroy] do
