@@ -261,6 +261,252 @@
       }
     ],
     "contacts": [
+      {
+        "action" : "GET",
+        "uri" : "\/contacts",
+        "authentication" : false,
+        "description" : "Displaying the logged in user's contacts ( Black book )",
+        "response" : {
+           "contacts":[
+              {
+                 "id":133,
+                 "created_at":"2016-12-09T23:58:10.208Z",
+                 "first_name":"Janae",
+                 "last_name":"Koelpin",
+                 "address":"860 Emelia Prairie",
+                 "company":"Eichmann-Gorczany",
+                 "emails":[
+                    {
+                       "id":133,
+                       "created_at":"2016-12-09T23:58:10.230Z",
+                       "email":"donna.bauch@tillman.biz",
+                       "email_type":"work"
+                    }
+                 ],
+                 "phones":[
+                    {
+                       "id":133,
+                       "created_at":"2016-12-09T23:58:10.248Z",
+                       "number":"(261) 667-4692 x65918",
+                       "phone_type":"home"
+                    }
+                 ]
+              }
+           ]
+        }
+      },
+      {
+        "action" : "GET",
+        "uri" : "\/contacts\/:id",
+        "authentication" : false,
+        "description" : "Displaying the contact information",
+        "response" : {
+           "contact":
+            {
+               "id":133,
+               "created_at":"2016-12-09T23:58:10.208Z",
+               "first_name":"Janae",
+               "last_name":"Koelpin",
+               "address":"860 Emelia Prairie",
+               "company":"Eichmann-Gorczany",
+               "emails":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.230Z",
+                     "email":"donna.bauch@tillman.biz",
+                     "email_type":"work"
+                  }
+               ],
+               "phones":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.248Z",
+                     "number":"(261) 667-4692 x65918",
+                     "phone_type":"home"
+                  }
+               ]
+            }
+        }
+      },
+      {
+        "action" : "POST",
+        "uri" : "\/contacts",
+        "authentication" : false,
+        "description" : "Creating a contact",
+        "params" : {
+          "contact[first_name]" : {
+            "type": "string",
+            "description": "The first name of the contact",
+            "required": true
+          },
+          "contact[last_name]" : {
+            "type": "string",
+            "description": "The last name of the contact",
+            "required": true
+          },
+          "contact[address]" : {
+            "type": "string",
+            "description": "The address of the contact",
+            "required": true
+          },
+          "contact[company]" : {
+            "type": "string",
+            "description": "The company name of the contact",
+            "required": true
+          },
+          "contact[emails_atributes][0][email]" : {
+            "type": "string",
+            "description": "The email address of the email",
+            "required": true
+          },
+          "contact[emails_atributes][0][email_type]" : {
+            "type": "string",
+            "description": "The email type of the email. (work or home)",
+            "required": true
+          },
+          "contact[phones_attributes][0][number]" : {
+            "type": "string",
+            "description": "The number of the phone",
+            "required": true
+          },
+          "contact[phones_attributes][0][phone_type]" : {
+            "type": "string",
+            "description": "The type of the phone contact (home or work)",
+            "required": true
+          }
+        },
+        "response" : {
+           "contact":
+            {
+               "id":133,
+               "created_at":"2016-12-09T23:58:10.208Z",
+               "first_name":"Janae",
+               "last_name":"Koelpin",
+               "address":"860 Emelia Prairie",
+               "company":"Eichmann-Gorczany",
+               "emails":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.230Z",
+                     "email":"donna.bauch@tillman.biz",
+                     "email_type":"work"
+                  }
+               ],
+               "phones":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.248Z",
+                     "number":"(261) 667-4692 x65918",
+                     "phone_type":"home"
+                  }
+               ]
+            }
+        }
+      },
+      {
+        "action" : "PUT",
+        "uri" : "\/contacts\/:id",
+        "authentication" : false,
+        "description" : "Updating a contact",
+        "params" : {
+          "contact[first_name]" : {
+            "type": "string",
+            "description": "The first name of the contact",
+            "required": true
+          },
+          "contact[last_name]" : {
+            "type": "string",
+            "description": "The last name of the contact",
+            "required": true
+          },
+          "contact[address]" : {
+            "type": "string",
+            "description": "The address of the contact",
+            "required": true
+          },
+          "contact[company]" : {
+            "type": "string",
+            "description": "The company name of the contact",
+            "required": true
+          },
+          "contact[emails_atributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the email to be updated.",
+            "required": true
+          },
+          "contact[emails_atributes][0][email]" : {
+            "type": "string",
+            "description": "The email address of the email",
+            "required": true
+          },
+          "contact[emails_atributes][0][email_type]" : {
+            "type": "string",
+            "description": "The email type of the email. (work or home)",
+            "required": true
+          },
+          "contact[emails_atributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Set the _destroy flag to delete the email from the contact",
+            "required": true
+          },
+          "contact[phones_attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the phone",
+            "required": true
+          },
+          "contact[phones_attributes][0][number]" : {
+            "type": "string",
+            "description": "The number of the phone",
+            "required": true
+          },
+          "contact[phones_attributes][0][phone_type]" : {
+            "type": "string",
+            "description": "The type of the phone contact (home or work)",
+            "required": true
+          },
+          "contact[phones_attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Set the _destroy flag to delete the phone from the contact",
+            "required": true
+          }
+        },
+        "response" : {
+           "contact":
+            {
+               "id":133,
+               "created_at":"2016-12-09T23:58:10.208Z",
+               "first_name":"Janae",
+               "last_name":"Koelpin",
+               "address":"860 Emelia Prairie",
+               "company":"Eichmann-Gorczany",
+               "emails":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.230Z",
+                     "email":"donna.bauch@tillman.biz",
+                     "email_type":"work"
+                  }
+               ],
+               "phones":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.248Z",
+                     "number":"(261) 667-4692 x65918",
+                     "phone_type":"home"
+                  }
+               ]
+            }
+        }
+      },
+      {
+        "action" : "DELETE",
+        "uri" : "\/contacts\/:id",
+        "authentication" : false,
+        "description" : "Deleting the contact from the black book",
+        "response" : {
+           "status": 204
+        }
+      }
     ],
     "conversations": [
     ],
