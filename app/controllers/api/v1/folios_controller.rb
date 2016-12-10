@@ -2,7 +2,7 @@ class Api::V1::FoliosController < ApplicationController
   before_action :authenticate_with_token!
 
   def index
-    render json: current_user.folios.page(params[:page]).per(20)
+    render json: current_user.folios.page(params[:page]).order('created_at desc').per(20)
   end
 
   def create

@@ -3,7 +3,7 @@
   "url": "https:\/\/api.hairfolio.tech",
   "version": "1.0",
   "copyright": "2016",
-  "description": "hairfolio is a socail network for the beauty profession.",
+  "description": "Hairfolio is a socail network for the beauty profession.",
   "authentication": "For authenticated routes please pass the following header: \"Authorization: somerandomtoken\". To get an auth_token please see the session and user registration routes.",
   "errors": {
     "http_errors": [
@@ -712,6 +712,109 @@
       }
     ],
     "folios": [
+      {
+        "action": "GET",
+        "uri": "\/folios",
+        "authentication" : false,
+        "description": "Showing the users hairfolios",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "folios": [
+            {
+              "id":65,
+              "created_at":"2016-12-10T00:48:52.730Z",
+              "name":"Et qui unde natus eius.",
+              "posts": [
+
+                ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/folios",
+        "authentication" : false,
+        "description": "Creating a new hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "folio[name]" : {
+            "type" : "array",
+            "description" : "The name of the folio",
+            "required" : true
+          },
+          "folio[post_ids]" : {
+            "type" : "array",
+            "description" : "An array of post ids to fit in the folio",
+            "required" : true
+          }
+        },
+        "response": {
+          "folios": [
+            {
+              "id":65,
+              "created_at":"2016-12-10T00:48:52.730Z",
+              "name":"Et qui unde natus eius.",
+              "posts": [
+
+                ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/folios\/:id",
+        "authentication" : false,
+        "description": "Updating a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "folio[name]" : {
+            "type" : "array",
+            "description" : "The name of the folio",
+            "required" : true
+          },
+          "folio[post_ids]" : {
+            "type" : "array",
+            "description" : "An array of post ids to fit in the folio",
+            "required" : true
+          }
+        },
+        "response": {
+          "folios": [
+            {
+              "id":65,
+              "created_at":"2016-12-10T00:48:52.730Z",
+              "name":"Et qui unde natus eius.",
+              "posts": [
+
+                ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/folios\/:id",
+        "authentication" : false,
+        "description": "Deleting a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
     ],
     "follows": [
     ],
