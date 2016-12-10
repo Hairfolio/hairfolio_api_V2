@@ -1,4 +1,5 @@
 class Api::V1::ContactsController < ApplicationController
+  before_action :authenticate_with_token!
   before_action :set_contact, only: [:update, :destroy, :show]
 
   def index
