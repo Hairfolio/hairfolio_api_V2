@@ -2493,6 +2493,76 @@
     "sessions": [
     ],
     "tags": [
+      {
+        "action": "GET",
+        "uri": "\/tags",
+        "authentication" : true,
+        "description": "Getting tags",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "tags": [
+            {
+              "id": 360,
+              "created_at": "2016-12-11T18:14:29.339Z",
+              "name": "voluptatem",
+              "url": null
+            }
+          ]
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/tags\/:id",
+        "authentication" : true,
+        "description": "Getting a tag",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "tag":
+            {
+              "id": 360,
+              "created_at": "2016-12-11T18:14:29.339Z",
+              "name": "voluptatem",
+              "url": null
+            }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/tags",
+        "authentication" : true,
+        "description": "Creating a tag",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "tag[name]" : {
+            "type" : "string",
+            "description" : "The tag name",
+            "required" : true
+          },
+          "tag[url]" : {
+            "type" : "string",
+            "description" : "The tag url",
+            "required" : true
+          }
+        },
+        "response" : {
+          "tag":
+            {
+              "id": 360,
+              "created_at": "2016-12-11T18:14:29.339Z",
+              "name": "voluptatem",
+              "url": null
+            }
+        }
+      }
     ],
     "users": [
     ]

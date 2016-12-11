@@ -11,6 +11,7 @@ describe Api::V1::TagsController do
   describe "GET #index" do
     it 'should display available tags' do
       get :index
+      puts response.body
       expect(json_response['tags'].count).to eq(1)
     end
 
@@ -28,7 +29,7 @@ describe Api::V1::TagsController do
   end
 
 
-  describe "GET #show" do
+  describe "POST #create" do
     describe 'with valid fields' do
       it 'should display tag information' do
         post :create, params: { tag: { name: "tajfklsjfd", url: "http://www.google.com"} }
