@@ -9,6 +9,7 @@ describe Api::V1::SalonsController do
     it 'should display available salons' do
       salon.reload
       get :index
+      puts response.body
       expect(json_response['salons'].count).to eq(1)
     end
 
