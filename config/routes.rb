@@ -26,7 +26,9 @@ Rails.application.routes.draw do
       resources :notifications, only: [:index, :show]
       resources :users, except: [:edit] do
         member { get :posts }
-        resources :follows, only: [:create, :destroy, :index]
+        resources :follows, only: [:create, :index] do
+          collection { delete :destroy }
+        end
         resources :notifications, only: [:index, :destroy]
       end
       resources :conversations, except: [:edit, :show] do
