@@ -2248,6 +2248,38 @@
       }
     ],
     "products": [
+      {
+        "action": "GET",
+        "uri": "\/products",
+        "authentication" : true,
+        "description": "Getting available products",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "q" : {
+            "type" : "string",
+            "description" : "The name to search by",
+            "required" : false
+          }
+        },
+        "response": {
+          "products": [
+            {
+              "id": 17,
+              "created_at": "2016-12-11T17:53:04.165Z",
+              "name": "Synergistic Granite Bag",
+              "tag": {
+                "id": 358,
+                "created_at": "2016-12-11T17:53:04.149Z",
+                "name": "adipisci",
+                "url": null
+              }
+            }
+          ]
+        }
+      }
     ],
     "salons" : [
     ],
