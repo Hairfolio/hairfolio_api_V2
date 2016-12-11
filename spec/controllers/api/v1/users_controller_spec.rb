@@ -8,6 +8,7 @@ describe Api::V1::UsersController do
     it 'should display available users' do
       user.reload
       get :index
+      puts response.body
       expect(json_response['users'].count).to eq(1)
     end
 

@@ -2618,6 +2618,103 @@
       }
     ],
     "users": [
+      {
+        "action": "GET",
+        "uri": "\/users",
+        "authentication" : true,
+        "description": "Showing user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "account_type" : {
+            "type" : "string",
+            "description" : "Account type",
+            "required" : false
+          },
+          "q" : {
+            "type" : "string",
+            "description" : "query",
+            "required" : false
+          }
+        },
+        "response" : {
+          "users": [
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/users\/:id",
+        "authentication" : true,
+        "description": "Showing user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "users":
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+        }
+      }
     ]
   }
 }
