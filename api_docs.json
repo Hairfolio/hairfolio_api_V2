@@ -817,8 +817,165 @@
       }
     ],
     "follows": [
+      {
+        "action": "GET",
+        "uri": "\/users\/:user_id\/follows",
+        "authentication" : true,
+        "description": "Displaying the followers and followings of a user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "following" : {
+            "type" : "boolean",
+            "description" : "Setting following to true will show the users the user is following instead of their followers",
+            "required" : false
+          }
+        },
+        "response": {
+          "users": [
+            {
+              "id": 2511,
+              "auth_token": "2QNDKWLiPNdtCx2GEsC_",
+              "email": "letha@stehr.io",
+              "first_name": "Susie",
+              "last_name": "Herzog",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "avatar_url": "https:\/\/robohash.org\/doloribusvoluptasnam.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1155",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Mollitia ut quis ipsam sed sapiente. Neque sint similique voluptas quae omnis deleniti impedit. Esse enim optio inventore autem sunt quisquam numquam. Porro officiis autem neque amet esse quas vel.",
+              "years_exp": 19,
+              "career_opportunity": "Suscipit sit aut autem. Repudiandae perferendis aut voluptatibus. Repudiandae corporis sapiente non. Saepe quae eos illum eum minima nam incidunt. Ipsam reiciendis rerum nemo exercitationem itaque quam reprehenderit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users\/:user_id\/follows",
+        "authentication" : true,
+        "description": "Following the user in the url as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "users": [
+            {
+              "id": 2511,
+              "auth_token": "2QNDKWLiPNdtCx2GEsC_",
+              "email": "letha@stehr.io",
+              "first_name": "Susie",
+              "last_name": "Herzog",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "avatar_url": "https:\/\/robohash.org\/doloribusvoluptasnam.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1155",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Mollitia ut quis ipsam sed sapiente. Neque sint similique voluptas quae omnis deleniti impedit. Esse enim optio inventore autem sunt quisquam numquam. Porro officiis autem neque amet esse quas vel.",
+              "years_exp": 19,
+              "career_opportunity": "Suscipit sit aut autem. Repudiandae perferendis aut voluptatibus. Repudiandae corporis sapiente non. Saepe quae eos illum eum minima nam incidunt. Ipsam reiciendis rerum nemo exercitationem itaque quam reprehenderit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:user_id\/follows",
+        "authentication" : true,
+        "description": "Un-following the user in the url as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
     ],
     "harmonies": [
+      {
+        "action": "GET",
+        "uri": "\/harmonies",
+        "authentication" : true,
+        "description": "Getting the available color harmonies",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "line_id" : {
+            "type" : "integer",
+            "description" : "Filtering the color harmonies by the product line.",
+            "required" : false
+          }
+        },
+        "response": {
+          "harmonies": [
+            {
+              "id": 170,
+              "created_at": "2016-12-11T16:10:36.220Z",
+              "name": "Kulas-Watsica",
+              "line": {
+                "id": 207,
+                "created_at": "2016-12-11T16:10:36.215Z",
+                "name": "Hodkiewicz Inc",
+                "brand": {
+                  "id": 286,
+                  "created_at": "2016-12-11T16:10:36.204Z",
+                  "name": "Bergstrom-Kunze",
+                  "services": [
+
+                  ]
+                },
+                "unit": "g"
+              },
+              "position": 1,
+              "colors": [
+                {
+                  "id": 142,
+                  "created_at": "2016-12-11T16:10:36.237Z",
+                  "harmony_id": 170,
+                  "code": "jdij2d390",
+                  "start_hex": "31529d",
+                  "end_hex": "b92769"
+                }
+              ]
+            }
+          ]
+        }
+      }
     ],
     "home": [
       {
@@ -836,10 +993,438 @@
       }
     ],
     "likes": [
+      {
+        "action": "GET",
+        "uri": "\/posts\/:post_id\/likes",
+        "authentication" : true,
+        "description": "Gettign the likes of a post",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "likes": [
+            {
+              "id": 56,
+              "created_at": "2016-12-11T16:18:02.544Z",
+              "post": {
+                "id": 789,
+                "created_at": "2016-12-11T16:18:02.519Z",
+                "description": "Nam accusamus enim maxime suscipit odit est. Praesentium veniam voluptatem. Nesciunt molestias soluta repudiandae ut natus.",
+                "likes_count": 1,
+                "formulas": [
+
+                ],
+                "labels": [
+
+                ]
+              },
+              "user": {
+                "id": 2522,
+                "email": "pietro.schaden@windler.biz",
+                "created_at": "2016-12-11T16:18:02.453Z",
+                "updated_at": "2016-12-11T16:18:02.453Z",
+                "account_type": "consumer",
+                "first_name": "Dereck",
+                "last_name": "Blick",
+                "avatar_url": "https:\/\/robohash.org\/recusandaeautipsam.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "27",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Unde labore quo voluptatem in beatae et impedit. Laboriosam consequatur ex aliquid et omnis rerum. Non eos consequatur velit. Eum ipsam et.",
+                "years_exp": 6,
+                "salon_id": null,
+                "career_opportunity": "Laudantium et ut exercitationem. Ut sit omnis minima sit provident et suscipit. Sequi pariatur impedit. Autem aperiam sit. Tempore beatae assumenda.",
+                "auth_token": "Jyhaxh4gaM7HPRMyGbsE"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/posts\/:post_id\/likes",
+        "authentication" : true,
+        "description": "Liking a post as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json",
+          "Authorization" : "j0dj92j90dj3d9023jd23j"
+        },
+        "response": {
+          "likes": [
+            {
+              "id": 56,
+              "created_at": "2016-12-11T16:18:02.544Z",
+              "post": {
+                "id": 789,
+                "created_at": "2016-12-11T16:18:02.519Z",
+                "description": "Nam accusamus enim maxime suscipit odit est. Praesentium veniam voluptatem. Nesciunt molestias soluta repudiandae ut natus.",
+                "likes_count": 1,
+                "formulas": [
+
+                ],
+                "labels": [
+
+                ]
+              },
+              "user": {
+                "id": 2522,
+                "email": "pietro.schaden@windler.biz",
+                "created_at": "2016-12-11T16:18:02.453Z",
+                "updated_at": "2016-12-11T16:18:02.453Z",
+                "account_type": "consumer",
+                "first_name": "Dereck",
+                "last_name": "Blick",
+                "avatar_url": "https:\/\/robohash.org\/recusandaeautipsam.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "27",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Unde labore quo voluptatem in beatae et impedit. Laboriosam consequatur ex aliquid et omnis rerum. Non eos consequatur velit. Eum ipsam et.",
+                "years_exp": 6,
+                "salon_id": null,
+                "career_opportunity": "Laudantium et ut exercitationem. Ut sit omnis minima sit provident et suscipit. Sequi pariatur impedit. Autem aperiam sit. Tempore beatae assumenda.",
+                "auth_token": "Jyhaxh4gaM7HPRMyGbsE"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/posts\/:post_id\/likes",
+        "authentication" : true,
+        "description": "Unliking a post as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
     ],
     "lines": [
+      {
+        "action": "GET",
+        "uri": "\/lines",
+        "authentication" : true,
+        "description": "DIsplaying available lines",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "brand_id" : {
+            "type" : "integer",
+            "description" : "Filtering the product lines by a specific brand",
+            "required" : false
+          }
+        },
+        "response": {
+          "lines": [
+            {
+              "id": 209,
+              "created_at": "2016-12-11T16:21:32.681Z",
+              "name": "Koelpin-Prohaska",
+              "brand": {
+                "id": 288,
+                "created_at": "2016-12-11T16:21:32.671Z",
+                "name": "Macejkovic-Ziemann",
+                "services": [
+
+                ]
+              },
+              "unit": "g"
+            }
+          ]
+        }
+      }
     ],
     "messages": [
+      {
+        "action": "GET",
+        "uri": "\/conversations\/:conversation_id\/messages",
+        "authentication" : true,
+        "description": "Showing the messages in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "messages": [
+            {
+              "id": 221,
+              "user": {
+                "id": 2612,
+                "auth_token": "mtNNARXT6G7s4ywKBFAT",
+                "email": "oma.corwin@champlin.com",
+                "first_name": "Keon",
+                "last_name": "Jones",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "443",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+                "years_exp": 13,
+                "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+                "likes": [
+
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              },
+              "created_at": "2016-12-11T16:28:31.913Z",
+              "conversation_id": 194,
+              "body": "MyText",
+              "post": {
+                "id": 824,
+                "created_at": "2016-12-11T16:28:31.905Z",
+                "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+                "likes_count": 0,
+                "formulas": [
+
+                ],
+                "labels": [
+
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id",
+        "authentication" : true,
+        "description": "Showing a particular message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "message": {
+            "id": 221,
+            "user": {
+              "id": 2612,
+              "auth_token": "mtNNARXT6G7s4ywKBFAT",
+              "email": "oma.corwin@champlin.com",
+              "first_name": "Keon",
+              "last_name": "Jones",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "443",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+              "years_exp": 13,
+              "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:28:31.913Z",
+            "conversation_id": 194,
+            "body": "MyText",
+            "post": {
+              "id": 824,
+              "created_at": "2016-12-11T16:28:31.905Z",
+              "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+              "likes_count": 0,
+              "formulas": [
+
+              ],
+              "labels": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/conversations\/:conversation_id\/messages",
+        "authentication" : true,
+        "description": "Creating a message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "message[body]" : {
+            "type" : "string",
+            "description" : "THe body of the message",
+            "required" : true
+          },
+          "message[post_id]" : {
+            "type" : "integer",
+            "description" : "A post to attach to the message",
+            "required" : true
+          }
+        },
+        "response": {
+          "message":
+          {
+            "id": 221,
+            "user": {
+              "id": 2612,
+              "auth_token": "mtNNARXT6G7s4ywKBFAT",
+              "email": "oma.corwin@champlin.com",
+              "first_name": "Keon",
+              "last_name": "Jones",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "443",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+              "years_exp": 13,
+              "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:28:31.913Z",
+            "conversation_id": 194,
+            "body": "MyText",
+            "post": {
+              "id": 824,
+              "created_at": "2016-12-11T16:28:31.905Z",
+              "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+              "likes_count": 0,
+              "formulas": [
+
+              ],
+              "labels": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id",
+        "authentication" : true,
+        "description": "Updating a message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "message[body]" : {
+            "type" : "string",
+            "description" : "THe body of the message",
+            "required" : true
+          },
+          "message[post_id]" : {
+            "type" : "integer",
+            "description" : "A post to attach to the message",
+            "required" : true
+          }
+        },
+        "response": {
+          "message":
+          {
+            "id": 221,
+            "user": {
+              "id": 2612,
+              "auth_token": "mtNNARXT6G7s4ywKBFAT",
+              "email": "oma.corwin@champlin.com",
+              "first_name": "Keon",
+              "last_name": "Jones",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "443",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+              "years_exp": 13,
+              "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:28:31.913Z",
+            "conversation_id": 194,
+            "body": "MyText",
+            "post": {
+              "id": 824,
+              "created_at": "2016-12-11T16:28:31.905Z",
+              "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+              "likes_count": 0,
+              "formulas": [
+
+              ],
+              "labels": [
+
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id",
+        "authentication" : true,
+        "description": "Deleting a message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
     ],
     "notifications" : [
     ],

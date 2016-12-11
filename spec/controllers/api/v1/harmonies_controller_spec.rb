@@ -8,6 +8,7 @@ describe Api::V1::HarmoniesController do
       harmony = create(:harmony)
       color = create(:color, harmony: harmony)
       get :index
+      puts response.body
       expect(json_response['harmonies'].count).to eq(1)
       expect(json_response['harmonies'].first['colors'].count).to eq(1)
     end

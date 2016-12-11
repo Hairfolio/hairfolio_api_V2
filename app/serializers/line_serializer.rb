@@ -4,4 +4,8 @@ class LineSerializer < ActiveModel::Serializer
   def unit
     object.unit.to_s
   end
+
+  def brand
+    BrandSerializer.new(object.brand).serializable_hash
+  end
 end

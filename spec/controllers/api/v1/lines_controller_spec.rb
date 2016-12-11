@@ -9,7 +9,7 @@ describe Api::V1::LinesController do
   end
 
   describe "GET #index" do
-    it 'should display available tags' do
+    it 'should display available lines' do
       get :index
       expect(json_response['lines'].count).to eq(1)
     end
