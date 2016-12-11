@@ -11,7 +11,6 @@ describe Api::V1::TagsController do
   describe "GET #index" do
     it 'should display available tags' do
       get :index
-      puts response.body
       expect(json_response['tags'].count).to eq(1)
     end
 

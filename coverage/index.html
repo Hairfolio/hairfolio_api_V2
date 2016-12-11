@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-11T10:14:29-08:00">2016-12-11T10:14:29-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-11T10:18:03-08:00">2016-12-11T10:18:03-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">88.71%</span></span>
+    (<span class="covered_percent"><span class="yellow">86.54%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.16
+         1.05
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>8</b> files in total.
-    <b>62</b> relevant lines. 
-    <span class="green"><b>55</b> lines covered</span> and
+    <b>9</b> files in total.
+    <b>52</b> relevant lines. 
+    <span class="green"><b>45</b> lines covered</span> and
     <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,11 +51,11 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#bffde83ee23e3bc623e50560bc6c2798e9ac099c" class="src_link" title="app/controllers/api/v1/tags_controller.rb">app/controllers/api/v1/tags_controller.rb</a></td>
+        <td class="strong"><a href="#f06153caf3c207f7f7208d9a214c3b6dc59c7cae" class="src_link" title="app/controllers/api/v1/services_controller.rb">app/controllers/api/v1/services_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>29</td>
-        <td>16</td>
-        <td>16</td>
+        <td>13</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -91,19 +91,29 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#ce57d65dde0e4ab8133072a4e1d064e256473e0b" class="src_link" title="app/models/tag.rb">app/models/tag.rb</a></td>
+        <td class="strong"><a href="#e1e4b0909794b5df2db9e97627140ede539b1ab3" class="src_link" title="app/models/brand.rb">app/models/brand.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>7</td>
-        <td>7</td>
+        <td>4</td>
+        <td>3</td>
+        <td>3</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#361d7788e6fff392e09b32fa0dc937eb39518903" class="src_link" title="app/serializers/tag_serializer.rb">app/serializers/tag_serializer.rb</a></td>
+        <td class="strong"><a href="#24a9311efae5688321fc72bc17782a38903bed7c" class="src_link" title="app/models/service.rb">app/models/service.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>4</td>
         <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#1a646adecf1e4462236c139de794c1776803f612" class="src_link" title="app/serializers/service_serializer.rb">app/serializers/service_serializer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
@@ -127,7 +137,7 @@
         <td>7</td>
         <td>6</td>
         <td>1</td>
-        <td>1.4</td>
+        <td>1.1</td>
       </tr>
       
     </tbody>
@@ -146,13 +156,13 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="bffde83ee23e3bc623e50560bc6c2798e9ac099c">
+        <div class="source_table" id="f06153caf3c207f7f7208d9a214c3b6dc59c7cae">
   <div class="header">
-    <h3>app/controllers/api/v1/tags_controller.rb</h3>
+    <h3>app/controllers/api/v1/services_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -163,7 +173,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Api::V1::TagsController &lt; ApplicationController</code>
+          <code class="ruby">class Api::V1::ServicesController &lt; ApplicationController</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -181,19 +191,19 @@
         <li class="covered" data-hits="2" data-linenumber="4">
           <span class="hits">2</span>
           
-          <code class="ruby">    tags = Tag.where(nil)</code>
+          <code class="ruby">    services = Service.where(nil)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">    tags = tags.where(&quot;name ilike ?&quot;, &quot;%#{params[:q]}%&quot;)</code>
+          <code class="ruby">    services.where(brand_id: params[:brand_id]) if params[&quot;brand_id&quot;]</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: tags.page(params[:page]).per(20)</code>
+          <code class="ruby">    render json: services.page(params[:page]).per(20)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -217,118 +227,22 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    tag = Tag.find(params[:id])</code>
+          <code class="ruby">    render json: Service.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="11">
           
-          <code class="ruby">    render json: tag</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    tag = Tag.new(tag_params)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    if tag.save</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      render json: tag, status: 201</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      render json: { errors: tag.errors}, status: 422</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def tag_params</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    params.require(:tag).permit(:name, :url)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">end</code>
@@ -596,13 +510,13 @@
   </pre>
 </div>
       
-        <div class="source_table" id="ce57d65dde0e4ab8133072a4e1d064e256473e0b">
+        <div class="source_table" id="e1e4b0909794b5df2db9e97627140ede539b1ab3">
   <div class="header">
-    <h3>app/models/tag.rb</h3>
+    <h3>app/models/brand.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -613,7 +527,49 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Tag &lt; ApplicationRecord</code>
+          <code class="ruby">class Brand &lt; ApplicationRecord</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_presence_of :name</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="3">
+          <span class="hits">4</span>
+          
+          <code class="ruby">  has_and_belongs_to_many :services, -&gt; { distinct }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="24a9311efae5688321fc72bc17782a38903bed7c">
+  <div class="header">
+    <h3>app/models/service.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Service &lt; ApplicationRecord</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
@@ -625,76 +581,10 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :labels</code>
+          <code class="ruby">  has_and_belongs_to_many :brands, -&gt; { distinct }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :posts, through: :labels</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  before_save :parameterize_name</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">  # scope :popular_today, -&gt; { joins(:post_item_tags).where(&quot;post_item_tags.created_at &gt;= ? and post_item_tags.created_at &lt;= ?&quot;, Time.now - 24.hours, Time.now).order(&quot;count(post_item_tags.hastag_id) desc&quot;)  }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">  # scope(&quot;Popular Today&quot;) { |scope| scope.joins(:post_item_tags).where(&quot;post_item_tags.created_at &gt;= ? and post_item_tags.created_at &lt;= ?&quot;, Time.now - 24.hours, Time.now).order(&quot;count(post_item_tags.hastag_id) desc&quot;) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby"># scope(&quot;Popular Past 48 Hours&quot;) { |scope| scope.joins(:post_item_tags).where(&quot;post_item_tags.created_at &gt;= ? and post_item_tags.created_at &lt;= ?&quot;, Time.now - 48.hours, Time.now).order(&quot;count(post_item_tags.hastag_id) desc&quot;) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby"># scope(&quot;Popular Past 7 Days&quot;) { |scope| scope.joins(:post_item_tags).where(&quot;post_item_tags.created_at &gt;= ? and post_item_tags.created_at &lt;= ?&quot;, Time.now - 7.days, Time.now).order(&quot;count(post_item_tags.hastag_id) desc&quot;) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"># scope(&quot;Popular Past 30 Days&quot;) { |scope| scope.joins(:post_item_tags).where(&quot;post_item_tags.created_at &gt;= ? and post_item_tags.created_at &lt;= ?&quot;, Time.now - 30.days, Time.now).order(&quot;count(post_item_tags.hastag_id) desc&quot;) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def parameterize_name</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="13">
-          <span class="hits">6</span>
-          
-          <code class="ruby">    self.name = self.name.parameterize</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>
@@ -704,9 +594,9 @@
   </pre>
 </div>
       
-        <div class="source_table" id="361d7788e6fff392e09b32fa0dc937eb39518903">
+        <div class="source_table" id="1a646adecf1e4462236c139de794c1776803f612">
   <div class="header">
-    <h3>app/serializers/tag_serializer.rb</h3>
+    <h3>app/serializers/service_serializer.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>2</b> relevant lines. 
@@ -721,16 +611,22 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class TagSerializer &lt; ActiveModel::Serializer</code>
+          <code class="ruby">class ServiceSerializer &lt; ActiveModel::Serializer</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :created_at, :name, :url</code>
+          <code class="ruby">  attributes :id, :created_at, :name, :position</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>
@@ -904,8 +800,8 @@
           <code class="ruby">    def json_response</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="4">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">      @json_response ||= JSON.parse(response.body)</code>
         </li>
