@@ -10,7 +10,8 @@ describe Api::V1::PostsController do
   before :each do
     api_authorization_header(user.auth_token)
     create(:label, post: postable)
-    create(:formula, post: postable)
+    photo = create(:photo, post: postable)
+    create(:formula, photo: photo)
   end
 
   describe "GET #index" do
@@ -33,14 +34,18 @@ describe Api::V1::PostsController do
       it 'should create the post' do
         post_params = build(:post).attributes
         post_params['labels_attributes'] = build(:label).attributes
+        formulas_attributes = build(:formula, service: service).attributes
         treatment_attributes = build(:treatment, color: color).attributes
-        post_params['formulas_attributes'] = build(:formula, service: service).attributes
-        post_params['formulas_attributes']['treatments_attributes'] = treatment_attributes
+        post_params['photos_attributes'] = build(:photo).attributes
+        post_params['photos_attributes']['formulas_attributes'] = formulas_attributes
+        post_params['photos_attributes']['formulas_attributes']['treatments_attributes'] = treatment_attributes
         post :create, params: { post: post_params }
+        puts response.body
         expect(json_response['post']['description']).to eq(post_params['description'])
-        expect(json_response['post']['formulas'].count).to eq(1)
+        expect(json_response['post']['photos'].count).to eq(1)
         expect(json_response['post']['labels'].count).to eq(1)
-        expect(json_response['post']['formulas'].first['treatments'].count).to eq(1)
+        expect(json_response['post']['photos'].first['formulas'].count).to eq(1)
+        expect(json_response['post']['photos'].first['formulas'].first['treatments'].count).to eq(1)
       end
     end
 
@@ -60,13 +65,13 @@ describe Api::V1::PostsController do
       end
 
       it 'should remove treatments in a formula' do
-        patch :update, params: { id: postable.id, post: { formulas_attributes: [{id: postable.formulas.first.id, treatments_attributes: [{ _destroy: true, id: postable.formulas.first.treatments.first.id}]}]}}
-        expect(json_response['post']['formulas'].first['treatments'].count).to eq(0)
+        patch :update, params: { id: postable.id, post: { photos_attributes: [id: postable.photos.first.id, formulas_attributes: [{id: postable.photos.first.formulas.first.id, treatments_attributes: [{ _destroy: true, id: postable.photos.first.formulas.first.treatments.first.id}]}]]}}
+        expect(json_response['post']['photos'].first['formulas'].first['treatments'].count).to eq(0)
       end
 
       it 'should remove formulas' do
-        patch :update, params: { id: postable.id, post: { formulas_attributes: [{id: postable.formulas.first.id, _destroy: true }]}}
-        expect(json_response['post']['formulas'].count).to eq(0)
+        patch :update, params: { id: postable.id, post: { photos_attributes: [id: postable.photos.first.id, formulas_attributes: [{id: postable.photos.first.formulas.first.id, _destroy: true }]]}}
+        expect(json_response['post']['photos'].first['formulas'].count).to eq(0)
       end
     end
 

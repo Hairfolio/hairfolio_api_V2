@@ -30,42 +30,31 @@
         1,
         1,
         1,
-        8,
+        12,
         null,
         null,
         null,
         1,
         null,
         1,
-        8,
+        9,
         null,
         null,
         null
       ],
-      "/Users/tyler/hairfolio/app/controllers/api/v1/messages_controller.rb": [
-        1,
+      "/Users/tyler/hairfolio/app/controllers/api/v1/posts_controller.rb": [
         1,
         1,
         1,
         null,
         1,
-        1,
-        null,
-        null,
-        1,
+        2,
+        2,
+        2,
         2,
         null,
         null,
         1,
-        2,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        2,
         2,
         2,
         1,
@@ -73,24 +62,29 @@
         1,
         null,
         null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
         null,
         1,
         4,
+        3,
+        null,
+        1,
+        null,
         null,
         null,
         1,
-        8,
+        1,
+        1,
         null,
+        null,
+        1,
         null,
         1,
         5,
+        null,
+        null,
+        1,
+        6,
+        null,
         null,
         null
       ],
@@ -113,40 +107,21 @@
         1,
         null,
         1,
-        10,
+        11,
         0,
         null,
-        10,
+        11,
         null,
         null,
         null,
         1,
-        8,
+        9,
         null,
         null,
         1,
-        8,
+        9,
         null,
         null,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/models/conversation.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/models/message.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
         null
       ],
       "/Users/tyler/hairfolio/app/models/post.rb": [
@@ -164,78 +139,40 @@
         1,
         1,
         1,
-        1,
+        2,
         null
       ],
-      "/Users/tyler/hairfolio/app/serializers/message_serializer.rb": [
-        1,
-        1,
-        null,
-        1,
-        5,
-        null,
-        null,
-        1,
-        5,
-        null,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/serializers/user_serializer.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        5,
-        null,
-        null,
-        1,
-        5,
-        null,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/models/like.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/models/education.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/tyler/hairfolio/app/models/offering.rb": [
-        1,
+      "/Users/tyler/hairfolio/app/models/label.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/tyler/hairfolio/app/serializers/post_serializer.rb": [
+      "/Users/tyler/hairfolio/app/models/tag.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        10,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/photo.rb": [
+        1,
+        1,
         1,
         1,
         null,
         1,
-        5,
-        null,
-        null,
-        1,
-        5,
-        null,
         null
       ],
       "/Users/tyler/hairfolio/app/models/formula.rb": [
@@ -249,7 +186,164 @@
         1,
         null
       ],
-      "/Users/tyler/hairfolio/app/models/label.rb": [
+      "/Users/tyler/hairfolio/app/models/service.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/treatment.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/color.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/harmony.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/line.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/brand.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/post_serializer.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        14,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/video.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/photo_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        11,
+        null,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/label_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        6,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/tag_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/formula_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        9,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/service_serializer.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/treatment_serializer.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/color_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/like.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/notification.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/folio.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/contact.rb": [
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -257,6 +351,6 @@
         null
       ]
     },
-    "timestamp": 1481473712
+    "timestamp": 1481477563
   }
 }

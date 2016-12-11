@@ -1,5 +1,9 @@
 class FormulaSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :post_id, :service_id, :time, :weight, :volume, :treatments
+  attributes :id, :created_at, :post_id, :service, :time, :weight, :volume, :treatments, :photo_id
+
+  def service
+    ServiceSerializer.new(object.service).serializable_hash if object.service
+  end
 
   def treatments
     object.treatments.map { |t| TreatmentSerializer.new(t).serializable_hash }

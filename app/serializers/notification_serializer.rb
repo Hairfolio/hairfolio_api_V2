@@ -10,6 +10,10 @@ class NotificationSerializer < ActiveModel::Serializer
     end
   end
 
+  def user
+    UserSerializer.new(object.user).serializable_hash
+  end
+
   def notifiable_type
     object.notifiable.class.name
   end
