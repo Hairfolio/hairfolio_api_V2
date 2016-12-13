@@ -11,7 +11,6 @@ describe Api::V1::ProductsController do
   describe "GET #index" do
     it 'should display available products' do
       get :index
-      puts response.body
       expect(json_response['products'].count).to eq(1)
     end
 

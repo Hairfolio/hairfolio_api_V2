@@ -40,7 +40,6 @@ describe Api::V1::PostsController do
         post_params['photos_attributes']['formulas_attributes'] = formulas_attributes
         post_params['photos_attributes']['formulas_attributes']['treatments_attributes'] = treatment_attributes
         post :create, params: { post: post_params }
-        puts response.body
         expect(json_response['post']['description']).to eq(post_params['description'])
         expect(json_response['post']['photos'].count).to eq(1)
         expect(json_response['post']['labels'].count).to eq(1)

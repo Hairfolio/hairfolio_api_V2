@@ -3,12 +3,12 @@ require 'rails_helper'
 describe Api::V1::ServicesController do
 
   let(:brand) { create(:brand) }
-  let(:service) { create(:service) }
+  let(:service_s) { create(:service) }
 
   before :each do
-    brand.services << service
+    brand.services << service_s
     brand.reload
-    service.reload
+    service_s.reload
   end
 
   describe "GET #index" do
@@ -27,7 +27,7 @@ describe Api::V1::ServicesController do
 
     it 'should display the brand attributes' do
       get :show, params: { id: service.id }
-      expect(json_response['service']['name']).to eq(service.name)
+      expect(json_response['service']['name']).to eq(service_s.name)
     end
   end
 end

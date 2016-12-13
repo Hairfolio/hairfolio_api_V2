@@ -4,11 +4,10 @@ class Tag < ApplicationRecord
   has_many :posts, through: :labels
   before_save :parameterize_name
   scope :popular, -> { joins(:labels).group("labels.tag_id").order("count(labels.tag_id) desc") }
-  # scope :popular_today, -> { joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 24.hours, Time.now).order("count(post_item_tags.hastag_id) desc")  }
-  # scope("Popular Today") { |scope| scope.joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 24.hours, Time.now).order("count(post_item_tags.hastag_id) desc") }
-# scope("Popular Past 48 Hours") { |scope| scope.joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 48.hours, Time.now).order("count(post_item_tags.hastag_id) desc") }
-# scope("Popular Past 7 Days") { |scope| scope.joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 7.days, Time.now).order("count(post_item_tags.hastag_id) desc") }
-# scope("Popular Past 30 Days") { |scope| scope.joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 30.days, Time.now).order("count(post_item_tags.hastag_id) desc") }
+  scope :popular_today, -> { joins(:labels).group("labels.tag_id").order("count(labels.tag_id) desc").where("labels.created_at >= ? and labels.created_at <= ?", Time.now - 24.hours, Time.now) }
+  scope :popular_last_48_hours, -> { joins(:labels).group("labels.tag_id").order("count(labels.tag_id) desc").where("labels.created_at >= ? and labels.created_at <= ?", Time.now - 48.hours, Time.now) }
+  scope :popular_last_7_days, -> { joins(:labels).group("labels.tag_id").order("count(labels.tag_id) desc").where("labels.created_at >= ? and labels.created_at <= ?", Time.now - 7.days, Time.now) }
+  scope :popular_last_30_days, -> { joins(:labels).group("labels.tag_id").order("count(labels.tag_id) desc").where("labels.created_at >= ? and labels.created_at <= ?", Time.now - 30.days, Time.now) }
 
   def parameterize_name
     self.name = self.name.parameterize

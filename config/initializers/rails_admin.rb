@@ -29,11 +29,11 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar true
 
-  # config.model Tag do
-  #   list do
-  #     scopes [:not_cart, :cart, nil]
-  #   end
-  # end
+  config.model Tag do
+    list do
+      scopes [:popular, :popular_today, :popular_last_48_hours, :popular_last_7_days, :popular_last_30_days]
+    end
+  end
 
   config.actions do
     dashboard                     # mandatory
