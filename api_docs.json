@@ -332,6 +332,9 @@
                  "first_name":"Janae",
                  "last_name":"Koelpin",
                  "address":"860 Emelia Prairie",
+                 "city":"San Jose",
+                 "state":"California",
+                 "zipcode":"92892",
                  "company":"Eichmann-Gorczany",
                  "emails":[
                     {
@@ -348,6 +351,9 @@
                        "number":"(261) 667-4692 x65918",
                        "phone_type":"home"
                     }
+                 ],
+                 "posts" :[
+
                  ]
               }
            ]
@@ -366,6 +372,9 @@
                "first_name":"Janae",
                "last_name":"Koelpin",
                "address":"860 Emelia Prairie",
+               "city":"San Jose",
+               "state":"California",
+               "zipcode":"92892",
                "company":"Eichmann-Gorczany",
                "emails":[
                   {
@@ -382,6 +391,9 @@
                      "number":"(261) 667-4692 x65918",
                      "phone_type":"home"
                   }
+               ],
+               "posts" :[
+
                ]
             }
         }
@@ -405,6 +417,21 @@
           "contact[address]" : {
             "type": "string",
             "description": "The address of the contact",
+            "required": true
+          },
+          "contact[city]" : {
+            "type": "string",
+            "description": "The city of the contact",
+            "required": true
+          },
+          "contact[state]" : {
+            "type": "string",
+            "description": "The state of the contact",
+            "required": true
+          },
+          "contact[zipcode]" : {
+            "type": "string",
+            "description": "The zipcode of the contact",
             "required": true
           },
           "contact[company]" : {
@@ -431,6 +458,11 @@
             "type": "string",
             "description": "The type of the phone contact (home or work)",
             "required": true
+          },
+          "contact[post_ids]" : {
+            "type" : "array",
+            "description": "An array of post ids",
+            "required" : false
           }
         },
         "response" : {
@@ -441,6 +473,9 @@
                "first_name":"Janae",
                "last_name":"Koelpin",
                "address":"860 Emelia Prairie",
+               "city":"San Jose",
+               "state":"California",
+               "zipcode":"92892",
                "company":"Eichmann-Gorczany",
                "emails":[
                   {
@@ -457,6 +492,9 @@
                      "number":"(261) 667-4692 x65918",
                      "phone_type":"home"
                   }
+               ],
+               "posts" :[
+
                ]
             }
         }
@@ -480,6 +518,21 @@
           "contact[address]" : {
             "type": "string",
             "description": "The address of the contact",
+            "required": true
+          },
+          "contact[city]" : {
+            "type": "string",
+            "description": "The city of the contact",
+            "required": true
+          },
+          "contact[state]" : {
+            "type": "string",
+            "description": "The state of the contact",
+            "required": true
+          },
+          "contact[zipcode]" : {
+            "type": "string",
+            "description": "The zipcode of the contact",
             "required": true
           },
           "contact[company]" : {
@@ -526,6 +579,11 @@
             "type": "string",
             "description": "Set the _destroy flag to delete the phone from the contact",
             "required": true
+          },
+          "contact[post_ids]" : {
+            "type" : "array",
+            "description": "An array of post ids",
+            "required" : false
           }
         },
         "response" : {
@@ -536,6 +594,9 @@
                "first_name":"Janae",
                "last_name":"Koelpin",
                "address":"860 Emelia Prairie",
+               "city":"San Jose",
+               "state":"California",
+               "zipcode":"92892",
                "company":"Eichmann-Gorczany",
                "emails":[
                   {
@@ -552,6 +613,9 @@
                      "number":"(261) 667-4692 x65918",
                      "phone_type":"home"
                   }
+               ],
+               "posts" :[
+
                ]
             }
         }
