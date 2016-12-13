@@ -1032,6 +1032,9 @@
               ],
               "offerings": [
 
+              ],
+              "experiences": [
+
               ]
             }
           ]
@@ -3071,6 +3074,9 @@
               ],
               "offerings": [
 
+              ],
+              "experiences": [
+
               ]
             }
           ],
@@ -3120,6 +3126,9 @@
 
               ],
               "offerings": [
+
+              ],
+              "experiences": [
 
               ]
             }
@@ -3219,6 +3228,11 @@
             "type" : "string",
             "description" : "The website of the salon",
             "required" : true
+          },
+          "user[experience_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the expereinces",
+            "required" : true
           }
         },
         "response" : {
@@ -3249,6 +3263,9 @@
 
               ],
               "offerings": [
+
+              ],
+              "experiences": [
 
               ]
             }
@@ -3358,6 +3375,11 @@
             "type" : "string",
             "description" : "The website of the salon",
             "required" : false
+          },
+          "user[experience_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the expereinces",
+            "required" : true
           }
         },
         "response" : {
@@ -3388,6 +3410,9 @@
 
               ],
               "offerings": [
+
+              ],
+              "experiences": [
 
               ]
             }
