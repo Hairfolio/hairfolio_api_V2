@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_and_belongs_to_many :experiences, -> { distinct }
+  has_and_belongs_to_many :certificates, -> { distinct }
 
 
   accepts_nested_attributes_for :salon, allow_destroy: true

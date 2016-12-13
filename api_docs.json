@@ -982,6 +982,9 @@
               ],
               "offerings": [
 
+              ],
+              "certificates": [
+
               ]
             }
           ],
@@ -1034,6 +1037,9 @@
 
               ],
               "experiences": [
+
+              ],
+              "certificates": [
 
               ]
             }
@@ -3077,6 +3083,9 @@
               ],
               "experiences": [
 
+              ],
+              "certificates": [
+
               ]
             }
           ],
@@ -3129,6 +3138,9 @@
 
               ],
               "experiences": [
+
+              ],
+              "certificates": [
 
               ]
             }
@@ -3233,6 +3245,16 @@
             "type" : "array",
             "description" : "The ids of the expereinces",
             "required" : true
+          },
+          "user[experience_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the expereinces",
+            "required" : false
+          },
+          "user[certificate_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the certificates",
+            "required" : false
           }
         },
         "response" : {
@@ -3266,6 +3288,9 @@
 
               ],
               "experiences": [
+
+              ],
+              "certificates": [
 
               ]
             }
@@ -3379,7 +3404,12 @@
           "user[experience_ids]" : {
             "type" : "array",
             "description" : "The ids of the expereinces",
-            "required" : true
+            "required" : false
+          },
+          "user[certificate_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the certificates",
+            "required" : false
           }
         },
         "response" : {
@@ -3413,6 +3443,12 @@
 
               ],
               "experiences": [
+
+              ],
+              "certificates": [
+
+              ],
+              "certificates": [
 
               ]
             }

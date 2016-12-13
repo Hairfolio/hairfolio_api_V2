@@ -30,7 +30,7 @@
         1,
         1,
         1,
-        115,
+        113,
         null,
         null,
         null,
@@ -1506,7 +1506,7 @@
         null,
         1,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -1522,7 +1522,7 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -1850,6 +1850,17 @@
         1,
         null,
         null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/spec/controllers/api/v1/tags_controller_spec.rb": [
@@ -1991,9 +2002,9 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
         null,
         null,
         null,
@@ -2241,6 +2252,7 @@
         null
       ],
       "/Users/tyler/hairfolio/app/models/certificate.rb": [
+        1,
         1,
         1,
         null
@@ -2517,6 +2529,7 @@
         null
       ],
       "/Users/tyler/hairfolio/app/models/experience.rb": [
+        1,
         1,
         1,
         null
@@ -3217,6 +3230,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         1,
         54,
@@ -3460,8 +3475,13 @@
         2,
         null,
         null
+      ],
+      "/Users/tyler/hairfolio/app/serializers/education_serializer.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1481644050
+    "timestamp": 1481645409
   }
 }

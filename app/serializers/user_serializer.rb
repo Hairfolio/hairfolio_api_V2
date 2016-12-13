@@ -4,6 +4,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :educations
   has_many :offerings
   has_many :experiences
+  has_many :certificates
 
   def likes_count
     object.likes.length
