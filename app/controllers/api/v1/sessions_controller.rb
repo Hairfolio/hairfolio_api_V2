@@ -105,4 +105,15 @@ class Api::V1::SessionsController < ApplicationController
       head 404
     end
   end
+
+  def environment
+      render json: {
+        facebook_app_id: ENV['FACEBOOK_APP_ID'],
+        facebook_redirect_url: ENV['FACEBOOK_REDIRECT_URL'],
+        insta_client_id: ENV['INSTAGRAM_CLIENT_ID'],
+        insta_redirect_url: ENV['INSTAGRAM_REDIRECT_URL'],
+        cloud_name: ENV['CLOUDINARY_NAME'],
+        cloud_preset: ENV['CLOUDINARY_PRESET']
+      }
+    end
 end

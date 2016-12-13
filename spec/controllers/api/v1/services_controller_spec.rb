@@ -26,7 +26,7 @@ describe Api::V1::ServicesController do
   describe "GET #show" do
 
     it 'should display the brand attributes' do
-      get :show, params: { id: service.id }
+      get :show, params: { id: service_s.id }
       expect(json_response['service']['name']).to eq(service_s.name)
     end
   end

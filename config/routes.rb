@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       end
       resources :sessions, only: [:create, :destroy] do
         collection do
+          get :environment
           post :facebook
           post :instagram
           post :recover
