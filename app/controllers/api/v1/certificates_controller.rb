@@ -1,7 +1,8 @@
 class Api::V1::CertificatesController < ApplicationController
 
   def index
-    render json: Certificate.all.page(params[:page]).order('position asc').per(20)
+    certificates = Certificate.all.page(params[:page]).order('position asc').per(20)
+    render json: certificates, meta: pagination_dict(certificates)
   end
 
   def show

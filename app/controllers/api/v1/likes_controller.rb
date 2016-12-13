@@ -3,7 +3,8 @@ class Api::V1::LikesController < ApplicationController
   before_action :set_post
 
   def index
-    render json: @post.likes.page(params[:page]).per(20)
+    likes = @post.likes.page(params[:page]).per(20)
+    render json: likes, meta: pagination_dict(likes)
   end
 
   def create

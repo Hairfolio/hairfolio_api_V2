@@ -5,7 +5,8 @@ class Api::V1::UsersController < ApplicationController
     users = User.where(nil)
     users = users.search(params[:q]) if params[:q]
     users = users.where(account_type: params[:account_type]) if params[:account_type]
-    render json: users.page(params[:page]).per(20)
+    users = users.page(params[:page]).per(20)
+    render json: users, meta: pagination_dict(users)
   end
 
   def show
@@ -35,7 +36,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def posts
-    render json: @user.posts.order('created_at desc').page(params[:page]).per(20)
+    posts = @user.posts.order('created_at desc').page(params[:page]).per(20)
+    render json: posts, meta: pagination_dict(posts)
   end
 
   private

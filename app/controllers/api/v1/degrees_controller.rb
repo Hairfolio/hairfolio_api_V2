@@ -1,7 +1,8 @@
 class Api::V1::DegreesController < ApplicationController
 
   def index
-    render json: Degree.all.page(params[:page]).order('position asc').per(20)
+    degrees = Degree.all.order('position asc').page(params[:page]).per(20)
+    render json: degrees, meta: pagination_dict(degrees)
   end
 
   def show

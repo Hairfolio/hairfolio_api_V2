@@ -3,7 +3,8 @@ class Api::V1::ConversationsController < ApplicationController
   before_action :set_conversation, except: [:index, :create]
 
   def index
-    render json: Conversation.participant(current_user)
+    conversations = Conversation.participant(current_user).page(params[:page]).per(20)
+    render json: conversations, meta: pagination_dict(conversations)
   end
 
   def update

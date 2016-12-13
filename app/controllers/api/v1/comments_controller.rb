@@ -27,7 +27,8 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def index
-    render json: @post.comments.order('created_at desc').page(params[:page]).per(20)
+    comments = @post.comments.order('created_at desc').page(params[:page]).per(20)
+    render json: comments, meta: pagination_dict(comments)
   end
 
   private

@@ -3,7 +3,8 @@ class Api::V1::ContactsController < ApplicationController
   before_action :set_contact, only: [:update, :destroy, :show]
 
   def index
-    render json: current_user.contacts
+    contacts = current_user.contacts.page(params[:page]).per(20)
+    render json: contacts, meta: pagination_dict(contacts)
   end
 
   def show

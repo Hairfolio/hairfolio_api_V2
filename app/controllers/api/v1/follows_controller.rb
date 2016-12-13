@@ -23,7 +23,7 @@ class Api::V1::FollowsController < ApplicationController
     else
       users = @user.followers.page(params[:page]).per(20)
     end
-    render json: users
+    render json: users, meta: pagination_dict(users)
   end
 
   private

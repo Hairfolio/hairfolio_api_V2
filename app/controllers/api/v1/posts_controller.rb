@@ -5,8 +5,9 @@ class Api::V1::PostsController < ApplicationController
   def index
     posts = Post.where(nil).order('created_at desc')
     posts = posts.popular if params[:popular]
-    posts = post.favorites(current_user) if params[:favorites]
-    render json: posts.page(params[:page]).per(20)
+    posts = posts.favorites(current_user) if params[:favorites]
+    posts = posts.page(params[:page]).per(20)
+    render json: posts, meta: pagination_dict(posts)
   end
 
   def create

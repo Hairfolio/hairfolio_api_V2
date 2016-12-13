@@ -1,7 +1,8 @@
 class Api::V1::BrandsController < ApplicationController
 
   def index
-    render json: Brand.all.page(params[:page]).per(20)
+    brands = Brand.all.page(params[:page]).per(20)
+    render json: brands, meta: pagination_dict(brands)
   end
 
   def show
