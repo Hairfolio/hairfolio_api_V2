@@ -61,7 +61,14 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "meta": {
+                "current_page": 1,
+                "next_page": 2,
+                "prev_page": null,
+                "total_pages": 12,
+                "total_count": 222
+              }
           }
         },
         {
@@ -102,7 +109,14 @@
               "created_at":"2016-12-08T20:32:14.486Z",
               "name":"Heller-Murphy"
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       }
     ],
@@ -119,7 +133,14 @@
               "created_at":"2016-12-08T20:32:14.486Z",
               "name":"Heller-Murphy"
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -179,7 +200,14 @@
                     ]
                  }
               }
-           ]
+           ],
+           "meta": {
+             "current_page": 1,
+             "next_page": 2,
+             "prev_page": null,
+             "total_pages": 12,
+             "total_count": 222
+           }
         }
       },
       {
@@ -589,7 +617,14 @@
                 2304
               ]
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
      },
      {
@@ -674,7 +709,14 @@
               "created_at":"2016-12-10T00:43:41.950Z",
               "name":"Enormous Cotton Knife"
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -707,7 +749,14 @@
               "name":"Enormous Cotton Knife",
               "position" : 1
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       }
     ],
@@ -731,7 +780,14 @@
 
                 ]
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -864,7 +920,14 @@
 
               ]
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -973,7 +1036,14 @@
                 }
               ]
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       }
     ],
@@ -1041,7 +1111,14 @@
                 "auth_token": "Jyhaxh4gaM7HPRMyGbsE"
               }
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -1143,7 +1220,14 @@
               },
               "unit": "g"
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       }
     ],
@@ -1193,11 +1277,13 @@
               "created_at": "2016-12-11T16:28:31.913Z",
               "conversation_id": 194,
               "body": "MyText",
+              "url": "http://www.google.com",
               "post": {
                 "id": 824,
                 "created_at": "2016-12-11T16:28:31.905Z",
                 "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
                 "likes_count": 0,
+                "comments_count": 0,
                 "formulas": [
 
                 ],
@@ -1206,7 +1292,14 @@
                 ]
               }
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -1253,11 +1346,13 @@
             "created_at": "2016-12-11T16:28:31.913Z",
             "conversation_id": 194,
             "body": "MyText",
+            "url": "http://www.google.com",
             "post": {
               "id": 824,
               "created_at": "2016-12-11T16:28:31.905Z",
               "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
               "likes_count": 0,
+              "comments_count": 0,
               "formulas": [
 
               ],
@@ -1283,10 +1378,15 @@
             "description" : "THe body of the message",
             "required" : true
           },
+          "message[url]" : {
+            "type" : "string",
+            "description" : "THe url link of the message",
+            "required" : false
+          },
           "message[post_id]" : {
             "type" : "integer",
             "description" : "A post to attach to the message",
-            "required" : true
+            "required" : false
           }
         },
         "response": {
@@ -1325,11 +1425,13 @@
             "created_at": "2016-12-11T16:28:31.913Z",
             "conversation_id": 194,
             "body": "MyText",
+            "url" : "http://www.google.com",
             "post": {
               "id": 824,
               "created_at": "2016-12-11T16:28:31.905Z",
               "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
               "likes_count": 0,
+              "comments_count": 0,
               "formulas": [
 
               ],
@@ -1353,6 +1455,11 @@
           "message[body]" : {
             "type" : "string",
             "description" : "THe body of the message",
+            "required" : true
+          },
+          "message[url]" : {
+            "type" : "string",
+            "description" : "THe url link of the message",
             "required" : true
           },
           "message[post_id]" : {
@@ -1397,11 +1504,13 @@
             "created_at": "2016-12-11T16:28:31.913Z",
             "conversation_id": 194,
             "body": "MyText",
+            "url" : "http://www.google.com",
             "post": {
               "id": 824,
               "created_at": "2016-12-11T16:28:31.905Z",
               "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
               "likes_count": 0,
+              "comments_count": 0,
               "formulas": [
 
               ],
@@ -1702,7 +1811,14 @@
               },
               "notifiable_type": "Like"
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -1868,6 +1984,7 @@
             "created_at": "2016-12-11T17:32:43.208Z",
             "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
             "likes_count": 0,
+            "comments_count": 0,
             "labels": [
               {
                 "id": 242,
@@ -1926,7 +2043,14 @@
 
             ]
           }
-        ]
+        ],
+        "meta": {
+          "current_page": 1,
+          "next_page": 2,
+          "prev_page": null,
+          "total_pages": 12,
+          "total_count": 222
+        }
         }
       },
       {
@@ -2001,6 +2125,7 @@
             "created_at": "2016-12-11T17:32:43.208Z",
             "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
             "likes_count": 0,
+            "comments_count": 0,
             "labels": [
               {
                 "id": 242,
@@ -2173,6 +2298,7 @@
             "created_at": "2016-12-11T17:32:43.208Z",
             "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
             "likes_count": 0,
+            "comments_count": 0,
             "labels": [
               {
                 "id": 242,
@@ -2277,7 +2403,14 @@
                 "url": null
               }
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       }
     ],
@@ -2312,7 +2445,14 @@
               "website": "http:\/\/kuhlmanthompson.info\/kristofer_oconnell",
               "phone": "(607) 194-5835"
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -2513,7 +2653,14 @@
               "name": "Lind and Sons",
               "position": 1
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -2748,7 +2895,14 @@
               "name": "voluptatem",
               "url": null
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -2855,7 +3009,14 @@
 
               ]
             }
-          ]
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
         }
       },
       {
@@ -3196,6 +3357,7 @@
             "created_at": "2016-12-11T17:32:43.208Z",
             "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
             "likes_count": 0,
+            "comments_count": 0,
             "labels": [
               {
                 "id": 242,
@@ -3254,7 +3416,14 @@
 
             ]
           }
-        ]
+        ],
+        "meta": {
+          "current_page": 1,
+          "next_page": 2,
+          "prev_page": null,
+          "total_pages": 12,
+          "total_count": 222
+        }
         }
       }
     ]

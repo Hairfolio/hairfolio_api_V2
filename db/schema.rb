@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209233551) do
+ActiveRecord::Schema.define(version: 20161213014727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -225,6 +225,7 @@ ActiveRecord::Schema.define(version: 20161209233551) do
     t.boolean  "read"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "url"
     t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
     t.index ["post_id"], name: "index_messages_on_post_id", using: :btree
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
@@ -273,9 +274,10 @@ ActiveRecord::Schema.define(version: 20161209233551) do
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "description"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "likes_count", default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "likes_count",    default: 0
+    t.integer  "comments_count", default: 0
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 

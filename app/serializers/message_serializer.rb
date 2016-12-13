@@ -1,5 +1,5 @@
 class MessageSerializer < ActiveModel::Serializer
-  attributes :id, :user, :created_at, :conversation_id, :body, :post
+  attributes :id, :user, :created_at, :conversation_id, :body, :post, :url
 
   def user
     UserSerializer.new(object.user).serializable_hash
