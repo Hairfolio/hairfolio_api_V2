@@ -3,6 +3,7 @@ class Tag < ApplicationRecord
   has_many :labels
   has_many :posts, through: :labels
   before_save :parameterize_name
+  scope :popular, -> { joins(:labels).group("labels.tag_id").order("count(labels.tag_id) desc") }
   # scope :popular_today, -> { joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 24.hours, Time.now).order("count(post_item_tags.hastag_id) desc")  }
   # scope("Popular Today") { |scope| scope.joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 24.hours, Time.now).order("count(post_item_tags.hastag_id) desc") }
 # scope("Popular Past 48 Hours") { |scope| scope.joins(:post_item_tags).where("post_item_tags.created_at >= ? and post_item_tags.created_at <= ?", Time.now - 48.hours, Time.now).order("count(post_item_tags.hastag_id) desc") }

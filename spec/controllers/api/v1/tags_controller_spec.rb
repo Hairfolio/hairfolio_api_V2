@@ -18,6 +18,13 @@ describe Api::V1::TagsController do
       get :index, params: { q: tag.name }
       expect(json_response['tags'].count).to eq(1)
     end
+
+    it 'should filter by popular by query' do
+      tag = create(:tag)
+      create(:label, tag: tag)
+      get :index, params: { q: tag.name }
+      expect(json_response['tags'].first['name']).to eq(tag.name)
+    end
   end
 
   describe "GET #show" do
