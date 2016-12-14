@@ -1,9 +1,6 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :description, :likes_count, :comments_count, :labels
+  attributes :id, :created_at, :description, :likes_count, :comments_count
   has_many :photos
   has_many :videos
 
-  def labels
-    object.labels.map { |f| LabelSerializer.new(f).serializable_hash }
-  end
 end

@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
   before_validation :set_default_account_type
 
-  scope :search, -> (query) { includes(:salon, :brand).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?) or (brands.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
+  scope :search, -> (query) { includes(:salon, :brand).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?) or (brands.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
 
 
   def friends

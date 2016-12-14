@@ -1,8 +1,8 @@
 class PhotoSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :asset_url, :post_id, :formulas
+  attributes :id, :created_at, :asset_url, :post_id, :labels
 
-  def formulas
-    object.formulas.map {|f| FormulaSerializer.new(f).serializable_hash}
+  def labels
+    object.labels.map {|f| LabelSerializer.new(f).serializable_hash}
   end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214213157) do
+ActiveRecord::Schema.define(version: 20161214215856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -192,6 +192,8 @@ ActiveRecord::Schema.define(version: 20161214213157) do
     t.integer  "photo_id"
     t.integer  "position_top"
     t.integer  "position_left"
+    t.integer  "label_id"
+    t.index ["label_id"], name: "index_formulas_on_label_id", using: :btree
     t.index ["photo_id"], name: "index_formulas_on_photo_id", using: :btree
     t.index ["post_id"], name: "index_formulas_on_post_id", using: :btree
     t.index ["service_id"], name: "index_formulas_on_service_id", using: :btree
@@ -213,6 +215,8 @@ ActiveRecord::Schema.define(version: 20161214213157) do
     t.integer  "position_left"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "photo_id"
+    t.index ["photo_id"], name: "index_labels_on_photo_id", using: :btree
     t.index ["post_id"], name: "index_labels_on_post_id", using: :btree
     t.index ["tag_id"], name: "index_labels_on_tag_id", using: :btree
   end
@@ -418,10 +422,12 @@ ActiveRecord::Schema.define(version: 20161214213157) do
   add_foreign_key "educations", "users"
   add_foreign_key "emails", "contacts"
   add_foreign_key "folios", "users"
+  add_foreign_key "formulas", "labels"
   add_foreign_key "formulas", "photos"
   add_foreign_key "formulas", "posts"
   add_foreign_key "formulas", "services"
   add_foreign_key "harmonies", "lines"
+  add_foreign_key "labels", "photos"
   add_foreign_key "labels", "posts"
   add_foreign_key "labels", "tags"
   add_foreign_key "likes", "posts"

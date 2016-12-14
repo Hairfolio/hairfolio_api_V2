@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :formula do
-    association :post
-    association :photo
+    association :label
     association :service
     weight 1
     volume 1

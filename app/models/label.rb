@@ -1,5 +1,7 @@
 class Label < ApplicationRecord
-  belongs_to :post
+  belongs_to :photo
+  belongs_to :tag
   has_many :formulas, dependent: :destroy
+  accepts_nested_attributes_for :formulas, allow_destroy: true
   validates_presence_of :tag, :position_top, :position_left
 end
