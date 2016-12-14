@@ -18,13 +18,13 @@ describe Api::V1::PostsController do
     it 'should render the latest posts' do
       postable.reload
       get :index
-      expect(json_response['posts'].count).to eq(2)
+      expect(json_response['posts'].count).to eq(1)
     end
 
     it 'should filter the popular posts' do
       create(:like, post: postable)
       get :index, params: { popular: true }
-      expect(json_response['posts'].count).to eq(2)
+      expect(json_response['posts'].count).to eq(1)
     end
 
   end
@@ -33,18 +33,19 @@ describe Api::V1::PostsController do
     describe 'with valid fields' do
       it 'should create the post' do
         post_params = build(:post).attributes
-        post_params['labels_attributes'] = build(:label).attributes
+        labels_attributes = build(:label).attributes
         formulas_attributes = build(:formula, service: service).attributes
         treatment_attributes = build(:treatment, color: color).attributes
         post_params['photos_attributes'] = build(:photo).attributes
-        post_params['photos_attributes']['formulas_attributes'] = formulas_attributes
-        post_params['photos_attributes']['formulas_attributes']['treatments_attributes'] = treatment_attributes
+        post_params['photos_attributes']['labels_attributes'] = labels_attributes
+        post_params['photos_attributes']['labels_attributes']['formulas_attributes'] = formulas_attributes
+        post_params['photos_attributes']['labels_attributes']['formulas_attributes']['treatments_attributes'] = treatment_attributes
         post :create, params: { post: post_params }
         expect(json_response['post']['description']).to eq(post_params['description'])
         expect(json_response['post']['photos'].count).to eq(1)
-        expect(json_response['post']['labels'].count).to eq(1)
-        expect(json_response['post']['photos'].first['formulas'].count).to eq(1)
-        expect(json_response['post']['photos'].first['formulas'].first['treatments'].count).to eq(1)
+        expect(json_response['post']['photos'].first['labels'].count).to eq(1)
+        expect(json_response['post']['photos'].first['labels'].first['formulas'].count).to eq(1)
+        expect(json_response['post']['photos'].first['labels'].first['formulas'].first['treatments'].count).to eq(1)
       end
     end
 
