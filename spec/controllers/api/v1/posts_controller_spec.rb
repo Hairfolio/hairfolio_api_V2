@@ -65,13 +65,13 @@ describe Api::V1::PostsController do
       end
 
       it 'should remove treatments in a formula' do
-        patch :update, params: { id: postable.id, post: { photos_attributes: [id: postable.photos.first.id, formulas_attributes: [{id: postable.photos.first.formulas.first.id, treatments_attributes: [{ _destroy: true, id: postable.photos.first.formulas.first.treatments.first.id}]}]]}}
-        expect(json_response['post']['photos'].first['formulas'].first['treatments'].count).to eq(0)
+        patch :update, params: { id: postable.id, post: { photos_attributes: [id: postable.photos.first.id, labels_attributes: [{ id: postable.photos.first.labels.first.id, formulas_attributes: [{id: postable.photos.first.labels.first.formulas.first.id, treatments_attributes: [{ _destroy: true, id: postable.photos.first.labels.first.formulas.first.treatments.first.id}]}]}]]}}
+        expect(json_response['post']['photos'].first['labels'].first['formulas'].first['treatments'].count).to eq(0)
       end
 
       it 'should remove formulas' do
-        patch :update, params: { id: postable.id, post: { photos_attributes: [id: postable.photos.first.id, formulas_attributes: [{id: postable.photos.first.formulas.first.id, _destroy: true }]]}}
-        expect(json_response['post']['photos'].first['formulas'].count).to eq(0)
+        patch :update, params: { id: postable.id, post: { photos_attributes: [{id: postable.photos.first.id, labels_attributes: [{ id: postable.photos.first.labels.first.id, formulas_attributes: [{id: postable.photos.first.labels.first.formulas.first.id, _destroy: true }]}]}]}}
+        expect(json_response['post']['photos'].first['labels'].first['formulas'].count).to eq(0)
       end
     end
 
