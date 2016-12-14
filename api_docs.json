@@ -1159,15 +1159,74 @@
               "id": 56,
               "created_at": "2016-12-11T16:18:02.544Z",
               "post": {
-                "id": 789,
-                "created_at": "2016-12-11T16:18:02.519Z",
-                "description": "Nam accusamus enim maxime suscipit odit est. Praesentium veniam voluptatem. Nesciunt molestias soluta repudiandae ut natus.",
-                "likes_count": 1,
-                "formulas": [
-
+                "id": 488,
+                "created_at": "2016-12-14T23:34:26.103Z",
+                "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                "likes_count": 0,
+                "comments_count": 0,
+                "photos": [
+                  {
+                    "id": 305,
+                    "created_at": "2016-12-14T23:34:26.105Z",
+                    "asset_url": "http:\/\/schimmel.name\/darien",
+                    "post_id": 488,
+                    "labels": [
+                      {
+                        "id": 254,
+                        "created_at": "2016-12-14T23:34:26.107Z",
+                        "position_top": 1,
+                        "position_left": 1,
+                        "tag": {
+                          "id": 318,
+                          "created_at": "2016-12-14T23:34:25.906Z",
+                          "name": "expedita",
+                          "url": null
+                        },
+                        "photo_id": 305,
+                        "formulas": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.109Z",
+                            "post_id": null,
+                            "service": {
+                              "id": 275,
+                              "created_at": "2016-12-14T23:34:25.927Z",
+                              "name": "Jenkins Group",
+                              "position": 1
+                            },
+                            "time": 1,
+                            "weight": 1,
+                            "volume": 1,
+                            "treatments": [
+                              {
+                                "id": 207,
+                                "created_at": "2016-12-14T23:34:26.111Z",
+                                "color": {
+                                  "id": 230,
+                                  "created_at": "2016-12-14T23:34:25.962Z",
+                                  "harmony_id": 242,
+                                  "code": "jdij2d390",
+                                  "start_hex": "996a96",
+                                  "end_hex": "41ffa9"
+                                },
+                                "weight": 1
+                              }
+                            ],
+                            "label_id": 254
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 ],
-                "labels": [
-
+                "videos": [
+                  {
+                    "id": 2,
+                    "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                    "post_id": 488,
+                    "created_at": "2016-12-14T23:34:26.114Z",
+                    "updated_at": "2016-12-14T23:34:26.114Z"
+                  }
                 ]
               },
               "user": {
@@ -1218,15 +1277,74 @@
               "id": 56,
               "created_at": "2016-12-11T16:18:02.544Z",
               "post": {
-                "id": 789,
-                "created_at": "2016-12-11T16:18:02.519Z",
-                "description": "Nam accusamus enim maxime suscipit odit est. Praesentium veniam voluptatem. Nesciunt molestias soluta repudiandae ut natus.",
-                "likes_count": 1,
-                "formulas": [
-
+                "id": 488,
+                "created_at": "2016-12-14T23:34:26.103Z",
+                "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                "likes_count": 0,
+                "comments_count": 0,
+                "photos": [
+                  {
+                    "id": 305,
+                    "created_at": "2016-12-14T23:34:26.105Z",
+                    "asset_url": "http:\/\/schimmel.name\/darien",
+                    "post_id": 488,
+                    "labels": [
+                      {
+                        "id": 254,
+                        "created_at": "2016-12-14T23:34:26.107Z",
+                        "position_top": 1,
+                        "position_left": 1,
+                        "tag": {
+                          "id": 318,
+                          "created_at": "2016-12-14T23:34:25.906Z",
+                          "name": "expedita",
+                          "url": null
+                        },
+                        "photo_id": 305,
+                        "formulas": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.109Z",
+                            "post_id": null,
+                            "service": {
+                              "id": 275,
+                              "created_at": "2016-12-14T23:34:25.927Z",
+                              "name": "Jenkins Group",
+                              "position": 1
+                            },
+                            "time": 1,
+                            "weight": 1,
+                            "volume": 1,
+                            "treatments": [
+                              {
+                                "id": 207,
+                                "created_at": "2016-12-14T23:34:26.111Z",
+                                "color": {
+                                  "id": 230,
+                                  "created_at": "2016-12-14T23:34:25.962Z",
+                                  "harmony_id": 242,
+                                  "code": "jdij2d390",
+                                  "start_hex": "996a96",
+                                  "end_hex": "41ffa9"
+                                },
+                                "weight": 1
+                              }
+                            ],
+                            "label_id": 254
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 ],
-                "labels": [
-
+                "videos": [
+                  {
+                    "id": 2,
+                    "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                    "post_id": 488,
+                    "created_at": "2016-12-14T23:34:26.114Z",
+                    "updated_at": "2016-12-14T23:34:26.114Z"
+                  }
                 ]
               },
               "user": {
@@ -1361,16 +1479,74 @@
               "body": "MyText",
               "url": "http://www.google.com",
               "post": {
-                "id": 824,
-                "created_at": "2016-12-11T16:28:31.905Z",
-                "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+                "id": 488,
+                "created_at": "2016-12-14T23:34:26.103Z",
+                "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
                 "likes_count": 0,
                 "comments_count": 0,
-                "formulas": [
-
+                "photos": [
+                  {
+                    "id": 305,
+                    "created_at": "2016-12-14T23:34:26.105Z",
+                    "asset_url": "http:\/\/schimmel.name\/darien",
+                    "post_id": 488,
+                    "labels": [
+                      {
+                        "id": 254,
+                        "created_at": "2016-12-14T23:34:26.107Z",
+                        "position_top": 1,
+                        "position_left": 1,
+                        "tag": {
+                          "id": 318,
+                          "created_at": "2016-12-14T23:34:25.906Z",
+                          "name": "expedita",
+                          "url": null
+                        },
+                        "photo_id": 305,
+                        "formulas": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.109Z",
+                            "post_id": null,
+                            "service": {
+                              "id": 275,
+                              "created_at": "2016-12-14T23:34:25.927Z",
+                              "name": "Jenkins Group",
+                              "position": 1
+                            },
+                            "time": 1,
+                            "weight": 1,
+                            "volume": 1,
+                            "treatments": [
+                              {
+                                "id": 207,
+                                "created_at": "2016-12-14T23:34:26.111Z",
+                                "color": {
+                                  "id": 230,
+                                  "created_at": "2016-12-14T23:34:25.962Z",
+                                  "harmony_id": 242,
+                                  "code": "jdij2d390",
+                                  "start_hex": "996a96",
+                                  "end_hex": "41ffa9"
+                                },
+                                "weight": 1
+                              }
+                            ],
+                            "label_id": 254
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 ],
-                "labels": [
-
+                "videos": [
+                  {
+                    "id": 2,
+                    "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                    "post_id": 488,
+                    "created_at": "2016-12-14T23:34:26.114Z",
+                    "updated_at": "2016-12-14T23:34:26.114Z"
+                  }
                 ]
               }
             }
@@ -1431,16 +1607,74 @@
             "body": "MyText",
             "url": "http://www.google.com",
             "post": {
-              "id": 824,
-              "created_at": "2016-12-11T16:28:31.905Z",
-              "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+              "id": 488,
+              "created_at": "2016-12-14T23:34:26.103Z",
+              "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
               "likes_count": 0,
               "comments_count": 0,
-              "formulas": [
-
+              "photos": [
+                {
+                  "id": 305,
+                  "created_at": "2016-12-14T23:34:26.105Z",
+                  "asset_url": "http:\/\/schimmel.name\/darien",
+                  "post_id": 488,
+                  "labels": [
+                    {
+                      "id": 254,
+                      "created_at": "2016-12-14T23:34:26.107Z",
+                      "position_top": 1,
+                      "position_left": 1,
+                      "tag": {
+                        "id": 318,
+                        "created_at": "2016-12-14T23:34:25.906Z",
+                        "name": "expedita",
+                        "url": null
+                      },
+                      "photo_id": 305,
+                      "formulas": [
+                        {
+                          "id": 207,
+                          "created_at": "2016-12-14T23:34:26.109Z",
+                          "post_id": null,
+                          "service": {
+                            "id": 275,
+                            "created_at": "2016-12-14T23:34:25.927Z",
+                            "name": "Jenkins Group",
+                            "position": 1
+                          },
+                          "time": 1,
+                          "weight": 1,
+                          "volume": 1,
+                          "treatments": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.111Z",
+                              "color": {
+                                "id": 230,
+                                "created_at": "2016-12-14T23:34:25.962Z",
+                                "harmony_id": 242,
+                                "code": "jdij2d390",
+                                "start_hex": "996a96",
+                                "end_hex": "41ffa9"
+                              },
+                              "weight": 1
+                            }
+                          ],
+                          "label_id": 254
+                        }
+                      ]
+                    }
+                  ]
+                }
               ],
-              "labels": [
-
+              "videos": [
+                {
+                  "id": 2,
+                  "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                  "post_id": 488,
+                  "created_at": "2016-12-14T23:34:26.114Z",
+                  "updated_at": "2016-12-14T23:34:26.114Z"
+                }
               ]
             }
           }
@@ -1511,16 +1745,74 @@
             "body": "MyText",
             "url" : "http://www.google.com",
             "post": {
-              "id": 824,
-              "created_at": "2016-12-11T16:28:31.905Z",
-              "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+              "id": 488,
+              "created_at": "2016-12-14T23:34:26.103Z",
+              "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
               "likes_count": 0,
               "comments_count": 0,
-              "formulas": [
-
+              "photos": [
+                {
+                  "id": 305,
+                  "created_at": "2016-12-14T23:34:26.105Z",
+                  "asset_url": "http:\/\/schimmel.name\/darien",
+                  "post_id": 488,
+                  "labels": [
+                    {
+                      "id": 254,
+                      "created_at": "2016-12-14T23:34:26.107Z",
+                      "position_top": 1,
+                      "position_left": 1,
+                      "tag": {
+                        "id": 318,
+                        "created_at": "2016-12-14T23:34:25.906Z",
+                        "name": "expedita",
+                        "url": null
+                      },
+                      "photo_id": 305,
+                      "formulas": [
+                        {
+                          "id": 207,
+                          "created_at": "2016-12-14T23:34:26.109Z",
+                          "post_id": null,
+                          "service": {
+                            "id": 275,
+                            "created_at": "2016-12-14T23:34:25.927Z",
+                            "name": "Jenkins Group",
+                            "position": 1
+                          },
+                          "time": 1,
+                          "weight": 1,
+                          "volume": 1,
+                          "treatments": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.111Z",
+                              "color": {
+                                "id": 230,
+                                "created_at": "2016-12-14T23:34:25.962Z",
+                                "harmony_id": 242,
+                                "code": "jdij2d390",
+                                "start_hex": "996a96",
+                                "end_hex": "41ffa9"
+                              },
+                              "weight": 1
+                            }
+                          ],
+                          "label_id": 254
+                        }
+                      ]
+                    }
+                  ]
+                }
               ],
-              "labels": [
-
+              "videos": [
+                {
+                  "id": 2,
+                  "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                  "post_id": 488,
+                  "created_at": "2016-12-14T23:34:26.114Z",
+                  "updated_at": "2016-12-14T23:34:26.114Z"
+                }
               ]
             }
           }
@@ -1591,16 +1883,74 @@
             "body": "MyText",
             "url" : "http://www.google.com",
             "post": {
-              "id": 824,
-              "created_at": "2016-12-11T16:28:31.905Z",
-              "description": "Et culpa aliquam beatae. Perspiciatis nihil quam amet vel iste sunt aut. Officiis autem qui non quis quibusdam deserunt.",
+              "id": 488,
+              "created_at": "2016-12-14T23:34:26.103Z",
+              "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
               "likes_count": 0,
               "comments_count": 0,
-              "formulas": [
-
+              "photos": [
+                {
+                  "id": 305,
+                  "created_at": "2016-12-14T23:34:26.105Z",
+                  "asset_url": "http:\/\/schimmel.name\/darien",
+                  "post_id": 488,
+                  "labels": [
+                    {
+                      "id": 254,
+                      "created_at": "2016-12-14T23:34:26.107Z",
+                      "position_top": 1,
+                      "position_left": 1,
+                      "tag": {
+                        "id": 318,
+                        "created_at": "2016-12-14T23:34:25.906Z",
+                        "name": "expedita",
+                        "url": null
+                      },
+                      "photo_id": 305,
+                      "formulas": [
+                        {
+                          "id": 207,
+                          "created_at": "2016-12-14T23:34:26.109Z",
+                          "post_id": null,
+                          "service": {
+                            "id": 275,
+                            "created_at": "2016-12-14T23:34:25.927Z",
+                            "name": "Jenkins Group",
+                            "position": 1
+                          },
+                          "time": 1,
+                          "weight": 1,
+                          "volume": 1,
+                          "treatments": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.111Z",
+                              "color": {
+                                "id": 230,
+                                "created_at": "2016-12-14T23:34:25.962Z",
+                                "harmony_id": 242,
+                                "code": "jdij2d390",
+                                "start_hex": "996a96",
+                                "end_hex": "41ffa9"
+                              },
+                              "weight": 1
+                            }
+                          ],
+                          "label_id": 254
+                        }
+                      ]
+                    }
+                  ]
+                }
               ],
-              "labels": [
-
+              "videos": [
+                {
+                  "id": 2,
+                  "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                  "post_id": 488,
+                  "created_at": "2016-12-14T23:34:26.114Z",
+                  "updated_at": "2016-12-14T23:34:26.114Z"
+                }
               ]
             }
           }
@@ -1801,15 +2151,74 @@
                 "id": 62,
                 "created_at": "2016-12-11T16:35:23.906Z",
                 "post": {
-                  "id": 841,
-                  "created_at": "2016-12-11T16:35:23.878Z",
-                  "description": "Nam impedit dolorem quas. Voluptatum sunt quo unde atque natus aut. Quaerat aperiam totam doloremque voluptas. Facere aut eius at consequatur corporis.",
-                  "likes_count": 1,
-                  "formulas": [
-
+                  "id": 488,
+                  "created_at": "2016-12-14T23:34:26.103Z",
+                  "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                  "likes_count": 0,
+                  "comments_count": 0,
+                  "photos": [
+                    {
+                      "id": 305,
+                      "created_at": "2016-12-14T23:34:26.105Z",
+                      "asset_url": "http:\/\/schimmel.name\/darien",
+                      "post_id": 488,
+                      "labels": [
+                        {
+                          "id": 254,
+                          "created_at": "2016-12-14T23:34:26.107Z",
+                          "position_top": 1,
+                          "position_left": 1,
+                          "tag": {
+                            "id": 318,
+                            "created_at": "2016-12-14T23:34:25.906Z",
+                            "name": "expedita",
+                            "url": null
+                          },
+                          "photo_id": 305,
+                          "formulas": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.109Z",
+                              "post_id": null,
+                              "service": {
+                                "id": 275,
+                                "created_at": "2016-12-14T23:34:25.927Z",
+                                "name": "Jenkins Group",
+                                "position": 1
+                              },
+                              "time": 1,
+                              "weight": 1,
+                              "volume": 1,
+                              "treatments": [
+                                {
+                                  "id": 207,
+                                  "created_at": "2016-12-14T23:34:26.111Z",
+                                  "color": {
+                                    "id": 230,
+                                    "created_at": "2016-12-14T23:34:25.962Z",
+                                    "harmony_id": 242,
+                                    "code": "jdij2d390",
+                                    "start_hex": "996a96",
+                                    "end_hex": "41ffa9"
+                                  },
+                                  "weight": 1
+                                }
+                              ],
+                              "label_id": 254
+                            }
+                          ]
+                        }
+                      ]
+                    }
                   ],
-                  "labels": [
-
+                  "videos": [
+                    {
+                      "id": 2,
+                      "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                      "post_id": 488,
+                      "created_at": "2016-12-14T23:34:26.114Z",
+                      "updated_at": "2016-12-14T23:34:26.114Z"
+                    }
                   ]
                 },
                 "user": {
@@ -1859,15 +2268,74 @@
                     "id": 62,
                     "created_at": "2016-12-11T16:35:23.906Z",
                     "post": {
-                      "id": 841,
-                      "created_at": "2016-12-11T16:35:23.878Z",
-                      "description": "Nam impedit dolorem quas. Voluptatum sunt quo unde atque natus aut. Quaerat aperiam totam doloremque voluptas. Facere aut eius at consequatur corporis.",
-                      "likes_count": 1,
-                      "formulas": [
-
+                      "id": 488,
+                      "created_at": "2016-12-14T23:34:26.103Z",
+                      "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                      "likes_count": 0,
+                      "comments_count": 0,
+                      "photos": [
+                        {
+                          "id": 305,
+                          "created_at": "2016-12-14T23:34:26.105Z",
+                          "asset_url": "http:\/\/schimmel.name\/darien",
+                          "post_id": 488,
+                          "labels": [
+                            {
+                              "id": 254,
+                              "created_at": "2016-12-14T23:34:26.107Z",
+                              "position_top": 1,
+                              "position_left": 1,
+                              "tag": {
+                                "id": 318,
+                                "created_at": "2016-12-14T23:34:25.906Z",
+                                "name": "expedita",
+                                "url": null
+                              },
+                              "photo_id": 305,
+                              "formulas": [
+                                {
+                                  "id": 207,
+                                  "created_at": "2016-12-14T23:34:26.109Z",
+                                  "post_id": null,
+                                  "service": {
+                                    "id": 275,
+                                    "created_at": "2016-12-14T23:34:25.927Z",
+                                    "name": "Jenkins Group",
+                                    "position": 1
+                                  },
+                                  "time": 1,
+                                  "weight": 1,
+                                  "volume": 1,
+                                  "treatments": [
+                                    {
+                                      "id": 207,
+                                      "created_at": "2016-12-14T23:34:26.111Z",
+                                      "color": {
+                                        "id": 230,
+                                        "created_at": "2016-12-14T23:34:25.962Z",
+                                        "harmony_id": 242,
+                                        "code": "jdij2d390",
+                                        "start_hex": "996a96",
+                                        "end_hex": "41ffa9"
+                                      },
+                                      "weight": 1
+                                    }
+                                  ],
+                                  "label_id": 254
+                                }
+                              ]
+                            }
+                          ]
+                        }
                       ],
-                      "labels": [
-
+                      "videos": [
+                        {
+                          "id": 2,
+                          "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                          "post_id": 488,
+                          "created_at": "2016-12-14T23:34:26.114Z",
+                          "updated_at": "2016-12-14T23:34:26.114Z"
+                        }
                       ]
                     },
                     "user": {
@@ -2075,67 +2543,74 @@
         },
         "response": {
           "posts": [{
-            "id": 1261,
-            "created_at": "2016-12-11T17:32:43.208Z",
-            "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
+            "id": 488,
+            "created_at": "2016-12-14T23:34:26.103Z",
+            "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
             "likes_count": 0,
             "comments_count": 0,
-            "labels": [
-              {
-                "id": 242,
-                "created_at": "2016-12-11T17:32:43.210Z",
-                "position_top": 1,
-                "position_left": 1,
-                "tag": {
-                  "id": 351,
-                  "created_at": "2016-12-11T17:32:43.053Z",
-                  "name": "quibusdam",
-                  "url": null
-                }
-              }
-            ],
             "photos": [
               {
-                "id": 332,
-                "created_at": "2016-12-11T17:32:43.212Z",
-                "asset_url": "http:\/\/ondricka.info\/emilio_pfannerstill",
-                "post_id": 1261,
-                "formulas": [
+                "id": 305,
+                "created_at": "2016-12-14T23:34:26.105Z",
+                "asset_url": "http:\/\/schimmel.name\/darien",
+                "post_id": 488,
+                "labels": [
                   {
-                    "id": 272,
-                    "created_at": "2016-12-11T17:32:43.214Z",
-                    "post_id": 1256,
-                    "service": {
-                      "id": 393,
-                      "created_at": "2016-12-11T17:32:43.069Z",
-                      "name": "Emard LLC",
-                      "position": 1
+                    "id": 254,
+                    "created_at": "2016-12-14T23:34:26.107Z",
+                    "position_top": 1,
+                    "position_left": 1,
+                    "tag": {
+                      "id": 318,
+                      "created_at": "2016-12-14T23:34:25.906Z",
+                      "name": "expedita",
+                      "url": null
                     },
-                    "time": 1,
-                    "weight": 1,
-                    "volume": 1,
-                    "treatments": [
+                    "photo_id": 305,
+                    "formulas": [
                       {
-                        "id": 272,
-                        "created_at": "2016-12-11T17:32:43.216Z",
-                        "color": {
-                          "id": 319,
-                          "created_at": "2016-12-11T17:32:43.111Z",
-                          "harmony_id": 347,
-                          "code": "jdij2d390",
-                          "start_hex": "a78659",
-                          "end_hex": "4e1416"
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.109Z",
+                        "post_id": null,
+                        "service": {
+                          "id": 275,
+                          "created_at": "2016-12-14T23:34:25.927Z",
+                          "name": "Jenkins Group",
+                          "position": 1
                         },
-                        "weight": 1
+                        "time": 1,
+                        "weight": 1,
+                        "volume": 1,
+                        "treatments": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.111Z",
+                            "color": {
+                              "id": 230,
+                              "created_at": "2016-12-14T23:34:25.962Z",
+                              "harmony_id": 242,
+                              "code": "jdij2d390",
+                              "start_hex": "996a96",
+                              "end_hex": "41ffa9"
+                            },
+                            "weight": 1
+                          }
+                        ],
+                        "label_id": 254
                       }
-                    ],
-                    "photo_id": 332
+                    ]
                   }
                 ]
               }
             ],
             "videos": [
-
+              {
+                "id": 2,
+                "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                "post_id": 488,
+                "created_at": "2016-12-14T23:34:26.114Z",
+                "updated_at": "2016-12-14T23:34:26.114Z"
+              }
             ]
           }
         ],
@@ -2163,52 +2638,52 @@
             "description" : "This is the body of the post",
             "required" : true
           },
-          "post[labels_attributes][0][tag_id]" : {
-            "type" : "integer",
-            "description" : "This is the id of the tag to associate the post with",
-            "required" : true
-          },
-          "post[labels_attributes][0][position_top]" : {
-            "type" : "integer",
-            "description" : "This is the position from the top to place the tag",
-            "required" : true
-          },
-          "post[labels_attributes][0][position_left]" : {
-            "type" : "integer",
-            "description" : "This is the position from the left to place the tag",
-            "required" : true
-          },
           "post[photos_attributes][asset_url]" : {
             "type" : "string",
             "description" : "This is the service of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][service_id]" : {
+          "post[photos_attributes][0][labels_attributes][0][tag_id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the tag to associate the post with",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_top]" : {
+            "type" : "integer",
+            "description" : "This is the position from the top to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_left]" : {
+            "type" : "integer",
+            "description" : "This is the position from the left to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][service_id]" : {
             "type" : "integer",
             "description" : "This is the service of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][weight]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][weight]" : {
             "type" : "integer",
             "description" : "This is the weight of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][volume]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][volume]" : {
             "type" : "integer",
             "description" : "This is the volume of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][time]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][time]" : {
             "type" : "integer",
             "description" : "This is the time of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][treatments_attributes][weight]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][weight]" : {
             "type" : "integer",
             "description" : "This is the weight of the formula treatment",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][treatments_attributes][color_id]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][color_id]" : {
             "type" : "integer",
             "description" : "This is the color id of the formula treatment",
             "required" : true
@@ -2216,67 +2691,74 @@
         },
         "response": {
           "post": {
-            "id": 1261,
-            "created_at": "2016-12-11T17:32:43.208Z",
-            "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
+            "id": 488,
+            "created_at": "2016-12-14T23:34:26.103Z",
+            "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
             "likes_count": 0,
             "comments_count": 0,
-            "labels": [
-              {
-                "id": 242,
-                "created_at": "2016-12-11T17:32:43.210Z",
-                "position_top": 1,
-                "position_left": 1,
-                "tag": {
-                  "id": 351,
-                  "created_at": "2016-12-11T17:32:43.053Z",
-                  "name": "quibusdam",
-                  "url": null
-                }
-              }
-            ],
             "photos": [
               {
-                "id": 332,
-                "created_at": "2016-12-11T17:32:43.212Z",
-                "asset_url": "http:\/\/ondricka.info\/emilio_pfannerstill",
-                "post_id": 1261,
-                "formulas": [
+                "id": 305,
+                "created_at": "2016-12-14T23:34:26.105Z",
+                "asset_url": "http:\/\/schimmel.name\/darien",
+                "post_id": 488,
+                "labels": [
                   {
-                    "id": 272,
-                    "created_at": "2016-12-11T17:32:43.214Z",
-                    "post_id": 1256,
-                    "service": {
-                      "id": 393,
-                      "created_at": "2016-12-11T17:32:43.069Z",
-                      "name": "Emard LLC",
-                      "position": 1
+                    "id": 254,
+                    "created_at": "2016-12-14T23:34:26.107Z",
+                    "position_top": 1,
+                    "position_left": 1,
+                    "tag": {
+                      "id": 318,
+                      "created_at": "2016-12-14T23:34:25.906Z",
+                      "name": "expedita",
+                      "url": null
                     },
-                    "time": 1,
-                    "weight": 1,
-                    "volume": 1,
-                    "treatments": [
+                    "photo_id": 305,
+                    "formulas": [
                       {
-                        "id": 272,
-                        "created_at": "2016-12-11T17:32:43.216Z",
-                        "color": {
-                          "id": 319,
-                          "created_at": "2016-12-11T17:32:43.111Z",
-                          "harmony_id": 347,
-                          "code": "jdij2d390",
-                          "start_hex": "a78659",
-                          "end_hex": "4e1416"
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.109Z",
+                        "post_id": null,
+                        "service": {
+                          "id": 275,
+                          "created_at": "2016-12-14T23:34:25.927Z",
+                          "name": "Jenkins Group",
+                          "position": 1
                         },
-                        "weight": 1
+                        "time": 1,
+                        "weight": 1,
+                        "volume": 1,
+                        "treatments": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.111Z",
+                            "color": {
+                              "id": 230,
+                              "created_at": "2016-12-14T23:34:25.962Z",
+                              "harmony_id": 242,
+                              "code": "jdij2d390",
+                              "start_hex": "996a96",
+                              "end_hex": "41ffa9"
+                            },
+                            "weight": 1
+                          }
+                        ],
+                        "label_id": 254
                       }
-                    ],
-                    "photo_id": 332
+                    ]
                   }
                 ]
               }
             ],
             "videos": [
-
+              {
+                "id": 2,
+                "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                "post_id": 488,
+                "created_at": "2016-12-14T23:34:26.114Z",
+                "updated_at": "2016-12-14T23:34:26.114Z"
+              }
             ]
           }
         }
@@ -2296,31 +2778,6 @@
             "description" : "This is the body of the post",
             "required" : true
           },
-          "post[labels_attributes][0][id]" : {
-            "type" : "integer",
-            "description" : "This is the id of the label to update",
-            "required" : true
-          },
-          "post[labels_attributes][0][_destroy]" : {
-            "type" : "integer",
-            "description" : "Set the _destroy flag to remove the label",
-            "required" : true
-          },
-          "post[labels_attributes][0][tag_id]" : {
-            "type" : "integer",
-            "description" : "This is the id of the tag to associate the post with",
-            "required" : true
-          },
-          "post[labels_attributes][0][position_top]" : {
-            "type" : "integer",
-            "description" : "This is the position from the top to place the tag",
-            "required" : true
-          },
-          "post[labels_attributes][0][position_left]" : {
-            "type" : "integer",
-            "description" : "This is the position from the left to place the tag",
-            "required" : true
-          },
           "post[photos_attributes][0][asset_url]" : {
             "type" : "string",
             "description" : "This is the service of the formula to add",
@@ -2336,52 +2793,77 @@
             "description" : "Set the destroy flag to delete teh photo",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][id]" : {
+          "post[photos_attributes][0][labels_attributes][0][id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the label to update",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][_destroy]" : {
+            "type" : "integer",
+            "description" : "Set the _destroy flag to remove the label",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][tag_id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the tag to associate the post with",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_top]" : {
+            "type" : "integer",
+            "description" : "This is the position from the top to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_left]" : {
+            "type" : "integer",
+            "description" : "This is the position from the left to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][id]" : {
             "type" : "integer",
             "description" : "This is id of the formula to update",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][_destroy]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][_destroy]" : {
             "type" : "integer",
             "description" : "Set the _destroy flag to delete teh formula from the photo",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][service_id]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][service_id]" : {
             "type" : "integer",
             "description" : "This is the service of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][weight]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][weight]" : {
             "type" : "integer",
             "description" : "This is the weight of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][volume]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][volume]" : {
             "type" : "integer",
             "description" : "This is the volume of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][time]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][time]" : {
             "type" : "integer",
             "description" : "This is the time of the formula to add",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][treatments_attributes][id]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][id]" : {
             "type" : "integer",
             "description" : "This is the id of the formula treatment",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][treatments_attributes][_destroy]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][_destroy]" : {
             "type" : "integer",
             "description" : "Set the _destroy flag to delete the treatment from the formula",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][treatments_attributes][weight]" : {
+          "post[photos_attributes][0][labels_attributes][0][photos_attributes][0][formulas_attributes][0][treatments_attributes][weight]" : {
             "type" : "integer",
             "description" : "This is the weight of the formula treatment",
             "required" : true
           },
-          "post[photos_attributes][0][formulas_attributes][0][treatments_attributes][color_id]" : {
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][color_id]" : {
             "type" : "integer",
             "description" : "This is the color id of the formula treatment",
             "required" : true
@@ -2389,67 +2871,74 @@
         },
         "response": {
           "post": {
-            "id": 1261,
-            "created_at": "2016-12-11T17:32:43.208Z",
-            "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
+            "id": 488,
+            "created_at": "2016-12-14T23:34:26.103Z",
+            "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
             "likes_count": 0,
             "comments_count": 0,
-            "labels": [
-              {
-                "id": 242,
-                "created_at": "2016-12-11T17:32:43.210Z",
-                "position_top": 1,
-                "position_left": 1,
-                "tag": {
-                  "id": 351,
-                  "created_at": "2016-12-11T17:32:43.053Z",
-                  "name": "quibusdam",
-                  "url": null
-                }
-              }
-            ],
             "photos": [
               {
-                "id": 332,
-                "created_at": "2016-12-11T17:32:43.212Z",
-                "asset_url": "http:\/\/ondricka.info\/emilio_pfannerstill",
-                "post_id": 1261,
-                "formulas": [
+                "id": 305,
+                "created_at": "2016-12-14T23:34:26.105Z",
+                "asset_url": "http:\/\/schimmel.name\/darien",
+                "post_id": 488,
+                "labels": [
                   {
-                    "id": 272,
-                    "created_at": "2016-12-11T17:32:43.214Z",
-                    "post_id": 1256,
-                    "service": {
-                      "id": 393,
-                      "created_at": "2016-12-11T17:32:43.069Z",
-                      "name": "Emard LLC",
-                      "position": 1
+                    "id": 254,
+                    "created_at": "2016-12-14T23:34:26.107Z",
+                    "position_top": 1,
+                    "position_left": 1,
+                    "tag": {
+                      "id": 318,
+                      "created_at": "2016-12-14T23:34:25.906Z",
+                      "name": "expedita",
+                      "url": null
                     },
-                    "time": 1,
-                    "weight": 1,
-                    "volume": 1,
-                    "treatments": [
+                    "photo_id": 305,
+                    "formulas": [
                       {
-                        "id": 272,
-                        "created_at": "2016-12-11T17:32:43.216Z",
-                        "color": {
-                          "id": 319,
-                          "created_at": "2016-12-11T17:32:43.111Z",
-                          "harmony_id": 347,
-                          "code": "jdij2d390",
-                          "start_hex": "a78659",
-                          "end_hex": "4e1416"
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.109Z",
+                        "post_id": null,
+                        "service": {
+                          "id": 275,
+                          "created_at": "2016-12-14T23:34:25.927Z",
+                          "name": "Jenkins Group",
+                          "position": 1
                         },
-                        "weight": 1
+                        "time": 1,
+                        "weight": 1,
+                        "volume": 1,
+                        "treatments": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.111Z",
+                            "color": {
+                              "id": 230,
+                              "created_at": "2016-12-14T23:34:25.962Z",
+                              "harmony_id": 242,
+                              "code": "jdij2d390",
+                              "start_hex": "996a96",
+                              "end_hex": "41ffa9"
+                            },
+                            "weight": 1
+                          }
+                        ],
+                        "label_id": 254
                       }
-                    ],
-                    "photo_id": 332
+                    ]
                   }
                 ]
               }
             ],
             "videos": [
-
+              {
+                "id": 2,
+                "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                "post_id": 488,
+                "created_at": "2016-12-14T23:34:26.114Z",
+                "updated_at": "2016-12-14T23:34:26.114Z"
+              }
             ]
           }
         }
@@ -3512,67 +4001,74 @@
         },
         "response": {
           "posts": [{
-            "id": 1261,
-            "created_at": "2016-12-11T17:32:43.208Z",
-            "description": "Dolorem delectus repellat aspernatur officiis unde cum. Nihil vero a et. Labore ad laudantium ea quasi. Consectetur aut dolorum.",
+            "id": 488,
+            "created_at": "2016-12-14T23:34:26.103Z",
+            "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
             "likes_count": 0,
             "comments_count": 0,
-            "labels": [
-              {
-                "id": 242,
-                "created_at": "2016-12-11T17:32:43.210Z",
-                "position_top": 1,
-                "position_left": 1,
-                "tag": {
-                  "id": 351,
-                  "created_at": "2016-12-11T17:32:43.053Z",
-                  "name": "quibusdam",
-                  "url": null
-                }
-              }
-            ],
             "photos": [
               {
-                "id": 332,
-                "created_at": "2016-12-11T17:32:43.212Z",
-                "asset_url": "http:\/\/ondricka.info\/emilio_pfannerstill",
-                "post_id": 1261,
-                "formulas": [
+                "id": 305,
+                "created_at": "2016-12-14T23:34:26.105Z",
+                "asset_url": "http:\/\/schimmel.name\/darien",
+                "post_id": 488,
+                "labels": [
                   {
-                    "id": 272,
-                    "created_at": "2016-12-11T17:32:43.214Z",
-                    "post_id": 1256,
-                    "service": {
-                      "id": 393,
-                      "created_at": "2016-12-11T17:32:43.069Z",
-                      "name": "Emard LLC",
-                      "position": 1
+                    "id": 254,
+                    "created_at": "2016-12-14T23:34:26.107Z",
+                    "position_top": 1,
+                    "position_left": 1,
+                    "tag": {
+                      "id": 318,
+                      "created_at": "2016-12-14T23:34:25.906Z",
+                      "name": "expedita",
+                      "url": null
                     },
-                    "time": 1,
-                    "weight": 1,
-                    "volume": 1,
-                    "treatments": [
+                    "photo_id": 305,
+                    "formulas": [
                       {
-                        "id": 272,
-                        "created_at": "2016-12-11T17:32:43.216Z",
-                        "color": {
-                          "id": 319,
-                          "created_at": "2016-12-11T17:32:43.111Z",
-                          "harmony_id": 347,
-                          "code": "jdij2d390",
-                          "start_hex": "a78659",
-                          "end_hex": "4e1416"
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.109Z",
+                        "post_id": null,
+                        "service": {
+                          "id": 275,
+                          "created_at": "2016-12-14T23:34:25.927Z",
+                          "name": "Jenkins Group",
+                          "position": 1
                         },
-                        "weight": 1
+                        "time": 1,
+                        "weight": 1,
+                        "volume": 1,
+                        "treatments": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.111Z",
+                            "color": {
+                              "id": 230,
+                              "created_at": "2016-12-14T23:34:25.962Z",
+                              "harmony_id": 242,
+                              "code": "jdij2d390",
+                              "start_hex": "996a96",
+                              "end_hex": "41ffa9"
+                            },
+                            "weight": 1
+                          }
+                        ],
+                        "label_id": 254
                       }
-                    ],
-                    "photo_id": 332
+                    ]
                   }
                 ]
               }
             ],
             "videos": [
-
+              {
+                "id": 2,
+                "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                "post_id": 488,
+                "created_at": "2016-12-14T23:34:26.114Z",
+                "updated_at": "2016-12-14T23:34:26.114Z"
+              }
             ]
           }
         ],

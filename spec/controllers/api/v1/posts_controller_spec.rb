@@ -36,6 +36,7 @@ describe Api::V1::PostsController do
         labels_attributes = build(:label).attributes
         formulas_attributes = build(:formula, service: service).attributes
         treatment_attributes = build(:treatment, color: color).attributes
+        post_params['videos_attributes'] = build(:video).attributes
         post_params['photos_attributes'] = build(:photo).attributes
         post_params['photos_attributes']['labels_attributes'] = labels_attributes
         post_params['photos_attributes']['labels_attributes']['formulas_attributes'] = formulas_attributes
@@ -46,6 +47,7 @@ describe Api::V1::PostsController do
         expect(json_response['post']['photos'].first['labels'].count).to eq(1)
         expect(json_response['post']['photos'].first['labels'].first['formulas'].count).to eq(1)
         expect(json_response['post']['photos'].first['labels'].first['formulas'].first['treatments'].count).to eq(1)
+        puts response.body
       end
     end
 

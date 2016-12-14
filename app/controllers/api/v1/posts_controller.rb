@@ -39,7 +39,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:description, photos_attributes: [:asset_url, :id, :_destroy, labels_attributes: [:id, :_destroy, :post_id, :tag_id, :position_top, :position_left, formulas_attributes: [:id, :_destroy, :service_id, :time, :weight, :volume, :position_top, :position_left, :post_id, treatments_attributes: [:color_id, :weight, :id, :_destroy]]]])
+    params.require(:post).permit(:description, videos_attributes: [:id, :_destroy, :asset_url, :post_id], photos_attributes: [:asset_url, :id, :_destroy, labels_attributes: [:id, :_destroy, :post_id, :tag_id, :position_top, :position_left, formulas_attributes: [:id, :_destroy, :service_id, :time, :weight, :volume, :position_top, :position_left, :post_id, treatments_attributes: [:color_id, :weight, :id, :_destroy]]]])
   end
 
 end
