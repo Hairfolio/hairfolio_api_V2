@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   belongs_to :salon
+  belongs_to :brand
   has_many :authentications, dependent: :destroy
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
   has_many :followers, through: :follower_relationships, source: :follower
@@ -31,7 +32,7 @@ class User < ApplicationRecord
 
   before_validation :set_default_account_type
 
-  scope :search, -> (query) { includes(:salon).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
+  scope :search, -> (query) { includes(:salon, :brand).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?) or (brands.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
 
 
   def friends
