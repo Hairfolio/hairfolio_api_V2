@@ -47,7 +47,6 @@ describe Api::V1::PostsController do
         expect(json_response['post']['photos'].first['labels'].count).to eq(1)
         expect(json_response['post']['photos'].first['labels'].first['formulas'].count).to eq(1)
         expect(json_response['post']['photos'].first['labels'].first['formulas'].first['treatments'].count).to eq(1)
-        puts response.body
       end
     end
 

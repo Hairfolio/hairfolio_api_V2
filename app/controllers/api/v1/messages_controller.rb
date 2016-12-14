@@ -1,7 +1,7 @@
 class Api::V1::MessagesController < ApplicationController
   before_action :authenticate_with_token!
   before_action :set_conversation
-  before_action :set_message, only: [:show, :update, :destroy]
+  before_action :set_message, only: [:show, :update, :destroy, :read]
 
   def index
     messages = @conversation.messages.order('created_at desc').page(params[:page]).per(20)
@@ -33,6 +33,11 @@ class Api::V1::MessagesController < ApplicationController
   def destroy
     @message.destroy
     head 204
+  end
+
+  def read
+    @message.update(read: true)
+    render json: @message
   end
 
   private

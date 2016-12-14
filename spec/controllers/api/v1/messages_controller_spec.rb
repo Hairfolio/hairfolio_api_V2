@@ -71,6 +71,14 @@ describe Api::V1::MessagesController do
     end
   end
 
+  describe 'POST #read' do
+    it 'should create the contact with a phone and email' do
+      message = create(:message, conversation: conversation)
+      post :read, params: { conversation_id: conversation.id, id: message.id }
+      expect(json_response['message']['read']).to eq(true)
+    end
+  end
+
   describe 'DELETE #destroy' do
     it 'should delete the contact' do
       message = create(:message, conversation: conversation)

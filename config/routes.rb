@@ -32,7 +32,9 @@ Rails.application.routes.draw do
         resources :notifications, only: [:index, :destroy]
       end
       resources :conversations, except: [:edit, :show] do
-        resources :messages, except: [:edit]
+        resources :messages, except: [:edit] do
+          member { post :read }
+        end
       end
       resources :sessions, only: [:create, :destroy] do
         collection do
