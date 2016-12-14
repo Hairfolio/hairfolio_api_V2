@@ -598,7 +598,7 @@ ul.vertical-tabs-list li {
 .parameter .param {
     display: block;
     float: left;
-    width: 220px;
+    width: 500px;
     color: #333;
     font-weight: bold;
 }

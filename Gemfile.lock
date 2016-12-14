@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tylerhoran/calamum
-  revision: 88d6916b89933a67911cc327860c07c2ae019d00
+  revision: 24d44139d36d1962c81a51e6565ca3f6951ec945
   specs:
     calamum (1.2.2)
       mixlib-cli
