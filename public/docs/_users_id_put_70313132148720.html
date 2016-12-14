@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>/users</title>
+    <title>/users/:id</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css" />
   </head>
@@ -23,13 +23,13 @@
 
       <div id="content-outer">
         <div class="page-header">
-          <h1>POST /users</h1>
+          <h1>PUT /users/:id</h1>
         </div>
 
         <div id="content-main">
           <div class="field field-el">
             <h2>Description</h2>
-            <p>Creating a user</p>
+            <p>Updating a user</p>
           </div>
 
 	  
@@ -126,6 +126,20 @@
                 </div>
               
                 <div class="parameter">
+                  <span class="param">user[salon_attributes][id]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The id of the salon to update</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][_destroy]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>Set the destroy tag to delete the salon</p>
+                </div>
+              
+                <div class="parameter">
                   <span class="param">user[salon_attributes][name]
                     <span>required, type: string</span>
                   </span>
@@ -134,51 +148,58 @@
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][address]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The address of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][city]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The city of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][state]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The state of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][zip]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The zip of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][phone]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The phone of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][website]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The website of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[experience_ids]
-                    <span>required, type: array</span>
+                    <span>optional, type: array</span>
                   </span>
                   <p>The ids of the expereinces</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[certificate_ids]
+                    <span>optional, type: array</span>
+                  </span>
+                  <p>The ids of the certificates</p>
                 </div>
               
             </div>
@@ -190,7 +211,7 @@
             <div class="group-example-request">
               <h2>Example Response</h2>
               <div class="content">
-                <pre class="prettyprint">{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"users": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 3268,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"auth_token": "AkDUSRgCBwdiFm6e37S7",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email": "leila@hodkiewicz.org",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Adah",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "Collier",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"account_type": "consumer",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"is_following": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"salon": null,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_url": "https://robohash.org/porroullamnemo.png?size=300x300&set=set1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_cloudinary_id": "1746",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_facebook": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_twitter": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_instagram": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_pinterest": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_tumblr": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"years_exp": 1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"likes": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"educations": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"offerings": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"experiences": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</pre>
+                <pre class="prettyprint">{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"users": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 3268,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"auth_token": "AkDUSRgCBwdiFm6e37S7",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email": "leila@hodkiewicz.org",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Adah",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "Collier",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"account_type": "consumer",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"is_following": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"salon": null,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_url": "https://robohash.org/porroullamnemo.png?size=300x300&set=set1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_cloudinary_id": "1746",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_facebook": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_twitter": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_instagram": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_pinterest": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_tumblr": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"years_exp": 1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"likes": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"educations": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"offerings": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"experiences": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"certificates": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</pre>
               </div>
             </div>
           
@@ -207,7 +228,7 @@
                 </tr>
                 <tr>
                   <td>HTTP Method</td>
-                  <td>POST</td>
+                  <td>PUT</td>
                 </tr>
                 <tr>
                   <td>Login Required</td>

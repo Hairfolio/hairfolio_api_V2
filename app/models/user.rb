@@ -33,6 +33,11 @@ class User < ApplicationRecord
 
   scope :search, -> (query) { includes(:salon).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
 
+
+  def friends
+    following & followers
+  end
+
   def following?(user)
     self.following.include?(user)
   end

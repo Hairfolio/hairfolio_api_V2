@@ -951,6 +951,11 @@
             "type" : "boolean",
             "description" : "Setting following to true will show the users the user is following instead of their followers",
             "required" : false
+          },
+          "friends" : {
+            "type" : "boolean",
+            "description" : "Setting friends to true will show the users the user is following who follow them back",
+            "required" : false
           }
         },
         "response": {
