@@ -24,6 +24,11 @@ class Api::V1::ConversationsController < ApplicationController
     end
   end
 
+  def read
+    @conversation.messages.where.not(user: current_user).update_all(read: true)
+    render json: @conversation, status: 201
+  end
+
   def destroy
     @conversation.destroy
     head 204

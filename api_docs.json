@@ -729,6 +729,26 @@
      },
      {
        "action" : "POST",
+       "uri" : "\/conversations\/:id\/read",
+       "authentication" : false,
+       "description" : "Mark all messages as read that the user didn't send",
+       "response" : {
+         "conversation":
+          {
+            "id":160,
+            "sender_id":2331,
+            "created_at":"2016-12-10T00:38:45.377Z",
+            "last_message":null,
+            "unread_messages" : 0,
+            "recipient_ids":
+              [
+                2333
+                ]
+              }
+          }
+     },
+     {
+       "action" : "POST",
        "uri" : "\/conversations\/:id",
        "authentication" : false,
        "description" : "Updating a conversation to add or delete users",

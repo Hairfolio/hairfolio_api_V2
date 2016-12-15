@@ -18,6 +18,16 @@ describe Api::V1::ConversationsController do
     end
   end
 
+  describe "POST #read" do
+
+    it 'should mark conversation messages as read' do
+      conversation = create(:conversation, sender: user)
+      message = create(:message, conversation: conversation)
+      post :read, params: { id: conversation.id }
+      expect(json_response['conversation']['last_message']['read']).to eq(true)
+    end
+  end
+
   describe 'POST #create' do
     describe 'with valid fields' do
       it 'should create the contact with a phone and email' do

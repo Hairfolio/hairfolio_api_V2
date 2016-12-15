@@ -34,6 +34,7 @@ Rails.application.routes.draw do
         resources :notifications, only: [:index, :destroy]
       end
       resources :conversations, except: [:edit, :show] do
+        member { post :read }
         resources :messages, except: [:edit] do
           member { post :read }
         end
