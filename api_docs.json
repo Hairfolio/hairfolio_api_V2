@@ -43,6 +43,13 @@
         "uri" : "\/brands",
         "authentication" : true,
         "description" : "Getting available brands",
+        "params" : {
+          "service_id" : {
+            "type" : "integer",
+            "description" : "The id of the service",
+            "required" : false
+          },
+        },
         "response" : {
           "brands" :
             [
