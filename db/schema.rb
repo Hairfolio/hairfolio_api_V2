@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215032629) do
+ActiveRecord::Schema.define(version: 20161215154048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20161215032629) do
     t.string   "state"
     t.string   "zipcode"
     t.string   "photo_url"
+    t.string   "asset_url"
     t.index ["user_id"], name: "index_contacts_on_user_id", using: :btree
   end
 

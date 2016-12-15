@@ -1,5 +1,5 @@
 class ContactSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :first_name, :last_name, :company, :address, :city, :state, :zipcode
+  attributes :id, :created_at, :first_name, :last_name, :company, :address, :city, :state, :zipcode, :asset_url
   has_many :posts
   has_many :emails
   has_many :phones
