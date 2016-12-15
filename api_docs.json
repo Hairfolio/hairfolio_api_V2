@@ -642,6 +642,7 @@
               "id": 153,
               "sender_id": 2303,
               "created_at": "2016-12-10T00:33:50.854Z",
+              "unread_count" : 0,
               "last_message": {
                 "id": 176,
                 "user": {
@@ -711,6 +712,7 @@
             "sender_id":2331,
             "created_at":"2016-12-10T00:38:45.377Z",
             "last_message":null,
+            "unread_count" : 0,
             "recipient_ids":
               [
                 2333
@@ -737,6 +739,7 @@
             "sender_id":2331,
             "created_at":"2016-12-10T00:38:45.377Z",
             "last_message":null,
+            "unread_count" : 0,
             "recipient_ids":
               [
                 2333, 2092
@@ -1477,6 +1480,7 @@
               "created_at": "2016-12-11T16:28:31.913Z",
               "conversation_id": 194,
               "body": "MyText",
+              "read" : true,
               "url": "http://www.google.com",
               "post": {
                 "id": 488,
@@ -1605,6 +1609,7 @@
             "created_at": "2016-12-11T16:28:31.913Z",
             "conversation_id": 194,
             "body": "MyText",
+            "read" : true,
             "url": "http://www.google.com",
             "post": {
               "id": 488,
@@ -1743,6 +1748,7 @@
             "created_at": "2016-12-11T16:28:31.913Z",
             "conversation_id": 194,
             "body": "MyText",
+            "read" : true,
             "url" : "http://www.google.com",
             "post": {
               "id": 488,
@@ -1881,6 +1887,7 @@
             "created_at": "2016-12-11T16:28:31.913Z",
             "conversation_id": 194,
             "body": "MyText",
+            "read" : true,
             "url" : "http://www.google.com",
             "post": {
               "id": 488,
