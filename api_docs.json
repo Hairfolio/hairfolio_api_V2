@@ -48,7 +48,7 @@
             "type" : "integer",
             "description" : "The id of the service",
             "required" : false
-          },
+          }
         },
         "response" : {
           "brands" :
