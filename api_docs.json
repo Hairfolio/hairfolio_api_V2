@@ -3659,6 +3659,20 @@
       },
       {
         "action": "GET",
+        "uri": "\/tags\/:id\/posts",
+        "authentication" : true,
+        "description": "Getting posts for that particular tag",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "posts": [
+          ]
+        }
+      },
+      {
+        "action": "GET",
         "uri": "\/tags\/:id",
         "authentication" : true,
         "description": "Getting a tag",
