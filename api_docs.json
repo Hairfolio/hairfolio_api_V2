@@ -3614,6 +3614,20 @@
           "Accept": "application\/vnd.hairfolio.v1",
           "Content-Type": "application\/json"
         },
+        "params" : {
+          "q" : {
+            "type" : "string",
+            "description" : "the name of the tag to search",
+            "required" : false
+
+          },
+          "popular" : {
+            "type" : "boolean",
+            "description" : "returning only popular tags",
+            "required" : false
+
+          }
+        },
         "response" : {
           "tags": [
             {
