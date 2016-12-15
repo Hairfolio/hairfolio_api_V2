@@ -1,4 +1,5 @@
 class Api::V1::TagsController < ApplicationController
+  before_action :set_tag, only: [:show, :posts]
 
   def index
     tags = Tag.where(nil)
@@ -9,8 +10,12 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def show
-    tag = Tag.find(params[:id])
-    render json: tag
+    render json: @tag
+  end
+
+  def posts
+    posts = Post.where(id: @tag.labels.pluck(:post_id)).page(params[:page]).per(20)
+    render json: posts, meta: pagination_dict(posts)
   end
 
   def create
@@ -23,6 +28,10 @@ class Api::V1::TagsController < ApplicationController
   end
 
   private
+
+  def set_tag
+    @tag = Tag.find(params[:id])
+  end
 
   def tag_params
     params.require(:tag).permit(:name, :url)

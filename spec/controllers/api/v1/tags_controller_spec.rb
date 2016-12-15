@@ -50,4 +50,13 @@ describe Api::V1::TagsController do
       end
     end
   end
+
+  describe "GET #posts" do
+    it 'should display available posts for the tags' do
+      label = create(:label, tag: tag)
+      get :posts, params: { id: tag.id }
+      expect(json_response['posts'].count).to eq(1)
+    end
+
+  end
 end

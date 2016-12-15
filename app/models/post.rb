@@ -10,4 +10,5 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :photos, allow_destroy: true
   accepts_nested_attributes_for :videos, allow_destroy: true
   scope :popular, -> { where('created_at > ?', 7.days.ago).order('likes_count desc') }
+  scope :favorites, -> (user) { where(id: user.likes.pluck(:post_id))}
 end

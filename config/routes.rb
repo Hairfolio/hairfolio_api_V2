@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       root to: 'home#index', as: 'api_home'
       resources :brands, only: [:index, :show]
       resources :services, only: [:index, :show]
-      resources :tags, only: [:index, :show, :create]
+      resources :tags, only: [:index, :show, :create] do
+        member { get :posts }
+      end
       resources :categories, only: [:index]
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index]
