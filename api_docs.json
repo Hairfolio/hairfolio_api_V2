@@ -3898,7 +3898,7 @@
           },
           "user[account_type]" : {
             "type" : "string",
-            "description" : "The user account_type ( 'consumer', 'owner', 'stylist', 'brand')",
+            "description" : "The user account_type ( 'consumer', 'owner', 'stylist', 'ambassador')",
             "required" : true
           },
           "user[password]" : {

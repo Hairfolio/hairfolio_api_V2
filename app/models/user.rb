@@ -26,7 +26,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :educations, allow_destroy: true
   accepts_nested_attributes_for :offerings, allow_destroy: true
 
-  enum account_type: [:consumer, :stylist, :brand, :owner]
+  enum account_type: [:consumer, :stylist, :ambassador, :owner]
 
   before_create :generate_authentication_token!
 
