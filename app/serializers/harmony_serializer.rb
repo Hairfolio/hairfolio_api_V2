@@ -3,6 +3,6 @@ class HarmonySerializer < ActiveModel::Serializer
   has_many :colors
 
   def line
-    LineSerializer.new(object.line).serializable_hash
+    LineSerializer.new(object.line, {scope: scope}).serializable_hash
   end
 end

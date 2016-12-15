@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-15T08:02:51-08:00">2016-12-15T08:02:51-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-15T08:31:32-08:00">2016-12-15T08:31:32-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.95
+         2.06
        </span>
     </span> hits/line)
   </h2>
@@ -297,7 +297,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>43.6</td>
+        <td>60.0</td>
       </tr>
       
       <tr>
@@ -397,7 +397,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>1.2</td>
+        <td>10.3</td>
       </tr>
       
       <tr>
@@ -6376,8 +6376,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="138" data-linenumber="4">
-          <span class="hits">138</span>
+        <li class="covered" data-hits="212" data-linenumber="4">
+          <span class="hits">212</span>
           
           <code class="ruby">    if session[&quot;warden.user.user.key&quot;]</code>
         </li>
@@ -6394,8 +6394,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="123" data-linenumber="7">
-          <span class="hits">123</span>
+        <li class="covered" data-hits="197" data-linenumber="7">
+          <span class="hits">197</span>
           
           <code class="ruby">      @current_user ||= request.headers[&#39;Authorization&#39;] ? User.find_by(auth_token: request.headers[&#39;Authorization&#39;]) : nil</code>
         </li>
@@ -7144,8 +7144,8 @@
           <code class="ruby">  has_many :messages, dependent: :destroy</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="57" data-linenumber="6">
+          <span class="hits">57</span>
           
           <code class="ruby">  scope :participant, -&gt; (user) { joins(:messages).where(messages: { user: user}) }</code>
         </li>
@@ -8773,7 +8773,7 @@
         <li class="covered" data-hits="3" data-linenumber="5">
           <span class="hits">3</span>
           
-          <code class="ruby">    UserSerializer.new(object.user).serializable_hash</code>
+          <code class="ruby">    UserSerializer.new(object.user, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -8887,7 +8887,7 @@
         <li class="covered" data-hits="3" data-linenumber="5">
           <span class="hits">3</span>
           
-          <code class="ruby">    MessageSerializer.new(object.messages.last).serializable_hash if object.messages.any?</code>
+          <code class="ruby">    MessageSerializer.new(object.messages.last, {scope: scope}).serializable_hash if object.messages.any?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -8911,7 +8911,7 @@
         <li class="covered" data-hits="3" data-linenumber="9">
           <span class="hits">3</span>
           
-          <code class="ruby">    scope &amp;&amp; scope.current_user ? object.messages.where(read: false).where(&#39;user_id != ?&#39;, scope.current_user.id) : 0</code>
+          <code class="ruby">    scope &amp;&amp; scope.current_user ? object.messages.where(read: false).where(&#39;user_id != ?&#39;, scope.current_user.id).length : 0</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -9199,7 +9199,7 @@
         <li class="covered" data-hits="4" data-linenumber="5">
           <span class="hits">4</span>
           
-          <code class="ruby">    UserSerializer.new(object.follower).serializable_hash</code>
+          <code class="ruby">    UserSerializer.new(object.follower, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -9223,7 +9223,7 @@
         <li class="covered" data-hits="4" data-linenumber="9">
           <span class="hits">4</span>
           
-          <code class="ruby">    UserSerializer.new(object.following).serializable_hash</code>
+          <code class="ruby">    UserSerializer.new(object.following, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -9283,7 +9283,7 @@
         <li class="covered" data-hits="5" data-linenumber="5">
           <span class="hits">5</span>
           
-          <code class="ruby">    ServiceSerializer.new(object.service).serializable_hash if object.service</code>
+          <code class="ruby">    ServiceSerializer.new(object.service, {scope: scope}).serializable_hash if object.service</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -9307,7 +9307,7 @@
         <li class="covered" data-hits="9" data-linenumber="9">
           <span class="hits">9</span>
           
-          <code class="ruby">    object.treatments.map { |t| TreatmentSerializer.new(t).serializable_hash }</code>
+          <code class="ruby">    object.treatments.map { |t| TreatmentSerializer.new(t, {scope: scope}).serializable_hash }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -9373,7 +9373,7 @@
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">    LineSerializer.new(object.line).serializable_hash</code>
+          <code class="ruby">    LineSerializer.new(object.line, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -9463,7 +9463,7 @@
         <li class="covered" data-hits="6" data-linenumber="10">
           <span class="hits">6</span>
           
-          <code class="ruby">    TagSerializer.new(object.tag).serializable_hash</code>
+          <code class="ruby">    TagSerializer.new(object.tag, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -9523,7 +9523,7 @@
         <li class="covered" data-hits="6" data-linenumber="5">
           <span class="hits">6</span>
           
-          <code class="ruby">    PostSerializer.new(object.post).serializable_hash</code>
+          <code class="ruby">    PostSerializer.new(object.post, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -9547,7 +9547,7 @@
         <li class="covered" data-hits="6" data-linenumber="9">
           <span class="hits">6</span>
           
-          <code class="ruby">    UserNestedSerializer.new(object.user).serializable_hash</code>
+          <code class="ruby">    UserNestedSerializer.new(object.user, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -9637,7 +9637,7 @@
         <li class="covered" data-hits="4" data-linenumber="9">
           <span class="hits">4</span>
           
-          <code class="ruby">    BrandSerializer.new(object.brand).serializable_hash</code>
+          <code class="ruby">    BrandSerializer.new(object.brand, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -9697,7 +9697,7 @@
         <li class="covered" data-hits="8" data-linenumber="5">
           <span class="hits">8</span>
           
-          <code class="ruby">    UserSerializer.new(object.user).serializable_hash</code>
+          <code class="ruby">    UserSerializer.new(object.user, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -9721,7 +9721,7 @@
         <li class="covered" data-hits="8" data-linenumber="9">
           <span class="hits">8</span>
           
-          <code class="ruby">    PostSerializer.new(object.post).serializable_hash if object.post</code>
+          <code class="ruby">    PostSerializer.new(object.post, {scope: scope}).serializable_hash if object.post</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -9793,7 +9793,7 @@
         <li class="covered" data-hits="4" data-linenumber="7">
           <span class="hits">4</span>
           
-          <code class="ruby">      UserSerializer.new(object.notifiable.follower).serializable_hash</code>
+          <code class="ruby">      UserSerializer.new(object.notifiable.follower, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -9805,7 +9805,7 @@
         <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">      UserSerializer.new(object.notifiable.user).serializable_hash</code>
+          <code class="ruby">      UserSerializer.new(object.notifiable.user, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -9835,7 +9835,7 @@
         <li class="covered" data-hits="6" data-linenumber="14">
           <span class="hits">6</span>
           
-          <code class="ruby">    UserSerializer.new(object.user).serializable_hash</code>
+          <code class="ruby">    UserSerializer.new(object.user, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -9895,7 +9895,7 @@
         <li class="covered" data-hits="4" data-linenumber="24">
           <span class="hits">4</span>
           
-          <code class="ruby">      FollowSerializer.new(object.notifiable).serializable_hash</code>
+          <code class="ruby">      FollowSerializer.new(object.notifiable, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
@@ -9907,7 +9907,7 @@
         <li class="covered" data-hits="2" data-linenumber="26">
           <span class="hits">2</span>
           
-          <code class="ruby">      LikeSerializer.new(object.notifiable).serializable_hash</code>
+          <code class="ruby">      LikeSerializer.new(object.notifiable, {scope: scope}).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -10009,7 +10009,7 @@
         <li class="covered" data-hits="12" data-linenumber="5">
           <span class="hits">12</span>
           
-          <code class="ruby">    object.labels.map {|f| LabelSerializer.new(f).serializable_hash}</code>
+          <code class="ruby">    object.labels.map {|f| LabelSerializer.new(f, {scope: scope}).serializable_hash}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -10291,7 +10291,7 @@
         <li class="covered" data-hits="4" data-linenumber="5">
           <span class="hits">4</span>
           
-          <code class="ruby">    ColorSerializer.new(object.color).serializable_hash if object.color</code>
+          <code class="ruby">    ColorSerializer.new(object.color, {scope: scope}).serializable_hash if object.color</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -10423,7 +10423,7 @@
         <li class="covered" data-hits="6" data-linenumber="17">
           <span class="hits">6</span>
           
-          <code class="ruby">    SalonSerializer.new(object.salon).serializable_hash if object.salon</code>
+          <code class="ruby">    SalonSerializer.new(object.salon, {scope: scope}).serializable_hash if object.salon</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -10447,7 +10447,7 @@
         <li class="covered" data-hits="6" data-linenumber="21">
           <span class="hits">6</span>
           
-          <code class="ruby">    BrandSerializer.new(object.brand).serializable_hash if object.brand</code>
+          <code class="ruby">    BrandSerializer.new(object.brand, {scope: scope}).serializable_hash if object.brand</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -10513,7 +10513,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :career_opportunity</code>
+          <code class="ruby">  attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :career_opportunity, :unread_messages</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -10609,7 +10609,7 @@
         <li class="covered" data-hits="55" data-linenumber="18">
           <span class="hits">55</span>
           
-          <code class="ruby">    SalonSerializer.new(object.salon).serializable_hash if object.salon</code>
+          <code class="ruby">    SalonSerializer.new(object.salon, {scope: scope}).serializable_hash if object.salon</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -10633,7 +10633,7 @@
         <li class="covered" data-hits="55" data-linenumber="22">
           <span class="hits">55</span>
           
-          <code class="ruby">    BrandSerializer.new(object.brand).serializable_hash if object.brand</code>
+          <code class="ruby">    BrandSerializer.new(object.brand, {scope: scope}).serializable_hash if object.brand</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">

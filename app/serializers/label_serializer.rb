@@ -7,6 +7,6 @@ class LabelSerializer < ActiveModel::Serializer
   end
 
   def tag
-    TagSerializer.new(object.tag).serializable_hash
+    TagSerializer.new(object.tag, {scope: scope}).serializable_hash
   end
 end

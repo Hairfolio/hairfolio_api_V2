@@ -2,11 +2,11 @@ class ConversationSerializer < ActiveModel::Serializer
   attributes :id, :sender_id, :created_at, :last_message, :recipient_ids, :unread_count
 
   def last_message
-    MessageSerializer.new(object.messages.last).serializable_hash if object.messages.any?
+    MessageSerializer.new(object.messages.last, {scope: scope}).serializable_hash if object.messages.any?
   end
 
   def unread_count
-    scope && scope.current_user ? object.messages.where(read: false).where('user_id != ?', scope.current_user.id) : 0
+    scope && scope.current_user ? object.messages.where(read: false).where('user_id != ?', scope.current_user.id).length : 0
   end
 
   def recipient_ids

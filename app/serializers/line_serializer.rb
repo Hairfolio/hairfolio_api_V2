@@ -6,6 +6,6 @@ class LineSerializer < ActiveModel::Serializer
   end
 
   def brand
-    BrandSerializer.new(object.brand).serializable_hash
+    BrandSerializer.new(object.brand, {scope: scope}).serializable_hash
   end
 end

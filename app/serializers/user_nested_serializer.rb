@@ -14,11 +14,11 @@ class UserNestedSerializer < ActiveModel::Serializer
   end
 
   def salon
-    SalonSerializer.new(object.salon).serializable_hash if object.salon
+    SalonSerializer.new(object.salon, {scope: scope}).serializable_hash if object.salon
   end
 
   def brand
-    BrandSerializer.new(object.brand).serializable_hash if object.brand
+    BrandSerializer.new(object.brand, {scope: scope}).serializable_hash if object.brand
   end
 
   def is_following
