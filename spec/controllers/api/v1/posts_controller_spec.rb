@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Api::V1::PostsController do
 
   let(:user) { create(:user) }
-  let(:postable) { create(:post) }
+  let(:postable) { create(:post, user: user) }
   let(:service) { create(:service) }
   let(:color) { create(:color) }
 

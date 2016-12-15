@@ -3,7 +3,7 @@ class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: [:update, :destroy]
 
   def index
-    posts = Post.where(nil).order('created_at desc')
+    posts = Post.where(user: current_user.followers + User.where(id: current_user.id)).order('created_at desc')
     posts = posts.popular if params[:popular]
     posts = posts.favorites(current_user) if params[:favorites]
     posts = posts.page(params[:page]).per(20)
