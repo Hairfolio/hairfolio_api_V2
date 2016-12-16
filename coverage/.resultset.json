@@ -30,7 +30,7 @@
         1,
         1,
         1,
-        119,
+        118,
         null,
         null,
         null,
@@ -755,7 +755,7 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null,
         null,
@@ -788,7 +788,7 @@
         2,
         1,
         null,
-        1,
+        0,
         null,
         null,
         null,
@@ -2649,7 +2649,6 @@
         1,
         1,
         1,
-        1,
         null,
         1,
         14,
@@ -2771,6 +2770,23 @@
         1,
         null,
         1,
+        null
+      ],
+      "/Users/tyler/hairfolio/app/models/tag.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        38,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/spec/models/like_spec.rb": [
@@ -3571,6 +3587,6 @@
         null
       ]
     },
-    "timestamp": 1481910397
+    "timestamp": 1481910639
   }
 }
