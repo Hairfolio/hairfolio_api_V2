@@ -26,7 +26,7 @@ describe Api::V1::NotificationsController do
       follow.save
       like.save
       api_authorization_header(user2.auth_token)
-      get :index, params: { followers: true }
+      get :index, params: { following: true }
       expect(json_response['notifications'].count).to eq(3)
     end
   end

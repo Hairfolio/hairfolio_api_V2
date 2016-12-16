@@ -2150,6 +2150,13 @@
           "Content-Type": "application\/json",
           "Authorization": "jd239jd920jd902jd902j3d"
         },
+        "params" : {
+          "following" : {
+            "type" : "boolean",
+            "description" : "Getting the notifications of people you're following",
+            "required" : false
+          }
+        },
         "response": {
           "notifications": [
             {
