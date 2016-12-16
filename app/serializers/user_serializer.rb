@@ -23,10 +23,10 @@ class UserSerializer < ActiveModel::Serializer
   end
 
   def is_following_me
-    scope && scope.current_user && scope.object.following?(current_user)
+    scope && scope.current_user && object.following?(scope.current_user)
   end
 
   def is_followed_by_me
-    scope && scope.current_user && scope.object.followers?(current_user)
+    scope && scope.current_user && object.followers?(scope.current_user)
   end
 end
