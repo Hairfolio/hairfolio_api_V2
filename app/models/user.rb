@@ -47,6 +47,10 @@ class User < ApplicationRecord
     self.following.include?(user)
   end
 
+  def followers?(user)
+    self.followers.include?(user)
+  end
+
   def set_default_account_type
     self.account_type ||= 'consumer'
   end

@@ -86,10 +86,10 @@
         1,
         null,
         1,
-        264,
-        15,
+        406,
+        29,
         null,
-        249,
+        377,
         null,
         null,
         null,
@@ -2773,23 +2773,6 @@
         1,
         null
       ],
-      "/Users/tyler/hairfolio/app/models/tag.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        38,
-        null,
-        null
-      ],
       "/Users/tyler/hairfolio/spec/models/like_spec.rb": [
         1,
         null,
@@ -3303,6 +3286,10 @@
         1,
         81,
         null,
+        null,
+        1,
+        81,
+        null,
         null
       ],
       "/Users/tyler/hairfolio/app/serializers/contact_serializer.rb": [
@@ -3584,6 +3571,6 @@
         null
       ]
     },
-    "timestamp": 1481832658
+    "timestamp": 1481910397
   }
 }
