@@ -34,8 +34,8 @@ describe Api::V1::FollowsController do
     describe 'with invalid fields' do
       it 'should not follow the user' do
         follow = create(:follow, follower: user_1, following: user_2)
-        post :create, params: { user_id: user_2.id }
-        expect(json_response['errors']['follower_id']).to include('has already been taken')
+        post :create, params: { user_id: 279879 }
+        expect(json_response['error']).to include("Couldn't find User")
       end
     end
   end

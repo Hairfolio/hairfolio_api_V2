@@ -18,11 +18,5 @@ RSpec.describe Follow, type: :model do
       follow.following = nil
       expect(follow).to_not be_valid
     end
-
-    it 'a unique following' do
-      follow.save
-      follow_2 = build(:follow, follower: follow.follower, following: follow.following)
-      expect(follow_2).to_not be_valid
-    end
   end
 end
