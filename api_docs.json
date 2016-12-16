@@ -3992,6 +3992,41 @@
             "type" : "array",
             "description" : "The ids of the certificates",
             "required" : false
+          },
+          "user[educations_attributes][name]" : {
+            "type" : "integer",
+            "description" : "The name of the education",
+            "required" : false
+          },
+          "user[educations_attributes][year_from]" : {
+            "type" : "integer",
+            "description" : "The year from of the education",
+            "required" : false
+          },
+          "user[educations_attributes][degree_id]" : {
+            "type" : "integer",
+            "description" : "The degree id education",
+            "required" : false
+          },
+          "user[educations_attributes][website]" : {
+            "type" : "integer",
+            "description" : "The webite of the education",
+            "required" : false
+          },
+          "user[offerings_attributes][price]" : {
+            "type" : "integer",
+            "description" : "The name of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][service_id]" : {
+            "type" : "integer",
+            "description" : "The year from of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][category_id]" : {
+            "type" : "integer",
+            "description" : "The degree id offering",
+            "required" : false
           }
         },
         "response" : {
@@ -4147,6 +4182,61 @@
           "user[certificate_ids]" : {
             "type" : "array",
             "description" : "The ids of the certificates",
+            "required" : false
+          },
+          "user[educations_attributes][id]" : {
+            "type" : "integer",
+            "description" : "The ids of the education to update",
+            "required" : false
+          },
+          "user[educations_attributes][_destroy]" : {
+            "type" : "integer",
+            "description" : "The set the destroy flag to delete the education",
+            "required" : false
+          },
+          "user[educations_attributes][name]" : {
+            "type" : "integer",
+            "description" : "The name of the education",
+            "required" : false
+          },
+          "user[educations_attributes][year_from]" : {
+            "type" : "integer",
+            "description" : "The year from of the education",
+            "required" : false
+          },
+          "user[educations_attributes][degree_id]" : {
+            "type" : "integer",
+            "description" : "The degree id education",
+            "required" : false
+          },
+          "user[educations_attributes][website]" : {
+            "type" : "integer",
+            "description" : "The webite of the education",
+            "required" : false
+          },
+          "user[offerings_attributes][id]" : {
+            "type" : "integer",
+            "description" : "The ids of the offering to update",
+            "required" : false
+          },
+          "user[offerings_attributes][_destroy]" : {
+            "type" : "integer",
+            "description" : "The set the destroy flag to delete the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][price]" : {
+            "type" : "integer",
+            "description" : "The name of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][service_id]" : {
+            "type" : "integer",
+            "description" : "The year from of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][category_id]" : {
+            "type" : "integer",
+            "description" : "The degree id offering",
             "required" : false
           }
         },
