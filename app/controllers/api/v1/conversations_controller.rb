@@ -16,7 +16,7 @@ class Api::V1::ConversationsController < ApplicationController
   end
 
   def create
-    conversation = Conversation.find_or_initialize_by(conversation_params)
+    conversation = Conversation.discover_or_new(conversation_params)
     if conversation.save
       render json: conversation, status: 201
     else

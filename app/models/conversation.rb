@@ -6,9 +6,15 @@ class Conversation < ApplicationRecord
   scope :participant, -> (user) { joins(:messages).where(messages: { user: user}) }
   serialize :recipient_ids
 
+  scope :including_all_ids, -> (ids) { where(matching_ids_query(ids, 'AND')) }
 
-  # def self.discover_or_new(params)
-  #   sender_id = params[:conversation][:sender_id]
-  #   recipient_ids = params[:conversation][:recipient_ids].first
-  # end
+  def self.discover_or_new(params)
+    Conversation.including_all_ids(params[:conversation][:recipient_ids]).where(sender_id: params[:conversation][:sender_id]).first_or_initialize
+  end
+
+  private
+
+  def self.matching_ids_query(ids, condition_separator = 'OR')
+    ids.map { |id| "(recipient_ids LIKE '%#{id}%')" }.join(" #{condition_separator} ")
+  end
 end
