@@ -9,7 +9,7 @@ class Conversation < ApplicationRecord
   scope :including_all_ids, -> (ids) { where(matching_ids_query(ids, 'AND')) }
 
   def self.discover_or_new(params)
-    Conversation.including_all_ids(params[:conversation][:recipient_ids]).where(sender_id: params[:conversation][:sender_id]).first_or_initialize
+    Conversation.including_all_ids(params[:recipient_ids]).where(sender_id: params[:sender_id]).first_or_initialize
   end
 
   private
