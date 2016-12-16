@@ -23,6 +23,7 @@ class User < ApplicationRecord
 
 
   accepts_nested_attributes_for :salon, allow_destroy: true
+  accepts_nested_attributes_for :brand, allow_destroy: true
   accepts_nested_attributes_for :educations, allow_destroy: true
   accepts_nested_attributes_for :offerings, allow_destroy: true
 
