@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       end
       resources :notifications, only: [:index, :show]
       resources :users, except: [:edit] do
+        resources :educations, except: [:edit]
+        resources :offerings, except: [:edit]
         member { get :posts }
         resources :follows, only: [:create, :index] do
           collection { delete :destroy }
