@@ -7,11 +7,4 @@ RSpec.describe Message, type: :model do
   it 'should be valid' do
     expect(message).to be_valid
   end
-
-  describe 'should require' do
-    it 'a body' do
-      message.body = nil
-      expect(message).to_not be_valid
-    end
-  end
 end
