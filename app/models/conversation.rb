@@ -6,7 +6,12 @@ class Conversation < ApplicationRecord
   scope :participant, -> (user) { joins(:messages).where(messages: { user: user}) }
   serialize :recipient_ids
 
+
   scope :including_all_ids, -> (ids) { where(matching_ids_query(ids, 'AND')) }
+
+  def recipients
+    User.where(id: recipient_ids << sender_id) 
+  end
 
   def self.discover_or_new(params)
     conversation = Conversation.including_all_ids(params[:recipient_ids]).first

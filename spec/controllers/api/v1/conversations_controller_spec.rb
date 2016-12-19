@@ -13,6 +13,7 @@ describe Api::V1::ConversationsController do
     it 'should display current user conversations' do
       conversation = create(:conversation, sender: user)
       get :index
+      puts response.body
       expect(json_response['conversations'].count).to eq(1)
       expect(json_response['conversations'].first['last_message']['body']).to eq(conversation.messages.last.body)
     end

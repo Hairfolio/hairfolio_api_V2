@@ -1,5 +1,9 @@
 class ConversationSerializer < ActiveModel::Serializer
-  attributes :id, :sender_id, :created_at, :last_message, :recipient_ids, :unread_messages
+  attributes :id, :sender_id, :created_at, :last_message, :recipient_ids, :unread_messages, :recipients
+
+  def recipients
+    object.recipients.map { |u| UserSerializer.new(u).serializable_hash }
+  end
 
   def last_message
     MessageSerializer.new(object.messages.last, {scope: scope}).serializable_hash if object.messages.any?
