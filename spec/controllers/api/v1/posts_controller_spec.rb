@@ -9,9 +9,10 @@ describe Api::V1::PostsController do
 
   before :each do
     api_authorization_header(user.auth_token)
+    line = create(:line)
     photo = create(:photo, post: postable)
     label = create(:label, photo: photo)
-    create(:formula, label: label)
+    create(:formula, label: label, line: line)
   end
 
   describe "GET #index" do

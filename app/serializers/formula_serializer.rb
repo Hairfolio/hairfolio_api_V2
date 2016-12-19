@@ -1,5 +1,6 @@
 class FormulaSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :post_id, :service, :time, :weight, :volume, :treatments, :label_id
+  attributes :id, :created_at, :post_id, :service, :time, :weight, :volume, :treatments
+  has_one :line
 
   def service
     ServiceSerializer.new(object.service, {scope: scope}).serializable_hash if object.service
