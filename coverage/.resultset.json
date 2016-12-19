@@ -2911,6 +2911,7 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         13,
@@ -3060,6 +3061,7 @@
         null
       ],
       "/Users/tyler/hairfolio/app/models/like.rb": [
+        1,
         1,
         1,
         1,
@@ -3845,6 +3847,6 @@
         null
       ]
     },
-    "timestamp": 1482174447
+    "timestamp": 1482187214
   }
 }
