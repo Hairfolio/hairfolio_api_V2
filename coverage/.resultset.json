@@ -1468,7 +1468,6 @@
         1,
         1,
         1,
-        1,
         null,
         null,
         1,
@@ -3036,23 +3035,6 @@
         1,
         null
       ],
-      "/Users/tyler/hairfolio/app/models/tag.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        39,
-        null,
-        null
-      ],
       "/Users/tyler/hairfolio/spec/models/like_spec.rb": [
         1,
         null,
@@ -3863,6 +3845,6 @@
         null
       ]
     },
-    "timestamp": 1482172422
+    "timestamp": 1482174447
   }
 }

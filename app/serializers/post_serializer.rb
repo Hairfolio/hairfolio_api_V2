@@ -5,7 +5,7 @@ class PostSerializer < ActiveModel::Serializer
   has_one :user
 
   def liked_by_me
-    object.user.likes.include?(object)
+    object.user.likes.pluck(:post_id).include?(object.id)
   end
 
 end

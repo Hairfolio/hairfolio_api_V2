@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-19T10:33:43-08:00">2016-12-19T10:33:43-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-19T11:07:27-08:00">2016-12-19T11:07:27-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.13%</span></span>
+    (<span class="covered_percent"><span class="green">99.12%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.4
+         2.39
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>151</b> files in total.
-    <b>2060</b> relevant lines. 
-    <span class="green"><b>2042</b> lines covered</span> and
+    <b>150</b> files in total.
+    <b>2047</b> relevant lines. 
+    <span class="green"><b>2029</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -631,16 +631,6 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#ce57d65dde0e4ab8133072a4e1d064e256473e0b" class="src_link" title="app/models/tag.rb">app/models/tag.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>12</td>
-        <td>12</td>
-        <td>0</td>
-        <td>4.2</td>
-      </tr>
-      
-      <tr>
         <td class="strong"><a href="#7e295835360494d8554196e7f57d5eec3ae3431b" class="src_link" title="app/models/treatment.rb">app/models/treatment.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>5</td>
@@ -1154,8 +1144,8 @@
         <td class="strong"><a href="#d3b81e9e2a12b629ef3fae6a305bf57836cfac0f" class="src_link" title="spec/controllers/api/v1/posts_controller_spec.rb">spec/controllers/api/v1/posts_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>94</td>
-        <td>63</td>
-        <td>63</td>
+        <td>62</td>
+        <td>62</td>
         <td>0</td>
         <td>2.0</td>
       </tr>
@@ -6933,7 +6923,7 @@
         <li class="covered" data-hits="7" data-linenumber="46">
           <span class="hits">7</span>
           
-          <code class="ruby">    params.require(:user).permit(:email, :password, :password_confirmation, :account_type, :first_name, :last_name, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :salon_id, :career_opportunity, brand_attributes: [:id, :_destroy, :name], salon_attributes: [:name, :info, :address, :city, :state, :zip, :website, :phone], educations_attributes: [:name, :year_from, :year_to, :degree_id, :user_id, :website, :id, :_destroy], offerings_attributes: [:user_id, :category_id, :service_id, :price, :id, :_destroy], experience_ids: [])</code>
+          <code class="ruby">    params.require(:user).permit(:email, :password, :password_confirmation, :account_type, :first_name, :last_name, :description, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :salon_id, :career_opportunity, brand_attributes: [:id, :_destroy, :name], salon_attributes: [:name, :info, :address, :city, :state, :zip, :website, :phone], educations_attributes: [:name, :year_from, :year_to, :degree_id, :user_id, :website, :id, :_destroy], offerings_attributes: [:user_id, :category_id, :service_id, :price, :id, :_destroy], experience_ids: [])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -7689,7 +7679,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_and_belongs_to_many :users, -&gt; {distinct}</code>
+          <code class="ruby">  has_and_belongs_to_many :users</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -8247,7 +8237,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_and_belongs_to_many :users, -&gt; { distinct }</code>
+          <code class="ruby">  has_and_belongs_to_many :users</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -9277,114 +9267,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="ce57d65dde0e4ab8133072a4e1d064e256473e0b">
-  <div class="header">
-    <h3>app/models/tag.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class Tag &lt; ApplicationRecord</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  validates_presence_of :name</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :labels</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :photos, through: :labels</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  before_save :parameterize_name</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular, -&gt; { order(&#39;labels_count desc&#39;).where(&#39;labels_count &gt; 0&#39;) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_today, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 24.hours, Time.now) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_last_48_hours, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 48.hours, Time.now) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_last_7_days, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 7.days, Time.now) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_last_30_days, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 30.days, Time.now) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def parameterize_name</code>
-        </li>
-      
-        <li class="covered" data-hits="39" data-linenumber="13">
-          <span class="hits">39</span>
-          
-          <code class="ruby">    self.name = self.name.parameterize</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
@@ -11121,7 +11003,7 @@
         <li class="covered" data-hits="25" data-linenumber="8">
           <span class="hits">25</span>
           
-          <code class="ruby">    object.user.likes.include?(object)</code>
+          <code class="ruby">    object.user.likes.pluck(:post_id).include?(object.id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -11595,7 +11477,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :career_opportunity, :unread_messages_count</code>
+          <code class="ruby">  attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :description, :years_exp, :career_opportunity, :unread_messages_count</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -16989,8 +16871,8 @@
     <h3>spec/controllers/api/v1/posts_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>63</b> relevant lines. 
-      <span class="green"><b>63</b> lines covered</span> and
+      <b>62</b> relevant lines. 
+      <span class="green"><b>62</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -17130,8 +17012,8 @@
           <code class="ruby">      expect(json_response[&#39;posts&#39;].count).to eq(1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="23">
+          
           
           <code class="ruby">    end</code>
         </li>
@@ -17142,8 +17024,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
-          
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
           
           <code class="ruby">    it &#39;should filter the popular posts&#39; do</code>
         </li>
@@ -17166,8 +17048,8 @@
           <code class="ruby">      expect(json_response[&#39;posts&#39;].count).to eq(1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="29">
+          
           
           <code class="ruby">    end</code>
         </li>
@@ -17190,8 +17072,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
-          
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;POST #create&quot; do</code>
         </li>
@@ -17298,8 +17180,8 @@
           <code class="ruby">        expect(json_response[&#39;post&#39;][&#39;photos&#39;].first[&#39;labels&#39;].first[&#39;formulas&#39;].first[&#39;treatments&#39;].count).to eq(1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="51">
+          
           
           <code class="ruby">      end</code>
         </li>
@@ -17316,8 +17198,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
-          
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
           <code class="ruby">    describe &#39;with invalid fields&#39; do</code>
         </li>
@@ -17340,8 +17222,8 @@
           <code class="ruby">        expect(json_response[&#39;errors&#39;][&#39;description&#39;]).to include(&quot;can&#39;t be blank&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="58">
+          
           
           <code class="ruby">      end</code>
         </li>
@@ -17364,8 +17246,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
-          
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;PATCH #update&quot; do</code>
         </li>
@@ -17394,8 +17276,8 @@
           <code class="ruby">        expect(json_response[&#39;post&#39;][&#39;description&#39;]).to eq(&quot;hello&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="67">
+          
           
           <code class="ruby">      end</code>
         </li>
@@ -17406,8 +17288,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
-          
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
           
           <code class="ruby">      it &#39;should remove treatments in a formula&#39; do</code>
         </li>
@@ -17424,8 +17306,8 @@
           <code class="ruby">        expect(json_response[&#39;post&#39;][&#39;photos&#39;].first[&#39;labels&#39;].first[&#39;formulas&#39;].first[&#39;treatments&#39;].count).to eq(0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="72">
+          
           
           <code class="ruby">      end</code>
         </li>
@@ -17436,8 +17318,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
-          
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
           
           <code class="ruby">      it &#39;should remove formulas&#39; do</code>
         </li>
@@ -17454,8 +17336,8 @@
           <code class="ruby">        expect(json_response[&#39;post&#39;][&#39;photos&#39;].first[&#39;labels&#39;].first[&#39;formulas&#39;].count).to eq(0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="77">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="77">
+          
           
           <code class="ruby">      end</code>
         </li>
@@ -17472,8 +17354,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
-          
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
           
           <code class="ruby">    describe &#39;with invalid fields&#39; do</code>
         </li>
@@ -17496,8 +17378,8 @@
           <code class="ruby">        expect(json_response[&#39;errors&#39;][&#39;description&#39;]).to include(&quot;can&#39;t be blank&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="84">
+          
           
           <code class="ruby">      end</code>
         </li>
@@ -17520,8 +17402,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
-          
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;DELETE #destroy&quot; do</code>
         </li>
@@ -17544,8 +17426,8 @@
           <code class="ruby">      expect(response.status).to eq(204)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="92">
+          
           
           <code class="ruby">    end</code>
         </li>
