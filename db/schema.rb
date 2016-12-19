@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216211951) do
+ActiveRecord::Schema.define(version: 20161219175909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,6 +217,8 @@ ActiveRecord::Schema.define(version: 20161216211951) do
     t.datetime "updated_at",    null: false
     t.integer  "photo_id"
     t.integer  "label_type"
+    t.string   "url"
+    t.string   "name"
     t.index ["photo_id"], name: "index_labels_on_photo_id", using: :btree
     t.index ["post_id"], name: "index_labels_on_post_id", using: :btree
     t.index ["tag_id"], name: "index_labels_on_tag_id", using: :btree
@@ -355,7 +357,6 @@ ActiveRecord::Schema.define(version: 20161216211951) do
     t.string   "name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "url"
     t.integer  "labels_count"
   end
 

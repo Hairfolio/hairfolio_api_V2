@@ -1,5 +1,5 @@
 class LabelSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :position_top, :position_left, :tag, :photo_id, :label_type
+  attributes :id, :created_at, :position_top, :position_left, :tag, :photo_id, :label_type, :name, :url
   has_many :formulas
 
   def label_type

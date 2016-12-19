@@ -9,6 +9,11 @@ class Api::V1::TagsController < ApplicationController
     render json: tags, meta: pagination_dict(tags)
   end
 
+  def exact
+    tag = Tag.find_by(name: params[:q])
+    render json: tag
+  end
+
   def show
     render json: @tag
   end
@@ -34,7 +39,7 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def tag_params
-    params.require(:tag).permit(:name, :url)
+    params.require(:tag).permit(:name)
   end
 
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :brands, only: [:index, :show]
       resources :services, only: [:index, :show]
       resources :tags, only: [:index, :show, :create] do
+        collection { get :exact }
         member { get :posts }
       end
       resources :categories, only: [:index]
