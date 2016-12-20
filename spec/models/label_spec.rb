@@ -10,11 +10,6 @@ RSpec.describe Label, type: :model do
 
   describe 'should require' do
 
-    it 'a tag' do
-      label.tag = nil
-      expect(label).to_not be_valid
-    end
-
     it 'a top position' do
       label.position_top = nil
       expect(label).to_not be_valid

@@ -4096,9 +4096,11 @@
           "Content-Type": "application\/json"
         },
         "params" : {
-          "type" : "string",
-          "description" : "The tag name",
-          "required" : true
+          "q" : {
+            "type" : "string",
+            "description" : "The tag name",
+            "required" : true
+          }
         },
         "response" : {
           "tag":
@@ -4367,11 +4369,6 @@
             "type" : "array",
             "description" : "The ids of the expereinces",
             "required" : true
-          },
-          "user[experience_ids]" : {
-            "type" : "array",
-            "description" : "The ids of the expereinces",
-            "required" : false
           },
           "user[certificate_ids]" : {
             "type" : "array",
@@ -4657,9 +4654,6 @@
 
               ],
               "experiences": [
-
-              ],
-              "certificates": [
 
               ],
               "certificates": [
