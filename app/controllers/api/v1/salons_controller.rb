@@ -1,5 +1,5 @@
 class Api::V1::SalonsController < ApplicationController
-  before_action :set_salon, only: [:update, :show, :destroy]
+  before_action :set_salon, only: [:update, :show, :destroy, :stylists]
 
   def index
     salons = Salon.where(nil)
@@ -33,6 +33,10 @@ class Api::V1::SalonsController < ApplicationController
   def destroy
     @salon.destroy
     head 204
+  end
+
+  def stylists
+    render json: @salon.users
   end
 
   private

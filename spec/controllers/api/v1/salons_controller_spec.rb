@@ -26,6 +26,14 @@ describe Api::V1::SalonsController do
     end
   end
 
+  describe "GET #stylists" do
+    it 'should display the salon attributes' do
+      create(:user, salon: salon)
+      get :stylists, params: { id: salon.id }
+      expect(json_response['users'].count).to eq(1)
+    end
+  end
+
   describe "POST #create" do
     describe 'with valid fields' do
       it 'should create the salon' do

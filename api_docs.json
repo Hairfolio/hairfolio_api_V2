@@ -3610,6 +3610,21 @@
         }
       },
       {
+        "action": "GET",
+        "uri": "\/salons\/:id\/stylists",
+        "authentication" : true,
+        "description": "Getting stylists of salon info",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "users": [
+
+            ]
+          }
+      },
+      {
         "action": "POST",
         "uri": "\/salons",
         "authentication" : true,
