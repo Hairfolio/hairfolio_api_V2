@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>/users</title>
+    <title>/users/:id</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css" />
   </head>
@@ -23,13 +23,13 @@
 
       <div id="content-outer">
         <div class="page-header">
-          <h1>POST /users</h1>
+          <h1>PUT /users/:id</h1>
         </div>
 
         <div id="content-main">
           <div class="field field-el">
             <h2>Description</h2>
-            <p>Creating a user</p>
+            <p>Updating a user</p>
           </div>
 
 	  
@@ -80,7 +80,7 @@
                   <span class="param">user[account_type]
                     <span>required, type: string</span>
                   </span>
-                  <p>The user account_type ( 'consumer', 'owner', 'stylist', 'ambassador')</p>
+                  <p>The user account_type ( 'consumer', 'owner', 'stylist', 'brand')</p>
                 </div>
               
                 <div class="parameter">
@@ -126,10 +126,73 @@
                 </div>
               
                 <div class="parameter">
-                  <span class="param">user[brand_attributes][name]
+                  <span class="param">user[brand_attributes][id]
                     <span>required, type: string</span>
                   </span>
+                  <p>The id of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][_destroy]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The set the destroy flag to delete the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][name]
+                    <span>optional, type: string</span>
+                  </span>
                   <p>The name of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][address]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The address of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][city]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The city of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][state]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The state of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][website]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The website of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][phone]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The phone of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][id]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The id of the salon to update</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][_destroy]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>Set the destroy tag to delete the salon</p>
                 </div>
               
                 <div class="parameter">
@@ -141,49 +204,49 @@
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][address]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The address of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][city]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The city of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][state]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The state of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][zip]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The zip of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][phone]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The phone of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[salon_attributes][website]
-                    <span>required, type: string</span>
+                    <span>optional, type: string</span>
                   </span>
                   <p>The website of the salon</p>
                 </div>
               
                 <div class="parameter">
                   <span class="param">user[experience_ids]
-                    <span>required, type: array</span>
+                    <span>optional, type: array</span>
                   </span>
                   <p>The ids of the expereinces</p>
                 </div>
@@ -193,6 +256,20 @@
                     <span>optional, type: array</span>
                   </span>
                   <p>The ids of the certificates</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[educations_attributes][id]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The ids of the education to update</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[educations_attributes][_destroy]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The set the destroy flag to delete the education</p>
                 </div>
               
                 <div class="parameter">
@@ -221,6 +298,20 @@
                     <span>optional, type: integer</span>
                   </span>
                   <p>The webite of the education</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[offerings_attributes][id]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The ids of the offering to update</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[offerings_attributes][_destroy]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The set the destroy flag to delete the offering</p>
                 </div>
               
                 <div class="parameter">
@@ -270,7 +361,7 @@
                 </tr>
                 <tr>
                   <td>HTTP Method</td>
-                  <td>POST</td>
+                  <td>PUT</td>
                 </tr>
                 <tr>
                   <td>Login Required</td>

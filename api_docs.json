@@ -4345,6 +4345,41 @@
             "description" : "The name of the brand",
             "required" : true
           },
+          "user[brand_attributes][name]" : {
+            "type" : "string",
+            "description" : "The name of the brand",
+            "required" : true
+          },
+          "user[brand_attributes][info]" : {
+            "type" : "string",
+            "description" : "The info of the brand",
+            "required" : true
+          },
+          "user[brand_attributes][address]" : {
+            "type" : "string",
+            "description" : "The address of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][city]" : {
+            "type" : "string",
+            "description" : "The city of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][state]" : {
+            "type" : "string",
+            "description" : "The state of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][website]" : {
+            "type" : "string",
+            "description" : "The website of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][phone]" : {
+            "type" : "string",
+            "description" : "The phone of the brand",
+            "required" : false
+          },
           "user[salon_attributes][name]" : {
             "type" : "string",
             "description" : "The name of the salon",
@@ -4524,6 +4559,46 @@
           "user[career_opportunity]" : {
             "type" : "string",
             "description" : "The user career opportunities",
+            "required" : false
+          },
+          "user[brand_attributes][id]" : {
+            "type" : "string",
+            "description" : "The id of the brand",
+            "required" : true
+          },
+          "user[brand_attributes][_destroy]" : {
+            "type" : "string",
+            "description" : "The set the destroy flag to delete the brand",
+            "required" : false
+          },
+          "user[brand_attributes][name]" : {
+            "type" : "string",
+            "description" : "The name of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][address]" : {
+            "type" : "string",
+            "description" : "The address of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][city]" : {
+            "type" : "string",
+            "description" : "The city of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][state]" : {
+            "type" : "string",
+            "description" : "The state of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][website]" : {
+            "type" : "string",
+            "description" : "The website of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][phone]" : {
+            "type" : "string",
+            "description" : "The phone of the brand",
             "required" : false
           },
           "user[salon_attributes][id]" : {
