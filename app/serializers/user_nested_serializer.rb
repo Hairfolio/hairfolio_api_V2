@@ -1,5 +1,5 @@
 class UserNestedSerializer < ActiveModel::Serializer
-  attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :career_opportunity
+  attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :career_opportunity, :is_following_me, :is_followed_by_me
   has_many :educations
   has_many :offerings
   has_many :experiences
@@ -19,10 +19,6 @@ class UserNestedSerializer < ActiveModel::Serializer
 
   def brand
     BrandSerializer.new(object.brand, {scope: scope}).serializable_hash if object.brand
-  end
-
-  def is_following
-    scope && scope.current_user && scope.current_user.following?(object) ? true : false
   end
 
   def is_following_me
