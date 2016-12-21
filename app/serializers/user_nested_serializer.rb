@@ -24,4 +24,12 @@ class UserNestedSerializer < ActiveModel::Serializer
   def is_following
     scope && scope.current_user && scope.current_user.following?(object) ? true : false
   end
+
+  def is_following_me
+    scope && scope.current_user && object.following?(scope.current_user)
+  end
+
+  def is_followed_by_me
+    scope && scope.current_user && object.followers?(scope.current_user)
+  end
 end
