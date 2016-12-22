@@ -1,10 +1,13 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :description, :years_exp, :career_opportunity, :unread_messages_count
+  attributes :id, :auth_token, :email, :first_name, :offerings, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :description, :years_exp, :career_opportunity, :unread_messages_count
   has_many :likes
   has_many :educations
-  has_many :offerings
   has_many :experiences
   has_many :certificates
+
+  def offerings
+    object.offerings.map { |o| OfferingSerializer.new(o, {scope: scope}).serializable_hash }
+  end
 
   def likes_count
     object.likes.length
