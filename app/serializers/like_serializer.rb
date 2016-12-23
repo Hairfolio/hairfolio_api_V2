@@ -6,7 +6,7 @@ class LikeSerializer < ActiveModel::Serializer
   end
 
   def user
-    UserNestedSerializer.new(object.user, {scope: scope}).serializable_hash
+    UserMinimalSerializer.new(object.user, {scope: scope}).serializable_hash
   end
 
 end

@@ -4,16 +4,16 @@ class NotificationSerializer < ActiveModel::Serializer
   def initiator
     case object.notifiable.class.name
     when 'Follow'
-      object.notifiable.follower
-      #UserSerializer.new(object.notifiable.follower, {scope: scope}).serializable_hash
+      #object.notifiable.follower
+      UserMinimalSerializer.new(object.notifiable.follower, {scope: scope}).serializable_hash
     when 'Like'
-      object.notifiable.user
-      #UserSerializer.new(object.notifiable.user, {scope: scope}).serializable_hash
+      #object.notifiable.user
+      UserMinimalSerializer.new(object.notifiable.user, {scope: scope}).serializable_hash
     end
   end
 
   def user
-    UserSerializer.new(object.user, {scope: scope}).serializable_hash
+    UserMinimalSerializer.new(object.user, {scope: scope}).serializable_hash
   end
 
   def notifiable_type
@@ -21,12 +21,12 @@ class NotificationSerializer < ActiveModel::Serializer
   end
 
   def notifiable
-    object.notifiable
-    # case object.notifiable.class.name
-    # when 'Follow'
-    #   FollowSerializer.new(object.notifiable, {scope: scope}).serializable_hash
-    # when 'Like'
-    #   LikeSerializer.new(object.notifiable, {scope: scope}).serializable_hash
-    # end
+    #object.notifiable
+    case object.notifiable.class.name
+    when 'Follow'
+      FollowSerializer.new(object.notifiable, {scope: scope}).serializable_hash
+    when 'Like'
+      LikeSerializer.new(object.notifiable, {scope: scope}).serializable_hash
+    end
   end
 end
