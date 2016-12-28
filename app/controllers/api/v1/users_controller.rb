@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :set_user, only: [:update, :destroy, :show, :posts]
+  before_action :set_user, only: [:update, :destroy, :show, :posts, :folios]
 
   def index
     users = User.where(nil)
@@ -38,6 +38,11 @@ class Api::V1::UsersController < ApplicationController
   def posts
     posts = @user.posts.order('created_at desc').page(params[:page]).per(20)
     render json: posts, meta: pagination_dict(posts)
+  end
+
+  def folios
+    folios = @user.folios.order('created_at desc').page(params[:page]).per(20)
+    render json: folios, meta: pagination_dict(folios)
   end
 
   private

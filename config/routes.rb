@@ -32,7 +32,10 @@ Rails.application.routes.draw do
       resources :users, except: [:edit] do
         resources :educations, except: [:edit]
         resources :offerings, except: [:edit]
-        member { get :posts }
+        member do
+          get :posts
+          get :folios
+        end
         resources :follows, only: [:create, :index] do
           collection { delete :destroy }
         end
