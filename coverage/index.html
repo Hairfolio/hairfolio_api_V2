@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-23T09:10:50-08:00">2016-12-23T09:10:50-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-28T08:15:55-08:00">2016-12-28T08:15:55-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.12%</span></span>
+    (<span class="covered_percent"><span class="green">99.02%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.28
+         2.26
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>151</b> files in total.
-    <b>2056</b> relevant lines. 
-    <span class="green"><b>2038</b> lines covered</span> and
-    <span class="red"><b>18</b> lines missed </span>
+    <b>150</b> files in total.
+    <b>2047</b> relevant lines. 
+    <span class="green"><b>2027</b> lines covered</span> and
+    <span class="red"><b>20</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -292,12 +292,12 @@
       
       <tr>
         <td class="strong"><a href="#16a9df7d950184db473a2a567d50a5a00dd3d5af" class="src_link" title="app/controllers/api/v1/users_controller.rb">app/controllers/api/v1/users_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>53</td>
-        <td>30</td>
-        <td>30</td>
-        <td>0</td>
-        <td>2.2</td>
+        <td class="green strong">93.94 %</td>
+        <td>58</td>
+        <td>33</td>
+        <td>31</td>
+        <td>2</td>
+        <td>2.1</td>
       </tr>
       
       <tr>
@@ -628,16 +628,6 @@
         <td>3</td>
         <td>0</td>
         <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#ce57d65dde0e4ab8133072a4e1d064e256473e0b" class="src_link" title="app/models/tag.rb">app/models/tag.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>12</td>
-        <td>12</td>
-        <td>0</td>
-        <td>4.1</td>
       </tr>
       
       <tr>
@@ -6673,11 +6663,11 @@
         <div class="source_table" id="16a9df7d950184db473a2a567d50a5a00dd3d5af">
   <div class="header">
     <h3>app/controllers/api/v1/users_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">93.94 %</span> covered</h4>
     <div>
-      <b>30</b> relevant lines. 
-      <span class="green"><b>30</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>33</b> relevant lines. 
+      <span class="green"><b>31</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -6693,7 +6683,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :set_user, only: [:update, :destroy, :show, :posts]</code>
+          <code class="ruby">  before_action :set_user, only: [:update, :destroy, :show, :posts, :folios]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -6939,64 +6929,94 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def folios</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    folios = @user.folios.order(&#39;created_at desc&#39;).page(params[:page]).per(20)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="45">
           
-          <code class="ruby">  def user_params</code>
+          
+          <code class="ruby">    render json: folios, meta: pagination_dict(folios)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="46">
-          <span class="hits">7</span>
+        <li class="never" data-hits="" data-linenumber="46">
           
-          <code class="ruby">    params.require(:user).permit(:email, :password, :password_confirmation, :account_type, :first_name, :last_name, :description, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :salon_id, :career_opportunity, brand_attributes: [:id, :_destroy, :name, :info, :address, :city, :state, :zip, :website, :phone], salon_attributes: [:name, :info, :address, :city, :state, :zip, :website, :phone], educations_attributes: [:name, :year_from, :year_to, :degree_id, :user_id, :website, :id, :_destroy], offerings_attributes: [:user_id, :category_id, :service_id, :price, :id, :_destroy], certificate_ids: [], experience_ids: [])</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_user</code>
+          <code class="ruby">  def user_params</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="50">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="51">
+          <span class="hits">7</span>
           
-          <code class="ruby">    @user = User.find(params[:id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    params.require(:user).permit(:email, :password, :password_confirmation, :account_type, :first_name, :last_name, :description, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :salon_id, :career_opportunity, brand_attributes: [:id, :_destroy, :name, :info, :address, :city, :state, :zip, :website, :phone], salon_attributes: [:name, :info, :address, :city, :state, :zip, :website, :phone], educations_attributes: [:name, :year_from, :year_to, :degree_id, :user_id, :website, :id, :_destroy], offerings_attributes: [:user_id, :category_id, :service_id, :price, :id, :_destroy], certificate_ids: [], experience_ids: [])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def set_user</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="55">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    @user = User.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">end</code>
@@ -9322,114 +9342,6 @@
   </pre>
 </div>
       
-        <div class="source_table" id="ce57d65dde0e4ab8133072a4e1d064e256473e0b">
-  <div class="header">
-    <h3>app/models/tag.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class Tag &lt; ApplicationRecord</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  validates_presence_of :name</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :labels</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_many :photos, through: :labels</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  before_save :parameterize_name</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular, -&gt; { order(&#39;labels_count desc&#39;).where(&#39;labels_count &gt; 0&#39;) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_today, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 24.hours, Time.now) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_last_48_hours, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 48.hours, Time.now) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_last_7_days, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 7.days, Time.now) }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scope :popular_last_30_days, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 30.days, Time.now) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def parameterize_name</code>
-        </li>
-      
-        <li class="covered" data-hits="38" data-linenumber="13">
-          <span class="hits">38</span>
-          
-          <code class="ruby">    self.name = self.name.parameterize</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
         <div class="source_table" id="7e295835360494d8554196e7f57d5eec3ae3431b">
   <div class="header">
     <h3>app/models/treatment.rb</h3>
@@ -11469,7 +11381,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :avatar_url, :avatar_cloudinary_id, :first_name, :last_name, :brand_name, :salon_name</code>
+          <code class="ruby">  attributes :id, :avatar_url, :avatar_cloudinary_id, :first_name, :last_name, :brand_name, :salon_name, :account_type</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
