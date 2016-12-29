@@ -5,7 +5,7 @@ class NotificationSerializer < ActiveModel::Serializer
     case object.notifiable.class.name
     when 'Follow'
       #object.notifiable.follower
-      UserMinimalSerializer.new(object.notifiable.follower, {scope: scope}).serializable_hash
+      UserMinimalSerializer.new(object.notifiable.follower, {scope: scope}).serializable_hash if object.notifiable.follower
     when 'Like'
       #object.notifiable.user
       UserMinimalSerializer.new(object.notifiable.user, {scope: scope}).serializable_hash
