@@ -14,20 +14,20 @@ RSpec.describe Formula, type: :model do
       expect(formula).to_not be_valid
     end
 
-    it 'a time' do
-      formula.time = nil
-      expect(formula).to_not be_valid
-    end
-
-    it 'a weight' do
-      formula.weight = nil
-      expect(formula).to_not be_valid
-    end
-
-    it 'a volume' do
-      formula.volume = nil
-      expect(formula).to_not be_valid
-    end
+    # it 'a time' do
+    #   formula.time = nil
+    #   expect(formula).to_not be_valid
+    # end
+    #
+    # it 'a weight' do
+    #   formula.weight = nil
+    #   expect(formula).to_not be_valid
+    # end
+    #
+    # it 'a volume' do
+    #   formula.volume = nil
+    #   expect(formula).to_not be_valid
+    # end
 
   end
 end

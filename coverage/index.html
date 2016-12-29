@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-29T15:06:53-08:00">2016-12-29T15:06:53-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-29T15:36:52-08:00">2016-12-29T15:36:52-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.02%</span></span>
+    (<span class="covered_percent"><span class="green">99.03%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.39
+         2.4
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>150</b> files in total.
-    <b>2051</b> relevant lines. 
-    <span class="green"><b>2031</b> lines covered</span> and
+    <b>151</b> files in total.
+    <b>2054</b> relevant lines. 
+    <span class="green"><b>2034</b> lines covered</span> and
     <span class="red"><b>20</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -357,7 +357,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>4.8</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -628,6 +628,16 @@
         <td>3</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#ce57d65dde0e4ab8133072a4e1d064e256473e0b" class="src_link" title="app/models/tag.rb">app/models/tag.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>15</td>
+        <td>12</td>
+        <td>12</td>
+        <td>0</td>
+        <td>3.8</td>
       </tr>
       
       <tr>
@@ -1354,10 +1364,10 @@
         <td class="strong"><a href="#ca751b742924339ad49b2c874c92ef0fcd9d693c" class="src_link" title="spec/models/formula_spec.rb">spec/models/formula_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>33</td>
-        <td>18</td>
-        <td>18</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -3479,7 +3489,7 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: current_user.following.uniq, status: 201</code>
+          <code class="ruby">      render json: current_user.following.uniq, status: 201, root: &#39;users&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -3491,7 +3501,7 @@
         <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">      render json: { errors: follow.errors }, status: 422</code>
+          <code class="ruby">      render json: { errors: follow.errors }, status: 422, root: &#39;users&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -3599,7 +3609,7 @@
         <li class="covered" data-hits="2" data-linenumber="28">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: users, meta: pagination_dict(users)</code>
+          <code class="ruby">    render json: users, meta: pagination_dict(users), root: &#39;users&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
@@ -7652,10 +7662,10 @@
           <code class="ruby">  has_many :users</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="4">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          <code class="ruby">  has_and_belongs_to_many :services, -&gt; { distinct }</code>
+          <code class="ruby">  has_and_belongs_to_many :services</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -9329,10 +9339,118 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_and_belongs_to_many :brands, -&gt; { distinct }</code>
+          <code class="ruby">  has_and_belongs_to_many :brands</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="ce57d65dde0e4ab8133072a4e1d064e256473e0b">
+  <div class="header">
+    <h3>app/models/tag.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Tag &lt; ApplicationRecord</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_presence_of :name</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :labels</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :photos, through: :labels</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_save :parameterize_name</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :popular, -&gt; { order(&#39;labels_count desc&#39;).where(&#39;labels_count &gt; 0&#39;) }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :popular_today, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 24.hours, Time.now) }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :popular_last_48_hours, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 48.hours, Time.now) }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :popular_last_7_days, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 7.days, Time.now) }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope :popular_last_30_days, -&gt; { joins(:labels).order(&#39;tags.labels_count desc&#39;).where(&quot;labels.created_at &gt;= ? and labels.created_at &lt;= ?&quot;, Time.now - 30.days, Time.now) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def parameterize_name</code>
+        </li>
+      
+        <li class="covered" data-hits="35" data-linenumber="13">
+          <span class="hits">35</span>
+          
+          <code class="ruby">    self.name = self.name.parameterize</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
@@ -10103,7 +10221,7 @@
         <li class="covered" data-hits="4" data-linenumber="5">
           <span class="hits">4</span>
           
-          <code class="ruby">    UserMinimalSerializer.new(object.follower, {scope: scope}).serializable_hash</code>
+          <code class="ruby">    UserMinimalSerializer.new(object.follower, {scope: scope}).serializable_hash if object.follower</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -10127,7 +10245,7 @@
         <li class="covered" data-hits="4" data-linenumber="9">
           <span class="hits">4</span>
           
-          <code class="ruby">    UserMinimalSerializer.new(object.following, {scope: scope}).serializable_hash</code>
+          <code class="ruby">    UserMinimalSerializer.new(object.following, {scope: scope}).serializable_hash if object.following</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -10727,7 +10845,7 @@
         <li class="covered" data-hits="4" data-linenumber="8">
           <span class="hits">4</span>
           
-          <code class="ruby">      UserMinimalSerializer.new(object.notifiable.follower, {scope: scope}).serializable_hash</code>
+          <code class="ruby">      UserMinimalSerializer.new(object.notifiable.follower, {scope: scope}).serializable_hash if object.notifiable.follower</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -22823,8 +22941,8 @@
     <h3>spec/models/formula_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>18</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -22856,8 +22974,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="5">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">  let(:formula) { build(:formula) }</code>
         </li>
@@ -22928,88 +23046,88 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="17">
           
-          <code class="ruby">    it &#39;a time&#39; do</code>
+          
+          <code class="ruby">    # it &#39;a time&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="18">
           
-          <code class="ruby">      formula.time = nil</code>
+          
+          <code class="ruby">    #   formula.time = nil</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="19">
           
-          <code class="ruby">      expect(formula).to_not be_valid</code>
+          
+          <code class="ruby">    #   expect(formula).to_not be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    #</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="22">
           
-          <code class="ruby">    it &#39;a weight&#39; do</code>
+          
+          <code class="ruby">    # it &#39;a weight&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="23">
           
-          <code class="ruby">      formula.weight = nil</code>
+          
+          <code class="ruby">    #   formula.weight = nil</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="24">
           
-          <code class="ruby">      expect(formula).to_not be_valid</code>
+          
+          <code class="ruby">    #   expect(formula).to_not be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    #</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="27">
           
-          <code class="ruby">    it &#39;a volume&#39; do</code>
+          
+          <code class="ruby">    # it &#39;a volume&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="28">
           
-          <code class="ruby">      formula.volume = nil</code>
+          
+          <code class="ruby">    #   formula.volume = nil</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="29">
           
-          <code class="ruby">      expect(formula).to_not be_valid</code>
+          
+          <code class="ruby">    #   expect(formula).to_not be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
