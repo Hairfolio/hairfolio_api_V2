@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :auth_token, :email, :first_name, :offerings, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :description, :years_exp, :career_opportunity, :unread_messages_count
+  attributes :id, :auth_token, :email, :first_name, :offerings, :facebook_id, :instagram_id, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :description, :years_exp, :career_opportunity, :unread_messages_count
   has_many :likes
   has_many :educations
   has_many :experiences
@@ -23,6 +23,14 @@ class UserSerializer < ActiveModel::Serializer
 
   def brand
     BrandSerializer.new(object.brand, {scope: scope}).serializable_hash if object.brand
+  end
+
+  def facebook_id
+    object.authentications.facebook.first.try(:uid) if object.authentications.instagram.any?
+  end
+
+  def instagram_id
+    object.authentications.instagram.first.try(:uid) if object.authentications.instagram.any?
   end
 
   def is_following_me
