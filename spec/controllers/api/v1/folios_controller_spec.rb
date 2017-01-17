@@ -18,13 +18,22 @@ describe Api::V1::FoliosController do
     end
   end
 
+  describe "GET #posts" do
+
+    it 'should display user\'s folios' do
+      folio.posts << create(:post)
+      get :posts, params: { id: folio.id }
+      expect(json_response['posts'].count).to eq(1)
+    end
+  end
+
 
   describe "POST #create" do
     describe 'with valid fields' do
       it 'should create a folio' do
         postable = create(:post)
         post :create, params: { folio: { name: "Folio name", post_ids: [postable.id]}}
-        expect(json_response['folio']['posts'].count).to eq(1)
+        expect(json_response['folio']['last_post']).to_not be_nil
         expect(json_response['folio']['name']).to eq("Folio name")
       end
     end
@@ -43,14 +52,14 @@ describe Api::V1::FoliosController do
       it 'should update a folio' do
         postable = create(:post)
         patch :update, params: { id: folio.id, folio: { name: "Folio new name", post_ids: [postable.id]}}
-        expect(json_response['folio']['posts'].count).to eq(1)
+        expect(json_response['folio']['last_post']).to_not be_nil
         expect(json_response['folio']['name']).to eq("Folio new name")
       end
 
       it 'should remove a post if removed' do
         postable = create(:post)
         patch :update, params: { id: folio.id, folio: { name: "Folio new name", post_ids: []}}
-        expect(json_response['folio']['posts'].count).to eq(0)
+        expect(json_response['folio']['last_post']).to be_nil
         expect(json_response['folio']['name']).to eq("Folio new name")
       end
     end

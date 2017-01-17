@@ -1,5 +1,6 @@
 class Api::V1::FoliosController < ApplicationController
   before_action :authenticate_with_token!
+  before_action :set_folio, only: [:posts]
 
   def index
     folios = current_user.folios.order('created_at desc').page(params[:page]).per(20)
@@ -30,7 +31,16 @@ class Api::V1::FoliosController < ApplicationController
     head 204
   end
 
+  def posts
+    posts = @folio.posts.order('created_at desc').page(params[:page]).per(10)
+    render json: posts, meta: pagination_dict(posts)
+  end
+
   private
+
+  def set_folio
+    @folio = Folio.find(params[:id])
+  end
 
   def folio_params
     params.require(:folio).permit(:name, post_ids: [])

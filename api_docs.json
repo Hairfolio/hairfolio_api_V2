@@ -1036,6 +1036,28 @@
         }
       },
       {
+        "action": "GET",
+        "uri": "\/folios\/:id\/posts",
+        "authentication" : false,
+        "description": "Showing the posts of a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "posts": [
+
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
         "action": "POST",
         "uri": "\/folios",
         "authentication" : false,
@@ -1062,9 +1084,7 @@
               "id":65,
               "created_at":"2016-12-10T00:48:52.730Z",
               "name":"Et qui unde natus eius.",
-              "posts": [
-
-                ]
+              "last_post": null
             }
           ]
         }
@@ -1096,9 +1116,7 @@
               "id":65,
               "created_at":"2016-12-10T00:48:52.730Z",
               "name":"Et qui unde natus eius.",
-              "posts": [
-
-                ]
+              "last_post": null
             }
           ]
         }

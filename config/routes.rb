@@ -21,7 +21,9 @@ Rails.application.routes.draw do
         member { get :stylists }
       end
       resources :contacts, except: [:edit]
-      resources :folios, only: [:index, :create, :destroy, :update]
+      resources :folios, only: [:index, :create, :destroy, :update] do
+        member { get :posts }
+      end
       resources :posts do
         resources :comments, only: [:create, :destroy, :index, :update]
         resources :likes, only: [:create, :index] do
