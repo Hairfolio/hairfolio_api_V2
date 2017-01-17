@@ -7,7 +7,7 @@ class Api::V1::PostsController < ApplicationController
     posts = Post.where(user: current_user.following + User.where(id: current_user.id)).order('created_at desc') unless (params[:popular] || params[:favorites])
     posts = posts.popular if params[:popular]
     posts = posts.favorites(current_user) if params[:favorites]
-    posts = posts.page(params[:page]).per(20)
+    posts = posts.page(params[:page]).per(10)
     render json: posts, meta: pagination_dict(posts)
   end
 

@@ -3005,6 +3005,11 @@
             "type" : "boolean",
             "description" : "Setting the popuar toggle filters by popular",
             "required" : false
+          },
+          "favorites" : {
+            "type" : "boolean",
+            "description" : "Setting the favorites toggle filters by popular",
+            "required" : false
           }
         },
         "response": {
