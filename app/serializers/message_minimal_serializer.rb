@@ -6,6 +6,6 @@ class MessageMinimalSerializer < ActiveModel::Serializer
   end
 
   def post
-    PostSerializer.new(object.post, {scope: scope}).serializable_hash if object.post
+    PostMinimalSerializer.new(object.post, {scope: scope}).serializable_hash if object.post
   end
 end
