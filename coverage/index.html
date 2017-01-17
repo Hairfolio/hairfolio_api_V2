@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-17T11:00:29-08:00">2017-01-17T11:00:29-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-17T11:04:29-08:00">2017-01-17T11:04:29-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.28
+         2.26
        </span>
     </span> hits/line)
   </h2>
@@ -317,7 +317,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>78.0</td>
+        <td>75.3</td>
       </tr>
       
       <tr>
@@ -347,7 +347,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>11.4</td>
+        <td>10.8</td>
       </tr>
       
       <tr>
@@ -417,7 +417,7 @@
         <td>16</td>
         <td>16</td>
         <td>0</td>
-        <td>5.0</td>
+        <td>4.8</td>
       </tr>
       
       <tr>
@@ -977,7 +977,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>14.0</td>
+        <td>15.0</td>
       </tr>
       
       <tr>
@@ -987,7 +987,7 @@
         <td>24</td>
         <td>24</td>
         <td>0</td>
-        <td>20.2</td>
+        <td>19.1</td>
       </tr>
       
       <tr>
@@ -3509,7 +3509,7 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: current_user.following.uniq, status: 201, root: &#39;users&#39;</code>
+          <code class="ruby">      render json: current_user.following.uniq, status: 201, root: &#39;users&#39;, each_serializer: UserMinimalSerializer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -3629,7 +3629,7 @@
         <li class="covered" data-hits="2" data-linenumber="28">
           <span class="hits">2</span>
           
-          <code class="ruby">    render json: users, meta: pagination_dict(users), root: &#39;users&#39;</code>
+          <code class="ruby">    render json: users, meta: pagination_dict(users), root: &#39;users&#39;, each_serializer: UserMinimalSerializer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
@@ -7244,8 +7244,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="283" data-linenumber="4">
-          <span class="hits">283</span>
+        <li class="covered" data-hits="271" data-linenumber="4">
+          <span class="hits">271</span>
           
           <code class="ruby">    if session[&quot;warden.user.user.key&quot;]</code>
         </li>
@@ -7262,8 +7262,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="254" data-linenumber="7">
-          <span class="hits">254</span>
+        <li class="covered" data-hits="242" data-linenumber="7">
+          <span class="hits">242</span>
           
           <code class="ruby">      @current_user ||= request.headers[&#39;Authorization&#39;] ? User.find_by(auth_token: request.headers[&#39;Authorization&#39;]) : nil</code>
         </li>
@@ -7508,8 +7508,8 @@
           <code class="ruby">  scope :facebook, -&gt; { joins(:provider).where(&quot;providers.name = &#39;facebook&#39;&quot;) }</code>
         </li>
       
-        <li class="covered" data-hits="107" data-linenumber="9">
-          <span class="hits">107</span>
+        <li class="covered" data-hits="101" data-linenumber="9">
+          <span class="hits">101</span>
           
           <code class="ruby">  scope :instagram, -&gt; { joins(:provider).where(&quot;providers.name = &#39;instagram&#39;&quot;) }</code>
         </li>
@@ -8012,8 +8012,8 @@
           <code class="ruby">  has_many :messages, dependent: :destroy</code>
         </li>
       
-        <li class="covered" data-hits="54" data-linenumber="6">
-          <span class="hits">54</span>
+        <li class="covered" data-hits="51" data-linenumber="6">
+          <span class="hits">51</span>
           
           <code class="ruby">  scope :participant, -&gt; (user) { joins(:messages).where(messages: { user: user}) }</code>
         </li>
@@ -11708,8 +11708,8 @@
           <code class="ruby">  def brand_name</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="5">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="43" data-linenumber="5">
+          <span class="hits">43</span>
           
           <code class="ruby">    object.brand ? object.brand.name : nil</code>
         </li>
@@ -11732,8 +11732,8 @@
           <code class="ruby">  def salon_name</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="9">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="43" data-linenumber="9">
+          <span class="hits">43</span>
           
           <code class="ruby">    object.salon ? object.salon.name : nil</code>
         </li>
@@ -11816,8 +11816,8 @@
           <code class="ruby">  def offerings</code>
         </li>
       
-        <li class="covered" data-hits="54" data-linenumber="9">
-          <span class="hits">54</span>
+        <li class="covered" data-hits="51" data-linenumber="9">
+          <span class="hits">51</span>
           
           <code class="ruby">    object.offerings.map { |o| OfferingSerializer.new(o, {scope: scope}).serializable_hash }</code>
         </li>
@@ -11840,8 +11840,8 @@
           <code class="ruby">  def likes_count</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="13">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="13">
+          <span class="hits">49</span>
           
           <code class="ruby">    object.likes.uniq.length</code>
         </li>
@@ -11864,8 +11864,8 @@
           <code class="ruby">  def followers_count</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="17">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="17">
+          <span class="hits">49</span>
           
           <code class="ruby">    object.followers.uniq.length</code>
         </li>
@@ -11888,8 +11888,8 @@
           <code class="ruby">  def salon</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="21">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="21">
+          <span class="hits">49</span>
           
           <code class="ruby">    SalonSerializer.new(object.salon, {scope: scope}).serializable_hash if object.salon</code>
         </li>
@@ -11912,8 +11912,8 @@
           <code class="ruby">  def brand</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="25">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="25">
+          <span class="hits">49</span>
           
           <code class="ruby">    BrandSerializer.new(object.brand, {scope: scope}).serializable_hash if object.brand</code>
         </li>
@@ -11936,8 +11936,8 @@
           <code class="ruby">  def facebook_id</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="29">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="29">
+          <span class="hits">49</span>
           
           <code class="ruby">    object.authentications.facebook.first.try(:uid) if object.authentications.instagram.any?</code>
         </li>
@@ -11960,8 +11960,8 @@
           <code class="ruby">  def instagram_id</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="33">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="33">
+          <span class="hits">49</span>
           
           <code class="ruby">    object.authentications.instagram.first.try(:uid) if object.authentications.instagram.any?</code>
         </li>
@@ -11984,8 +11984,8 @@
           <code class="ruby">  def is_following_me</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="37">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="37">
+          <span class="hits">49</span>
           
           <code class="ruby">    scope &amp;&amp; scope.current_user &amp;&amp; object.following?(scope.current_user)</code>
         </li>
@@ -12008,8 +12008,8 @@
           <code class="ruby">  def is_followed_by_me</code>
         </li>
       
-        <li class="covered" data-hits="52" data-linenumber="41">
-          <span class="hits">52</span>
+        <li class="covered" data-hits="49" data-linenumber="41">
+          <span class="hits">49</span>
           
           <code class="ruby">    scope &amp;&amp; scope.current_user &amp;&amp; object.followers?(scope.current_user)</code>
         </li>

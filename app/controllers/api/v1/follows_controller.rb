@@ -5,7 +5,7 @@ class Api::V1::FollowsController < ApplicationController
   def create
     follow = Follow.new(follower: current_user, following: @user)
     if follow.save
-      render json: current_user.following.uniq, status: 201, root: 'users'
+      render json: current_user.following.uniq, status: 201, root: 'users', each_serializer: UserMinimalSerializer
     else
       render json: { errors: follow.errors }, status: 422, root: 'users'
     end
@@ -25,7 +25,7 @@ class Api::V1::FollowsController < ApplicationController
     else
       users = Kaminari.paginate_array(@user.followers.uniq).page(params[:page]).per(20)
     end
-    render json: users, meta: pagination_dict(users), root: 'users'
+    render json: users, meta: pagination_dict(users), root: 'users', each_serializer: UserMinimalSerializer
   end
 
   private
