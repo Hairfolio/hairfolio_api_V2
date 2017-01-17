@@ -10,11 +10,11 @@ class UserSerializer < ActiveModel::Serializer
   end
 
   def likes_count
-    object.likes.length
+    object.likes.uniq.length
   end
 
   def followers_count
-    object.followers.length
+    object.followers.uniq.length
   end
 
   def salon
