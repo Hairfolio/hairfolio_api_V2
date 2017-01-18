@@ -3678,6 +3678,7 @@
       "/Users/tyler/hairfolio/app/serializers/post_minimal_serializer.rb": [
         1,
         1,
+        1,
         null,
         1,
         4,
@@ -3708,6 +3709,10 @@
       "/Users/tyler/hairfolio/app/serializers/folio_serializer.rb": [
         1,
         1,
+        null,
+        1,
+        4,
+        null,
         null,
         1,
         4,
@@ -3919,6 +3924,6 @@
         null
       ]
     },
-    "timestamp": 1484681572
+    "timestamp": 1484767076
   }
 }

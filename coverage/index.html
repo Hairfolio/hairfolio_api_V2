@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-17T11:32:52-08:00">2017-01-17T11:32:52-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-01-18T11:17:56-08:00">2017-01-18T11:17:56-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>153</b> files in total.
-    <b>2076</b> relevant lines. 
-    <span class="green"><b>2056</b> lines covered</span> and
+    <b>2079</b> relevant lines. 
+    <span class="green"><b>2059</b> lines covered</span> and
     <span class="red"><b>20</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -773,11 +773,11 @@
       <tr>
         <td class="strong"><a href="#31062f59a66afc6682deba9abf1ef4253474fedc" class="src_link" title="app/serializers/folio_serializer.rb">app/serializers/folio_serializer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>7</td>
-        <td>4</td>
-        <td>4</td>
+        <td>11</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
@@ -903,11 +903,11 @@
       <tr>
         <td class="strong"><a href="#849c08e7733aac7da378055231299d3d9559f176" class="src_link" title="app/serializers/post_minimal_serializer.rb">app/serializers/post_minimal_serializer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>12</td>
-        <td>6</td>
-        <td>6</td>
+        <td>13</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -10205,8 +10205,8 @@
     <h3>app/serializers/folio_serializer.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -10223,7 +10223,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attributes :id, :created_at, :name, :last_post</code>
+          <code class="ruby">  attributes :id, :created_at, :name, :last_post, :posts_count</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -10251,6 +10251,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def posts_count</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    object.posts.length</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">end</code>
@@ -11315,8 +11339,8 @@
     <h3>app/serializers/post_minimal_serializer.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -11336,61 +11360,67 @@
           <code class="ruby">  attributes :id, :created_at, :description, :likes_count, :comments_count, :liked_by_me, :user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  has_many :photos</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">  def user</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="5">
+        <li class="covered" data-hits="4" data-linenumber="6">
           <span class="hits">4</span>
           
           <code class="ruby">    UserMinimalSerializer.new(object.user).serializable_hash if object.user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  def liked_by_me</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="9">
+        <li class="covered" data-hits="4" data-linenumber="10">
           <span class="hits">4</span>
           
           <code class="ruby">    object.user.likes.pluck(:post_id).include?(object.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">end</code>

@@ -1021,9 +1021,8 @@
               "id":65,
               "created_at":"2016-12-10T00:48:52.730Z",
               "name":"Et qui unde natus eius.",
-              "posts": [
-
-                ]
+              "posts_count" : 0,
+              "last_post" : null
             }
           ],
           "meta": {
@@ -1084,7 +1083,8 @@
               "id":65,
               "created_at":"2016-12-10T00:48:52.730Z",
               "name":"Et qui unde natus eius.",
-              "last_post": null
+              "last_post": null,
+              "posts_count" : 0
             }
           ]
         }
@@ -1116,7 +1116,8 @@
               "id":65,
               "created_at":"2016-12-10T00:48:52.730Z",
               "name":"Et qui unde natus eius.",
-              "last_post": null
+              "last_post": null,
+              "posts_count" : 0
             }
           ]
         }
