@@ -1,6 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   before_action :authenticate_with_token!, only: [:create, :update, :destroy, :index]
-  before_action :set_post, only: [:update, :destroy]
+  before_action :set_post, only: [:update, :destroy, :show]
 
   def index
     posts = Post.where(nil)
@@ -26,6 +26,10 @@ class Api::V1::PostsController < ApplicationController
     else
       render json: { errors: @post.errors }, status: 422
     end
+  end
+
+  def show
+    render json: @post, root: 'post'
   end
 
   def destroy

@@ -30,6 +30,14 @@ describe Api::V1::PostsController do
 
   end
 
+  describe "GET #show" do
+    it 'should render the post' do
+      postable.reload
+      get :show, params: { id: postable.id }
+      expect(json_response['post']).to_not be_nil
+    end
+  end
+
   describe "POST #create" do
     describe 'with valid fields' do
       it 'should create the post' do
