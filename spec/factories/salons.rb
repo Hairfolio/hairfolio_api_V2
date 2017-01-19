@@ -8,5 +8,8 @@ FactoryGirl.define do
     zip { Faker::Address.postcode }
     website { Faker::Internet.url }
     phone { Faker::PhoneNumber.phone_number }
+    after :create do |s|
+      create(:user, account_type: 'owner', salon: s)
+    end
   end
 end

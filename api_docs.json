@@ -3728,27 +3728,38 @@
           }
         },
         "response": {
-          "salons": [
+          "users": [
             {
-              "id": 55,
-              "created_at": "2016-12-11T17:59:30.230Z",
-              "name": "Gutmann-Christiansen",
-              "info": "Hic suscipit numquam dicta est perspiciatis explicabo sint. Quis quam dicta provident. Aliquid dolorum ducimus laborum est repellendus possimus commodi.",
-              "address": "2120 Skiles Roads",
-              "city": "Raymundoview",
-              "state": "Missouri",
-              "zip": "64779",
-              "website": "http:\/\/kuhlmanthompson.info\/kristofer_oconnell",
-              "phone": "(607) 194-5835"
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
             }
-          ],
-          "meta": {
-            "current_page": 1,
-            "next_page": 2,
-            "prev_page": null,
-            "total_pages": 12,
-            "total_count": 222
-          }
+          ]
         }
       },
       {

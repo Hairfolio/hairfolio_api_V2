@@ -5,8 +5,9 @@ class Api::V1::SalonsController < ApplicationController
     salons = Salon.where(nil)
     salons = salons.near([params[:latitude], params[:longitude]], params[:radius]) if (params[:latitude] && params[:longitude] && params[:radius])
     salons = salons.where("name ilike ?", "%#{params[:q]}%")
-    salons = salons.page(params[:page]).per(20)
-    render json: salons, meta: pagination_dict(salons)
+    users = salons.map(&:owner)
+    users = Kaminari.paginate_array(users).page(params[:page]).per(20)
+    render json: users, meta: pagination_dict(users)
   end
 
   def show

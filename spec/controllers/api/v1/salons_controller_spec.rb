@@ -9,13 +9,13 @@ describe Api::V1::SalonsController do
     it 'should display available salons' do
       salon.reload
       get :index
-      expect(json_response['salons'].count).to eq(1)
+      expect(json_response['users'].count).to eq(1)
     end
 
     it 'should display available salons filtered by query' do
       salon.reload
       get :index, params: { q: salon.name }
-      expect(json_response['salons'].count).to eq(1)
+      expect(json_response['users'].count).to eq(1)
     end
   end
 
@@ -30,7 +30,7 @@ describe Api::V1::SalonsController do
     it 'should display the salon attributes' do
       create(:user, salon: salon)
       get :stylists, params: { id: salon.id }
-      expect(json_response['users'].count).to eq(1)
+      expect(json_response['users'].count).to eq(2)
     end
   end
 
