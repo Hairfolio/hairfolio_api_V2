@@ -80,4 +80,26 @@ describe Api::V1::FoliosController do
       expect(response.status).to eq(204)
     end
   end
+
+  describe "POST #add_post" do
+    let(:postable) { create(:post) }
+
+    it 'should add a post to a folio' do
+      post :add_post, params: { id: folio.id, post_id: postable.id }
+      expect(response.status).to eq(201)
+      expect(json_response['posts'].count).to eq(1)
+    end
+  end
+
+
+  describe "DELETE #remove_post" do
+    let(:postable) { create(:post) }
+
+    it 'should delete a post from a folio' do
+      folio.posts << postable
+      delete :remove_post, params: { id: folio.id, post_id: postable.id }
+      expect(json_response['posts'].count).to eq(0)
+      expect(response.status).to eq(204)
+    end
+  end
 end

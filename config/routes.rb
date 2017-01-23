@@ -22,7 +22,11 @@ Rails.application.routes.draw do
       end
       resources :contacts, except: [:edit]
       resources :folios, only: [:index, :create, :destroy, :update] do
-        member { get :posts }
+        member do
+          get :posts
+          post :add_post
+          delete :remove_post
+        end
       end
       resources :posts do
         resources :comments, only: [:create, :destroy, :index, :update]
@@ -30,6 +34,7 @@ Rails.application.routes.draw do
           collection { delete :destroy }
         end
       end
+      resources :photos, only: [:update]
       resources :notifications, only: [:index, :show]
       resources :users, except: [:edit] do
         resources :educations, except: [:edit]

@@ -1058,6 +1058,64 @@
       },
       {
         "action": "POST",
+        "uri": "\/folios\/:id\/add_post",
+        "authentication" : false,
+        "description": "Adding a post to a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "post_id" : {
+            "type" : "integer",
+            "description" : "the id of the post",
+            "required" : true
+          }
+        },
+        "response": {
+          "posts": [
+
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/folios\/:id\/remove_post",
+        "authentication" : false,
+        "description": "Removing a post fom a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "post_id" : {
+            "type" : "integer",
+            "description" : "the id of the post",
+            "required" : true
+          }
+        },
+        "response": {
+          "posts": [
+
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "POST",
         "uri": "\/folios",
         "authentication" : false,
         "description": "Creating a new hairfolio",
@@ -1586,6 +1644,91 @@
         },
         "response": {
           "status": 204
+        }
+      }
+    ],
+    "photos": [
+      {
+        "action": "PUT",
+        "uri": "\/photos\/:id",
+        "authentication" : true,
+        "description": "Updating a photo",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "photo[asset_url]" : {
+            "type" : "string",
+            "description" : "The url of the photo",
+            "required" : false
+          },
+          "photo[post_id]" : {
+            "type" : "integer",
+            "description" : "The id of the post",
+            "required" : false
+          },
+          "photo[video_url]" : {
+            "type" : "string",
+            "description" : "The url of the video",
+            "required" : false
+          }
+        },
+        "response": {
+          "photo": {
+            "id": 305,
+            "created_at": "2016-12-14T23:34:26.105Z",
+            "asset_url": "http:\/\/schimmel.name\/darien",
+            "post_id": 488,
+            "labels": [
+              {
+                "id": 254,
+                "created_at": "2016-12-14T23:34:26.107Z",
+                "position_top": 1,
+                "position_left": 1,
+                "label_type": "hash_tag",
+                "tag": {
+                  "id": 318,
+                  "created_at": "2016-12-14T23:34:25.906Z",
+                  "name": "expedita",
+                  "url": null
+                },
+                "photo_id": 305,
+                "formulas": [
+                  {
+                    "id": 207,
+                    "created_at": "2016-12-14T23:34:26.109Z",
+                    "post_id": null,
+                    "service": {
+                      "id": 275,
+                      "created_at": "2016-12-14T23:34:25.927Z",
+                      "name": "Jenkins Group",
+                      "position": 1
+                    },
+                    "time": 1,
+                    "weight": 1,
+                    "volume": 1,
+                    "treatments": [
+                      {
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.111Z",
+                        "color": {
+                          "id": 230,
+                          "created_at": "2016-12-14T23:34:25.962Z",
+                          "harmony_id": 242,
+                          "code": "jdij2d390",
+                          "start_hex": "996a96",
+                          "end_hex": "41ffa9"
+                        },
+                        "weight": 1
+                      }
+                    ],
+                    "label_id": 254
+                  }
+                ]
+              }
+            ]
+          }
         }
       }
     ],

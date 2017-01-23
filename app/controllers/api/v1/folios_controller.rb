@@ -1,6 +1,6 @@
 class Api::V1::FoliosController < ApplicationController
   before_action :authenticate_with_token!
-  before_action :set_folio, only: [:posts]
+  before_action :set_folio, only: [:posts, :add_post, :remove_post]
 
   def index
     folios = current_user.folios.order('created_at desc').page(params[:page]).per(20)
@@ -23,6 +23,18 @@ class Api::V1::FoliosController < ApplicationController
     else
       render json: { errors: folio.errors }, status: 422
     end
+  end
+
+  def add_post
+    post = Post.find(params[:post_id])
+    @folio.posts << post unless @folio.posts.include?(post)
+    render json: @folio.posts, status: 201
+  end
+
+  def remove_post
+    post = Post.find(params[:post_id])
+    @folio.posts.delete(post)
+    render json: @folio.posts, status: 204
   end
 
   def destroy

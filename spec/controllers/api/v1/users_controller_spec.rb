@@ -28,7 +28,7 @@ describe Api::V1::UsersController do
       stylist = create(:user, account_type: 'owner', salon: salon)
 
       get :index, params: { account_type: 'owner', q: salon.name }
-      expect(json_response['users'].count).to eq(1)
+      expect(json_response['users'].count).to eq(2)
     end
   end
 
