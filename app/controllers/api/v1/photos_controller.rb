@@ -2,8 +2,11 @@ class Api::V1::PhotosController < ApplicationController
 
   def update
     photo = Photo.find(params[:id])
-    photo.update(photo_params)
-    render json: photo, status: 201
+    if photo.update(photo_params)
+      render json: photo, status: 201
+    else
+      render json: { errors: photo.errors }, status: 422
+    end
   end
 
   private
