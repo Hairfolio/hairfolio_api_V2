@@ -48,7 +48,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:facebook_token, :twitter_token, :instagram_token, :pinterest_token, :email, :password, :password_confirmation, :account_type, :first_name, :last_name, :description, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :salon_id, :career_opportunity, brand_attributes: [:id, :_destroy, :name, :info, :address, :city, :state, :zip, :website, :phone], salon_attributes: [:name, :info, :address, :city, :state, :zip, :website, :phone], educations_attributes: [:name, :year_from, :year_to, :degree_id, :user_id, :website, :id, :_destroy], offerings_attributes: [:user_id, :category_id, :service_id, :price, :id, :_destroy], certificate_ids: [], experience_ids: [])
+    params.require(:user).permit(:facebook_token, :twitter_token, :instagram_token, :default_pinterest_board, :pinterest_token, :email, :password, :password_confirmation, :account_type, :first_name, :last_name, :description, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :years_exp, :salon_id, :career_opportunity, brand_attributes: [:id, :_destroy, :name, :info, :address, :city, :state, :zip, :website, :phone], salon_attributes: [:name, :info, :address, :city, :state, :zip, :website, :phone], educations_attributes: [:name, :year_from, :year_to, :degree_id, :user_id, :website, :id, :_destroy], offerings_attributes: [:user_id, :category_id, :service_id, :price, :id, :_destroy], certificate_ids: [], experience_ids: [])
   end
 
   def set_user
