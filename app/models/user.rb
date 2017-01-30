@@ -36,7 +36,7 @@ class User < ApplicationRecord
   scope :search, -> (query) { includes(:salon, :brand).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?) or (brands.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
 
   def unread_messages_count
-    Conversation.includes(:messages).participant(self).map {|c| c.messages.where(read: false).where('user_id != ?', self.id).length }.sum
+    Conversation.participant(self).map {|c| c.messages.where(read: false).where('user_id != ?', self.id).length }.sum
   end
 
   def friends

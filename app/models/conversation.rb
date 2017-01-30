@@ -3,7 +3,7 @@ class Conversation < ApplicationRecord
 
   belongs_to :sender, :foreign_key => :sender_id, class_name: 'User'
   has_many :messages, dependent: :destroy
-  scope :participant, -> (user) { joins(:messages).where(messages: { user: user}).order('conversations.updated_at desc') }
+  scope :participant, -> (user) { where("conversations.sender_id = ? or recipient_ids ilike '%?%'", user.id, user.id).order('conversations.updated_at desc') }
   serialize :recipient_ids
 
 
