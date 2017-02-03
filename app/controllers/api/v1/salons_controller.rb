@@ -7,7 +7,7 @@ class Api::V1::SalonsController < ApplicationController
     salons = salons.where("name ilike ?", "%#{params[:q]}%")
     users = salons.map(&:owner)
     users = Kaminari.paginate_array(users).page(params[:page]).per(20)
-    render json: users, meta: pagination_dict(users)
+    render json: users, meta: pagination_dict(users), serializer: UserNestedSerializer
   end
 
   def show
