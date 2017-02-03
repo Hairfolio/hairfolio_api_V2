@@ -3,14 +3,14 @@ class Conversation < ApplicationRecord
 
   belongs_to :sender, :foreign_key => :sender_id, class_name: 'User'
   has_many :messages, dependent: :destroy
-  scope :participant, -> (user) { joins(:messages).where(messages: { user: user}) }
+  scope :participant, -> (user) { where("conversations.sender_id = ? or recipient_ids ilike '%?%'", user.id, user.id).order('conversations.updated_at desc') }
   serialize :recipient_ids
 
 
   scope :including_all_ids, -> (ids) { where(matching_ids_query(ids, 'AND')) }
 
   def recipients
-    User.where(id: recipient_ids << sender_id) 
+    User.where(id: recipient_ids << sender_id)
   end
 
   def self.discover_or_new(params)
