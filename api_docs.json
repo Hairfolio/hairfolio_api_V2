@@ -3857,17 +3857,22 @@
           "latitude" : {
             "type" : "float",
             "description" : "The latitude to search with",
-            "required" : true
+            "required" : false
           },
           "longitude" : {
             "type" : "string",
             "description" : "The longitude to search with",
-            "required" : true
+            "required" : false
           },
           "radius" : {
             "type" : "string",
             "description" : "the radius to search with (in miles)",
-            "required" : true
+            "required" : false
+          },
+          "zipcode" : {
+            "type" : "string",
+            "description" : "the the zipcode to search nearby",
+            "required" : false
           }
         },
         "response": {
