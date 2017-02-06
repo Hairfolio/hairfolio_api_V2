@@ -10,7 +10,7 @@ class Conversation < ApplicationRecord
   scope :including_all_ids, -> (ids) { where(matching_ids_query(ids, 'AND')) }
 
   def recipients
-    User.where(id: recipient_ids << sender_id)
+    User.where(id: (recipient_ids ? recipient_ids : [] ) << sender_id)
   end
 
   def self.discover_or_new(params)
