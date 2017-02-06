@@ -12,6 +12,10 @@ class Harmony < ApplicationRecord
         last_digit_or_number: c.code.split(/([a-zA-Z]{1,}|\d{1,}\.\d{1,}|\d{1,})$/).reject { |a| a.empty? }.first
       }
     }
-    Color.where(id: hash.sort_by { |c| [c[:first_digit_or_number], c[:last_digit_or_number]]}.reverse.map { |a| a[:id] })
+    colors_ids = hash.sort_by { |c|
+      [c[:first_digit_or_number].to_f, c[:last_digit_or_number].to_f]
+    }.reverse.map { |a| a[:id] }
+
+    Color.find(colors_ids).index_by(&:id).slice(*colors_ids).values
   end
 end
