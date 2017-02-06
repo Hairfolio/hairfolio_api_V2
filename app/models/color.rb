@@ -6,4 +6,5 @@ class Color < ApplicationRecord
   validates :start_hex, format: { with: /\A[a-f0-9]+\z/ }
   validates :end_hex, length: { is: 6 }
   validates :end_hex, format: { with: /\A[a-f0-9]+\z/ }
+
 end
