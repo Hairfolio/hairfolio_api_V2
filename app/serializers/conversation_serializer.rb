@@ -14,6 +14,6 @@ class ConversationSerializer < ActiveModel::Serializer
   end
 
   def recipient_ids
-    object.recipient_ids.map { |r| r.to_i }
+    object.recipient_ids ? object.recipient_ids.map { |r| r.to_i } : []
   end
 end
