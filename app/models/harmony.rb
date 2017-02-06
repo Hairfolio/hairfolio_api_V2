@@ -8,10 +8,10 @@ class Harmony < ApplicationRecord
       {
         id: c.id,
         code: c.code,
-        first_digit_or_number: c.code.split(/^([a-zA-Z]{1,}|\d{1,}\.\d{1,}|\d{1,})/).first,
-        last_digit_or_number: c.code.split(/([a-zA-Z]{1,}|\d{1,}\.\d{1,}|\d{1,})$/).first
+        first_digit_or_number: c.code.split(/^([a-zA-Z]{1,}|\d{1,}\.\d{1,}|\d{1,})/).reject { |a| a.empty? }.first,
+        last_digit_or_number: c.code.split(/([a-zA-Z]{1,}|\d{1,}\.\d{1,}|\d{1,})$/).reject { |a| a.empty? }.first
       }
     }
-    
+    Color.where(id: hash.sort_by { |c| [c[:first_digit_or_number], c[:last_digit_or_number]]}.reverse.map { |a| a[:id] })
   end
 end

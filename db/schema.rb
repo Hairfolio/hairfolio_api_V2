@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126002000) do
+ActiveRecord::Schema.define(version: 20170206183213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,8 +75,9 @@ ActiveRecord::Schema.define(version: 20170126002000) do
     t.string   "code"
     t.string   "start_hex"
     t.string   "end_hex"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "blank",      default: false
     t.index ["harmony_id"], name: "index_colors_on_harmony_id", using: :btree
   end
 

@@ -6,6 +6,6 @@ class HarmonySerializer < ActiveModel::Serializer
   end
 
   def colors
-    object.colors.order('code desc').map { |c| ColorSerializer.new(c).serializable_hash}
+    object.ordered_colors.map { |c| ColorSerializer.new(c).serializable_hash}
   end
 end
