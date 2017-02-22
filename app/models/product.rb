@@ -6,8 +6,11 @@ class Product < ApplicationRecord
 
   def upload_to_cloudinary
     if image_url
-      image = Cloudinary::Uploader.upload(image_url)
-      update(cloudinary_url: image['url'])
+      begin
+        image = Cloudinary::Uploader.upload(image_url)
+        update(cloudinary_url: image['url'])
+      rescue
+      end
     end
   end
 end
