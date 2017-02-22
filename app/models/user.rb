@@ -33,10 +33,18 @@ class User < ApplicationRecord
 
   before_validation :set_default_account_type
 
+  after_create :follow_autofollows
+
   scope :search, -> (query) { includes(:salon, :brand).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?) or (brands.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
 
   def unread_messages_count
     Conversation.participant(self).map {|c| c.messages.where(read: false).where('user_id != ?', self.id).length }.sum
+  end
+
+  def follow_autofollows
+    User.where(autofollow: true).each do |user|
+      Follow.create(follower: self, following: user)
+    end
   end
 
   def friends
