@@ -35,7 +35,7 @@ class User < ApplicationRecord
 
   after_create :follow_autofollows
 
-  scope :search, -> (query) { includes(:salon, :brand).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (salons.name ilike ?) or (brands.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
+  scope :search, -> (query) { includes(:salon, :brand).where('(users.first_name ilike ?) or (users.last_name ilike ?) or (users.description ilike ?) or (salons.name ilike ?) or (brands.name ilike ?)', "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%").references(:salon)}
 
   def unread_messages_count
     Conversation.participant(self).map {|c| c.messages.where(read: false).where('user_id != ?', self.id).length }.sum
