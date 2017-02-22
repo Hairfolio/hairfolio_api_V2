@@ -42,7 +42,7 @@ class User < ApplicationRecord
   end
 
   def follow_autofollows
-    User.where(autofollow: true).each do |user|
+    User.where(auto_follow: true).each do |user|
       Follow.create(follower: self, following: user)
     end
   end
