@@ -19,7 +19,7 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def posts
-    posts = Post.where(id: @tag.photos.pluck(:post_id)).order('created_at desc').page(params[:page]).per(20)
+    posts = Post.where(id: @tag.photos.pluck(:post_id)).order('created_at desc').page(params[:page]).per(8)
     render json: posts, meta: pagination_dict(posts)
   end
 
