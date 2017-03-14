@@ -4,7 +4,7 @@ class Api::V1::OfferingsController < ApplicationController
   before_action :set_offering, only: [:show, :update, :destroy]
 
   def index
-    offerings = @user.offerings.page(params[:page]).per(20)
+    offerings = @user.offerings.page(params[:page]).per(8)
     render json: offerings, meta: pagination_dict(offerings)
   end
 

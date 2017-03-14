@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-14T12:50:42-07:00">2017-03-14T12:50:42-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-14T15:12:02-07:00">2017-03-14T15:12:02-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1651,7 +1651,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    brands = Brand.all.page(params[:page]).per(20)</code>
+          <code class="ruby">    brands = Brand.all.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -1747,7 +1747,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    categories = Category.all.page(params[:page]).per(20)</code>
+          <code class="ruby">    categories = Category.all.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -1813,7 +1813,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    certificates = Certificate.all.page(params[:page]).order(&#39;position asc&#39;).per(20)</code>
+          <code class="ruby">    certificates = Certificate.all.page(params[:page]).order(&#39;position asc&#39;).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -2053,7 +2053,7 @@
         <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">    comments = @post.comments.order(&#39;created_at desc&#39;).page(params[:page]).per(20)</code>
+          <code class="ruby">    comments = @post.comments.order(&#39;created_at desc&#39;).page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
@@ -2215,7 +2215,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    contacts = current_user.contacts.page(params[:page]).per(20)</code>
+          <code class="ruby">    contacts = current_user.contacts.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -2503,7 +2503,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    conversations = Conversation.participant(current_user).distinct.page(params[:page]).per(20)</code>
+          <code class="ruby">    conversations = Conversation.participant(current_user).distinct.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -2785,7 +2785,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    degrees = Degree.all.order(&#39;position asc&#39;).page(params[:page]).per(20)</code>
+          <code class="ruby">    degrees = Degree.all.order(&#39;position asc&#39;).page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -2887,7 +2887,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    educations = @user.educations.page(params[:page]).per(20)</code>
+          <code class="ruby">    educations = @user.educations.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
@@ -3187,7 +3187,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    experiences = Experience.all.order(&#39;position asc&#39;).page(params[:page]).per(20)</code>
+          <code class="ruby">    experiences = Experience.all.order(&#39;position asc&#39;).page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -3265,7 +3265,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    folios = current_user.folios.order(&#39;created_at desc&#39;).page(params[:page]).per(20)</code>
+          <code class="ruby">    folios = current_user.folios.order(&#39;created_at desc&#39;).page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -3745,7 +3745,7 @@
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">      users = Kaminari.paginate_array(@user.following.uniq).page(params[:page]).per(20)</code>
+          <code class="ruby">      users = Kaminari.paginate_array(@user.following.uniq).page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="23">
@@ -3757,7 +3757,7 @@
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">      users = Kaminari.paginate_array(@user.friends.uniq).page(params[:page]).per(20)</code>
+          <code class="ruby">      users = Kaminari.paginate_array(@user.friends.uniq).page(params[:page]).per(8)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
@@ -3769,7 +3769,7 @@
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      users = Kaminari.paginate_array(@user.followers.uniq).page(params[:page]).per(20)</code>
+          <code class="ruby">      users = Kaminari.paginate_array(@user.followers.uniq).page(params[:page]).per(8)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -4015,7 +4015,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    likes = @post.likes.page(params[:page]).per(20)</code>
+          <code class="ruby">    likes = @post.likes.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -4297,7 +4297,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    messages = @conversation.messages.order(&#39;created_at desc&#39;).page(params[:page]).per(20)</code>
+          <code class="ruby">    messages = @conversation.messages.order(&#39;created_at desc&#39;).page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
@@ -4651,7 +4651,7 @@
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">    notifications = notifications.page(params[:page]).per(10)</code>
+          <code class="ruby">    notifications = notifications.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="8">
@@ -4765,7 +4765,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    offerings = @user.offerings.page(params[:page]).per(20)</code>
+          <code class="ruby">    offerings = @user.offerings.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
@@ -5539,7 +5539,7 @@
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">    products = products.page(params[:page]).per(20)</code>
+          <code class="ruby">    products = products.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
@@ -5641,7 +5641,7 @@
         <li class="covered" data-hits="2" data-linenumber="10">
           <span class="hits">2</span>
           
-          <code class="ruby">    users = Kaminari.paginate_array(users).page(params[:page]).per(20)</code>
+          <code class="ruby">    users = Kaminari.paginate_array(users).page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="11">
@@ -7081,7 +7081,7 @@
         <li class="covered" data-hits="4" data-linenumber="8">
           <span class="hits">4</span>
           
-          <code class="ruby">    users = users.page(params[:page]).per(20)</code>
+          <code class="ruby">    users = users.page(params[:page]).per(8)</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="9">

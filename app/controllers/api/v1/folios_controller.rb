@@ -3,7 +3,7 @@ class Api::V1::FoliosController < ApplicationController
   before_action :set_folio, only: [:posts, :add_post, :remove_post]
 
   def index
-    folios = current_user.folios.order('created_at desc').page(params[:page]).per(20)
+    folios = current_user.folios.order('created_at desc').page(params[:page]).per(8)
     render json: folios, meta: pagination_dict(folios)
   end
 

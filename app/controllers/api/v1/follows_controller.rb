@@ -19,11 +19,11 @@ class Api::V1::FollowsController < ApplicationController
 
   def index
     if params[:followings]
-      users = Kaminari.paginate_array(@user.following.uniq).page(params[:page]).per(20)
+      users = Kaminari.paginate_array(@user.following.uniq).page(params[:page]).per(8)
     elsif params[:friends]
-      users = Kaminari.paginate_array(@user.friends.uniq).page(params[:page]).per(20)
+      users = Kaminari.paginate_array(@user.friends.uniq).page(params[:page]).per(8)
     else
-      users = Kaminari.paginate_array(@user.followers.uniq).page(params[:page]).per(20)
+      users = Kaminari.paginate_array(@user.followers.uniq).page(params[:page]).per(8)
     end
     render json: users, meta: pagination_dict(users), root: 'users', each_serializer: UserMinimalSerializer
   end

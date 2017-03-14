@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
     users = User.where(nil)
     users = users.search(params[:q]) if params[:q]
     users = users.where(account_type: params[:account_type]) if params[:account_type]
-    users = users.page(params[:page]).per(20)
+    users = users.page(params[:page]).per(8)
     render json: users, meta: pagination_dict(users)
   end
 
