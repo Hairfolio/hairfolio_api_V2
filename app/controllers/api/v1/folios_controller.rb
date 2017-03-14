@@ -44,7 +44,7 @@ class Api::V1::FoliosController < ApplicationController
   end
 
   def posts
-    posts = @folio.posts.order('created_at desc').page(params[:page]).per(10)
+    posts = @folio.posts.order('created_at desc').page(params[:page]).per(8)
     render json: posts, meta: pagination_dict(posts)
   end
 
