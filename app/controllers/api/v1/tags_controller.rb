@@ -3,7 +3,7 @@ class Api::V1::TagsController < ApplicationController
 
   def index
     tags = Tag.where(nil)
-    tags = tags.where("name ilike ?", "%#{params[:q].gsub('#', '')}%")
+    tags = tags.where("name ilike ?", "%#{params[:q].to_s.gsub('#', '')}%")
     tags = tags.popular if params[:popular]
     tags = tags.page(params[:page]).per(3)
     render json: tags, meta: pagination_dict(tags)
