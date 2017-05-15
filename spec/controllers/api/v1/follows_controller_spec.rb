@@ -21,6 +21,13 @@ describe Api::V1::FollowsController do
       get :index, params: {user_id: user_2.id, followings: true }
       expect(json_response['users'].count).to eq(1)
     end
+
+    it 'should shows the user friends' do
+      follow = create(:follow, follower: user_2, following: user_1)
+      create(:follow, follower: user_1, following: user_2)
+      get :index, params: {user_id: user_2.id, friends: true }
+      expect(json_response['users'].count).to eq(1)
+    end
   end
 
   describe "POST #create" do

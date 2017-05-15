@@ -42,15 +42,6 @@ describe Api::V1::MessagesController do
         expect(json_response['message']['body']).to eq(message_params['body'])
       end
     end
-
-    # describe 'with invalid fields' do
-    #   it 'should create the contact with a phone and email' do
-    #     message_params =  build(:message).attributes
-    #     message_params['user_id'] = nil
-    #     post :create, params: {  conversation_id: conversation.id, message: message_params }
-    #     expect(json_response['errors']['body']).to include("can't be blank")
-    #   end
-    # end
   end
 
   describe 'PATCH #update' do
@@ -61,14 +52,6 @@ describe Api::V1::MessagesController do
         expect(json_response['message']['body']).to eq("New Body")
       end
     end
-
-    # describe 'with invalid fields' do
-    #   it 'should create the contact with a phone and email' do
-    #     message = create(:message, conversation: conversation)
-    #     patch :update, params: { conversation_id: conversation.id, id: message.id, message: { user_id: nil } }
-    #     expect(json_response['errors']['body']).to include("can't be blank")
-    #   end
-    # end
   end
 
   describe 'POST #read' do

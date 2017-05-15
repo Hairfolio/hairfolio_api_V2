@@ -16,5 +16,12 @@ describe Api::V1::PhotosController do
         expect(json_response['photo']['asset_url']).to eq("Howdy")
       end
     end
+
+    describe 'with invalid fields' do
+      it 'should not update a photo' do
+        patch :update, params: { id: photo.id, photo: { asset_url: nil} }
+        expect(json_response['errors']['asset_url']).to include("can't be blank")
+      end
+    end
   end
 end

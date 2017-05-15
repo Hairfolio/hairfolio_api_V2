@@ -20,7 +20,7 @@ class Api::V1::SessionsController < ApplicationController
         user.save
         render json: user, status: 200, location: [:api, user]
       else
-        user = user = User.create_from_social(response)
+        user = User.create_from_social(response)
         if user
           user.generate_authentication_token!
           user.save

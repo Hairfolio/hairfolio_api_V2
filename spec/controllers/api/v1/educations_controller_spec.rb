@@ -18,6 +18,13 @@ describe Api::V1::EducationsController do
     end
   end
 
+  describe "GET #show" do
+    it 'should display the education' do
+      education.save
+      get :show, params: { user_id: user.id, id: education.id }
+      expect(json_response['education']).to_not be_nil
+    end
+  end
 
   describe "POST #create" do
     describe 'with valid fields' do

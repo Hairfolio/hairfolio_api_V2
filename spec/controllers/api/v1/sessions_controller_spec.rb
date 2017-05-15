@@ -2,6 +2,13 @@ require 'rails_helper'
 
 describe Api::V1::SessionsController do
 
+  describe "GET #environment" do
+    it 'should render the vars' do
+      get :environment
+      expect(json_response['facebook_app_id']).to_not be_nil
+    end
+  end
+
   describe "POST #create" do
 
     before(:each) do
@@ -92,6 +99,21 @@ describe Api::V1::SessionsController do
         it { expect(response.status).to eq(422) }
       end
 
+      context "when the user is not valid" do
+
+        before :each do
+          stub_request(:get, "https://graph.facebook.com/me?access_token=baduser&fields=id,name,first_name,last_name,email,friends").to_return(:status => 200, :body => "{}", :headers => {})
+          token = 'baduser'
+          post :facebook, params: { facebook_token: token }
+        end
+
+        it 'returns a json with an error' do
+          expect(json_response['errors']).to eql "Invalid user"
+        end
+
+        it { expect(response.status).to eq(422) }
+      end
+
       context "when the token is valid" do
         before :each do
           token = 'goodtoken'
@@ -143,6 +165,7 @@ describe Api::V1::SessionsController do
 
 
   describe "POST #instagram" do
+    let(:user) { create(:user) }
 
     before :each do
       create(:provider, name: 'instagram')
@@ -164,6 +187,21 @@ describe Api::V1::SessionsController do
         it { expect(response.status).to eq(422) }
       end
 
+      context "when the user is not valid" do
+
+        before :each do
+          stub_request(:get, "https://api.instagram.com/v1/users/self.json?access_token=baduser").to_return(:status => 200, :body => "{}", :headers => {})
+          token = 'baduser'
+          post :instagram, params: { instagram_token: token }
+        end
+
+        it 'returns a json with an error' do
+          expect(json_response['errors']).to eql "Invalid user"
+        end
+
+        it { expect(response.status).to eq(422) }
+      end
+
       context "when the token is valid" do
         before :each do
           token = 'goodtoken'
@@ -176,6 +214,41 @@ describe Api::V1::SessionsController do
 
         it { expect(response.status).to eq(200) }
 
+      end
+    end
+
+    context "when the user already exists" do
+      before(:each) do
+      stub_request(:get, "https://api.instagram.com/v1/users/self.json?access_token=goodtokenemail").to_return(:status => 200, :body => "{\"data\":{\"id\":\"1574083\",\"username\":\"snoopdogg\",\"full_name\":\"Snoop Dogg\",\"profile_picture\":\"http://distillery.s3.amazonaws.com/profiles/profile_1574083_75sq_1295469061.jpg\",\"bio\":\"This is my bio\",\"website\":\"http://snoopdogg.com\",\"counts\":{\"media\":1320,\"follows\":420,\"followed_by\":3410}}}", :headers => {})
+       token = 'goodtokenemail'
+       post :instagram, params: { instagram_token: token }
+      end
+
+      context 'when the authentication already exists' do
+        it 'should not create a new authentication' do
+          token = 'goodtokenemail'
+          expect { post :instagram, params: { instagram_token: token } }.to change{ Authentication.count }.by(0)
+        end
+      end
+
+      context "when the token is valid" do
+
+        it 'should not create an additional user' do
+          expect(User.count).to eq(1)
+        end
+
+        it { expect(response.status).to eq(200) }
+      end
+    end
+
+    context "when the user is signed in" do
+      before(:each) do
+        stub_request(:get, "https://api.instagram.com/v1/users/self.json?access_token=goodtokenemail").to_return(:status => 200, :body => "{\"data\":{\"id\":\"1574083\",\"username\":\"snoopdogg\",\"full_name\":\"Snoop Dogg\",\"profile_picture\":\"http://distillery.s3.amazonaws.com/profiles/profile_1574083_75sq_1295469061.jpg\",\"bio\":\"This is my bio\",\"website\":\"http://snoopdogg.com\",\"counts\":{\"media\":1320,\"follows\":420,\"followed_by\":3410}}}", :headers => {})
+      end
+
+      it 'should add the authentication to their profile' do
+        api_authorization_header(user.auth_token)
+        expect { post :instagram, params: { instagram_token: 'goodtokenemail' } }.to change{ User.count }.by(0)
       end
     end
   end

@@ -13,21 +13,15 @@ class Api::V1::MessagesController < ApplicationController
   end
 
   def update
-    if @message.update(message_params)
-      render json: @message, status: 201
-    else
-      render json: { errors: @message.errors }, status: 422
-    end
+    @message.update(message_params)
+    render json: @message, status: 201
   end
 
   def create
     message = current_user.messages.build(message_params)
     message.conversation = @conversation
-    if message.save
-      render json: message, status: 201
-    else
-      render json: { errors: message.errors }, status: 422
-    end
+    message.save
+    render json: message, status: 201
   end
 
   def destroy

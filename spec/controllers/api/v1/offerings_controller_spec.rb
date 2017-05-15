@@ -18,6 +18,14 @@ describe Api::V1::OfferingsController do
     end
   end
 
+  describe "GET #show" do
+
+    it 'should display the offering' do
+      offering.save
+      get :show, params: { user_id: user.id, id: offering.id }
+      expect(json_response['offering']).to_not be_nil
+    end
+  end
 
   describe "POST #create" do
     describe 'with valid fields' do

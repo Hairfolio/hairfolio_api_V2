@@ -90,7 +90,7 @@ class User < ApplicationRecord
   def self.create_from_social(response)
     password = Devise.friendly_token
     name = response['full_name'] ? response['full_name'] : response['name']
-    user = create(email: response['email'] ? response['email'] : "socialemail#{rand(0..83293)}@example.com", first_name: name.split(' ').first, last_name: name.split(' ').last, password: password, password_confirmation: password)
+    user = create(email: response['email'] ? response['email'] : "socialemail#{rand(0..83293)}@example.com", first_name: name.split(' ').first, last_name: name.split(' ').last, password: password, password_confirmation: password) rescue User.new
     return user.valid? ? user : false
   end
 end
