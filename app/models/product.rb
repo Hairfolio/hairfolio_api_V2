@@ -10,7 +10,7 @@ class Product < ApplicationRecord
         image = Cloudinary::Uploader.upload(image_url)
         # :nocov:
         update(cloudinary_url: image['url'])
-        # :nocov: 
+        # :nocov:
       rescue
       end
     end

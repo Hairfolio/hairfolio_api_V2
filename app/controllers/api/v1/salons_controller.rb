@@ -5,7 +5,7 @@ class Api::V1::SalonsController < ApplicationController
     salons = Salon.where(nil)
     salons = salons.near([params[:latitude], params[:longitude]], params[:radius]) if (params[:latitude] && params[:longitude] && params[:radius])
     salons = salons.near(params[:zipcode]) if params[:zipcode]
-    salons = salons.where("name ilike ?", "%#{params[:q]}%")
+    salons = salons.where("name ilike ? or info ilike ?", "%#{params[:q]}%", "%#{params[:q]}%")
     users = salons.map(&:owner).compact
     users = Kaminari.paginate_array(users).page(params[:page]).per(8)
     render json: users.empty? ? {users: []} : users, meta: pagination_dict(users), each_serializer: UserNestedSerializer
