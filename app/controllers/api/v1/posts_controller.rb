@@ -4,7 +4,8 @@ class Api::V1::PostsController < ApplicationController
 
   def index
     posts = Post.where(nil)
-    posts = Post.where(user: current_user.following + User.where(id: current_user.id)).order('created_at desc') unless (params[:popular] || params[:favorites])
+    posts = posts.where("description ilike ?", "%#{params[:q]}") if params[:q]
+    posts = posts.where(user: current_user.following + User.where(id: current_user.id)).order('created_at desc') unless (params[:popular] || params[:favorites])
     posts = posts.popular if params[:popular]
     posts = posts.favorites(current_user).order('created_at desc') if params[:favorites]
     posts = posts.page(params[:page]).per(params[:favorites] ? 6 : 4)
