@@ -2,7 +2,7 @@ class Api::V1::TagsController < ApplicationController
   before_action :set_tag, only: [:show, :posts]
 
   def index
-    tags = Tag.where(nil)
+    tags = Tag.includes(:photos).where.not(photos: { id: nil })
     tags = tags.where("name ilike ?", "%#{params[:q].gsub('#', '')}%") if params[:q]
     tags = tags.popular if params[:popular]
     tags = tags.page(params[:page]).per(3)
