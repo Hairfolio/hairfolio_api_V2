@@ -35,6 +35,13 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Post do
+    edit do
+      field :user
+      field :description
+    end
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
