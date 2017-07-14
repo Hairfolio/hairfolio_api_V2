@@ -1,24 +1,56 @@
-# README
+# Hairfolio API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application provides web and API access to the [Hairfolio](https://api.hairfolio.tech) architecture.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Install dependencies for the application. Instructions below are for OSX via homebrew:
 
-* System dependencies
+```console
+$ brew install postgresql
+$ brew services start postgresql
+$ brew install puma/puma/puma-dev
+$ sudo puma-dev -setup
+$ puma-dev -install
+$ cd ~/.puma-dev && ln -s ~/hairfolio
+```
 
-* Configuration
+And then configure the application environment from the project directory:
 
-* Database creation
+```console
+$ cp config/secrets.example.yml config/secrets.yml
+$ cp config/application.example.yml config/application.yml
+```
 
-* Database initialization
+And then execute:
 
-* How to run the test suite
+```console
+$ bundle
+$ rake db:setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Testing
 
-* Deployment instructions
+```console
+$ spring spec
+```
 
-* ...
+## Usage
+
+The application will be spawned by puma dev and made available at [http://hairfolio.dev](http://hairfolio.dev).
+
+### Restarting
+
+Puma dev currently has a quirk of requiring a touch and remove for restarting the server:
+
+```console
+$ touch tmp/restart.txt && rm tmp/restart.txt
+```
+
+## Deployment
+
+The app is hosted on Heroku at [http://hairfolio-prod.herokuapp.com](http://hairfolio-prod.herokuapp.com):
+
+```console
+git push heroku master
+```
