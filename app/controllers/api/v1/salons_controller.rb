@@ -1,12 +1,14 @@
 class Api::V1::SalonsController < ApplicationController
   before_action :set_salon, only: [:update, :show, :destroy, :stylists]
+  before_action :authenticate_with_token!, only: [:index, :stylists]
 
   def index
+    @blocked_ids = current_user.blocking.pluck(:id)
     salons = Salon.where(nil)
     salons = salons.near([params[:latitude], params[:longitude]], params[:radius]) if (params[:latitude] && params[:longitude] && params[:radius])
     salons = salons.near(params[:zipcode]) if params[:zipcode]
     salons = salons.where("name ilike ? or info ilike ?", "%#{params[:q]}%", "%#{params[:q]}%")
-    users = salons.map(&:owner).compact
+    users = salons.map(&:owner).compact.select { |user| !@blocked_ids.include? user.id }
     users = Kaminari.paginate_array(users).page(params[:page]).per(8)
     render json: users.empty? ? {users: []} : users, meta: pagination_dict(users), each_serializer: UserNestedSerializer
   end
@@ -38,7 +40,7 @@ class Api::V1::SalonsController < ApplicationController
   end
 
   def stylists
-    render json: @salon.users
+    render json: @salon.users.where.not(id: current_user.blocking.pluck(:id))
   end
 
   private

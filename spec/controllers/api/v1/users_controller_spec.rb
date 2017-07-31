@@ -5,6 +5,10 @@ describe Api::V1::UsersController do
   let(:user) { create(:user) }
 
   describe "GET #index" do
+    before :each do
+      api_authorization_header(user.auth_token)
+    end
+
     it 'should display available users' do
       user.reload
       get :index

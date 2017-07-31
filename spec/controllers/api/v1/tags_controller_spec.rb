@@ -3,12 +3,17 @@ require 'rails_helper'
 describe Api::V1::TagsController do
 
   let(:tag) { create(:tag) }
+  let(:user) { create(:user) }
 
   before :each do
     tag.reload
   end
 
   describe "GET #index" do
+    before :each do
+      api_authorization_header(user.auth_token)
+    end
+
     it 'should display available tags' do
       get :index
       expect(json_response['tags'].count).to eq(1)
@@ -59,6 +64,10 @@ describe Api::V1::TagsController do
   end
 
   describe "GET #posts" do
+    before :each do
+      api_authorization_header(user.auth_token)
+    end
+
     it 'should display available posts for the tags' do
       label = create(:label, tag: tag)
       get :posts, params: { id: tag.id }
