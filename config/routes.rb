@@ -46,6 +46,9 @@ Rails.application.routes.draw do
         resources :follows, only: [:create, :index] do
           collection { delete :destroy }
         end
+        resources :blocks, only: [:create, :index] do
+          collection { delete :destroy }
+        end
         resources :notifications, only: [:index, :destroy]
       end
       resources :conversations, except: [:edit, :show] do
