@@ -11,9 +11,9 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow', dependent: :destroy
   has_many :following, through: :following_relationships, source: :following
 
-  has_many :blocker_relationships, foreign_key: :blocker_id, class_name: 'Block', dependent: :destroy
+  has_many :blocker_relationships, foreign_key: :blocking_id, class_name: 'Block', dependent: :destroy
   has_many :blocker, through: :blocker_relationships, source: :blocker
-  has_many :blocked_relationships, foreign_key: :blocking_id, class_name: 'Block', dependent: :destroy
+  has_many :blocked_relationships, foreign_key: :blocker_id, class_name: 'Block', dependent: :destroy
   has_many :blocking, through: :blocked_relationships, source: :blocking
 
   has_many :contacts, dependent: :destroy

@@ -3,7 +3,16 @@ class Api::V1::TagsController < ApplicationController
   before_action :authenticate_with_token!, only: [:index, :posts]
 
   def index
-    tags = Tag.includes(:photos).where.not(photos: { id: nil })
+    blocked_photos_id = Post.includes(:photos)
+      .where(user_id: current_user.blocking.pluck(:id))
+      .map { |post|
+        post.photos.map { |photo|
+          photo.id
+        }
+      }.flatten
+    tags = Tag.includes(:photos)
+      .where.not(photos: { id: nil })
+      .where.not(photos: { id: blocked_photos_id })
     tags = tags.where("tags.name ilike ?", "%#{params[:q].gsub('#', '')}%") if params[:q]
     tags = tags.popular if params[:popular]
     tags = tags.page(params[:page]).per(3)
