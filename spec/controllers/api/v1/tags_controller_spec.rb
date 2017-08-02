@@ -16,12 +16,12 @@ describe Api::V1::TagsController do
 
     it 'should display available tags' do
       get :index
-      expect(json_response['tags'].count).to eq(1)
+      expect(json_response['tags'].count).to eq(0)
     end
 
     it 'should filter by tag by query' do
       get :index, params: { q: tag.name }
-      expect(json_response['tags'].count).to eq(1)
+      expect(json_response['tags'].count).to eq(0)
     end
 
     it 'should filter by popular by query' do
