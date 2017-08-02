@@ -3,11 +3,8 @@ class Api::V1::BlocksController < ApplicationController
   before_action :authenticate_with_token!, except: [:index]
 
   def create
-    unless Block.find_by(blocker: current_user, blocking: @user)
-      Block.create(blocker: current_user, blocking: @user)
-    end
-    follow = Follow.find_by(following: @user, follower: current_user)
-    follow.destroy if follow
+    Block.find_or_create_by(blocker: current_user, blocking: @user)
+    Follow.destroy_all(following: @user, follower: current_user)
     users = Kaminari.paginate_array(current_user.blocking).page(params[:page]).per(8)
     render json: users, meta: pagination_dict(users), status: 201, root: 'users', each_serializer: UserMinimalSerializer
   end
