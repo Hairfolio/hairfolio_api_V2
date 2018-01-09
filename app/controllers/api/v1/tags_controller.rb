@@ -1,8 +1,13 @@
 class Api::V1::TagsController < ApplicationController
   before_action :set_tag, only: [:show, :posts]
+  before_action :authenticate_with_token!, only: [:index, :posts]
 
   def index
-    tags = Tag.includes(:photos).where.not(photos: { id: nil })
+    blocked_posts_ids = Post.where(user_id: current_user.blocking.pluck(:id)).pluck(:id)
+    blocked_photos_id = Photo.where(post_id: blocked_posts_ids).pluck(:id)
+    tags = Tag.includes(:photos)
+      .where.not(photos: { id: nil })
+      .where.not(photos: { id: blocked_photos_id })
     tags = tags.where("tags.name ilike ?", "%#{params[:q].gsub('#', '')}%") if params[:q]
     tags = tags.popular if params[:popular]
     tags = tags.page(params[:page]).per(3)
@@ -19,7 +24,9 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def posts
-    posts = Post.where(id: @tag.photos.pluck(:post_id)).order('created_at desc').page(params[:page]).per(8)
+    posts = Post.where(id: @tag.photos.pluck(:post_id))
+      .where.not(user_id: current_user.blocking.pluck(:id))
+      .order('created_at desc').page(params[:page]).per(8)
     render json: posts, meta: pagination_dict(posts)
   end
 

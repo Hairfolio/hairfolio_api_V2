@@ -3,8 +3,12 @@ require 'rails_helper'
 describe Api::V1::SalonsController do
 
   let(:salon) { create(:salon) }
+  let(:user) { create(:user) }
 
   describe "GET #index" do
+    before :each do
+      api_authorization_header(user.auth_token)
+    end
 
     it 'should display available salons' do
       salon.reload
@@ -27,6 +31,10 @@ describe Api::V1::SalonsController do
   end
 
   describe "GET #stylists" do
+    before :each do
+      api_authorization_header(user.auth_token)
+    end
+
     it 'should display the salon attributes' do
       create(:user, salon: salon)
       get :stylists, params: { id: salon.id }

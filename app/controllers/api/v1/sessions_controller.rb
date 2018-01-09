@@ -115,5 +115,5 @@ class Api::V1::SessionsController < ApplicationController
         cloud_name: ENV['CLOUDINARY_NAME'],
         cloud_preset: ENV['CLOUDINARY_PRESET']
       }
-    end
+  end
 end
