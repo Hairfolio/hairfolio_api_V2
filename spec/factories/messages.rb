@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :message do
     body "MyText"
     association :conversation

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :service do
     name { Faker::Company.name }
     position 1

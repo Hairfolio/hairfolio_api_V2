@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/cousi/projects/hairfolio_api_V2/app/helpers/application_helper.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/lib/spec/api_constraints_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/lib/spec/api_constraints_spec.rb": [
         1,
         null,
         1,
@@ -26,7 +26,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/support/request_helpers.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/support/request_helpers.rb": [
         1,
         1,
         1,
@@ -42,7 +42,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/blocks_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/blocks_controller.rb": [
         1,
         1,
         1,
@@ -72,7 +72,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/application_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -83,28 +83,28 @@
         1,
         null,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         35,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         5,
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/concerns/authenticable.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/concerns/authenticable.rb": [
         1,
         null,
         1,
-        496,
+        494,
         41,
         null,
-        455,
+        453,
         null,
         null,
         null,
@@ -118,7 +118,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/brands_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/brands_controller_spec.rb": [
         1,
         null,
         1,
@@ -144,7 +144,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/brands_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/brands_controller.rb": [
         1,
         null,
         1,
@@ -159,7 +159,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/categories_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/categories_controller_spec.rb": [
         1,
         null,
         1,
@@ -178,7 +178,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/categories_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/categories_controller.rb": [
         1,
         null,
         1,
@@ -188,7 +188,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/certificates_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/certificates_controller_spec.rb": [
         1,
         null,
         1,
@@ -212,7 +212,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/certificates_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/certificates_controller.rb": [
         1,
         null,
         1,
@@ -225,7 +225,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/comments_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/comments_controller_spec.rb": [
         1,
         null,
         1,
@@ -286,7 +286,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/comments_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/comments_controller.rb": [
         1,
         1,
         1,
@@ -336,7 +336,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/contacts_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/contacts_controller_spec.rb": [
         1,
         null,
         1,
@@ -417,7 +417,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/contacts_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/contacts_controller.rb": [
         1,
         1,
         1,
@@ -464,7 +464,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/conversations_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/conversations_controller_spec.rb": [
         1,
         null,
         1,
@@ -546,7 +546,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/conversations_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/conversations_controller.rb": [
         1,
         1,
         1,
@@ -594,7 +594,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/degrees_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/degrees_controller_spec.rb": [
         1,
         null,
         1,
@@ -618,7 +618,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/degrees_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/degrees_controller.rb": [
         1,
         null,
         1,
@@ -631,7 +631,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/educations_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/educations_controller_spec.rb": [
         1,
         null,
         1,
@@ -704,7 +704,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/educations_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/educations_controller.rb": [
         1,
         1,
         1,
@@ -756,7 +756,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/experiences_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/experiences_controller_spec.rb": [
         1,
         null,
         1,
@@ -771,7 +771,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/experiences_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/experiences_controller.rb": [
         1,
         null,
         1,
@@ -781,7 +781,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/folios_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/folios_controller_spec.rb": [
         1,
         null,
         1,
@@ -888,7 +888,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/folios_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/folios_controller.rb": [
         1,
         1,
         1,
@@ -951,7 +951,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/follows_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/follows_controller_spec.rb": [
         1,
         null,
         1,
@@ -1019,7 +1019,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/follows_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/follows_controller.rb": [
         1,
         1,
         1,
@@ -1055,7 +1055,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/harmonies_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/harmonies_controller_spec.rb": [
         1,
         null,
         1,
@@ -1081,7 +1081,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/harmonies_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/harmonies_controller.rb": [
         1,
         null,
         1,
@@ -1092,7 +1092,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/home_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/home_controller_spec.rb": [
         1,
         null,
         1,
@@ -1106,7 +1106,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/home_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/home_controller.rb": [
         1,
         1,
         1,
@@ -1114,7 +1114,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/likes_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/likes_controller_spec.rb": [
         1,
         null,
         1,
@@ -1168,7 +1168,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/likes_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/likes_controller.rb": [
         1,
         1,
         1,
@@ -1201,7 +1201,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/lines_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/lines_controller_spec.rb": [
         1,
         null,
         1,
@@ -1225,7 +1225,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/lines_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/lines_controller.rb": [
         1,
         null,
         1,
@@ -1236,7 +1236,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/messages_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/messages_controller_spec.rb": [
         1,
         null,
         1,
@@ -1310,7 +1310,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/messages_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/messages_controller.rb": [
         1,
         1,
         1,
@@ -1362,7 +1362,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/notifications_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/notifications_controller_spec.rb": [
         1,
         null,
         1,
@@ -1405,7 +1405,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/notifications_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/notifications_controller.rb": [
         1,
         1,
         null,
@@ -1423,7 +1423,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/offerings_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/offerings_controller_spec.rb": [
         1,
         null,
         1,
@@ -1497,7 +1497,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/offerings_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/offerings_controller.rb": [
         1,
         1,
         1,
@@ -1549,7 +1549,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/photos_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/photos_controller_spec.rb": [
         1,
         null,
         1,
@@ -1578,7 +1578,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/photos_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/photos_controller.rb": [
         1,
         null,
         1,
@@ -1601,7 +1601,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/posts_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -1705,7 +1705,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/posts_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/posts_controller.rb": [
         1,
         1,
         1,
@@ -1759,7 +1759,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/products_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/products_controller_spec.rb": [
         1,
         null,
         1,
@@ -1783,7 +1783,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/products_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/products_controller.rb": [
         1,
         null,
         1,
@@ -1795,7 +1795,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/salons_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/salons_controller_spec.rb": [
         1,
         null,
         1,
@@ -1883,7 +1883,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/salons_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/salons_controller.rb": [
         1,
         1,
         1,
@@ -1895,7 +1895,6 @@
         2,
         2,
         2,
-        null,
         2,
         2,
         null,
@@ -1941,7 +1940,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/services_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/services_controller_spec.rb": [
         1,
         null,
         1,
@@ -1976,7 +1975,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/services_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/services_controller.rb": [
         1,
         null,
         1,
@@ -1991,7 +1990,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/sessions_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -2279,7 +2278,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/sessions_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/sessions_controller.rb": [
         1,
         null,
         1,
@@ -2320,32 +2319,32 @@
         1,
         11,
         11,
-        9,
-        9,
-        9,
-        1,
-        1,
-        1,
-        1,
-        8,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         7,
         7,
+        7,
+        1,
+        1,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        5,
+        5,
         5,
         5,
         5,
         5,
         null,
-        2,
+        0,
         null,
         null,
         null,
-        2,
+        4,
         null,
         null,
         null,
@@ -2400,7 +2399,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/tags_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/tags_controller_spec.rb": [
         1,
         null,
         1,
@@ -2480,7 +2479,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/tags_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/tags_controller.rb": [
         1,
         1,
         1,
@@ -2534,7 +2533,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/controllers/api/v1/users_controller_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/controllers/api/v1/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -2666,7 +2665,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/controllers/api/v1/users_controller.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/controllers/api/v1/users_controller.rb": [
         1,
         1,
         1,
@@ -2728,7 +2727,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/authentication_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/authentication_spec.rb": [
         1,
         null,
         1,
@@ -2752,7 +2751,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/authentication.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/authentication.rb": [
         1,
         1,
         1,
@@ -2785,7 +2784,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/block_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/block_spec.rb": [
         1,
         null,
         1,
@@ -2808,7 +2807,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/block.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/block.rb": [
         1,
         1,
         1,
@@ -2816,7 +2815,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/brand_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/brand_spec.rb": [
         1,
         null,
         1,
@@ -2835,14 +2834,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/brand.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/brand.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/category_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/category_spec.rb": [
         1,
         null,
         1,
@@ -2861,12 +2860,12 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/category.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/category.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/certificate_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/certificate_spec.rb": [
         1,
         null,
         1,
@@ -2885,13 +2884,13 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/certificate.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/certificate.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/color_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/color_spec.rb": [
         1,
         null,
         1,
@@ -2920,7 +2919,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/color.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/color.rb": [
         1,
         1,
         1,
@@ -2932,7 +2931,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/comment_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/comment_spec.rb": [
         1,
         null,
         1,
@@ -2961,30 +2960,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/comment.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/comment.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/post.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        2,
-        1,
-        null
-      ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/contact_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/contact_spec.rb": [
         1,
         null,
         1,
@@ -3003,7 +2986,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/contact.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/contact.rb": [
         1,
         1,
         1,
@@ -3014,7 +2997,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/conversation_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/conversation_spec.rb": [
         1,
         null,
         1,
@@ -3033,7 +3016,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/conversation.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/conversation.rb": [
         1,
         1,
         null,
@@ -3062,7 +3045,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/degree_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/degree_spec.rb": [
         1,
         null,
         1,
@@ -3081,13 +3064,13 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/degree.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/degree.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/education_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/education_spec.rb": [
         1,
         null,
         1,
@@ -3121,7 +3104,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/education.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/education.rb": [
         1,
         1,
         1,
@@ -3129,7 +3112,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/email_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/email_spec.rb": [
         1,
         null,
         1,
@@ -3153,14 +3136,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/email.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/email.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/experience_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/experience_spec.rb": [
         1,
         null,
         1,
@@ -3179,13 +3162,13 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/experience.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/experience.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/folio_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/folio_spec.rb": [
         1,
         null,
         1,
@@ -3209,14 +3192,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/folio.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/folio.rb": [
         1,
         1,
         1,
-        15,
+        23,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/follow_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/follow_spec.rb": [
         1,
         null,
         1,
@@ -3240,7 +3223,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/follow.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/follow.rb": [
         1,
         1,
         1,
@@ -3253,7 +3236,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/formula_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/formula_spec.rb": [
         1,
         null,
         1,
@@ -3288,7 +3271,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/formula.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/formula.rb": [
         1,
         1,
         1,
@@ -3299,7 +3282,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/harmony_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/harmony_spec.rb": [
         1,
         null,
         1,
@@ -3323,7 +3306,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/harmony.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/harmony.rb": [
         1,
         1,
         1,
@@ -3331,12 +3314,12 @@
         null,
         1,
         2,
-        null,
+        2,
         null,
         null,
         6,
         4,
-        2,
+        null,
         null,
         2,
         2,
@@ -3346,7 +3329,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/label_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/label_spec.rb": [
         1,
         null,
         1,
@@ -3371,7 +3354,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/label.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/label.rb": [
         1,
         1,
         1,
@@ -3382,24 +3365,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/tag.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        36,
-        null,
-        null
-      ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/like_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/like_spec.rb": [
         1,
         null,
         1,
@@ -3423,7 +3389,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/like.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/like.rb": [
         1,
         1,
         1,
@@ -3437,7 +3403,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/line_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/line_spec.rb": [
         1,
         null,
         1,
@@ -3466,14 +3432,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/line.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/line.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/message_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/message_spec.rb": [
         1,
         null,
         1,
@@ -3485,7 +3451,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/message.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/message.rb": [
         1,
         1,
         1,
@@ -3493,7 +3459,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/notification_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/notification_spec.rb": [
         1,
         null,
         1,
@@ -3522,7 +3488,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/notification.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/notification.rb": [
         1,
         1,
         1,
@@ -3530,7 +3496,7 @@
         2,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/offering_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/offering_spec.rb": [
         1,
         null,
         1,
@@ -3560,7 +3526,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/offering.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/offering.rb": [
         1,
         1,
         1,
@@ -3568,7 +3534,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/phone_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/phone_spec.rb": [
         1,
         null,
         1,
@@ -3592,14 +3558,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/phone.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/phone.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/photo_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/photo_spec.rb": [
         1,
         null,
         1,
@@ -3618,7 +3584,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/photo.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/photo.rb": [
         1,
         1,
         1,
@@ -3627,7 +3593,7 @@
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/post_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/post_spec.rb": [
         1,
         null,
         1,
@@ -3651,7 +3617,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/product_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/product_spec.rb": [
         1,
         null,
         1,
@@ -3674,7 +3640,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/product.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/product.rb": [
         1,
         1,
         1,
@@ -3694,7 +3660,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/provider_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/provider_spec.rb": [
         1,
         null,
         1,
@@ -3713,13 +3679,13 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/provider.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/provider.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/salon_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/salon_spec.rb": [
         1,
         null,
         1,
@@ -3737,7 +3703,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/salon.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/salon.rb": [
         1,
         1,
         1,
@@ -3751,7 +3717,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/service_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/service_spec.rb": [
         1,
         null,
         1,
@@ -3770,13 +3736,13 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/service.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/service.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/tag_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/tag_spec.rb": [
         1,
         null,
         1,
@@ -3794,7 +3760,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/treatment_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/treatment_spec.rb": [
         1,
         null,
         1,
@@ -3818,14 +3784,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/treatment.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/treatment.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/user_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -3837,7 +3803,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/spec/models/video_spec.rb": [
+      "/Users/tyler/hairfolio_api_v2/spec/models/video_spec.rb": [
         1,
         null,
         1,
@@ -3856,13 +3822,13 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/models/video.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/models/video.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/user_minimal_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/user_minimal_serializer.rb": [
         1,
         1,
         null,
@@ -3883,30 +3849,30 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/brand_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/brand_serializer.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/service_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/service_serializer.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/category_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/category_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/certificate_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/certificate_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/comment_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/comment_serializer.rb": [
         1,
         1,
         null,
@@ -3915,7 +3881,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/user_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/user_serializer.rb": [
         1,
         1,
         1,
@@ -3960,7 +3926,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/contact_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/contact_serializer.rb": [
         1,
         1,
         1,
@@ -3971,17 +3937,17 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/email_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/email_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/phone_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/phone_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/conversation_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/conversation_serializer.rb": [
         1,
         1,
         null,
@@ -4002,7 +3968,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/message_minimal_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/message_minimal_serializer.rb": [
         1,
         1,
         null,
@@ -4015,7 +3981,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/post_minimal_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/post_minimal_serializer.rb": [
         1,
         1,
         1,
@@ -4030,23 +3996,23 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/degree_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/degree_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/education_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/education_serializer.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/experience_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/experience_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/folio_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/folio_serializer.rb": [
         1,
         1,
         null,
@@ -4059,7 +4025,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/post_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/post_serializer.rb": [
         1,
         1,
         1,
@@ -4072,7 +4038,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/harmony_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/harmony_serializer.rb": [
         1,
         1,
         null,
@@ -4085,7 +4051,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/line_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/line_serializer.rb": [
         1,
         1,
         null,
@@ -4098,12 +4064,12 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/color_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/color_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/like_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/like_serializer.rb": [
         1,
         1,
         null,
@@ -4117,7 +4083,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/message_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/message_serializer.rb": [
         1,
         1,
         null,
@@ -4130,7 +4096,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/notification_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/notification_serializer.rb": [
         1,
         1,
         null,
@@ -4164,7 +4130,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/follow_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/follow_serializer.rb": [
         1,
         1,
         null,
@@ -4177,14 +4143,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/offering_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/offering_serializer.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/photo_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/photo_serializer.rb": [
         1,
         1,
         null,
@@ -4194,7 +4160,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/label_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/label_serializer.rb": [
         1,
         1,
         null,
@@ -4211,7 +4177,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/tag_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/tag_serializer.rb": [
         1,
         1,
         null,
@@ -4220,7 +4186,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/formula_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/formula_serializer.rb": [
         1,
         1,
         1,
@@ -4234,7 +4200,7 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/treatment_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/treatment_serializer.rb": [
         1,
         1,
         null,
@@ -4243,14 +4209,14 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/product_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/product_serializer.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/user_nested_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/user_nested_serializer.rb": [
         1,
         1,
         1,
@@ -4283,12 +4249,12 @@
         null,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/serializers/salon_serializer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/serializers/salon_serializer.rb": [
         1,
         1,
         null
       ],
-      "/Users/cousi/projects/hairfolio_api_V2/app/mailers/user_mailer.rb": [
+      "/Users/tyler/hairfolio_api_v2/app/mailers/user_mailer.rb": [
         1,
         1,
         null,
@@ -4300,6 +4266,6 @@
         null
       ]
     },
-    "timestamp": 1501694801
+    "timestamp": 1518557589
   }
 }

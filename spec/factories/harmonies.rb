@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :harmony do
     association :line
     name { Faker::Company.name }

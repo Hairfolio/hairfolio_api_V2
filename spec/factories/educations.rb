@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :education do
     name { Faker::Company.name }
     year_from 1998

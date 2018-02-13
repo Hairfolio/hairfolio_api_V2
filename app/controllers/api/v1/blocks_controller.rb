@@ -4,7 +4,7 @@ class Api::V1::BlocksController < ApplicationController
 
   def create
     Block.find_or_create_by(blocker: current_user, blocking: @user)
-    Follow.destroy_all(following: @user, follower: current_user)
+    Follow.where(following: @user, follower: current_user).destroy_all
     users = Kaminari.paginate_array(current_user.blocking).page(params[:page]).per(8)
     render json: users, meta: pagination_dict(users), status: 201, root: 'users', each_serializer: UserMinimalSerializer
   end

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :conversation do
     association :sender, factory: :user
     recipient_ids {[ create(:user).id]}

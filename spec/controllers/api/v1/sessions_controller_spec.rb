@@ -196,7 +196,7 @@ describe Api::V1::SessionsController do
         end
 
         it 'returns a json with an error' do
-          expect(json_response['errors']).to eql "Invalid user"
+          expect(json_response['errors']).to eql "Invalid instagram token"
         end
 
         it { expect(response.status).to eq(422) }

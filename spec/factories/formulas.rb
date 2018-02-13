@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :formula do
     association :label
     association :service

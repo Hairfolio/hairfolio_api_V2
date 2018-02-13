@@ -18,7 +18,7 @@ RSpec.configure do |config|
   config.include Request::JsonHelpers, :type => :controller
   config.include Request::HeadersHelpers, :type => :controller
   config.include Devise::Test::ControllerHelpers, :type => :controller
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include ActiveJob::TestHelper, type: :job
   config.include AbstractController::Translation
 

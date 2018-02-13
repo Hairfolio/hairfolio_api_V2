@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :color do
     association :harmony
     code "jdij2d390"

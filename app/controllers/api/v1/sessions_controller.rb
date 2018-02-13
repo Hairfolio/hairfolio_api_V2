@@ -108,12 +108,12 @@ class Api::V1::SessionsController < ApplicationController
 
   def environment
       render json: {
-        facebook_app_id: ENV['FACEBOOK_APP_ID'],
-        facebook_redirect_url: ENV['FACEBOOK_REDIRECT_URL'],
-        insta_client_id: ENV['INSTAGRAM_CLIENT_ID'],
-        insta_redirect_url: ENV['INSTAGRAM_REDIRECT_URL'],
-        cloud_name: ENV['CLOUDINARY_NAME'],
-        cloud_preset: ENV['CLOUDINARY_PRESET']
+        facebook_app_id: Rails.application.credentials.facebook_app_id,
+        facebook_redirect_url: Rails.application.credentials.facebook_redirect_url,
+        insta_client_id: Rails.application.credentials.instagram_client_id,
+        insta_redirect_url: Rails.application.credentials.instagram_redirect_url,
+        cloud_name: Rails.application.credentials.cloudinary_name,
+        cloud_preset: Rails.application.credentials.cloudinary_preset
       }
   end
 end

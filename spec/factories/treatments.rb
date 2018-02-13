@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :treatment do
     association :color
     association :formula
