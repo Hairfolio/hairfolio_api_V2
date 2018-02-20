@@ -25,13 +25,13 @@ class UserSerializer < ActiveModel::Serializer
     BrandSerializer.new(object.brand, {scope: scope}).serializable_hash if object.brand
   end
 
-  def facebook_id
-    object.authentications.facebook.first.try(:uid) if object.authentications.instagram.any?
-  end
-
-  def instagram_id
-    object.authentications.instagram.first.try(:uid) if object.authentications.instagram.any?
-  end
+  # def facebook_id
+  #   object.authentications.facebook.first.try(:uid) if object.authentications.instagram.any?
+  # end
+  #
+  # def instagram_id
+  #   object.authentications.instagram.first.try(:uid) if object.authentications.instagram.any?
+  # end
 
   def is_following_me
     scope && scope.current_user && object.following?(scope.current_user)

@@ -28,16 +28,16 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
-  if Bullet.enable?
-    config.before(:each) do
-      Bullet.start_request
-    end
-
-    config.after(:each) do
-      Bullet.perform_out_of_channel_notifications if Bullet.notification?
-      Bullet.end_request
-    end
-  end
+  # if Bullet.enable?
+  #   config.before(:each) do
+  #     Bullet.start_request
+  #   end
+  #
+  #   config.after(:each) do
+  #     Bullet.perform_out_of_channel_notifications if Bullet.notification?
+  #     Bullet.end_request
+  #   end
+  # end
 
   config.before :each do
     stub_request(:get, "https://graph.facebook.com/me?access_token=badtoken&fields=id,name,first_name,last_name,email,friends").to_return(:status => 200, :body => "", :headers => {})

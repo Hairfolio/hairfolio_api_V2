@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_07_31_120936) do
+ActiveRecord::Schema.define(version: 2018_02_20_221713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -382,6 +382,7 @@ ActiveRecord::Schema.define(version: 2017_07_31_120936) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "labels_count"
+    t.string "last_photo"
   end
 
   create_table "treatments", id: :serial, force: :cascade do |t|
@@ -430,6 +431,8 @@ ActiveRecord::Schema.define(version: 2017_07_31_120936) do
     t.string "pinterest_token"
     t.string "default_pinterest_board"
     t.boolean "auto_follow", default: false
+    t.integer "facebook_id"
+    t.integer "instagram_id"
     t.index ["brand_id"], name: "index_users_on_brand_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

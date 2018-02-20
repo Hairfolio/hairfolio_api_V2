@@ -27,7 +27,7 @@ class Api::V1::TagsController < ApplicationController
     posts = Post.where(id: @tag.photos.pluck(:post_id))
       .where.not(user_id: current_user.blocking.pluck(:id))
       .order('created_at desc').page(params[:page]).per(8)
-    render json: posts, meta: pagination_dict(posts)
+    render json: posts, include: '**', meta: pagination_dict(posts)
   end
 
   def create

@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_many :services, through: :offerings
   has_many :posts, dependent: :destroy
   has_many :notifications, dependent: :destroy
+
   has_and_belongs_to_many :experiences
   has_and_belongs_to_many :certificates
 
@@ -41,6 +42,8 @@ class User < ApplicationRecord
   before_validation :set_default_account_type
 
   after_create :follow_autofollows
+
+  default_scope { includes(:likes, :offerings, :certificates, :educations, :experiences) }
 
   scope :search, -> (query) {
     includes(:salon, :brand, :services, :experiences)

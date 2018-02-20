@@ -9,6 +9,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :photos, allow_destroy: true
   accepts_nested_attributes_for :videos, allow_destroy: true
+
+  default_scope { includes(:likes, :videos, :comments, photos: {labels: [:tag, :formulas]}, user: [:followers, :following, :likes, :offerings, :certificates, :educations, :experiences]) }
+
   scope :popular, -> { where('created_at > ?', 7.days.ago).order('likes_count desc') }
   scope :favorites, -> (user) { where(id: user.likes.pluck(:post_id))}
 end
