@@ -1,5 +1,5 @@
 class UserMinimalSerializer < ActiveModel::Serializer
-  attributes :id, :avatar_url, :avatar_cloudinary_id, :first_name, :last_name, :brand_name, :salon_name, :account_type, :is_following_me, :is_followed_by_me 
+  attributes :id, :avatar_url, :avatar_cloudinary_id, :first_name, :last_name, :brand_name, :salon_name, :account_type, :is_following_me, :is_followed_by_me
 
   def brand_name
     object.brand ? object.brand.name : nil
