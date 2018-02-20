@@ -1,6 +1,3 @@
 class LikeSerializer < ActiveModel::Serializer
-  attributes :id, :created_at
-  has_one :post
-  has_one :user
-
+  attributes :id, :created_at, :post_id, :user_id
 end
