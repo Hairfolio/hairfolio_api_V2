@@ -1,12 +1,6 @@
 class LikeSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :post, :user
-
-  def post
-    PostSerializer.new(object.post, {scope: scope}).serializable_hash
-  end
-
-  def user
-    UserMinimalSerializer.new(object.user, {scope: scope}).serializable_hash
-  end
+  attributes :id, :created_at
+  has_one :post
+  has_one :user
 
 end
