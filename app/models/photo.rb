@@ -16,8 +16,8 @@ class Photo < ApplicationRecord
   end
 
   def warm_cache
-    split = asset_url.split('upload')
-    let splitUrl = uri.split('upload');
+    require 'open-uri'
+    split_url = asset_url.split('upload')
     [80, 120, 32, 40, 195, 220].each do |width|
       new_url = "#{split[0]}upload/w_#{width}#{split[1]}"
       open(new_url)
