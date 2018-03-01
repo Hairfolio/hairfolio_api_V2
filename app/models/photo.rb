@@ -21,6 +21,6 @@ class Photo < ApplicationRecord
     [80, 120, 32, 40, 195, 220, 2250, 1500, 2160, 1280].each do |width|
       new_url = "#{split_url[0]}upload/w_#{width}#{split_url[1]}"
       open(new_url) rescue true
-    end
+    end unless Rails.env.test?
   end
 end

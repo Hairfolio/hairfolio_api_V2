@@ -28,6 +28,7 @@ describe Api::V1::TagsController do
       tag = create(:tag)
       create(:label, tag: tag)
       get :index, params: { q: tag.name }
+      puts response.body
       expect(json_response['tags'].first['name']).to eq(tag.name)
     end
   end
