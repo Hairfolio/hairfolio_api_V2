@@ -45,3 +45,4 @@ group :test do
   gem 'simplecov'
   gem 'bullet'
 end
+
