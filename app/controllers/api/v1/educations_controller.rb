@@ -4,7 +4,7 @@ class Api::V1::EducationsController < ApplicationController
   before_action :set_education, only: [:show, :update, :destroy]
 
   def index
-    educations = @user.educations.page(params[:page]).per(8)
+    educations = @user.educations.page(params[:page]).per(params[:limit])
     render json: educations, meta: pagination_dict(educations)
   end
 

@@ -3,7 +3,7 @@ class Api::V1::ContactsController < ApplicationController
   before_action :set_contact, only: [:update, :destroy, :show]
 
   def index
-    contacts = current_user.contacts.page(params[:page]).per(8)
+    contacts = current_user.contacts.page(params[:page]).per(params[:limit])
     render json: contacts
   end
 
@@ -40,6 +40,6 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :address, :city, :state, :zipcode, :asset_url, :company, post_ids: [], phones_attributes: [:number, :id, :_destroy, :phone_type, :contact_id], emails_attributes: [:email, :id, :_destroy, :contact_id, :email_type])
+    params.require(:contact).permit(:first_name, :last_name, :address, :city, :state, :country_code , :zipcode, :asset_url, :company, post_ids: [], phones_attributes: [:number, :id, :_destroy, :phone_type, :contact_id], emails_attributes: [:email, :id, :_destroy, :contact_id, :email_type])
   end
 end

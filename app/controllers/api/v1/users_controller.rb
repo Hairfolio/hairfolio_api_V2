@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
     users = users.search(params[:q]) if params[:q]
     users = users.where(account_type: params[:account_type]) if params[:account_type]
     users = users.where.not(id: current_user.blocking.pluck(:id))
-    users = users.page(params[:page]).per(8)
+    users = users.page(params[:page]).per(params[:limit])
     render json: users, meta: pagination_dict(users)
   end
 
@@ -38,12 +38,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def posts
-    posts = @user.posts.order('created_at desc').page(params[:page]).per(8)
+    posts = @user.posts.order('created_at desc').page(params[:page]).per(params[:limit])
     render json: posts, meta: pagination_dict(posts)
   end
 
   def folios
-    folios = @user.folios.order('created_at desc').page(params[:page]).per(8)
+    folios = @user.folios.order('created_at desc').page(params[:page]).per(params[:limit])
     render json: folios, meta: pagination_dict(folios)
   end
 

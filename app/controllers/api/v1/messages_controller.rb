@@ -4,7 +4,7 @@ class Api::V1::MessagesController < ApplicationController
   before_action :set_message, only: [:show, :update, :destroy, :read]
 
   def index
-    messages = @conversation.messages.order('created_at desc').page(params[:page]).per(8)
+    messages = @conversation.messages.order('created_at desc').page(params[:page]).per(params[:limit])
     render json: messages, meta: pagination_dict(messages), each_serializer: MessageMinimalSerializer
   end
 

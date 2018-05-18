@@ -4,7 +4,7 @@ class Api::V1::NotificationsController < ApplicationController
   def index
     notifications = Notification.includes(:user).where(nil).order('created_at desc')
     notifications = params[:following] ? notifications.following(current_user) : current_user.notifications
-    notifications = notifications.page(params[:page]).per(8)
+    notifications = notifications.page(params[:page]).per(params[:limit])
     render json: notifications, meta: pagination_dict(notifications)
   end
 

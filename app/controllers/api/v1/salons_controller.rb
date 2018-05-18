@@ -9,7 +9,7 @@ class Api::V1::SalonsController < ApplicationController
     salons = salons.near(params[:zipcode]) if params[:zipcode]
     salons = salons.where("name ilike ? or info ilike ?", "%#{params[:q]}%", "%#{params[:q]}%")
     users = User.where(salon_id: salons.pluck(:id)).where.not(id: @blocked_ids)
-    users = Kaminari.paginate_array(users).page(params[:page]).per(8)
+    users = Kaminari.paginate_array(users).page(params[:page]).per(params[:limit])
     render json: users.empty? ? {users: []} : users, meta: pagination_dict(users), each_serializer: UserNestedSerializer
   end
 
