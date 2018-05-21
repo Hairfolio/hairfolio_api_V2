@@ -3,7 +3,7 @@ class Api::V1::ContactsController < ApplicationController
   before_action :set_contact, only: [:update, :destroy, :show]
 
   def index
-    contacts = current_user.contacts.page(params[:page]).per(params[:limit])
+    contacts = current_user.contacts.order_desc.page(params[:page]).per(params[:limit])
     render json: contacts
   end
 
