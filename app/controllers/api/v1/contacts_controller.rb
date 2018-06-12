@@ -4,7 +4,7 @@ class Api::V1::ContactsController < ApplicationController
 
   def index
     contacts = current_user.contacts.order_desc.page(params[:page]).per(params[:limit])
-    render json: contacts
+    render json: contacts, meta: pagination_dict(contacts)
   end
 
   def show
