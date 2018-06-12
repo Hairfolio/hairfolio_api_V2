@@ -21,7 +21,7 @@ gem 'active_record_query_trace'
 # APIs
 gem 'active_model_serializers'
 gem 'jbuilder'
-gem 'calamum', git: 'https://github.com/tylerhoran/calamum'
+gem 'calamum'#, git: 'https://github.com/tylerhoran/calamum'
 gem 'geocoder'
 gem 'cloudinary'
 
@@ -45,4 +45,3 @@ group :test do
   gem 'simplecov'
   gem 'bullet'
 end
-
