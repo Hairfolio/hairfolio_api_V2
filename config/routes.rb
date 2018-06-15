@@ -11,7 +11,7 @@ Rails.application.routes.draw do
         member { get :posts }
       end
       resources :categories, only: [:index]
-      resources :certificates, only: [:index, :show]
+      resources :certificates, only: [:index, :show, :create]
       resources :products, only: [:index]
       resources :degrees, only: [:index, :show]
       resources :lines, only: [:index, :show]

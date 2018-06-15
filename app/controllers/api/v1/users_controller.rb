@@ -48,8 +48,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def invite_users
-    UserMailer.send_invitation_email(params[:emails]).deliver_now
-    render json: {status: 200, message: 'Invitations sent successfully.'}
+    emails = params[:emails]
+    emails.each do |email|
+      UserMailer.send_invitation_email(email).deliver_now
+    end
+    render json: { message: "Invitation send successfully."}, status: 200
   end
 
   private
