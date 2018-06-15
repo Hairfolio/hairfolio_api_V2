@@ -67,6 +67,7 @@ Rails.application.routes.draw do
       end
     end
   end
+  post "invite_users",to: 'api/v1/users#invite_users'
   get "/404" => "api/v1/errors#not_found"
   get "/500" => "api/v1/errors#exception"
   devise_for :users
