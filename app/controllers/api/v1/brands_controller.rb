@@ -1,9 +1,14 @@
 class Api::V1::BrandsController < ApplicationController
 
   def index
-    brands = Brand.all.page(params[:page]).per(params[:limit])
-    brands = Service.find(params[:service_id]).brands if params["service_id"]
-    render json: brands, includes: [:services], meta: pagination_dict(brands)
+    brands =
+      if params["service_id"]
+        Service.find(params[:service_id]).brands
+      else
+        Brand.all
+      end
+    all_brands =  brands.page(params[:page]).per(params[:limit])
+    render json: all_brands, includes: [:services], meta: pagination_dict(all_brands)
   end
 
   def show
