@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
     users = users.search(params[:q]) if params[:q]
     users = users.where(account_type: params[:account_type]) if params[:account_type]
     users = users.where.not(id: current_user.blocking.pluck(:id))
-    users = users.page(params[:page]).per(params[:limit]).order('updated_at DESC')
+    users = users.order(updated_at: :desc).page(params[:page]).per(params[:limit])
     render json: users, meta: pagination_dict(users)
   end
 
