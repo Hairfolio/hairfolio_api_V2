@@ -1,0 +1,13 @@
+*.gem
+.DS_Store
+
+*.swp
+*.swo
+
+tmp
+coverage
+.rspec
+
+Gemfile.lock
+
+.bundle

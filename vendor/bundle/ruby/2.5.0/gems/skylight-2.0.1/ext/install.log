@@ -1,0 +1,4 @@
+I, [2018-08-10T12:34:56.424687 #20088]  INFO -- : SKYLIGHT_HDR_PATH=/opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext; SKYLIGHT_LIB_PATH=/opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/lib/skylight/native/x86_64-linux
+I, [2018-08-10T12:34:56.425008 #20088]  INFO -- : [SKYLIGHT] fetching native ext; curr-platform=x86_64-linux; requested-arch=x86_64-linux; version=2.0.0-b7a5dfb
+I, [2018-08-10T12:34:56.425102 #20088]  INFO -- : [SKYLIGHT] attempting to fetch from remote; uri=https://s3.amazonaws.com/skylight-agent-packages/skylight-native/2.0.0-b7a5dfb/skylight_x86_64-linux.tar.gz
+I, [2018-08-10T12:35:04.073219 #20088]  INFO -- : [SKYLIGHT] successfully downloaded native ext; out=/opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext/skylight_x86_64-linux.tar.gz

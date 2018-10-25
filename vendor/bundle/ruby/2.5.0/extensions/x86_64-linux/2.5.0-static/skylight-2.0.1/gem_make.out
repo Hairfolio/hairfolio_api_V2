@@ -1,0 +1,30 @@
+current directory: /opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext
+/usr/local/bin/ruby -r ./siteconf20180810-8826-1k0xftt.rb extconf.rb
+I, [2018-08-10T12:34:56.424687 #20088]  INFO -- : SKYLIGHT_HDR_PATH=/opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext; SKYLIGHT_LIB_PATH=/opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/lib/skylight/native/x86_64-linux
+I, [2018-08-10T12:34:56.425008 #20088]  INFO -- : [SKYLIGHT] fetching native ext; curr-platform=x86_64-linux; requested-arch=x86_64-linux; version=2.0.0-b7a5dfb
+I, [2018-08-10T12:34:56.425102 #20088]  INFO -- : [SKYLIGHT] attempting to fetch from remote; uri=https://s3.amazonaws.com/skylight-agent-packages/skylight-native/2.0.0-b7a5dfb/skylight_x86_64-linux.tar.gz
+I, [2018-08-10T12:35:04.073219 #20088]  INFO -- : [SKYLIGHT] successfully downloaded native ext; out=/opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext/skylight_x86_64-linux.tar.gz
+skylightd
+libskylight.so
+skylight.h
+skylight_dlopen.h
+skylight_dlopen.c
+checking for skylight_dlopen.h in /opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext... yes
+checking for dlfcn.h... yes
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for fast thread local storage... yes
+creating Makefile
+
+current directory: /opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext
+make "DESTDIR=" clean
+
+current directory: /opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext
+make "DESTDIR="
+compiling skylight_dlopen.c
+compiling skylight_native.c
+compiling skylight_memprof.c
+linking shared-object skylight_native.so
+
+current directory: /opt/lampp/htdocs/hairfolio_api_V2/vendor/bundle/ruby/2.5.0/gems/skylight-2.0.1/ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 skylight_native.so ./.gem.20180810-8826-1523ff0
