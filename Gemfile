@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.5.1'
 
 gem 'rails', '~> 5.2.0.rc1'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -18,12 +18,16 @@ gem 'rails_admin', '~> 1.0'
 gem 'rails_admin_import'
 gem 'active_record_query_trace'
 
+
 # APIs
 gem 'active_model_serializers'
 gem 'jbuilder'
 gem 'calamum'#, git: 'https://github.com/tylerhoran/calamum'
 gem 'geocoder'
 gem 'cloudinary'
+
+#Cros Origins
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   gem 'faker'
