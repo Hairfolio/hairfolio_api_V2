@@ -30,4 +30,5 @@ module Hairfolio
       g.test_framework :rspec
     end
   end
+  
 end
