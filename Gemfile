@@ -27,7 +27,7 @@ gem 'geocoder'
 gem 'cloudinary'
 
 #Cros Origins
-gem 'rack-cors', require: 'rack/cors'
+gem 'rack-cors', require: 'rack/cors' 
 
 group :development, :test do
   gem 'faker'
