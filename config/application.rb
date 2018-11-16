@@ -16,7 +16,7 @@ module Hairfolio
         origins '*'
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
-    end
+    end 
 
     config.eager_load_paths << Rails.root.join('lib')
 
@@ -30,5 +30,5 @@ module Hairfolio
       g.test_framework :rspec
     end
   end
-  
+
 end
