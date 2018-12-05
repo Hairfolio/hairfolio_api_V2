@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :folios, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :favourites, dependent: :destroy
   has_many :educations, dependent: :destroy
   has_many :offerings, dependent: :destroy
   has_many :services, through: :offerings
@@ -43,7 +44,7 @@ class User < ApplicationRecord
 
   after_create :follow_autofollows
 
-  default_scope { includes(:likes, :offerings, :certificates, :educations, :experiences) }
+  default_scope { includes(:likes, :favourites, :offerings, :certificates, :educations, :experiences) }
 
   scope :search, -> (query) {
     includes(:salon, :brand, :services, :experiences)

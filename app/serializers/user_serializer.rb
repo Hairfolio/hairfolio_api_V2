@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :auth_token, :email, :first_name, :default_pinterest_board, :offerings, :facebook_id, :instagram_id, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :description, :years_exp, :career_opportunity, :unread_messages_count
+  attributes :id, :email, :first_name, :auth_token, :default_pinterest_board, :favourites_count,  :offerings, :facebook_id, :instagram_id, :last_name, :likes_count, :followers_count, :account_type, :is_following_me, :is_followed_by_me, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :prof_desc, :description, :years_exp, :career_opportunity, :unread_messages_count
   has_many :likes
+  has_many :favourites
   has_many :educations
   has_many :experiences
   has_many :certificates
@@ -11,6 +12,10 @@ class UserSerializer < ActiveModel::Serializer
 
   def likes_count
     object.likes.uniq.length
+  end
+
+  def favourites_count
+    object.favourites.uniq.length
   end
 
   def followers_count
