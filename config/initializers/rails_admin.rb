@@ -39,8 +39,22 @@ RailsAdmin.config do |config|
     edit do
       field :user
       field :description
+      field :products
     end
   end
+
+  config.model 'Category' do
+    edit do
+      field :name
+      field :position
+      field :products
+      field :image
+         # multiple_active_storage
+    end
+    list do
+      configure :image
+    end
+  end 
 
   config.actions do
     dashboard                     # mandatory
@@ -58,4 +72,5 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  
 end
