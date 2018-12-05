@@ -8,6 +8,7 @@ class Api::V1::UsersController < ApplicationController
     users = users.where(account_type: params[:account_type]) if params[:account_type]
     users = users.where.not(id: current_user.blocking.pluck(:id))
     users = users.order(updated_at: :desc).page(params[:page]).per(params[:limit])
+    
     render json: users, meta: pagination_dict(users)
   end
 
@@ -24,6 +25,19 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def user_likes
+    likes = Like.where(user_id: params[:id])
+
+    render json: likes, status: 201
+  end
+
+  def user_favourites  
+    user_id = User.where(auth_token:request.headers['Authorization']).map(&:id)   
+    favourites = Favourite.where(user_id: params[:id])
+
+    render json:favourites, user_id: user_id[0], status: 201
+  end
+
   def update
     if @user.update(user_params)
       render json: @user, status: 201
@@ -34,6 +48,7 @@ class Api::V1::UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    render json: { message: "User Deleted" }, status: 201
     head 204
   end
 
