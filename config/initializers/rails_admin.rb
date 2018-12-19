@@ -49,14 +49,14 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.model Cart do
-    edit do
-      field :user      
-      field :products
-      field :price
-      field :quantity
-    end
-  end
+  # config.model Cart do
+  #   edit do
+  #     field :user      
+  #     field :products
+  #     field :price
+  #     field :quantity
+  #   end
+  # end
 
   config.model Category do
     edit do
@@ -78,17 +78,17 @@ RailsAdmin.config do |config|
     dashboard                     # mandatory
     index                         # mandatory
     new do
-      except ['Cart']
+      except ['']
     end
     export
     bulk_delete
     show
     edit do
-      except ['Cart']
+      except ['']
     end
     delete
     show_in_app do
-      except ['Cart']
+      except ['']
     end
     import
     ## With an audit adapter, you can add:
