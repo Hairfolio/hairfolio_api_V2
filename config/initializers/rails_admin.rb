@@ -43,34 +43,57 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.model 'Category' do
+  config.model ProductGallery do
+    edit do
+      field :image_url
+    end
+  end
+
+  config.model Cart do
+    edit do
+      field :user      
+      field :products
+      field :price
+      field :quantity
+    end
+  end
+
+  config.model Category do
     edit do
       field :name
       field :position
       field :products
-      field :image
-         # multiple_active_storage
+      field :image        
     end
     list do
       configure :image
     end
   end 
 
+  config.model ProductGallery do
+   visible false
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
-    new
+    new do
+      except ['Cart']
+    end
     export
     bulk_delete
     show
-    edit
+    edit do
+      except ['Cart']
+    end
     delete
-    show_in_app
+    show_in_app do
+      except ['Cart']
+    end
     import
-
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
-  
+    
 end
