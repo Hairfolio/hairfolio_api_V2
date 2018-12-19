@@ -6,4 +6,8 @@ class CategorySerializer < ActiveModel::Serializer
     object.products.order("id DESC")
   end
 
+  def image
+  	object.image.url
+  end
+
 end

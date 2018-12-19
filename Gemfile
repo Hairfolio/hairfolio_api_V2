@@ -18,6 +18,8 @@ gem 'rails_admin', '~> 1.0'
 gem 'rails_admin_import'
 gem 'active_record_query_trace'
 
+#Image Upload
+gem 'carrierwave', '~> 0.9'
 
 # APIs
 gem 'active_model_serializers'

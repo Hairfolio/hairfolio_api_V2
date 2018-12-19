@@ -1,13 +1,17 @@
 class Product < ApplicationRecord
+  mount_uploader :product_image, AttachmentUploader
+  has_many :product_galleries
+  accepts_nested_attributes_for :product_galleries, :allow_destroy => true
+
   belongs_to :tag
-  
   has_and_belongs_to_many :posts
   belongs_to :user
-  
-  # belongs_to :subcategory, foreign_key: 'subcategory_id', class_name: 'Category'  
+    
   has_and_belongs_to_many :categories
 
-  validates_presence_of :name, :tag
+  validates_presence_of :name, :tag, :product_image, :price, :quantity
+  validates :price, :quantity, :numericality => { :greater_than_or_equal_to => 0 }
+
   has_many :favourites, dependent: :destroy
   after_create :upload_to_cloudinary
 
