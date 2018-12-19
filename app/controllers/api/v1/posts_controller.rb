@@ -58,4 +58,5 @@ class Api::V1::PostsController < ApplicationController
     params.require(:post).permit(:description, product_ids:[], videos_attributes: [:id, :_destroy, :asset_url, :post_id], photos_attributes: [:asset_url, :video_url, :id, :_destroy, labels_attributes: [:id, :_destroy, :post_id, :tag_id, :label_type, :position_top, :position_left, :name, :url, formulas_attributes: [:id, :_destroy, :service_id, :line_id, :time, :weight, :volume, :position_top, :position_left, :post_id, treatments_attributes: [:color_id, :weight, :id, :_destroy]]]])
   end
 
+
 end
