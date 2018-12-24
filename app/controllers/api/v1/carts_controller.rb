@@ -9,14 +9,12 @@ class Api::V1::CartsController < ApplicationController
 		if !cart.empty?
 			current_quantity = cart.pluck(:quantity)[0]
 			cart.update(quantity: current_quantity + 1 )
-
 			render json: cart, status:200
 		else
 			cart = Cart.new(cart_params)
 			cart.user_id = current_user.id
 			cart.quantity = 1			
 			cart.save
-
 			render json: cart
 		end
 	end
@@ -24,11 +22,11 @@ class Api::V1::CartsController < ApplicationController
 	def decrease		
 		cart = Cart.where(product_id: cart_params[:product_id])
 		cart = cart.where(user_id: current_user.id)		
-		current_quantity = cart.pluck(:quantity)[0]		
+		
+		current_quantity = cart.pluck(:quantity)[0]
 
 		if current_quantity > 1
 			cart.update(quantity: current_quantity - 1 )
-
 			render json: cart, status:200	
 		else
 			render json: { message: "Invalide quantity", status:201 }
@@ -36,7 +34,7 @@ class Api::V1::CartsController < ApplicationController
 	end
 
 	def cart		
-		@cart = Cart.where(user_id: current_user.id)		
+		@cart = Cart.where(user_id: current_user.id)
 		render json: @cart
 	end
 
