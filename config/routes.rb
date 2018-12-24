@@ -72,11 +72,21 @@ Rails.application.routes.draw do
         end
       end
     end
-  end  
+  end
+
+  #Cart APIs  
+  post "/cart/plus_to_cart" => "api/v1/carts#increase"
+  post "/cart/minus_from_cart" => "api/v1/carts#decrease"
+  get  "/cart" => "api/v1/carts#cart"
+  post "/cart/remove_from_cart" => "api/v1/carts#remove"
+
   get "/user/likes/:id" => "api/v1/users#user_likes"
   get "/user/favourites/:id" => "api/v1/users#user_favourites"
+  
   get "/404" => "api/v1/errors#not_found"
   get "/500" => "api/v1/errors#exception"
+
   devise_for :users
+
   root to: 'home#index'
 end

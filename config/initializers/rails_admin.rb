@@ -47,16 +47,18 @@ RailsAdmin.config do |config|
     edit do
       field :image_url
     end
+    visible false
   end
 
-  # config.model Cart do
-  #   edit do
-  #     field :user      
-  #     field :products
-  #     field :price
-  #     field :quantity
-  #   end
-  # end
+
+  config.model Cart do
+    edit do
+      field :user      
+      field :products
+      field :price
+      field :quantity
+    end
+  end
 
   config.model Category do
     edit do
@@ -70,25 +72,21 @@ RailsAdmin.config do |config|
     end
   end 
 
-  config.model ProductGallery do
-   visible false
-  end
-
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
     new do
-      except ['']
+      except ['Cart']
     end
     export
     bulk_delete
     show
     edit do
-      except ['']
+      except ['Cart']
     end
     delete
     show_in_app do
-      except ['']
+      except ['Cart']
     end
     import
     ## With an audit adapter, you can add:
