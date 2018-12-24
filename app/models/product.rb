@@ -9,8 +9,8 @@ class Product < ApplicationRecord
     
   has_and_belongs_to_many :categories
 
-  validates_presence_of :name, :tag, :product_image, :price, :quantity
-  validates :price, :quantity, :numericality => { :greater_than_or_equal_to => 0 }
+  #validates_presence_of :name, :tag, :product_image, :price, :quantity
+  #validates :price, :quantity, :numericality => { :greater_than_or_equal_to => 0 }
 
   has_many :favourites, dependent: :destroy
   after_create :upload_to_cloudinary
