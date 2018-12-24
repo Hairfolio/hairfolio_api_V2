@@ -6,7 +6,7 @@ class CartSerializer < ActiveModel::Serializer
   end
 
   def product
-  	Product.where(id:object.product_id).select(:id, :name, :quantity, :product_image).take
+  	Product.where(id:object.product_id).select(:id, :name, :price, :quantity, :product_image).take
   end
 
 end
