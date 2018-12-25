@@ -4,20 +4,19 @@ class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: [:update, :destroy, :show]
 
   def index
-    # posts = Post.where(nil)
-    # posts = posts.where("description ilike ?", "%#{params[:q]}%") if params[:q]
-    # posts = posts.where(user: current_user.following + User.where(id: current_user.id)).order('created_at desc') unless (params[:popular] || params[:favorites])
-    # posts = posts.popular if params[:popular]
-    # posts = posts.favorites(current_user).order('created_at desc') if params[:favorites]
-    # posts = posts.where.not(user_id: current_user.blocking.pluck(:id))
-    # posts = posts.page(params[:page]).per(params[:favorites] ? 6 : 4)
+    posts = Post.where(nil)
+    posts = posts.where("description ilike ?", "%#{params[:q]}%") if params[:q]
+    posts = posts.where(user: current_user.following + User.where(id: current_user.id)).order('created_at desc') unless (params[:popular] || params[:favorites])
+    posts = posts.popular if params[:popular]
+    posts = posts.favorites(current_user).order('created_at desc') if params[:favorites]
+    posts = posts.where.not(user_id: current_user.blocking.pluck(:id))
+    posts = posts.page(params[:page]).per(params[:favorites] ? 6 : 4)
 
-    # render json: posts, meta: pagination_dict(posts)
-
-    posts = Post.all
-    posts = posts.order(updated_at: :desc).page(params[:page]).per(params[:limit])
-    
     render json: posts, meta: pagination_dict(posts)
+
+    # posts = Post.all
+    # posts = posts.order(updated_at: :desc).page(params[:page]).per(params[:limit])    
+    # render json: posts, meta: pagination_dict(posts)
     
   end
 

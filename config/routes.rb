@@ -74,6 +74,10 @@ Rails.application.routes.draw do
     end
   end
 
+  # resources :payments
+
+  get "/all_posts" => "api/v1/brands#all_posts"
+
   #Cart APIs  
   post "/cart/plus_to_cart" => "api/v1/carts#increase"
   post "/cart/minus_from_cart" => "api/v1/carts#decrease"

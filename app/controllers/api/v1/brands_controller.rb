@@ -15,4 +15,12 @@ class Api::V1::BrandsController < ApplicationController
     render json: Brand.find(params[:id])
   end
 
+  def all_posts
+      posts = Post.all
+      posts = posts.order(updated_at: :desc).page(params[:page]).per(params[:limit])
+    
+      render json: posts, meta: pagination_dict(posts)
+  end
+
+
 end
