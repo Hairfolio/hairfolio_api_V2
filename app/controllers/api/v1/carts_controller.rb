@@ -4,18 +4,18 @@ class Api::V1::CartsController < ApplicationController
 
 	def increase		
 		cart = Cart.where(product_id: cart_params[:product_id])
-		cart = cart.where(user_id: current_user.id )
+		cart = cart.where(user_id: current_user.id)
 		
 		if !cart.empty?
 			current_quantity = cart.pluck(:quantity)[0]
 			cart.update(quantity: current_quantity + 1 )
-			render json: cart, status:200
+			render json: cart, status:201
 		else
 			cart = Cart.new(cart_params)
 			cart.user_id = current_user.id
 			cart.quantity = 1			
 			cart.save
-			render json: cart
+			render json: cart, status:201
 		end
 	end
 
@@ -27,23 +27,23 @@ class Api::V1::CartsController < ApplicationController
 
 		if current_quantity > 1
 			cart.update(quantity: current_quantity - 1 )
-			render json: cart, status:200	
+			render json: cart, status:201	
 		else
-			render json: { message: "Invalide quantity", status:201 }
+			render json: { errors: "Invalide quantity" }, status: 422
 		end
 	end
 
 	def cart		
 		@cart = Cart.where(user_id: current_user.id)
-		render json: @cart
+		render json: @cart, status:201
 	end
 
 	def remove
 		cart = Cart.where(user_id: current_user.id).where(product_id: params[:product_id])
 		if cart.delete_all == 1
-			render json: "true"
+			render json: { message: "Success" }, status:201
 		else
-			render json: "false"
+			render json: { errors: "Error" }, status:422
 		end
 	end
 
