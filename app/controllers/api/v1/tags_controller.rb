@@ -16,7 +16,12 @@ class Api::V1::TagsController < ApplicationController
 
   def exact
     tag = Tag.find_by(name: params[:q])
-    render json: tag
+    if tag
+      render json: tag, status:201
+    else
+      render json: { message: "No Tag Found" }, status:422
+    end
+
   end
 
   def show
