@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   belongs_to :salon
   belongs_to :brand
+  has_many :orders
   has_many :authentications, dependent: :destroy
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow', dependent: :destroy
   has_many :followers, through: :follower_relationships, source: :follower

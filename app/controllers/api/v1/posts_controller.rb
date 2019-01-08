@@ -22,7 +22,6 @@ class Api::V1::PostsController < ApplicationController
 
   def create
     post = current_user.posts.build(post_params)
-
     if post.save
       render json: post, status: 201
     else

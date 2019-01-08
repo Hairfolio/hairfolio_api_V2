@@ -10,6 +10,12 @@ Rails.application.routes.draw do
         collection { get :exact }
         member { get :posts }
       end
+      # resources :payments
+      resources :discount_sliders, only: [:index]
+      resources :sub_categories, only: [:index]
+      resources :store_shop_its, only: [:index]
+      resources :store_landing_sales, only: [:index]
+      # resources :orders
       resources :categories, only: [:index, :show]
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index, :show]
@@ -74,9 +80,12 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :payments
+  
 
+  # Get All Posts
   get "/all_posts" => "api/v1/brands#all_posts"
+  get "/trending_posts" => "api/v1/brands#trendings"
+  get "/editor_pics_posts" => "api/v1/brands#editor_pics"
 
   #Cart APIs  
   post "/cart/plus_to_cart" => "api/v1/carts#increase"

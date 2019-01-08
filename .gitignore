@@ -20,5 +20,8 @@
 /config/application.yml
 /coverage
 
+#Database File
+/config/database.yml
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key

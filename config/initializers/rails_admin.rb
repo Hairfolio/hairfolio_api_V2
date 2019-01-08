@@ -40,6 +40,8 @@ RailsAdmin.config do |config|
       field :user
       field :description
       field :products
+      field :is_trending
+      field :is_editors_pic
     end
   end
 
@@ -61,14 +63,10 @@ RailsAdmin.config do |config|
   end
 
   config.model Category do
-    edit do
+    edit do     
       field :name
       field :position
-      field :products
-      field :image        
-    end
-    list do
-      configure :image
+      field :image      
     end
   end 
 

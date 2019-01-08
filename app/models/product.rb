@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   belongs_to :tag
   has_and_belongs_to_many :posts
   belongs_to :user
+  belongs_to :product_brand
     
   has_and_belongs_to_many :categories
 

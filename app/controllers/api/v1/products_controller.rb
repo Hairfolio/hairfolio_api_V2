@@ -1,4 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
+
   def index
     user_id = User.where(auth_token:request.headers['Authorization']).map(&:id)
     products = Product.where(nil)
@@ -12,4 +13,7 @@ class Api::V1::ProductsController < ApplicationController
   	@product = Product.find(params[:id])
   	render json: @product, user_id: user_id[0]
   end
+
+ 
+
 end

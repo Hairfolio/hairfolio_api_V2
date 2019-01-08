@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_18_093849) do
+ActiveRecord::Schema.define(version: 2019_01_08_064549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "authentications", id: :serial, force: :cascade do |t|
     t.integer "provider_id"
@@ -59,11 +81,25 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.index ["service_id"], name: "index_brands_services_on_service_id"
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "quantity"
+  end
+
   create_table "categories", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "position", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+  end
+
+  create_table "categories_products", id: false, force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "product_id"
   end
 
   create_table "certificates", id: :serial, force: :cascade do |t|
@@ -140,6 +176,28 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.integer "position", default: 0
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "discount_sliders", force: :cascade do |t|
+    t.string "banner_image"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "educations", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "year_from"
@@ -176,11 +234,19 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.index ["user_id"], name: "index_experiences_users_on_user_id"
   end
 
+  create_table "favourites", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "folios", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total_posts", default: 0
     t.index ["user_id"], name: "index_folios_on_user_id"
   end
 
@@ -286,6 +352,7 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.integer "notifiable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "like_id"
     t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
@@ -300,6 +367,24 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.index ["category_id"], name: "index_offerings_on_category_id"
     t.index ["service_id"], name: "index_offerings_on_service_id"
     t.index ["user_id"], name: "index_offerings_on_user_id"
+  end
+
+  create_table "order_details", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "transaction_id"
+    t.string "charge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "phones", id: :serial, force: :cascade do |t|
@@ -327,7 +412,14 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.datetime "updated_at", null: false
     t.integer "likes_count", default: 0
     t.integer "comments_count", default: 0
+    t.boolean "is_trending", default: false
+    t.boolean "is_editors_pic", default: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "posts_products", id: false, force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "product_id"
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
@@ -335,6 +427,18 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.integer "tag_id"
     t.index ["post_id"], name: "index_posts_tags_on_post_id"
     t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
+  end
+
+  create_table "product_brands", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_galleries", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.string "image_url"
   end
 
   create_table "products", id: :serial, force: :cascade do |t|
@@ -345,6 +449,11 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "cloudinary_url"
+    t.integer "quantity"
+    t.decimal "price"
+    t.integer "favourites_count", default: 0
+    t.string "product_image"
+    t.integer "product_brand_id"
     t.index ["tag_id"], name: "index_products_on_tag_id"
   end
 
@@ -376,6 +485,30 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.datetime "updated_at", null: false
     t.integer "brand_id"
     t.index ["brand_id"], name: "index_services_on_brand_id"
+  end
+
+  create_table "store_landing_sales", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "store_shop_its", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", id: :serial, force: :cascade do |t|
@@ -432,8 +565,9 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
     t.string "pinterest_token"
     t.string "default_pinterest_board"
     t.boolean "auto_follow", default: false
-    t.integer "facebook_id"
-    t.integer "instagram_id"
+    t.string "facebook_id"
+    t.string "instagram_id"
+    t.boolean "is_admin", default: true
     t.index ["brand_id"], name: "index_users_on_brand_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -450,6 +584,9 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
 
   add_foreign_key "authentications", "providers"
   add_foreign_key "authentications", "users"
+  add_foreign_key "carts", "users", name: "carts_user_id_fkey"
+  add_foreign_key "categories_products", "categories", name: "categories_products_category_id_fkey"
+  add_foreign_key "categories_products", "products", name: "categories_products_product_id_fkey"
   add_foreign_key "colors", "harmonies"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
@@ -459,6 +596,8 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
   add_foreign_key "educations", "degrees"
   add_foreign_key "educations", "users"
   add_foreign_key "emails", "contacts"
+  add_foreign_key "favourites", "products", name: "favourites_product_id_fkey"
+  add_foreign_key "favourites", "users", name: "favourites_user_id_fkey"
   add_foreign_key "folios", "users"
   add_foreign_key "formulas", "labels"
   add_foreign_key "formulas", "lines"
@@ -479,9 +618,16 @@ ActiveRecord::Schema.define(version: 2018_05_18_093849) do
   add_foreign_key "offerings", "categories"
   add_foreign_key "offerings", "services"
   add_foreign_key "offerings", "users"
+  add_foreign_key "order_details", "orders", name: "order_details_order_id_fkey"
+  add_foreign_key "order_details", "products", name: "order_details_product_id_fkey"
+  add_foreign_key "orders", "users", name: "orders_user_id_fkey"
   add_foreign_key "phones", "contacts"
   add_foreign_key "photos", "posts"
   add_foreign_key "posts", "users"
+  add_foreign_key "posts_products", "posts", name: "products_posts_post_id_fkey"
+  add_foreign_key "posts_products", "products", name: "products_posts_product_id_fkey"
+  add_foreign_key "product_galleries", "products", name: "product_galleries_product_id_fkey"
+  add_foreign_key "products", "product_brands", name: "products_product_brand_id_fkey"
   add_foreign_key "products", "tags"
   add_foreign_key "services", "brands"
   add_foreign_key "treatments", "colors"

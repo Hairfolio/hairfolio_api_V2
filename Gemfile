@@ -31,6 +31,10 @@ gem 'cloudinary'
 #Cros Origins
 gem 'rack-cors', require: 'rack/cors'
 
+
+#Stripe Gateway
+gem 'stripe'
+
 group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
