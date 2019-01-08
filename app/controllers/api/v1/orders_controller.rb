@@ -1,6 +1,5 @@
 class Api::V1::OrdersController < ApplicationController
 	before_action :authenticate_with_token!
-
   	def create
   		order = Order.new
 	  	order.user_id = @current_user.id
