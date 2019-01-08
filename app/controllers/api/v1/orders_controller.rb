@@ -19,5 +19,4 @@ class Api::V1::OrdersController < ApplicationController
 	  		render json: { message: "Error" }, status:201
 	  	end
   	end
-
 end
