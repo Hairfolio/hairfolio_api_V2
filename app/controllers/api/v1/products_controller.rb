@@ -14,6 +14,12 @@ class Api::V1::ProductsController < ApplicationController
   	render json: @product, user_id: user_id[0]
   end
 
+
+  def trending_products
+    trending_products = Product.where(is_trending: true)
+
+    render json:  trending_products
+  end
  
 
 end

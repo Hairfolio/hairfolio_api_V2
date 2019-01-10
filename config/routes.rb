@@ -87,6 +87,9 @@ Rails.application.routes.draw do
   get "/trending_posts" => "api/v1/brands#trendings"
   get "/editor_pics_posts" => "api/v1/brands#editor_pics"
 
+  #Trending Products
+  get "/trending_products" => "api/v1/products#trending_products"
+
   #Cart APIs  
   post "/cart/plus_to_cart" => "api/v1/carts#increase"
   post "/cart/minus_from_cart" => "api/v1/carts#decrease"
