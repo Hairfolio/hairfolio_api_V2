@@ -22,8 +22,16 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: hairfolio_development
+  adapter: postgresql
+  encoding: unicode
+  database: hairfolio_local
+  pool: 5
+  username: postgres
+  password: postgres
+  
+# development:
+#   <<: *default
+#   database: hairfolio_local
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
