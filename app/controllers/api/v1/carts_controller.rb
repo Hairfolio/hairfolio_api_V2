@@ -50,7 +50,7 @@ class Api::V1::CartsController < ApplicationController
 
 
 	def cart		
-		@cart = Cart.where(user_id: current_user.id)
+		@cart = Cart.where(user_id: current_user.id).order(created_at: :desc)
 		render json: @cart, status:201
 	end
 
