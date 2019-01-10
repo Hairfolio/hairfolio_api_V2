@@ -19,7 +19,7 @@ class Api::V1::CartsController < ApplicationController
 		end
 	end
 
-	def decrease		
+	def decrease
 		cart = Cart.where(product_id: cart_params[:product_id])
 		cart = cart.where(user_id: current_user.id)		
 		
@@ -32,6 +32,22 @@ class Api::V1::CartsController < ApplicationController
 			render json: { errors: "Invalide quantity" }, status: 422
 		end
 	end
+
+	
+	def update
+		quantity = Product.where(id: params[:cart][:product_id]).pluck(:quantity)[0]
+
+		if params[:cart][:quantity] > quantity			
+			render json: { errors: "Out Of Stock" }, status:422
+		else
+			cart = Cart.where(product_id: params[:product_id])
+			cart = cart.where(user_id: current_user.id)			
+			cart.update(quantity: params[:cart][:quantity])
+
+			render json: cart, status:200
+		end
+	end
+
 
 	def cart		
 		@cart = Cart.where(user_id: current_user.id)
@@ -47,6 +63,8 @@ class Api::V1::CartsController < ApplicationController
 		end
 	end
 
+
+	private
 	def cart_params
 		params.require(:cart).permit(:product_id)
 	end

@@ -92,6 +92,7 @@ Rails.application.routes.draw do
   post "/cart/minus_from_cart" => "api/v1/carts#decrease"
   get  "/cart" => "api/v1/carts#cart"
   post "/cart/remove_from_cart" => "api/v1/carts#remove"
+  put  "/cart/update_cart" => "api/v1/carts#update"
 
   get "/user/likes/:id" => "api/v1/users#user_likes"
   get "/user/favourites/:id" => "api/v1/users#user_favourites"
