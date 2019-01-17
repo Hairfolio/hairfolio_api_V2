@@ -80,7 +80,7 @@ RailsAdmin.config do |config|
     dashboard                     # mandatory
     index                         # mandatory
     new do
-      except ['Cart']
+      except ['Cart', 'Order', 'OrderDetail']
     end
     export
     bulk_delete
