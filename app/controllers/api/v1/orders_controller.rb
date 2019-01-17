@@ -1,5 +1,4 @@
 class Api::V1::OrdersController < ApplicationController
-
 	before_action :authenticate_with_token!
 
   	def create  		  		
