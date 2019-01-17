@@ -72,6 +72,10 @@ GEM
       mimemagic (>= 0.3.0)
     case_transform (0.2)
       activesupport
+    ckeditor (4.3.0)
+      orm_adapter (~> 0.5.0)
+      terrapin
+    climate_control (0.2.0)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -340,6 +344,8 @@ GEM
     stripe (3.3.2)
       faraday (~> 0.9)
     temple (0.8.0)
+    terrapin (0.6.0)
+      climate_control (>= 0.0.3, < 1.0)
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -396,6 +402,7 @@ DEPENDENCIES
   byebug
   calamum
   carrierwave (~> 0.9)
+  ckeditor
   cloudinary
   devise
   factory_bot_rails

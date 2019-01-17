@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_064549) do
+ActiveRecord::Schema.define(version: 2019_01_10_113242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -384,7 +384,14 @@ ActiveRecord::Schema.define(version: 2019_01_08_064549) do
     t.string "charge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "phones", id: :serial, force: :cascade do |t|
@@ -454,6 +461,7 @@ ActiveRecord::Schema.define(version: 2019_01_08_064549) do
     t.integer "favourites_count", default: 0
     t.string "product_image"
     t.integer "product_brand_id"
+    t.boolean "is_trending"
     t.index ["tag_id"], name: "index_products_on_tag_id"
   end
 

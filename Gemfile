@@ -31,6 +31,7 @@ gem 'cloudinary'
 #Cros Origins
 gem 'rack-cors', require: 'rack/cors'
 
+gem 'ckeditor'
 
 #Stripe Gateway
 gem 'stripe'

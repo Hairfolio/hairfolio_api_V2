@@ -1,5 +1,5 @@
 require 'api_constraints'
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   namespace :api, defaults: { format: :json }, constraints: { localhost: 'api' }, path: '/' do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
@@ -15,7 +15,8 @@ Rails.application.routes.draw do
       resources :sub_categories, only: [:index]
       resources :store_shop_its, only: [:index]
       resources :store_landing_sales, only: [:index]
-      # resources :orders
+      resources :orders, only:[:create]
+      get "/user_orders" => "orders#user_orders"
       resources :categories, only: [:index, :show]
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index, :show]
@@ -80,7 +81,8 @@ Rails.application.routes.draw do
     end
   end
 
-  
+  #CMS Page
+  get "pages/:slug" => "pages#show"
 
   # Get All Posts
   get "/all_posts" => "api/v1/brands#all_posts"
