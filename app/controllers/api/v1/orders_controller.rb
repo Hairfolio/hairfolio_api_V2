@@ -5,8 +5,10 @@ class Api::V1::OrdersController < ApplicationController
   		order = Order.new
 	  	order.user_id = @current_user.id
 	  	order.payment_status = "awaiting"
-	  	order.order_number = "Ord_#{DateTime.now.strftime("%Y%m%d%H%M")}"
+	  	order.order_number = "Ord#{DateTime.now.strftime("%Y%m%d%H%M")}"
 	  	order.shipping_status = "pending"
+	  	order.address_id = params[:address_id]
+	  	
 	  	if order.save	  		
 	  		@cart_data = Cart.where(user_id: @current_user.id)	  		
 	  		@cart_data.each do |value|

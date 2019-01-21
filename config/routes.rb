@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         member { get :posts }
       end
       # resources :payments
+      resources :addresses
       resources :discount_sliders, only: [:index]
       resources :sub_categories, only: [:index]
       resources :store_shop_its, only: [:index]

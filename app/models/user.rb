@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :blocking, through: :blocked_relationships, source: :blocking
 
   has_many :contacts, dependent: :destroy
+  has_many :addresses, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :folios, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -37,7 +38,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :educations, allow_destroy: true
   accepts_nested_attributes_for :offerings, allow_destroy: true
 
-  enum account_type: [:consumer, :stylist, :ambassador, :owner] 
+  enum account_type: [:consumer, :stylist, :ambassador, :owner, :delivery, :warehouse] 
 
   before_create :generate_authentication_token!
 
