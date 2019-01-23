@@ -32,6 +32,7 @@ gem 'cloudinary'
 gem 'rack-cors', require: 'rack/cors'
 
 gem 'ckeditor'
+gem 'ancestry'
 
 #Stripe Gateway
 gem 'stripe'

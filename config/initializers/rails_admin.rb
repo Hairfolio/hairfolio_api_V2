@@ -69,12 +69,16 @@ RailsAdmin.config do |config|
   end
 
   config.model Category do
-    edit do     
+    edit do
       field :name
-      field :position
-      field :image      
+      field :image
+      field :parent_id, :enum do
+        enum_method do
+          :parent_enum
+        end
+      end
     end
-  end 
+  end
 
   config.actions do
     dashboard                     # mandatory

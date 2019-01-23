@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_18_065000) do
+ActiveRecord::Schema.define(version: 2019_01_22_072044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(version: 2019_01_18_065000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
@@ -647,6 +649,7 @@ ActiveRecord::Schema.define(version: 2019_01_18_065000) do
   add_foreign_key "offerings", "users"
   add_foreign_key "order_details", "orders", name: "order_details_order_id_fkey"
   add_foreign_key "order_details", "products", name: "order_details_product_id_fkey"
+  add_foreign_key "orders", "addresses", name: "orders_address_id_fkey"
   add_foreign_key "orders", "users", name: "orders_user_id_fkey"
   add_foreign_key "phones", "contacts"
   add_foreign_key "photos", "posts"

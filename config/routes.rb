@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :orders, only:[:create]
       get "/user_orders" => "orders#user_orders"
       resources :categories, only: [:index, :show]
+      get "/search_by_categories" => "categories#search_by_categories"
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index, :show]
       resources :degrees, only: [:index, :show]

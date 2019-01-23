@@ -12,7 +12,7 @@ class CategorySerializer < ActiveModel::Serializer
   end
 
   def sub_categories
-  	SubCategory.where(category_id: object.id)
+    Category.where(ancestry: object.id)
   end
 
 end
