@@ -1,5 +1,15 @@
 class Api::V1::OrdersController < ApplicationController
 	before_action :authenticate_with_token!
+	def index
+		orders = Order.where(user_id: current_user.id)  		
+  		orders = orders.where(shipping_status: params[:status])  		
+  		if params[:status] == 'pending'
+  			orders = orders.or(Order.where(shipping_status: "progress"))
+  		end
+  		orders = orders.page(params[:page]).per(params[:limit])
+
+  		render json: orders, meta: pagination_dict(orders)
+	end
 
   	def create  		  		
   		order = Order.new
@@ -24,17 +34,6 @@ class Api::V1::OrdersController < ApplicationController
 	  	else
 	  		render json: { errors: "Error" }, status:422
 	  	end
-  	end
-
-  	def user_orders
-  		orders = Order.where(user_id: current_user.id)  		
-  		orders = orders.where(shipping_status: params[:status])  		
-  		if params[:status] == 'pending'
-  			orders = orders.or(Order.where(shipping_status: "progress"))
-  		end
-  		orders = orders.page(params[:page]).per(params[:limit])
-
-  		render json: orders, meta: pagination_dict(orders)
   	end
 
   	def show
