@@ -3,8 +3,7 @@ class Api::V1::FavouritesController < ApplicationController
   before_action :set_product
 
   def index
-    favourites = @product.favourites.page(params[:page]).per(params[:limit])
-    
+    favourites = @product.favourites.page(params[:page]).per(params[:limit])    
     render json: favourites, meta: pagination_dict(favourites)
   end
 
@@ -18,12 +17,9 @@ class Api::V1::FavouritesController < ApplicationController
   end
 
   def destroy
-    favourite = @product.favourites.find_by!(user: current_user)
-    
+    favourite = @product.favourites.find_by!(user: current_user)    
     favourite.destroy
-
-    render json: favourite, status:201
-    
+    render json: favourite, status:201    
   end
 
   private
