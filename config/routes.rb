@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :sub_categories, only: [:index]
       resources :store_shop_its, only: [:index]
       resources :store_landing_sales, only: [:index]
-      resources :orders, only:[:create]
+      resources :orders, only:[:create, :show]
       get "/user_orders" => "orders#user_orders"
       resources :categories, only: [:index, :show]
       get "/search_by_categories" => "categories#search_by_categories"

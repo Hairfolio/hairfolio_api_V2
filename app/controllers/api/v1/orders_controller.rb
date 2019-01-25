@@ -37,4 +37,9 @@ class Api::V1::OrdersController < ApplicationController
   		render json: orders, meta: pagination_dict(orders)
   	end
 
+  	def show
+  		@order = Order.find(params[:id])
+  		render json: @order, status: 200
+  	end 	
+
 end
