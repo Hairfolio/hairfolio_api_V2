@@ -11,7 +11,11 @@ Rails.application.routes.draw do
         member { get :posts }
       end
       # resources :payments
+      resources :carts, only:[:index, :create]
+      put "/update_cart" => "carts#update_cart"
+      post "/remove_from_cart" => "carts#remove_from_cart"
       resources :addresses
+      resources :searches, only: [:index, :create]
       resources :discount_sliders, only: [:index]
       resources :sub_categories, only: [:index]
       resources :store_shop_its, only: [:index]
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
       get "/search_by_categories" => "categories#search_by_categories"
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index, :show]
+      get "/search_product" => "products#search_product"
       resources :degrees, only: [:index, :show]
       resources :lines, only: [:index, :show]
       resources :harmonies, only: [:index]
@@ -92,13 +97,6 @@ Rails.application.routes.draw do
 
   #Trending Products
   get "/trending_products" => "api/v1/products#trending_products"
-
-  #Cart APIs  
-  post "/cart/plus_to_cart" => "api/v1/carts#increase"
-  post "/cart/minus_from_cart" => "api/v1/carts#decrease"
-  get  "/cart" => "api/v1/carts#cart"
-  post "/cart/remove_from_cart" => "api/v1/carts#remove"
-  put  "/cart/update_cart" => "api/v1/carts#update"
 
   get "/user/likes/:id" => "api/v1/users#user_likes"
   get "/user/favourites/:id" => "api/v1/users#user_favourites"
