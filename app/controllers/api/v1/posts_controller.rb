@@ -2,6 +2,7 @@ class Api::V1::PostsController < ApplicationController
   
   before_action :authenticate_with_token!, only: [:create, :update, :destroy, :index]
   before_action :set_post, only: [:update, :destroy, :show]
+  before_action :check_user
   
   def index
     posts = Post.where(nil)
@@ -12,7 +13,7 @@ class Api::V1::PostsController < ApplicationController
     posts = posts.where.not(user_id: current_user.blocking.pluck(:id))
     posts = posts.page(params[:page]).per(params[:favorites] ? 6 : 4)
 
-    render json: posts, user_id: current_user.id, meta: pagination_dict(posts)
+    render json: posts, user_id: @user_id, meta: pagination_dict(posts)
 
   end
 
@@ -34,7 +35,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-    render json: @post, user_id: current_user.id, root: 'post'
+    render json: @post, user_id: @user_id, root: 'post'
   end
 
   def destroy

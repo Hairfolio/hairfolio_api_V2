@@ -16,9 +16,12 @@ module Authenticable
     current_user.present?
   end
 
-  def logged_in
-    current_user
+  def check_user
+    if current_user.present?
+      @user_id = current_user.id
+    else
+      @user_id = ''
+    end  
   end
-
 
 end

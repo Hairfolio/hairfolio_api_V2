@@ -1,10 +1,11 @@
 class Api::V1::LikesController < ApplicationController
   before_action :authenticate_with_token!
   before_action :set_post
+  before_action :check_user
 
   def index
     likes = @post.likes.page(params[:page]).per(params[:limit])
-    render json: likes, user_id: current_user.id, meta: pagination_dict(likes)
+    render json: likes, user_id: @user_id, meta: pagination_dict(likes)
   end
 
   def create
