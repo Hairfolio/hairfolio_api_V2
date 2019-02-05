@@ -8,12 +8,20 @@ class PostSerializer < ActiveModel::Serializer
     object.photos.includes(labels: [:tag, formulas: [:service, treatments: [:color]]])
   end
 
+  def liked_by_me    
+    object.likes.pluck(:user_id).include?(current_user_id)
+  end
+
+  def current_user_id
+    @instance_options[:user_id]
+  end
+
   def user
     UserMinimalSerializer.new(object.user, {scope: scope}).serializable_hash
   end
 
-  def liked_by_me
-    object.user.likes.pluck(:post_id).include?(object.id)
-  end
+  # def liked_by_me
+  #   object.user.likes.pluck(:post_id).include?(object.id)
+  # end
 
 end

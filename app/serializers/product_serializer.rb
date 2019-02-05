@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-	attributes :id, :name, :is_favourite, :is_trending, :price, :product_image, :quantity,:favourites_count, :link_url, :image_url, :cloudinary_url, :created_at, :categories
+	attributes :id, :name, :is_favourite, :is_trending, :price, :short_description, :description, :product_image, :quantity,:favourites_count, :link_url, :image_url, :cloudinary_url, :created_at, :categories
 	belongs_to :tag
 	belongs_to :product_brand
 	has_many :product_galleries

@@ -2,7 +2,7 @@ class Api::V1::PostsController < ApplicationController
   
   before_action :authenticate_with_token!, only: [:create, :update, :destroy, :index]
   before_action :set_post, only: [:update, :destroy, :show]
-
+  
   def index
     posts = Post.where(nil)
     posts = posts.where("description ilike ?", "%#{params[:q]}%") if params[:q]
@@ -12,12 +12,8 @@ class Api::V1::PostsController < ApplicationController
     posts = posts.where.not(user_id: current_user.blocking.pluck(:id))
     posts = posts.page(params[:page]).per(params[:favorites] ? 6 : 4)
 
-    render json: posts, meta: pagination_dict(posts)
+    render json: posts, user_id: current_user.id, meta: pagination_dict(posts)
 
-    # posts = Post.all
-    # posts = posts.order(updated_at: :desc).page(params[:page]).per(params[:limit])    
-    # render json: posts, meta: pagination_dict(posts)
-    
   end
 
   def create
@@ -38,7 +34,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-    render json: @post, root: 'post'
+    render json: @post, user_id: current_user.id, root: 'post'
   end
 
   def destroy
