@@ -7,6 +7,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :certificates
   has_many :contacts
   has_many :posts
+  has_many :addresses
 
   def offerings
     object.offerings.map { |o| OfferingSerializer.new(o, {scope: scope}).serializable_hash }
