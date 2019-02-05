@@ -1,5 +1,5 @@
 class Api::V1::BrandsController < ApplicationController
-
+  before_action :logged_in  
   def index
     brands =
       if params["service_id"]
@@ -19,17 +19,17 @@ class Api::V1::BrandsController < ApplicationController
   def all_posts
       posts = Post.all
       posts = posts.order(updated_at: :desc).page(params[:page]).per(params[:limit])    
-      render json: posts, meta: pagination_dict(posts)
+      render json: posts, user_id: current_user.id, meta: pagination_dict(posts)
   end
 
   def trendings
     @posts = Post.where(is_trending: true)
-    render json: @posts
+    render json: @posts, user_id: current_user.id
   end
 
   def editor_pics
     @posts = Post.where(is_editors_pic: true)
-    render json: @posts
+    render json: @posts, user_id: current_user.id
   end
 
 end
