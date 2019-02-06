@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       root to: 'home#index', as: 'api_home'
       resources :brands, only: [:index, :show]
+      get "/all_posts" => "brands#all_posts"
+      get "/trending_posts" => "brands#trendings"
+      get "/editor_pics_posts" => "brands#editor_pics"
       resources :services, only: [:index, :show]
       resources :tags, only: [:index, :show, :create] do
         collection { get :exact }
@@ -26,6 +29,7 @@ Rails.application.routes.draw do
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index, :show]
       get "/search_product" => "products#search_product"
+      get "/trending_products" => "products#trending_products"
       resources :degrees, only: [:index, :show]
       resources :lines, only: [:index, :show]
       resources :harmonies, only: [:index]
@@ -55,6 +59,8 @@ Rails.application.routes.draw do
       end
       resources :photos, only: [:update]
       resources :notifications, only: [:index, :show]
+      get "/user/likes/:id" => "users#user_likes"
+      get "/user/favourites/:id" => "users#user_favourites"
       resources :users, except: [:edit] do
         resources :educations, except: [:edit]
         resources :offerings, except: [:edit]
@@ -89,22 +95,11 @@ Rails.application.routes.draw do
 
   #CMS Page
   get "pages/:slug" => "pages#show"
-
-  # Get All Posts
-  get "/all_posts" => "api/v1/brands#all_posts"
-  get "/trending_posts" => "api/v1/brands#trendings"
-  get "/editor_pics_posts" => "api/v1/brands#editor_pics"
-
-  #Trending Products
-  get "/trending_products" => "api/v1/products#trending_products"
-
-  get "/user/likes/:id" => "api/v1/users#user_likes"
-  get "/user/favourites/:id" => "api/v1/users#user_favourites"
   
+  #Errors
   get "/404" => "api/v1/errors#not_found"
   get "/500" => "api/v1/errors#exception"
 
   devise_for :users
-
   root to: 'home#index'
 end
