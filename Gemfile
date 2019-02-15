@@ -20,6 +20,7 @@ gem 'active_record_query_trace'
 
 #Image Upload
 gem 'carrierwave', '~> 0.9'
+gem 'meta-tags'
 
 # APIs
 gem 'active_model_serializers'

@@ -18,12 +18,14 @@ Rails.application.routes.draw do
       put "/update_cart" => "carts#update_cart"
       post "/remove_from_cart" => "carts#remove_from_cart"
       resources :addresses
-      resources :searches, only: [:index, :create]
+      resources :searches, only: [:index]
+      post "/filter_products" => "searches#filter_products"
+      get "/search_products" => "searches#search_products"
       resources :discount_sliders, only: [:index]
       resources :sub_categories, only: [:index]
       resources :store_shop_its, only: [:index]
       resources :store_landing_sales, only: [:index]
-      resources :orders, only:[:index, :create, :show]      
+      resources :orders, only:[:index, :create, :show]
       resources :categories, only: [:index, :show]
       get "/search_by_categories" => "categories#search_by_categories"
       resources :certificates, only: [:index, :show]
@@ -45,12 +47,15 @@ Rails.application.routes.draw do
           delete :remove_post
         end
       end
+
+      
       resources :posts do
         resources :comments, only: [:create, :destroy, :index, :update]
         resources :likes, only: [:create, :index] do
           collection { delete :destroy }
         end
       end
+
       resources :products do
         # resources :comments, only: [:create, :destroy, :index, :update]
         resources :favourites, only: [:create, :index] do
@@ -95,6 +100,7 @@ Rails.application.routes.draw do
 
   #CMS Page
   get "pages/:slug" => "pages#show"
+  get "/view_post_meta/:id" => "api/v1/brands#view_post_meta"
   
   #Errors
   get "/404" => "api/v1/errors#not_found"
