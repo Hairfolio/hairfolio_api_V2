@@ -42,10 +42,10 @@ class Api::V1::BrandsController < ApplicationController
       set_meta_tags title: "Hairfolio App",
       site: "Hair Folio",
       description: @description,
-      refresh:5,
+      refresh:5, 
       twitter:{
           card: "hairfolio Card",
-          site:"hairfolio",
+          site:"http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
           title: "Posts",
           description:@description,
           image: @image
