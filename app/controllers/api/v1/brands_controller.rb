@@ -36,16 +36,14 @@ class Api::V1::BrandsController < ApplicationController
   def view_post_meta
       @post = Post.find(params[:id])      
       @photos = @post.photos
-      @description = @post.description      
-      @image = @photos[0].asset_url
-      set_meta_tags description: @description,
-        refresh:5,
+      set_meta_tags description: @post.description,
+      refresh:5,
         og:{
-            title: "Test",
-            description: @description,
+            title: "Hair folio post",
+            description: @post.description,
             type: "Website",
-            url: "www.google.com",
-            image: "https://www.w3schools.com/w3css/img_lights.jpg"
+            url: request.base_url+"/posts/"+params[:id],
+            image: @photos[0].asset_url
         }
   end
 
