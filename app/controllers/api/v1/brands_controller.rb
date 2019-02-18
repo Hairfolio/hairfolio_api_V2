@@ -37,6 +37,7 @@ class Api::V1::BrandsController < ApplicationController
       @post = Post.find(params[:id])      
       @photos = @post.photos      
       set_meta_tags description: @post.description,
+        refresh: 5,
         og:{
             title: "Test",
             description: @post.description,
@@ -44,10 +45,11 @@ class Api::V1::BrandsController < ApplicationController
             url: request.base_url+"/posts/"+params[:id],
             image: {
               url:@photos[0].asset_url,
-              width: '200',
-              height: '200'
+              width: '720',
+              height: '360'
             }
         }
+
   end
 
 end
