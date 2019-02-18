@@ -39,13 +39,11 @@ class Api::V1::BrandsController < ApplicationController
       @description = @post.description
       @image = @photos[0].asset_url
 
-      set_meta_tags title: "Hairfolio App",
-                    site: "Hair Folio",
-                    description: @description,
+      set_meta_tags description: @description,
                     refresh:5,
                     twitter:{
                         card: "photo",
-                        site:"http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
+                        site:"http://hairfolio-prod.herokuapp.com",
                         title: @description,
                         description:@description,
                         image: {
@@ -58,7 +56,7 @@ class Api::V1::BrandsController < ApplicationController
                       title: @description,
                       description: @description,
                       type: "Website",
-                      url: "http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
+                      url: "http://hairfolio-prod.herokuapp.com",
                       image:{
                         _: @image,
                         width:  300,
