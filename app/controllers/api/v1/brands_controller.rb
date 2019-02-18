@@ -41,7 +41,7 @@ class Api::V1::BrandsController < ApplicationController
       set_meta_tags description: @description,
         og:{
             title: "Test",
-            description: @description,
+            description: "description dmeo",
             type: "Website",
             url: request.base_url+"/posts/"+params[:id],
             image: @image
