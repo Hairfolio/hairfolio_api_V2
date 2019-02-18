@@ -37,7 +37,7 @@ class Api::V1::BrandsController < ApplicationController
       @post = Post.find(params[:id])      
       @photos = @post.photos      
       set_meta_tags description: @post.description,
-        refresh: 5,
+        # refresh: 5,
         og:{
             title: "Test",
             description: @post.description,
