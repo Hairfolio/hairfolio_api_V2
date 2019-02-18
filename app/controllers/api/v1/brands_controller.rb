@@ -35,14 +35,14 @@ class Api::V1::BrandsController < ApplicationController
 
   def view_post_meta
       @post = Post.find(params[:id])      
-      @photos = @post.photos      
-      set_meta_tags description: @post.description,
-        og:{
+      @photos = @post.photos
+
+      set_meta_tags og:{
             title: "Test",
-            description: @post.description,
+            description: "Test description",
             type: "Website",
-            url: request.base_url+"/posts/"+params[:id],
-            image: @photos[0].asset_url
+            url: "https://www.facebook.com/",
+            image: "http://hairfolio-prod.herokuapp.com/uploads/category/image/17/slider-2.jpg"
         }
   end
 
