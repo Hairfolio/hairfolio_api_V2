@@ -42,7 +42,11 @@ class Api::V1::BrandsController < ApplicationController
             description: @post.description,
             type: "Website",
             url: request.base_url+"/posts/"+params[:id],
-            image: @photos[0].asset_url
+            image: {
+              url:@photos[0].asset_url,
+              width: '200',
+              height: '200'
+            }
         }
   end
 
