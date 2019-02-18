@@ -46,7 +46,7 @@ class Api::V1::BrandsController < ApplicationController
                     twitter:{
                         card: "photo",
                         site:"http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
-                        title: "Posts",
+                        title: @description,
                         description:@description,
                         image: {
                           _: @image,
@@ -55,7 +55,7 @@ class Api::V1::BrandsController < ApplicationController
                         }
                     },
                     og:{
-                      title: "Hair folio post",
+                      title: @description,
                       description: @description,
                       type: "Website",
                       url: "http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
