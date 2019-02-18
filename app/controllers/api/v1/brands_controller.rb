@@ -42,7 +42,7 @@ class Api::V1::BrandsController < ApplicationController
             description: "Test description",
             type: "Website",
             url: "https://www.facebook.com/",
-            image: "http://hairfolio-prod.herokuapp.com/uploads/category/image/17/slider-2.jpg"
+            image: @photos[0].asset_url
         }
   end
 
