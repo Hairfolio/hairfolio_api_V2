@@ -1,6 +1,6 @@
 class Api::V1::BrandsController < ApplicationController  
   before_action :check_user
-
+ 
   def index
     brands =
       if params["service_id"]
@@ -40,23 +40,31 @@ class Api::V1::BrandsController < ApplicationController
       @image = @photos[0].asset_url
 
       set_meta_tags title: "Hairfolio App",
-      site: "Hair Folio",
-      description: @description,
-      refresh:5, 
-      twitter:{
-          card: "hairfolio Card",
-          site:"http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
-          title: "Posts",
-          description:@description,
-          image: @image
-      },
-      og:{
-          title: "Hair folio post",
-          description: @description,
-          type: "Website",
-          url: "http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
-          image: @image
-        }
+                    site: "Hair Folio",
+                    description: @description,
+                    refresh:5,
+                    twitter:{
+                        card: "photo",
+                        site:"http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
+                        title: "Posts",
+                        description:@description,
+                        image: {
+                          _: @image,
+                          width:  300,
+                          height: 300
+                        }
+                    },
+                    og:{
+                      title: "Hair folio post",
+                      description: @description,
+                      type: "Website",
+                      url: "http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
+                      image:{
+                        _: @image,
+                        width:  300,
+                        height: 300
+                      } 
+                    }
   end
 
 end
