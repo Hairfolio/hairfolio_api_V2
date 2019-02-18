@@ -43,7 +43,7 @@ class Api::V1::BrandsController < ApplicationController
             title: "Test",
             description: @description,
             type: "Website",
-            url: request.base_url+"/posts/"+params[:id],
+            url: "www.google.com",
             image: "https://www.w3schools.com/w3css/img_lights.jpg"
         }
   end
