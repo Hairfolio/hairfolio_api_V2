@@ -39,6 +39,7 @@ class Api::V1::BrandsController < ApplicationController
       @description = @post.description      
       @image = @photos[0].asset_url
       set_meta_tags description: @description,
+        refresh:5,
         og:{
             title: "Test",
             description: @description,
