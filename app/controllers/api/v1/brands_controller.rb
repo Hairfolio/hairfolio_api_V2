@@ -40,28 +40,24 @@ class Api::V1::BrandsController < ApplicationController
       @image = @photos[0].asset_url
 
       set_meta_tags description: @description,
-                    refresh:5,
-                    twitter:{
-                        card: "photo",
-                        site:"http://hairfolio-prod.herokuapp.com",
-                        title: @description,
-                        description:@description,
-                        image: {
-                          _: @image,
-                          width:  300,
-                          height: 300
-                        }
-                    },
+                    # refresh:5,
+                    # twitter:{
+                    #     card: "photo",
+                    #     site:"http://hairfolio-prod.herokuapp.com",
+                    #     title: @description,
+                    #     description:@description,
+                    #     image: {
+                    #       _: @image,
+                    #       width:  300,
+                    #       height: 300
+                    #     }
+                    # },
                     og:{
                       title: @description,
                       description: @description,
                       type: "Website",
                       url: "http://hairfolio-prod.herokuapp.com",
-                      image:{
-                        _: @image,
-                        width:  300,
-                        height: 300
-                      } 
+                      image:@image
                     }
   end
 
