@@ -36,14 +36,26 @@ class Api::V1::BrandsController < ApplicationController
   def view_post_meta
       @post = Post.find(params[:id])      
       @photos = @post.photos
-      set_meta_tags description: @post.description,
+      @description = @post.description
+      @image = @photos[0].asset_url
+
+      set_meta_tags title: "" 
+      site: "Hair Folio"
+      description: @description,
       refresh:5,
-        og:{
-            title: "Hair folio post",
-            description: @post.description,
-            type: "Website",
-            url: request.base_url+"/posts/"+params[:id],
-            image: @photos[0].asset_url
+      twitter:{
+          card: "hairfolio Card",
+          site:"hairfolio",
+          title: "Posts",
+          description:@description,
+          image: @image
+      },
+      og:{
+          title: "Hair folio post",
+          description: @description,
+          type: "Website",
+          url: "http://180.211.99.165:8080/jaisal/hairfolio/dist/#/home",
+          image: @image
         }
   end
 
