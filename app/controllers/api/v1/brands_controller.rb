@@ -41,17 +41,17 @@ class Api::V1::BrandsController < ApplicationController
 
       set_meta_tags description: @description,
                     refresh:5,
-                    twitter:{
-                        card: "photo",
-                        site:"http://hairfolio-prod.herokuapp.com",
-                        title: @description,
-                        description:@description,
-                        image: {
-                          url: @image,
-                          width:  "300px",
-                          height: "300px"
-                        }
-                    },
+                    # twitter:{
+                    #     card: "photo",
+                    #     site:"http://hairfolio-prod.herokuapp.com",
+                    #     title: @description,
+                    #     description:@description,
+                    #     image: {
+                    #       url: @image,
+                    #       width:  "300px",
+                    #       height: "300px"
+                    #     }
+                    # },
                     og:{
                       title: @description,
                       description: @description,
