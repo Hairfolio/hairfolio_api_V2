@@ -34,32 +34,20 @@ class Api::V1::BrandsController < ApplicationController
   end
 
   def view_post_meta
+    @post = Post.find(params[:id])
+    @photos = @post.photos
+    @description = @post.description
+    @image = @photos[0].asset_url
 
-      @post = Post.find(params[:id])
-      @photos = @post.photos
-      @description = @post.description
-      @image = @photos[0].asset_url
-
-      set_meta_tags description: @description,
-                    refresh:5,                    
-                    og:{
-                      title: @description,
-                      description: @description,
-                      type: "website",
-                      url: "",
-                      image:@image
-                    }
-                    # twitter:{
-                    #     card: "photo",
-                    #     site:"http://hairfolio-prod.herokuapp.com",
-                    #     title: @description,
-                    #     description:@description,
-                    #     image: {
-                    #       url: @image,
-                    #       width:  "300px",
-                    #       height: "300px"
-                    #     }
-                    # }
+    set_meta_tags description: @description,
+    refresh:5,                    
+    og:{
+      title: @description,
+      description: @description,
+      type: "website",
+      url: "",
+      image:@image
+    }
   end
 
   def view_post
