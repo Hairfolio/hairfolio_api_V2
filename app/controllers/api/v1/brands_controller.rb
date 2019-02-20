@@ -34,7 +34,7 @@ class Api::V1::BrandsController < ApplicationController
   end
 
   def view_post_meta
-    
+
       @post = Post.find(params[:id])
       @photos = @post.photos
       @description = @post.description
@@ -60,6 +60,10 @@ class Api::V1::BrandsController < ApplicationController
                     #       height: "300px"
                     #     }
                     # }
+  end
+
+  def view_post
+    render json: params[:id]
   end
 
 end
