@@ -101,8 +101,7 @@ Rails.application.routes.draw do
 
   #CMS Page
   get "pages/:slug" => "pages#show" 
-  get "/view_post_meta/:id" => "api/v1/brands#view_post_meta"
-  get "/view_post/:id" => "api/v1/brands#view_post"
+  get "/view_post_meta/:id" => "api/v1/brands#view_post_meta"  
   #Errors
   get "/404" => "api/v1/errors#not_found"
   get "/500" => "api/v1/errors#exception"
