@@ -34,7 +34,7 @@ class Api::V1::BrandsController < ApplicationController
   end
 
   def view_post_meta
-      @post = Post.find(params[:id])      
+      @post = Post.find(params[:id])
       @photos = @post.photos
       @description = @post.description
       @image = @photos[0].asset_url
