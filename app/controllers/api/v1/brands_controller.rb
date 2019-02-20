@@ -34,6 +34,7 @@ class Api::V1::BrandsController < ApplicationController
   end
 
   def view_post_meta
+    
       @post = Post.find(params[:id])
       @photos = @post.photos
       @description = @post.description
@@ -45,7 +46,7 @@ class Api::V1::BrandsController < ApplicationController
                       title: @description,
                       description: @description,
                       type: "website",
-                      url: request.domain+"/view_post/"+params[:id],
+                      url: request.base_url+"/view_post/"+params[:id],
                       image:@image
                     }
                     # twitter:{
