@@ -44,7 +44,7 @@ class Api::V1::BrandsController < ApplicationController
                     og:{
                       title: @description,
                       description: @description,
-                      type: "post",
+                      type: "website",
                       url: "",
                       image:@image
                     }
