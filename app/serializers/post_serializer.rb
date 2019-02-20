@@ -1,8 +1,10 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :description,:is_trending, :products, :likes_count, :user, :comments_count, :liked_by_me
+  attributes :id, :created_at, :description,:is_trending, :likes_count, :user, :comments_count, :liked_by_me
+  has_many :products
   has_many :photos, include_nested_associations: true
   has_many :videos, include_nested_associations: true
   has_one :user
+
 
   def photos
     object.photos.includes(labels: [:tag, formulas: [:service, treatments: [:color]]])
