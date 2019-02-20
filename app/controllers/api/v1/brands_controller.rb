@@ -44,8 +44,8 @@ class Api::V1::BrandsController < ApplicationController
                     og:{
                       title: @description,
                       description: @description,
-                      type: "Website",
-                      url: "http://hairfolio-prod.herokuapp.com",
+                      type: "post",
+                      url: "",
                       image:@image
                     }
                     # twitter:{
