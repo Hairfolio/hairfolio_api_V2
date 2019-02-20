@@ -8,8 +8,7 @@ Rails.application.routes.draw do
       get "/all_posts" => "brands#all_posts"
       get "/trending_posts" => "brands#trendings"
       get "/editor_pics_posts" => "brands#editor_pics"
-      get "/view_post_meta/:id" => "brands#view_post_meta"
-      get "/view_post/:id" => "brands#view_post"
+     
       resources :services, only: [:index, :show]
       resources :tags, only: [:index, :show, :create] do
         collection { get :exact }
@@ -102,7 +101,8 @@ Rails.application.routes.draw do
 
   #CMS Page
   get "pages/:slug" => "pages#show" 
-  
+  get "/view_post_meta/:id" => "api/v1/brands#view_post_meta"
+  get "/view_post/:id" => "api/v1/brands#view_post"
   #Errors
   get "/404" => "api/v1/errors#not_found"
   get "/500" => "api/v1/errors#exception"
