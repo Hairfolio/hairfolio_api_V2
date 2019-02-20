@@ -45,7 +45,7 @@ class Api::V1::BrandsController < ApplicationController
                       title: @description,
                       description: @description,
                       type: "website",
-                      url: "",
+                      url: request.domain+"/view_post/"+params[:id],
                       image:@image
                     }
                     # twitter:{
