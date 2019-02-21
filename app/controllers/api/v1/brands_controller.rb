@@ -1,6 +1,7 @@
 class Api::V1::BrandsController < ApplicationController  
   before_action :check_user
- 
+  # require "base64"
+
   def index
     brands =
       if params["service_id"]
@@ -33,7 +34,10 @@ class Api::V1::BrandsController < ApplicationController
     render json: @posts, user_id: @user_id
   end
 
+  #Meta tags Api
   def view_post_meta
+    # enc   = Base64.encode64("181")
+    # render json: Base64.decode64(enc)
     @post = Post.find(params[:id])
     @photos = @post.photos
     @description = @post.description
