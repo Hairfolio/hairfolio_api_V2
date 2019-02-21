@@ -52,6 +52,6 @@ class Api::V1::BrandsController < ApplicationController
       url: "",
       image:@image
     }
-  end
+  end 
 
 end
