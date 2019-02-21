@@ -1,5 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :body, :user_id, :first_name, :last_name, :avatar_url, :created_at
+  attributes :id, :body, :user_id, :first_name, :last_name, :avatar_cloudinary_id, :created_at
 
   def user
     UserSerializer.new(object.user, {scope: scope}).serializable_hash
@@ -17,8 +17,8 @@ class CommentSerializer < ActiveModel::Serializer
   	object.user.last_name
   end
 
-  def avatar_url
-  	object.user.avatar_url
+  def avatar_cloudinary_id
+  	object.user.avatar_cloudinary_id
   end
 
 end
