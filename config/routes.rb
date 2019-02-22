@@ -49,7 +49,7 @@ Rails.application.routes.draw do
         end
       end
 
-      
+      get "/user_posts" => "posts#user_posts"
       resources :posts do
         resources :comments, only: [:create, :destroy, :index, :update]
         resources :likes, only: [:create, :index] do

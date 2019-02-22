@@ -14,7 +14,13 @@ class Api::V1::PostsController < ApplicationController
     posts = posts.page(params[:page]).per(params[:favorites] ? 6 : 4)
 
     render json: posts, user_id: @user_id, meta: pagination_dict(posts)
+  end
 
+  def user_posts
+    posts = Post.where(user_id:current_user.id).order('id desc')
+    posts = posts.page(params[:page]).per(params[:limit])
+
+    render json: posts,user_id: @user_id, meta:pagination_dict(posts)
   end
 
   def create
