@@ -1,6 +1,6 @@
 class Api::V1::BrandsController < ApplicationController  
   before_action :check_user
-  # require "base64"
+  require "base64"
 
   def index
     brands =
@@ -36,8 +36,10 @@ class Api::V1::BrandsController < ApplicationController
 
   #Meta tags Api
   def view_post_meta
-    # enc   = Base64.encode64("181")
-    # render json: Base64.decode64(enc)
+    @unique_code = Base64.encode64(params[:id].to_s+','+@user_id.to_s)    
+    #enc = Base64.decode64(unique_code)
+    # render json: enc.split(",")[1];
+    
     @post = Post.find(params[:id])
     @photos = @post.photos
     @description = @post.description
@@ -52,6 +54,7 @@ class Api::V1::BrandsController < ApplicationController
       url: "",
       image:@image
     }
+    
   end 
 
 end
