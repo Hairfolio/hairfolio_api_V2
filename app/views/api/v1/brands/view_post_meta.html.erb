@@ -1,22 +1,20 @@
-<!-- <script type="text/javascript">
-    window.location.href="http://180.211.99.165:8080/jaisal/hairfolio/postdetails/"+ btoa(<%= @post.id %>)
-</script> -->
-
 <script type="text/javascript">
-
 	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);	
 	if (isMobile) {	 	
 	 	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 	    if (/windows phone/i.test(userAgent)){
-	        window.location.href="hairfolio://ASDF/"+<%= @post.id %>
+	        setTimeout(function () { window.location = "https://play.google.com/store"; }, 25);			
+	        window.location ="hairfolio://ASDF/"+<%= @post.id %>
 	    }
 	    if (/android/i.test(userAgent)){
-	        window.location.href="hairfolio://ASDF/"+<%= @post.id %>
+	        setTimeout(function () { window.location = "https://play.google.com/store"; }, 25);			
+	        window.location ="hairfolio://ASDF/"+<%= @post.id %>
 	    }
-	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream){	        
-	        window.location.href="hairfolio://ASDF/"+<%= @post.id %>
+	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream){
+	    	setTimeout(function () { window.location = "https://www.apple.com/itunes/"; }, 25);			
+	        window.location ="hairfolio://ASDF/"+<%= @post.id %>
 	    }
-	}else{
+	}else {
 		window.location.href="http://180.211.99.165:8080/jaisal/hairfolio/postdetails/"+ btoa(<%= @post.id %>)
 	}
 </script>
