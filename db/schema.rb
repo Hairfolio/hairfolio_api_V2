@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_072044) do
+ActiveRecord::Schema.define(version: 2019_02_25_122723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.string "email"
     t.string "first_name"
     t.string "last_name"
+    t.string "user_address"
     t.string "phone"
     t.string "city"
     t.string "landmark"
@@ -49,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.boolean "default_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_address"
   end
 
   create_table "authentications", id: :serial, force: :cascade do |t|
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.integer "position", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
+    t.string "image", limit: 1000
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
@@ -323,6 +323,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.integer "label_type"
     t.string "url"
     t.string "name"
+    t.integer "product_id"
     t.index ["photo_id"], name: "index_labels_on_photo_id"
     t.index ["post_id"], name: "index_labels_on_post_id"
     t.index ["tag_id"], name: "index_labels_on_tag_id"
@@ -370,6 +371,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "like_id"
+    t.integer "favourite_id"
     t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
@@ -440,14 +442,14 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.datetime "updated_at", null: false
     t.integer "likes_count", default: 0
     t.integer "comments_count", default: 0
-    t.boolean "is_trending", default: false
-    t.boolean "is_editors_pic", default: false
+    t.boolean "is_trending"
+    t.boolean "is_editors_pic"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "posts_products", id: false, force: :cascade do |t|
-    t.integer "post_id"
     t.integer "product_id"
+    t.integer "post_id"
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
@@ -479,10 +481,12 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.string "cloudinary_url"
     t.integer "quantity"
     t.decimal "price"
-    t.integer "favourites_count", default: 0
+    t.integer "favourites_count"
     t.string "product_image"
     t.integer "product_brand_id"
     t.boolean "is_trending"
+    t.text "short_description"
+    t.text "description"
     t.index ["tag_id"], name: "index_products_on_tag_id"
   end
 
@@ -597,6 +601,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
     t.string "facebook_id"
     t.string "instagram_id"
     t.boolean "is_admin", default: true
+    t.string "device_id"
     t.index ["brand_id"], name: "index_users_on_brand_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -614,7 +619,6 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
   add_foreign_key "authentications", "providers"
   add_foreign_key "authentications", "users"
   add_foreign_key "carts", "users", name: "carts_user_id_fkey"
-  add_foreign_key "categories_products", "categories", name: "categories_products_category_id_fkey"
   add_foreign_key "categories_products", "products", name: "categories_products_product_id_fkey"
   add_foreign_key "colors", "harmonies"
   add_foreign_key "comments", "posts"
@@ -626,7 +630,6 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
   add_foreign_key "educations", "users"
   add_foreign_key "emails", "contacts"
   add_foreign_key "favourites", "products", name: "favourites_product_id_fkey"
-  add_foreign_key "favourites", "users", name: "favourites_user_id_fkey"
   add_foreign_key "folios", "users"
   add_foreign_key "formulas", "labels"
   add_foreign_key "formulas", "lines"
@@ -643,21 +646,19 @@ ActiveRecord::Schema.define(version: 2019_01_22_072044) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "posts"
   add_foreign_key "messages", "users"
+  add_foreign_key "notifications", "favourites", name: "fk_favourite_id"
+  add_foreign_key "notifications", "likes", name: "fk_like_id"
   add_foreign_key "notifications", "users"
   add_foreign_key "offerings", "categories"
   add_foreign_key "offerings", "services"
   add_foreign_key "offerings", "users"
-  add_foreign_key "order_details", "orders", name: "order_details_order_id_fkey"
-  add_foreign_key "order_details", "products", name: "order_details_product_id_fkey"
   add_foreign_key "orders", "addresses", name: "orders_address_id_fkey"
-  add_foreign_key "orders", "users", name: "orders_user_id_fkey"
   add_foreign_key "phones", "contacts"
   add_foreign_key "photos", "posts"
   add_foreign_key "posts", "users"
-  add_foreign_key "posts_products", "posts", name: "products_posts_post_id_fkey"
+  add_foreign_key "posts_products", "posts", name: "posts_products_post_id_fkey"
   add_foreign_key "posts_products", "products", name: "products_posts_product_id_fkey"
   add_foreign_key "product_galleries", "products", name: "product_galleries_product_id_fkey"
-  add_foreign_key "products", "product_brands", name: "products_product_brand_id_fkey"
   add_foreign_key "products", "tags"
   add_foreign_key "services", "brands"
   add_foreign_key "treatments", "colors"
