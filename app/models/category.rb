@@ -1,8 +1,7 @@
 class Category < ApplicationRecord 
   has_ancestry
   has_many :children, class_name: "Category", foreign_key: "parent_id"  
-  belongs_to :parent_category, class_name: "Category", foreign_key: "parent_id"
-  validates_presence_of :name, :image
+  belongs_to :parent_category, class_name: "Category", foreign_key: "parent_id"  
   has_and_belongs_to_many :products
   mount_uploader :image, AttachmentUploader 
 
@@ -20,4 +19,5 @@ class Category < ApplicationRecord
   	end
   	result
   end
+
 end
