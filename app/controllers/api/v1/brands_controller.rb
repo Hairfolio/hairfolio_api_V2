@@ -68,5 +68,4 @@ class Api::V1::BrandsController < ApplicationController
   def view_post
     render json: params[:id]
   end
-
 end

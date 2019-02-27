@@ -513,6 +513,16 @@ ActiveRecord::Schema.define(version: 2019_02_27_054655) do
     t.index ["user_id"], name: "index_push_notifications_on_user_id"
   end
 
+  create_table "refers", force: :cascade do |t|
+    t.string "unique_code"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_refers_on_post_id"
+    t.index ["user_id"], name: "index_refers_on_user_id"
+  end
+
   create_table "salons", id: :serial, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -677,6 +687,8 @@ ActiveRecord::Schema.define(version: 2019_02_27_054655) do
   add_foreign_key "posts_products", "products", name: "products_posts_product_id_fkey"
   add_foreign_key "product_galleries", "products", name: "product_galleries_product_id_fkey"
   add_foreign_key "products", "tags"
+  add_foreign_key "refers", "posts"
+  add_foreign_key "refers", "users"
   add_foreign_key "services", "brands"
   add_foreign_key "treatments", "colors"
   add_foreign_key "treatments", "formulas"
