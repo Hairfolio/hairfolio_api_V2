@@ -44,8 +44,15 @@ class Api::V1::TagsController < ApplicationController
     end
   end
 
-  private
+  def all_tags
+    @tags = Tag.all
+    @tags = @tags.order('id desc')
+    @tags = @tags.page(params[:page]).per(params[:limit])
 
+    render json: @tags, meta:pagination_dict(@tags)
+  end
+
+  private
   def set_tag
     @tag = Tag.find(params[:id])
   end
