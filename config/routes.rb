@@ -9,9 +9,12 @@ Rails.application.routes.draw do
       get "/trending_posts" => "brands#trendings"
       get "/editor_pics_posts" => "brands#editor_pics"
      
-      resources :services, only: [:index, :show]
+      resources :services, only: [:index, :show]      
       resources :tags, only: [:index, :show, :create] do
-        collection { get :exact }
+        collection do 
+          get :exact 
+          get :all_tags
+        end
         member { get :posts }
       end
       # resources :payments
@@ -100,8 +103,9 @@ Rails.application.routes.draw do
   end
 
   #CMS Page
-  get "pages/:slug" => "pages#show" 
-  get "/view_post_meta/:id" => "api/v1/brands#view_post_meta"  
+  get "pages/:slug" => "pages#show"   
+  get "/view_post_meta/:id" => "api/v1/refers#view_post_meta"
+
   #Errors
   get "/404" => "api/v1/errors#not_found"
   get "/500" => "api/v1/errors#exception"

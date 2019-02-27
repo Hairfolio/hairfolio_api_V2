@@ -34,27 +34,4 @@ class Api::V1::BrandsController < ApplicationController
     render json: @posts, user_id: @user_id
   end
 
-  #Meta tags Api
-  def view_post_meta
-    @unique_code = Base64.encode64(params[:id].to_s+','+@user_id.to_s)    
-    #enc = Base64.decode64(unique_code)
-    # render json: enc.split(",")[1];
-    
-    @post = Post.find(params[:id])
-    @photos = @post.photos
-    @description = @post.description
-    @image = @photos[0].asset_url
-
-    set_meta_tags description: @description,
-    refresh:5,                    
-    og:{
-      title: @description,
-      description: @description,
-      type: "website",
-      url: "",
-      image:@image
-    }
-    
-  end 
-
 end
