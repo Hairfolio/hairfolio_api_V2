@@ -39,6 +39,8 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'ckeditor'
 gem 'ancestry'
 
+gem 'rails_admin_nestable', '~> 0.3.2'
+
 #Stripe Gateway
 gem 'stripe'
 

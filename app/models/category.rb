@@ -19,5 +19,4 @@ class Category < ApplicationRecord
   	end
   	result
   end
-
 end

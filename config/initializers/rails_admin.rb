@@ -58,7 +58,6 @@ RailsAdmin.config do |config|
       field :categories do
         partial 'categories'
       end
-
       include_all_fields
       exclude_fields :favourites, :posts, :tag, :favourites_count
     end
@@ -119,6 +118,10 @@ RailsAdmin.config do |config|
         end
       end
     end
+    nestable_tree({
+      position_field: :position,
+      max_depth: 2
+    })
   end
 
   config.actions do
@@ -138,6 +141,7 @@ RailsAdmin.config do |config|
       except ['Cart']
     end
     import
+    nestable
     ## With an audit adapter, you can add:
     # history_index
     # history_show
