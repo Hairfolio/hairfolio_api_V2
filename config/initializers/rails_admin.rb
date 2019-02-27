@@ -55,6 +55,9 @@ RailsAdmin.config do |config|
       field :favourites_count do
         read_only true
       end
+      field :categories do
+        partial 'categories'
+      end
       include_all_fields
       exclude_fields :favourites, :posts, :tag, :favourites_count
     end

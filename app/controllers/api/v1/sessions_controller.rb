@@ -1,4 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
+  include Registrable
 
   def facebook
     response = User.validate_facebook_token(params[:facebook_token])
@@ -9,21 +10,16 @@ class Api::V1::SessionsController < ApplicationController
       authentication = provider.authentications.where(uid: response['id']).first
 
       if authentication
-        sign_in authentication.user
-        user.generate_authentication_token!
-        user.save
+        sign_in_user user: user
         render json: user, status: 200, location: [:api, user]
       elsif user
         Authentication.create_from_koala(response, user, provider)
-        sign_in user
-        user.generate_authentication_token!
-        user.save
+        sign_in_user user: user
         render json: user, status: 200, location: [:api, user]
       else
         user = User.create_from_social(response)
         if user
-          user.generate_authentication_token!
-          user.save
+          sign_in_user user: user
           Authentication.create_from_koala(response, user, provider)
           render json: user, status: 200, location: [:api, user]
         else
@@ -41,21 +37,16 @@ class Api::V1::SessionsController < ApplicationController
       provider = Provider.where(name: 'instagram').first
       authentication = provider.authentications.where(uid: response.id).first
       if authentication
-        sign_in authentication.user
-        authentication.user.generate_authentication_token!
-        authentication.user.save
+        sign_in_user user: authentication.user
         render json: authentication.user, status: 200, location: [:api, authentication.user]
       elsif current_user
         Authentication.create_from_instagram(params[:google_token], response, current_user, provider)
-        sign_in current_user
-        current_user.generate_authentication_token!
-        current_user.save
+        sign_in_user user: current_user
         render json: current_user, status: 200, location: [:api, current_user]
       else
         user = User.create_from_social(response)
         if user
-          user.generate_authentication_token!
-          user.save
+          sign_in_user user: user
           Authentication.create_from_instagram(params[:google_token], response, user, provider)
           render json: user, status: 200, location: [:api, user]
         else
@@ -71,11 +62,8 @@ class Api::V1::SessionsController < ApplicationController
     user_password = params[:session][:password]
     user_email = params[:session][:email]
     user = User.find_by(email: user_email)
-
-    if user && user.valid_password?(user_password)
-      sign_in user
-      user.generate_authentication_token!
-      user.save
+    if user && user&.valid_password?(user_password)
+      sign_in_user user: user
       render json: user, status: 200, location: [:api, user]
     else
       render json: { errors: "Invalid username or password" }, status: 422
@@ -107,13 +95,21 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def environment
-      render json: {
-        facebook_app_id: Rails.application.credentials.facebook_app_id,
-        facebook_redirect_url: Rails.application.credentials.facebook_redirect_url,
-        insta_client_id: Rails.application.credentials.instagram_client_id,
-        insta_redirect_url: Rails.application.credentials.instagram_redirect_url,
-        cloud_name: Rails.application.credentials.cloudinary_name,
-        cloud_preset: Rails.application.credentials.cloudinary_preset
-      }
+    render json: {
+      facebook_app_id: Rails.application.credentials.facebook_app_id,
+      facebook_redirect_url: Rails.application.credentials.facebook_redirect_url,
+      insta_client_id: Rails.application.credentials.instagram_client_id,
+      insta_redirect_url: Rails.application.credentials.instagram_redirect_url,
+      cloud_name: Rails.application.credentials.cloudinary_name,
+      cloud_preset: Rails.application.credentials.cloudinary_preset
+    }
+  end
+
+  private
+
+  def sign_in_user(user:)
+    sign_in user
+    register_token_and_device_id user
+    user.save
   end
 end

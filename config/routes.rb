@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         collection { get :exact }
         member { get :posts }
       end
+      resources :push_notifications, only: %i[index update]
       # resources :payments
       resources :carts, only:[:index, :create]
       put "/update_cart" => "carts#update_cart"

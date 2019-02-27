@@ -21,3 +21,20 @@
 
 en:
   hello: "Hello world"
+
+  errors:
+    param_invalid: "Parameters invalid or having unknown format"
+
+  notifications:
+    order_created:
+      message: "Your order with order number %{order_number} has been created successfully."
+      title: "Order Created"
+    order_delivered:
+      message: "Your order with order number %{order_number} has been delivered successfully."
+      title: "Order Delivered"
+    order_confirmed:
+      message: "Your order with order number %{order_number} has been confirmed."
+      title: "Order Confirmed"
+    order_in_progress:
+      message: "Your order with order number %{order_number} is in progress now."
+      title: "Order In Progress"
