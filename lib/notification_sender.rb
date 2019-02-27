@@ -1,41 +1,45 @@
 # frozen_string_literal: true
+#
+class NotificationSender
+  attr_reader :message, :device_id, :title
 
-module FirebaseCloudMessaging
-  class NotificationSender
+  def initialize(device_id:, message:, title:)
+    @device_id = device_id
+    @message = message
+    @title = title
+  end
 
-    attr_reader :message, :user_device_ids
-
-    # Firebase works with up to 1000 device_ids per call
-    MAX_USER_IDS_PER_CALL = 1000
-
-    def initialize(user_device_ids, message)
-      @user_device_ids = user_device_ids
-      @message = message
+  def call
+    begin
+      resp = fcm_client.send(device_id, options)
+      response_body = JSON.parse resp[:body].gsub('=>', ':')
+      success = ParseBoolean.from_int_or_str(response_body.dig("success"))
+      result =
+        if success
+          { sucess: true, resp_message: response_body["results"][0]["message_id"] }
+        else
+          { sucess: false, resp_message: response_body["results"][0]["error"] }
+        end
+      result
+    rescue Exception => e
+      Rails.logger.debug('Notification sending failed.')
     end
+  end
 
-    def call
-      user_device_ids.each_slice(MAX_USER_IDS_PER_CALL) do |device_ids|
-        fcm_client.send(device_ids, options)
-      end
-    end
+  private
 
-    private
+  def options
+    { collapse_key: 'green',
+      show_in_foreground: true,
+      notification: {
+        title: title,
+        body: message,
+        badge: 1
+      },
+      data: {} }
+  end
 
-    def options
-      {
-          priority: 'high',
-          data: {
-              message: message
-          },
-          notification: {
-              body: message,
-              sound: 'default'
-          }
-      }
-    end
-
-    def fcm_client
-      @fcm_client ||= FCM.new(Rails.application.secrets.fcm_key)
-    end
+  def fcm_client
+    @fcm_client ||= FCM.new(Rails.application.secrets.fcm_server_key)
   end
 end

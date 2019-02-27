@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_122723) do
+ActiveRecord::Schema.define(version: 2019_02_26_112953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -494,6 +494,22 @@ ActiveRecord::Schema.define(version: 2019_02_25_122723) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "push_notifications", force: :cascade do |t|
+    t.string "message"
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "push_notification_sent_at"
+    t.integer "status"
+    t.string "notifier_type"
+    t.bigint "notifier_id"
+    t.integer "notification_for"
+    t.string "notification_response"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notifier_type", "notifier_id"], name: "index_push_notifications_on_notifier_type_and_notifier_id"
+    t.index ["user_id"], name: "index_push_notifications_on_user_id"
   end
 
   create_table "salons", id: :serial, force: :cascade do |t|
