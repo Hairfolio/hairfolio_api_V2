@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 #
 class NotificationSender
-  attr_reader :message, :device_id, :title
+  attr_reader :message, :device_id, :title, :badge_count
 
-  def initialize(device_id:, message:, title:)
-    @device_id = device_id
+  def initialize(user:, message:, title:)
+    @device_id = user.device_id
     @message = message
     @title = title
+    @badge_count = user.push_notifications.where(read: false).count
   end
 
   def call
@@ -34,7 +35,7 @@ class NotificationSender
       notification: {
         title: title,
         body: message,
-        badge: 1
+        badge: badge_count
       },
       data: {} }
   end

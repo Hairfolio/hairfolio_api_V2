@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+  rescue_from ActionController::ParameterMissing, :with => :invalid_parameters
   serialization_scope :view_context
   skip_before_action :verify_authenticity_token
+  include ErrorHandler
   include Authenticable
 
   private
@@ -17,7 +18,18 @@ class ApplicationController < ActionController::Base
     }
   end
 
-  def record_not_found(error)
-    render json: { error: error.message }, status: :not_found
+  def pagination_params
+    {
+      per_page: params[:per_page] || 10,
+      page: params[:page] || 1
+    }
+  end
+
+  def success(data:, meta: nil,status: 201)
+    render json: data, meta: meta, status: status
+  end
+
+  def invalid_parameters
+    render json: { error: I18n.t('errors.param_invalid') }, status: :unprocessable_entity
   end
 end

@@ -22,6 +22,9 @@
 en:
   hello: "Hello world"
 
+  errors:
+    param_invalid: "Parameters invalid or having unknown format"
+
   notifications:
     order_created:
       message: "Your order with order number %{order_number} has been created successfully."
