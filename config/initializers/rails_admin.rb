@@ -55,6 +55,10 @@ RailsAdmin.config do |config|
       field :favourites_count do
         read_only true
       end
+      field :categories do
+        partial 'categories'
+      end
+
       include_all_fields
       exclude_fields :favourites, :posts, :tag, :favourites_count
     end
@@ -102,8 +106,13 @@ RailsAdmin.config do |config|
 
   config.model Category do
     edit do
-      field :name
-      field :image
+      field :name do
+        required true
+      end
+      field :image do 
+        required true
+      end
+      
       field :parent_id, :enum do
         enum_method do
           :parent_enum
@@ -116,7 +125,7 @@ RailsAdmin.config do |config|
     dashboard                     # mandatory
     index                         # mandatory
     new do
-      except ['Cart', 'Order', 'OrderDetail']
+      except ['Cart', 'Order', 'OrderDetail', 'Refer']
     end
     export
     bulk_delete
