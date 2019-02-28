@@ -120,6 +120,7 @@ RailsAdmin.config do |config|
     end
     nestable_tree({
       position_field: :position,
+      live_update: false,
       max_depth: 2
     })
   end
