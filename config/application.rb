@@ -27,6 +27,7 @@ module Hairfolio
     end
 
     config.autoload_paths << Rails.root.join('lib')
+    config.eager_load_paths << Rails.root.join('lib')
     config.exceptions_app = self.routes
     config.generators do |g|
       g.test_framework :rspec
