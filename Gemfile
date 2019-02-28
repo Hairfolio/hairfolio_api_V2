@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '2.5.3'
 
 gem 'rails', '~> 5.2.0.rc1'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -17,6 +17,10 @@ gem 'uglifier'
 gem 'rails_admin', '~> 1.0'
 gem 'rails_admin_import'
 gem 'active_record_query_trace'
+gem 'pry'
+
+# FCM integration
+gem 'fcm'
 
 #Image Upload
 gem 'carrierwave', '~> 0.9'

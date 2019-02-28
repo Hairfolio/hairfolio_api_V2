@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_045608) do
+ActiveRecord::Schema.define(version: 2019_02_27_054655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -496,6 +496,23 @@ ActiveRecord::Schema.define(version: 2019_02_27_045608) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "push_notifications", force: :cascade do |t|
+    t.string "message"
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "push_notification_sent_at"
+    t.integer "status"
+    t.string "notifier_type"
+    t.bigint "notifier_id"
+    t.integer "notification_for"
+    t.string "notification_response"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "read", default: false
+    t.index ["notifier_type", "notifier_id"], name: "index_push_notifications_on_notifier_type_and_notifier_id"
+    t.index ["user_id"], name: "index_push_notifications_on_user_id"
+  end
+
   create_table "refers", force: :cascade do |t|
     t.string "unique_code"
     t.bigint "user_id"
@@ -611,6 +628,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_045608) do
     t.string "facebook_id"
     t.string "instagram_id"
     t.boolean "is_admin", default: true
+    t.string "device_id"
     t.index ["brand_id"], name: "index_users_on_brand_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

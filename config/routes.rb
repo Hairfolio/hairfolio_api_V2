@@ -9,13 +9,16 @@ Rails.application.routes.draw do
       get "/trending_posts" => "brands#trendings"
       get "/editor_pics_posts" => "brands#editor_pics"
      
-      resources :services, only: [:index, :show]      
+      resources :services, only: [:index, :show]
       resources :tags, only: [:index, :show, :create] do
         collection do 
           get :exact 
           get :all_tags
         end
         member { get :posts }
+      end
+      resources :push_notifications, only: %i[index update] do
+        post :reset_badge_count, on: :collection
       end
       # resources :payments
       resources :carts, only:[:index, :create]

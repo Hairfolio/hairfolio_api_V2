@@ -28,6 +28,7 @@ class User < ApplicationRecord
   has_many :services, through: :offerings
   has_many :posts, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :push_notifications, dependent: :destroy
 
   has_and_belongs_to_many :experiences
   has_and_belongs_to_many :certificates
