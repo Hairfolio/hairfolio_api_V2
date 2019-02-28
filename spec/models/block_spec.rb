@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe Block, type: :model do
   let(:block) { build(:block) }
