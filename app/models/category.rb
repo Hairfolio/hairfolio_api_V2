@@ -4,7 +4,8 @@ class Category < ApplicationRecord
   belongs_to :parent_category, class_name: "Category", foreign_key: "parent_id"  
   has_and_belongs_to_many :products
   mount_uploader :image, AttachmentUploader 
-
+  has_many :offering, dependent: :restrict_with_error
+  
   def parent_enum
     Category.where.not(id: id).where(ancestry: nil).map { |c| [ c.name, c.id ] }
   end
@@ -19,4 +20,5 @@ class Category < ApplicationRecord
   	end
   	result
   end
+
 end
