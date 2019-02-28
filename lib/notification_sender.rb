@@ -17,9 +17,9 @@ class NotificationSender
       success = ParseBoolean.from_int_or_str(response_body.dig("success"))
       result =
         if success
-          { sucess: true, resp_message: response_body["results"][0]["message_id"] }
+          { success: true, resp_message: response_body["results"][0]["message_id"] }
         else
-          { sucess: false, resp_message: response_body["results"][0]["error"] }
+          { success: false, resp_message: response_body["results"][0]["error"] }
         end
       result
     rescue Exception => e

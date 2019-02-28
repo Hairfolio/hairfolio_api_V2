@@ -6,6 +6,7 @@ class  Api::V1::PushNotificationsController < ApplicationController
 
   def index
     push_notifications = @current_user.push_notifications
+                                      .delivered
                                       .order(created_at: :desc)
                                       .paginate(pagination_params)
     success(data: push_notifications, meta: pagination_dict(push_notifications))
@@ -14,6 +15,11 @@ class  Api::V1::PushNotificationsController < ApplicationController
   def update
     @push_notification.update!(push_notification_params)
     success(data: PushNotificationSerializer.new(@push_notification).serializable_hash)
+  end
+
+  def reset_badge_count
+    @current_user.push_notifications.unread.update_all(read: true)
+    success(data: { message: 'Reset successfully.' })
   end
 
   private
