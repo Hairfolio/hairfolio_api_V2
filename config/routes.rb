@@ -25,9 +25,13 @@ Rails.application.routes.draw do
       put "/update_cart" => "carts#update_cart"
       post "/remove_from_cart" => "carts#remove_from_cart"
       resources :addresses
-      resources :searches, only: [:index]
-      post "/filter_products" => "searches#filter_products"
-      get "/search_products" => "searches#search_products"
+      resources :searches, only: [:index] do
+          collection do
+            get :product_brands
+            get :search_products
+            post :filter_products
+          end
+      end
       resources :discount_sliders, only: [:index]
       resources :sub_categories, only: [:index]
       resources :store_shop_its, only: [:index]
@@ -37,7 +41,7 @@ Rails.application.routes.draw do
       get "/search_by_categories" => "categories#search_by_categories"
       resources :certificates, only: [:index, :show]
       resources :products, only: [:index, :show]
-      get "/search_product" => "products#search_product"
+      # get "/search_product" => "products#search_product"
       get "/trending_products" => "products#trending_products"
       resources :degrees, only: [:index, :show]
       resources :lines, only: [:index, :show]
@@ -54,13 +58,13 @@ Rails.application.routes.draw do
           delete :remove_post
         end
       end
-
-      get "/user_posts" => "posts#user_posts"
+      
       resources :posts do
         resources :comments, only: [:create, :destroy, :index, :update]
         resources :likes, only: [:create, :index] do
           collection { delete :destroy }
         end
+        get :user_posts, on: :collection
       end
 
       resources :products do
