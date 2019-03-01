@@ -1,6 +1,5 @@
 class Api::V1::RefersController < ApplicationController
-	before_action :check_user
-  	require "base64"
+	before_action :check_user  	
 
 	#Meta tags Api
   	def view_post_meta	    

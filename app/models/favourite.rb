@@ -8,7 +8,7 @@ class Favourite < ApplicationRecord
   has_many :notifications
   # Add new column name as favourite_id in notifications table
   def notify_owner
-    Notification.create!(user: user, body: "#{product.name} Added to Your Favourite List.", notifiable: self)
+    Notification.create!(user: user, body: "#{product.name} Added to Your Wish List.", notifiable: self)
   end
   
 end
