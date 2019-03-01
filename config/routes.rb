@@ -107,6 +107,10 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    namespace :warehouse do
+      resources :products, only: :index
+    end
   end
 
   #CMS Page
