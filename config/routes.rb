@@ -106,10 +106,10 @@ Rails.application.routes.draw do
           post :recover
         end
       end
-    end
-
-    namespace :warehouse do
-      resources :products, only: :index
+      namespace :warehouse do
+        resources :products, except: :destroy
+        resources :sessions, only: %i[create destroy]
+      end
     end
   end
 
