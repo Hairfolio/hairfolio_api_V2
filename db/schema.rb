@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_121146) do
+ActiveRecord::Schema.define(version: 2019_03_06_120601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -408,7 +408,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_121146) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
-    t.string "transaction_id"
     t.string "charge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -417,6 +416,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_121146) do
     t.integer "shipping_status"
     t.integer "address_id"
     t.bigint "delivery_user_id"
+    t.float "amount"
     t.index ["delivery_user_id"], name: "index_orders_on_delivery_user_id"
   end
 
@@ -426,6 +426,19 @@ ActiveRecord::Schema.define(version: 2019_03_05_121146) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_transactions", force: :cascade do |t|
+    t.string "performer_type"
+    t.bigint "performer_id"
+    t.integer "amount"
+    t.integer "transaction_type"
+    t.string "stripe_charge_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["performer_type", "performer_id"], name: "index_payment_transactions_on_performer_type_and_performer_id"
+    t.index ["user_id"], name: "index_payment_transactions_on_user_id"
   end
 
   create_table "phones", id: :serial, force: :cascade do |t|
