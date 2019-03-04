@@ -5,11 +5,19 @@ class ProductPolicy < ApplicationPolicy
     end
   end
 
-  def index?
+  def global
     @user.account_type.eql?('warehouse')
   end
 
+  def index?
+    global
+  end
+
   def create?
-    @user.account_type.eql?('warehouse')
+    global
+  end
+
+  def show?
+    global
   end
 end

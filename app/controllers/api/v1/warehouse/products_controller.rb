@@ -1,10 +1,11 @@
 class Api::V1::Warehouse::ProductsController < ApplicationController
   before_action :authenticate_with_token!
   before_action :authorize_warehouse_user
+  before_action :set_product, only: %i[show edit]
 
   def index
     products = Product.order(created_at: :asc).paginate(pagination_params)
-    success(data: products, meta: pagination_dict(products))
+    success(data: products, meta: pagination_dict(products), serializer_options: { user_id: @user_id })
   end
 
   def create

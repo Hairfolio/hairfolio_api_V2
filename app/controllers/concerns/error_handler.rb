@@ -1,6 +1,6 @@
 module ErrorHandler
-  def self.includes(clazz)
-    clazz.eval do
+  def self.included(clazz)
+    clazz.class_eval do
       rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
     end
   end
