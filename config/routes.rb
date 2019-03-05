@@ -110,6 +110,9 @@ Rails.application.routes.draw do
         resources :products, except: %i[new edit]
         resources :sessions, only: %i[create destroy]
       end
+      namespace :delivery do
+        resources :sessions, only: %i[create destroy]
+      end
     end
   end
 

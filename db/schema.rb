@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_105433) do
+ActiveRecord::Schema.define(version: 2019_03_05_121146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -416,6 +416,8 @@ ActiveRecord::Schema.define(version: 2019_03_05_105433) do
     t.integer "payment_status"
     t.integer "shipping_status"
     t.integer "address_id"
+    t.bigint "delivery_user_id"
+    t.index ["delivery_user_id"], name: "index_orders_on_delivery_user_id"
   end
 
   create_table "pages", force: :cascade do |t|
