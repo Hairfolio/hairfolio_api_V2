@@ -9,6 +9,7 @@ class Api::V1::OrdersController < ApplicationController
     if params[:status] == 'pending'
       orders = orders.or(Order.where(shipping_status: "progress"))
     end
+    orders = orders.order('id asc')
     orders = orders.page(params[:page]).per(params[:limit])
     render json: orders, meta: pagination_dict(orders)
   end
