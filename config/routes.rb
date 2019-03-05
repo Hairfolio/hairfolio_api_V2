@@ -106,6 +106,9 @@ Rails.application.routes.draw do
           post :recover
         end
       end
+      resources :cards, only: %i[index create destroy] do
+        put :make_primary, on: :member
+      end
     end
   end
 

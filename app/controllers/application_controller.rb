@@ -29,7 +29,8 @@ class ApplicationController < ActionController::Base
     render json: data, meta: meta, status: status
   end
 
-  def invalid_parameters
-    render json: { error: I18n.t('errors.param_invalid') }, status: :unprocessable_entity
+  def invalid_parameters(message: nil)
+    message ||= I18n.t('errors.param_invalid')
+    render json: { error: message }, status: :unprocessable_entity
   end
 end

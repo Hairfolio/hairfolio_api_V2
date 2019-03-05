@@ -24,6 +24,7 @@ en:
 
   errors:
     param_invalid: "Parameters invalid or having unknown format"
+    primary_card: 'You cannot delete primary card'
 
   notifications:
     order_created:
