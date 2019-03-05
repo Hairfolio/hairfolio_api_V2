@@ -16,5 +16,9 @@ module StripeIntegrator
       response['sources']['data'].map { |i| card_ids << i['id'] if (i['object'] == 'card') }
       { id: response['id'], cards: card_ids }
     end
+
+    def find_customer
+      Stripe::Customer.retrieve(user.stripe_customer_id)
+    end
   end
 end

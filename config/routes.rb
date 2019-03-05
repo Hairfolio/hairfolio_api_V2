@@ -117,6 +117,9 @@ Rails.application.routes.draw do
         resources :sessions, only: %i[create destroy]
         resources :orders, only: %i[index update show]
       end
+      resources :cards, only: %i[index create destroy] do
+        put :make_primary, on: :member
+      end
     end
   end
 

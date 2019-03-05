@@ -18,7 +18,7 @@ module Payments
 
     def create_stripe_customer
       ActiveRecord::Base.transaction do
-        customer = StripeIntegrator::Customer.new(user: user, token: token).create
+        customer = StripeIntegrator::Customer.new(user: user, token: card_token).create
         user.update!(stripe_customer_id: customer[:id])
         if customer[:cards]
           customer[:cards].each { |i| user.cards.create!(stripe_card_id: i) }
@@ -28,8 +28,8 @@ module Payments
 
     def create_card
       ActiveRecord::Base.transaction do
-        card = StripeIntegrator::Card.new(customer_id: user.stripe_customer_id)
-                                     .create(token: token)
+        card = StripeIntegrator::Card.new(user: user)
+                                     .create(token: card_token)
         user.cards.create!(stripe_card_id: card)
       end
     end

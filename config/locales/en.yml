@@ -25,6 +25,7 @@ en:
   errors:
     param_invalid: "Parameters invalid or having unknown format"
     not_authorized: 'You are not authorized to perform this action'
+    primary_card: 'You cannot delete primary card'
 
   warehouse:
     sessions:
