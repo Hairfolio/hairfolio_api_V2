@@ -44,7 +44,7 @@ class Api::V1::PostsController < ApplicationController
     @posts = Post.joins(photos: :tags).where(tags: { id: params[:tag_id] } )
     @posts = @posts.page(params[:page]).per(params[:limit])
     
-    render json: @posts, meta: pagination_dict(@posts)
+    render json: @posts, user_id: @user_id, meta: pagination_dict(@posts)
   end
 
   def show
