@@ -1,6 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   
-  before_action :authenticate_with_token!, only: [:create, :update, :destroy, :index]
+  before_action :authenticate_with_token!, only: [:create, :update, :destroy, :index, :user_posts]
   before_action :set_post, only: [:update, :destroy, :show]
   before_action :check_user
   
@@ -17,10 +17,10 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def user_posts
-    posts = Post.where(user_id:current_user.id).order('id desc')
-    posts = posts.page(params[:page]).per(params[:limit])
+      posts = Post.where(user_id:current_user.id).order('id desc')
+      posts = posts.page(params[:page]).per(params[:limit])
 
-    render json: posts,user_id: @user_id, meta:pagination_dict(posts)
+      render json: posts,user_id: @user_id, meta:pagination_dict(posts)
   end
 
   def create
