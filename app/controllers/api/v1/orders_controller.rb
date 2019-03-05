@@ -7,7 +7,7 @@ class Api::V1::OrdersController < ApplicationController
     orders = Order.where(user_id: current_user.id)
     orders = orders.where(shipping_status: params[:status])
     if params[:status] == 'pending'
-      orders = orders.or(Order.where(shipping_status: "progress"))
+      orders = orders.or(orders.where(shipping_status: "progress"))
     end
     orders = orders.order('id asc')
     orders = orders.page(params[:page]).per(params[:limit])
