@@ -24,11 +24,17 @@ en:
 
   errors:
     param_invalid: "Parameters invalid or having unknown format"
+    not_authorized: 'You are not authorized to perform this action'
 
   warehouse:
     sessions:
       delete: "User loged out successfully."
       invalid_email_password: 'Invalid email/password.'
+
+  products:
+    create: 'Product created successfully.'
+    update: 'Product updated successfully.'
+    destroy: 'Product deleted successfully.'
 
   notifications:
     order_created:

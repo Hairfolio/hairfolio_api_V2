@@ -9,11 +9,10 @@ class ProductSerializer < ActiveModel::Serializer
 	end
 
 	def current_user_id
-	   @instance_options[:user_id]
+		@instance_options[:user_id]
 	end
 
 	def product_image
 		object.product_image.url
 	end
-
 end

@@ -107,7 +107,7 @@ Rails.application.routes.draw do
         end
       end
       namespace :warehouse do
-        resources :products, except: :destroy
+        resources :products, except: %i[new edit]
         resources :sessions, only: %i[create destroy]
       end
     end

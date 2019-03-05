@@ -20,4 +20,12 @@ class ProductPolicy < ApplicationPolicy
   def show?
     global
   end
+
+  def update?
+    global
+  end
+
+  def destroy?
+    global
+  end
 end

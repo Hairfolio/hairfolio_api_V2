@@ -1,4 +1,5 @@
 class Api::V1::Warehouse::SessionsController < ApplicationController
+  include ApiNamespaceble
 
   def create
     user_email = params.dig(:session, :email)&.downcase
@@ -6,7 +7,7 @@ class Api::V1::Warehouse::SessionsController < ApplicationController
     if user && user&.valid_password?(params[:session][:password])
       user.generate_authentication_token!
       user.save!
-      success(data: UserSerializer.new(user).as_json, status: 200)
+      success(data: user, status: 200)
     else
       errors(message: I18n.t('warehouse.sessions.invalid_email_password'), status: 422)
     end
