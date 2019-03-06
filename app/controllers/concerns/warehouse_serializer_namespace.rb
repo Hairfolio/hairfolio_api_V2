@@ -1,6 +1,6 @@
 # frozen_string_lieral: true
 
-module ApiNamespaceble
+module WarehouseSerializerNamespace
   extend ActiveSupport::Concern
 
   included do

@@ -1,5 +1,5 @@
 class Api::V1::Warehouse::SessionsController < ApplicationController
-  include ApiNamespaceble
+  include WarehouseSerializerNamespace
 
   def create
     user_email = params.dig(:session, :email)&.downcase
