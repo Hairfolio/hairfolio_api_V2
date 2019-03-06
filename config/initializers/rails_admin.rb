@@ -148,6 +148,19 @@ RailsAdmin.config do |config|
 
       field :shipping_status
     end
+    list do
+      field :id
+      field :order_number
+      field :user
+      field :delivery_user
+      field :shipping_status
+      field :payment_status
+      field :transaction
+      field :charge
+      field :address
+      field :created_at
+      field :updated_at
+    end
   end
 
   config.actions do

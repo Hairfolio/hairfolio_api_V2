@@ -36,6 +36,9 @@ en:
     update: 'Product updated successfully.'
     destroy: 'Product deleted successfully.'
 
+  orders:
+    update: 'Order updated successfully.'
+
   notifications:
     order_created:
       message: "Your order with order number %{order_number} has been created successfully."

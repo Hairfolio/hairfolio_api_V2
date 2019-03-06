@@ -112,6 +112,7 @@ Rails.application.routes.draw do
       end
       namespace :delivery do
         resources :sessions, only: %i[create destroy]
+        resources :orders, only: %i[index update show]
       end
     end
   end
