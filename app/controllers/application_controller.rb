@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   include ErrorHandler
   include Authenticable
+  include Pundit
 
   private
 
@@ -25,8 +26,13 @@ class ApplicationController < ActionController::Base
     }
   end
 
-  def success(data:, meta: nil,status: 201)
-    render json: data, meta: meta, status: status
+  def success(data:, meta: nil,status: 201, serializer_options: {})
+    render json: data, options: serializer_options, meta: meta, status: status
+  end
+
+  def errors(message:, status:)
+    render json: { errors: message }, status: status
+
   end
 
   def invalid_parameters

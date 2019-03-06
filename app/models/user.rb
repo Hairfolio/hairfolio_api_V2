@@ -29,6 +29,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :push_notifications, dependent: :destroy
+  has_many :delivery_orders, class_name: 'Order', foreign_key: :delivery_user_id, dependent: :destroy
 
   has_and_belongs_to_many :experiences
   has_and_belongs_to_many :certificates
@@ -109,5 +110,9 @@ class User < ApplicationRecord
     name = response['full_name'] ? response['full_name'] : response['name']
     user = create(email: response['email'] ? response['email'] : "socialemail#{rand(0..83293)}@example.com", first_name: name.split(' ').first, last_name: name.split(' ').last, password: password, password_confirmation: password) rescue User.new
     return user.valid? ? user : false
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end

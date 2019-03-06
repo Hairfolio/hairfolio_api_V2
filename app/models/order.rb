@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
   belongs_to :address
+  belongs_to :delivery_user, class_name: 'User'
   has_many :order_details
   has_many :push_notifications, foreign_key: :notifier_id
   enum payment_status: [:awaiting, :paid, :cancel]

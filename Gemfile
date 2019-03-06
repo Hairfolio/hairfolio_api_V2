@@ -41,8 +41,14 @@ gem 'ancestry'
 
 gem 'rails_admin_nestable', '~> 0.3.2'
 
-#Stripe Gateway
+# Stripe Gateway
 gem 'stripe'
+
+# Role Management
+gem 'pundit'
+
+# Soft Delete
+gem "paranoia", "~> 2.2"
 
 group :development, :test do
   gem 'faker'

@@ -2,6 +2,7 @@ class Tag < ApplicationRecord
   validates_presence_of :name
   has_many :labels
   has_many :photos, through: :labels
+  has_many :products
   before_save :parameterize_name
   scope :popular, -> { order('labels_count desc').where('labels_count > 0') }
   scope :popular_today, -> { joins(:labels).order('tags.labels_count desc').where("labels.created_at >= ? and labels.created_at <= ?", Time.now - 24.hours, Time.now) }

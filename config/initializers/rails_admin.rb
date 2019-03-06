@@ -28,6 +28,16 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar true
+  #
+  config.model User do
+    edit do
+      field :first_name
+      field :last_name
+      field :email
+      field :password
+      field :account_type
+    end
+  end
 
   config.model Product do
     edit do
@@ -125,19 +135,49 @@ RailsAdmin.config do |config|
     })
   end
 
+  config.model Order do
+    edit do
+      field :delivery_user_id, :enum do
+        visible do
+          bindings[:object].delivery_user_id.nil?
+        end
+        enum do
+          User.delivery.collect {|p| [p.full_name, p.id]}
+        end
+      end
+
+      field :shipping_status
+    end
+    list do
+      field :id
+      field :order_number
+      field :user
+      field :delivery_user
+      field :shipping_status
+      field :payment_status
+      field :transaction
+      field :charge
+      field :address
+      field :created_at
+      field :updated_at
+    end
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
     new do
-      except ['Cart', 'Order', 'OrderDetail', 'Refer']
+      except ['Cart', 'Order', 'OrderDetail', 'Refer', 'PushNotification']
     end
     export
     bulk_delete
     show
     edit do
-      except ['Cart']
+      except ['Cart', 'PushNotification']
     end
-    delete
+    delete do
+      except ['PushNotification', 'Order']
+    end
     show_in_app do
       except ['Cart']
     end

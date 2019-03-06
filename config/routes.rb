@@ -109,6 +109,14 @@ Rails.application.routes.draw do
           post :recover
         end
       end
+      namespace :warehouse do
+        resources :products, except: %i[new edit]
+        resources :sessions, only: %i[create destroy]
+      end
+      namespace :delivery do
+        resources :sessions, only: %i[create destroy]
+        resources :orders, only: %i[index update show]
+      end
     end
   end
 
