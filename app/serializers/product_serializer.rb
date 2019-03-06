@@ -6,14 +6,13 @@ class ProductSerializer < ActiveModel::Serializer
 
 	def is_favourite
 	   object.favourites.pluck(:user_id).include?(current_user_id)
-    end
+	end
 
 	def current_user_id
-	   @instance_options[:user_id]
-    end
+		@instance_options[:user_id]
+	end
 
 	def product_image
 		object.product_image.url
 	end
-
 end
