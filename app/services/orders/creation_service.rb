@@ -12,6 +12,7 @@ module Orders
         create_order_and_order_details
         create_payment
         create_transaction
+        send_notification
         order
       end
     end
@@ -48,6 +49,11 @@ module Orders
     def create_transaction
       order.create_payment_transaction!(amount: order.amount.to_i, user_id: current_user.id,
                                         stripe_charge_id: payment['id'], transaction_type: :debit)
+    end
+
+    def send_notification
+      notification = Notifications::OrderNotification.new(order: order, for_activity: 'order_created').generate
+      ApplicationNotification.new(notification: notification).deliver if notification
     end
   end
 end
