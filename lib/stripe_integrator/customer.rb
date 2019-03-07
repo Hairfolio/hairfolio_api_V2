@@ -1,7 +1,7 @@
 require_relative './base'
 
 module StripeIntegrator
-  class Customer
+  class Customer < Base
     attr_accessor :user, :token
     def initialize(user:, token: nil)
       @user = user

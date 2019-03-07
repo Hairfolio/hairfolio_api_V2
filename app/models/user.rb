@@ -33,6 +33,10 @@ class User < ApplicationRecord
   has_many :cards, dependent: :destroy
   has_one :primary_card, -> { where(is_primary: true) }, class_name: 'Card'
 
+  has_many :delivery_orders, class_name: 'Order', foreign_key: :delivery_user_id, dependent: :destroy
+  has_many :carts, dependent: :destroy
+
+
   has_and_belongs_to_many :experiences
   has_and_belongs_to_many :certificates
 

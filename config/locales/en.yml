@@ -26,6 +26,22 @@ en:
     param_invalid: "Parameters invalid or having unknown format"
     not_authorized: 'You are not authorized to perform this action'
     primary_card: 'You cannot delete primary card'
+    not_authorized: 'You are not authorized to perform this action'
+    standard_error: 'Something went wrong.'
+    stripe_error: 'There is some problem processing your payment.'
+
+  warehouse:
+    sessions:
+      delete: "User loged out successfully."
+      invalid_email_password: 'Invalid email/password.'
+
+  products:
+    create: 'Product created successfully.'
+    update: 'Product updated successfully.'
+    destroy: 'Product deleted successfully.'
+
+  orders:
+    update: 'Order updated successfully.'
 
   warehouse:
     sessions:
@@ -53,3 +69,7 @@ en:
     order_in_progress:
       message: "Your order with order number %{order_number} is in progress now."
       title: "Order In Progress"
+
+  exceptions:
+    quantity_exceed_error: 'Quantity ordered exceeds available quantity.'
+    cart_empty_error: 'Cart is empty.'

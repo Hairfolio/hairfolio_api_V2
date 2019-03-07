@@ -1,7 +1,7 @@
 Dir["./*.rb"].each {|file| require file }
 
 module StripeIntegrator
-  class Card
+  class Card < Base
     attr_accessor :customer
     def initialize(user:)
       @customer = StripeIntegrator::Customer.new(user: user).find_customer

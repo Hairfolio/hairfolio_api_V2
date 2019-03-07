@@ -4,6 +4,7 @@ class Order < ApplicationRecord
   belongs_to :delivery_user, class_name: 'User'
   has_many :order_details
   has_many :push_notifications, foreign_key: :notifier_id
+  has_one :payment_transaction, foreign_key: :performer_id
   enum payment_status: [:awaiting, :paid, :cancel]
   enum shipping_status: [:pending, :progress, :delivered]
   before_save :order_notification_flag, if: :set_notification_flag?
