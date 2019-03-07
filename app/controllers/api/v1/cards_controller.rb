@@ -4,7 +4,6 @@ class Api::V1::CardsController < ApplicationController
 
   def index
     result = fetch_cards(limit: params[:limit], starting_after: params[:starting_after])
-    binding.pry
     success(data: result, status: 200)
   end
 

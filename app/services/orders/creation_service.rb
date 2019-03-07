@@ -42,6 +42,7 @@ module Orders
     def create_payment
       card = current_user.cards.find(payment_params[:card_id])
       @payment = Payments::CreationService.new(order: order, card: card).call
+      order.update!(payment_status: 'paid')
     end
 
     def create_transaction
