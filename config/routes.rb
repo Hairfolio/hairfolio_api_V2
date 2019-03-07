@@ -63,7 +63,7 @@ Rails.application.routes.draw do
         resources :comments, only: [:create, :destroy, :index, :update]
         resources :likes, only: [:create, :index] do
           collection { delete :destroy }
-        end        
+        end
         collection do
           get :user_posts
           get :posts_by_tag
