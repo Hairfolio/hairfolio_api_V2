@@ -598,7 +598,7 @@ ul.vertical-tabs-list li {
 .parameter .param {
     display: block;
     float: left;
-    width: 500px;
+    width: 220px;
     color: #333;
     font-weight: bold;
 }
@@ -1043,7 +1043,6 @@ pre.prettyprint  {
     padding: 0px;
      background-color: #fafafb;
      border: none !important;
-     overflow-y: auto;
 }
  pre .str  {
     color: #36C;

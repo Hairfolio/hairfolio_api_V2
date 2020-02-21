@@ -16,14 +16,15 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # Do not fallback to  pipeline if a precompiled asset is missed.
+  config.assets.compile = true
+  #config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -65,7 +66,7 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
-  config.require_master_key = true
+  config.require_master_key = false
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
@@ -81,8 +82,10 @@ Rails.application.configure do
     :address   => "smtp.sendgrid.net",
     :port      => 587,
     :enable_starttls_auto => true,
-    :user_name => Rails.application.credentials.sendgrid_username,
-    :password  => Rails.application.credentials.sendgrid_password,
+    # :user_name => Rails.application.credentials.sendgrid_username,
+    # :password  => Rails.application.credentials.sendgrid_password,
+    :user_name => Rails.application.secrets.sendgrid_username,
+    :password => Rails.application.secrets.sendgrid_password,
     :authentication => 'login',
     :domain => 'hairfolio.tech',
 }
@@ -95,4 +98,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  #config.serve_static_assets.enabled = true
 end

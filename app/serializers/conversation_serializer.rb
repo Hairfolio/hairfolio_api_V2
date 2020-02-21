@@ -1,10 +1,6 @@
 class ConversationSerializer < ActiveModel::Serializer
   attributes :id, :sender_id, :created_at, :last_message, :recipient_ids, :unread_messages, :recipients
 
-  def self.eager_load_relation(relation)
-    relation.includes(:messages)
-  end
-
   def recipients
     object.recipients ? object.recipients.map { |u| UserMinimalSerializer.new(u).serializable_hash } : []
   end

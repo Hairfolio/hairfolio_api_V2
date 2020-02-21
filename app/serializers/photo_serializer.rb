@@ -1,10 +1,5 @@
 class PhotoSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :asset_url, :post_id, :labels, :video_url
-
-  def self.eager_load_relation(relation)
-    relation.includes(:labels)
-  end
-
+  attributes :id, :created_at, :asset_url, :post_id, :labels, :video_url,:thumb_url
   has_many :labels
 
   # def labels

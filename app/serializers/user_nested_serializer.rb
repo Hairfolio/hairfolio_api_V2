@@ -1,13 +1,5 @@
 class UserNestedSerializer < ActiveModel::Serializer
   attributes :id, :auth_token, :email, :first_name, :last_name, :auth_token, :likes_count, :followers_count, :account_type, :salon, :brand, :avatar_url, :avatar_cloudinary_id, :share_facebook, :share_twitter, :share_instagram, :share_pinterest, :share_tumblr, :facebook_token, :instagram_token, :twitter_token, :pinterest_token, :prof_desc, :years_exp, :career_opportunity, :is_following_me, :is_followed_by_me
-
-  def self.eager_load_relation(relation)
-    relation.includes(:educations)
-    relation.includes(:offerings)
-    relation.includes(:experiences)
-    relation.includes(:certificates)
-  end
-
   has_many :educations
   has_many :offerings
   has_many :experiences

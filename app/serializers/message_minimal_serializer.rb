@@ -1,5 +1,5 @@
 class MessageMinimalSerializer < ActiveModel::Serializer
-  attributes :id, :user, :created_at, :conversation_id, :body, :post, :url, :read
+  attributes :id,:photo_asset_url, :video_asset_url, :user, :created_at, :conversation_id, :body, :post, :url, :read
 
   def user
     UserMinimalSerializer.new(object.user).serializable_hash if object.user

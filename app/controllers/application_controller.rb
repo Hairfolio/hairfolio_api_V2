@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   serialization_scope :view_context
   skip_before_action :verify_authenticity_token
+  include ErrorHandler
   include Authenticable
+  include Pundit
 
   private
 
@@ -17,7 +18,18 @@ class ApplicationController < ActionController::Base
     }
   end
 
-  def record_not_found(error)
-    render json: { error: error.message }, status: :not_found
+  def pagination_params
+    {
+      per_page: params[:per_page] || 10,
+      page: params[:page] || 1
+    }
+  end
+
+  def success(data:, meta: nil, status: 201, serializer_options: {})
+    render json: data, options: serializer_options, meta: meta, status: status
+  end
+
+  def errors(message:, status:)
+    render json: { errors: message }, status: status
   end
 end

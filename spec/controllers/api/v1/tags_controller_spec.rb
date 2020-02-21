@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe Api::V1::TagsController do
 
@@ -28,6 +28,7 @@ describe Api::V1::TagsController do
       tag = create(:tag)
       create(:label, tag: tag)
       get :index, params: { q: tag.name }
+      puts response.body
       expect(json_response['tags'].first['name']).to eq(tag.name)
     end
   end
@@ -69,7 +70,7 @@ describe Api::V1::TagsController do
     end
 
     it 'should display available posts for the tags' do
-      labels = create_list(:label, 8, tag: tag)
+      labels = create_list(:label, 10, tag: tag)
       get :posts, params: { id: tag.id }
       expect(json_response['posts'].count).to eq(8)
     end

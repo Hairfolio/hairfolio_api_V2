@@ -37,7 +37,7 @@ class Api::V1::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body, :url, :post_id)
+    params.require(:message).permit(:body, :url, :post_id, :photo_asset_url, :video_asset_url)
   end
 
   def set_conversation

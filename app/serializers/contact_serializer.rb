@@ -4,6 +4,6 @@ class ContactSerializer < ActiveModel::Serializer
   has_many :phones
 
   def posts
-    object.posts.limit(20).map { |p| PostSerializer.new(p).serializable_hash }
+    object.posts.map { |p| PostSerializer.new(p).serializable_hash }
   end
 end

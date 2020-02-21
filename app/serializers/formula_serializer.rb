@@ -1,10 +1,5 @@
 class FormulaSerializer < ActiveModel::Serializer
   attributes :id, :created_at, :post_id, :service, :time, :weight, :volume, :treatments
-
-  def self.eager_load_relation(relation)
-    relation.includes(:treatments)
-  end
-
   has_one :line
   has_one :service
   has_many :treatments

@@ -6,4 +6,9 @@ class UserMailer < ActionMailer::Base
     @password = password
     mail(:to => user.email, :subject => 'Password Reset Notification')
   end
+
+  def send_invitation_email(email)
+  	mail(to: email, subject: "I’d like to add you on Hairfolio")
+  end
+
 end

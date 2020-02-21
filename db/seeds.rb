@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 puts "loading providers..."
 load('db/seeds/providers.rb')
 puts "loading categories..."
@@ -25,3 +26,14 @@ puts "loading colors..."
 load('db/seeds/colors.rb')
 puts "loading tags..."
 load('db/seeds/tags.rb')
+puts 'loading product attributes..'
+load 'db/seeds/product_attributes.rb'
+puts 'loading mobile store banner attributes..'
+load 'db/seeds/mobile_store_banner.rb'
+
+GlobalVar.create!(name: 'referral_coupon_percentage', value: 10)
+GlobalVar.create!(name: 'commission_percentage', value: 10)
+GlobalVar.create!(name: 'wallet_transaction_fee', value: 5)
+GlobalVar.create!(name: 'wallet_transaction_service_charge', value: 5)
+GlobalVar.create!(name: 'log_commission_percentage', value: 10)
+LogDefault.create!(title: 'Recommanded by',description: 'Take a look at some nice products')

@@ -45,3 +45,20 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+# if ENV.fetch("RAILS_ENV") == 'production'
+#
+#   bind  "unix:///var/www/html/hairfolio/shared/tmp/sockets/puma.sock"
+#
+#   pidfile "/var/www/html/hairfolio/shared/tmp/pids/puma.pid"
+#
+#   state_path "/var/www/html/hairfolio/shared/tmp/sockets/puma.state"
+#
+#   directory "/var/www/html/hairfolio/current"
+#
+#   daemonize true
+#
+#   activate_control_app 'unix:///var/www/html/hairfolio/shared/tmp/sockets/pumactl.sock'
+#
+#   prune_bundler
+#
+# end

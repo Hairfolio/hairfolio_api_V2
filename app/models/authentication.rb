@@ -17,7 +17,7 @@ class Authentication < ApplicationRecord
       provider: provider,
       uid: params['id'],
       token: params['token'],
-      params: params,
+      params: params
     )
   end
 

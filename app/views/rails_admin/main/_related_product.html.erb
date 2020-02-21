@@ -1,0 +1,178 @@
+<% @order ||= []
+   @object.relations.each do |postdata|
+     @order.push(postdata.related_product_id)
+   end
+%>
+<%product = Product.all %>
+<input id="myInput" type="text" placeholder="Search..">
+<div id="table-wrapper">
+  <div id="table-scroll">
+    <table border="1" style="width: 30%">
+      <thead>
+      <tr>
+        <td></td>
+        <td>Id</td>
+        <td>Image</td>
+        <td>Name</td>
+        <td>Date</td>
+      </tr>
+      </thead>
+      <%product.each do |product| %>
+        <tbody id="myTable">
+        <tr>
+          <td><input type="checkbox" class="checkbox-envt" name="product[related_product_ids][]" id="<%= product.id%>" value="<%= product.id %>"
+                     img_data_src="<%= product.product_image.prod_thumb_image.url.present? ? product.product_image.prod_thumb_image.url : 'https://hairfolioapp.s3.us-west-1.amazonaws.com/post/11558905_hf_imagedisplay.png'%>"
+                     data_name ="<%=product.name %>"
+                     <%= @object.relations.pluck(:related_product_id).include?(product.id) ? "checked" : "unchecked" if @object.relations.pluck(:related_product_id).present?%>></td>
+          <td><%= product.id %></td>
+          <td><%= image_tag(product.product_image.prod_thumb_image.url.present? ? product.product_image.prod_thumb_image.url : 'https://hairfolioapp.s3.us-west-1.amazonaws.com/post/11558905_hf_imagedisplay.png' , :size => '150x150')%></td>
+          <td><%= product.name %></td>
+          <td><%= product.created_at %></td>
+        </tr>
+        </tbody>
+      <%end %>
+    </table>
+  </div>
+
+  <div class="list-item">
+    <div id="select-data-wrapper">
+      <div id="select-data-scroll">
+        <table border="1" id="sortable" width ="100%"  >
+          <thead>
+          <tr>
+            <td>Id</td>
+            <td>image</td>
+            <td>Name</td>
+            <td></td>
+          </tr>
+          </thead>
+          <% @order.each do |data_value, index| %>
+            <%product.each do |product| %>
+              <tbody>
+              <% if product.id == data_value %>
+                <tr id="sectio<%=data_value%>">
+                  <td><%=product.id %></td>
+                  <td><%= image_tag(product.product_image.prod_thumb_image.url.present? ? product.product_image.prod_thumb_image.url  : 'https://hairfolioapp.s3.us-west-1.amazonaws.com/post/11558905_hf_imagedisplay.png' , :size => '150x150')%></td>
+                  <td><%= product.name %></td>
+                  <td><span class="close-icon" onclick="close_data(<%=data_value %>)">X</span></td>
+                </tr>
+              <%end %>
+              </tbody>
+            <%end %>
+          <%end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #table-wrapper {
+    position:relative;
+    width: 70%;
+  }
+  #table-scroll {
+    height:950px;
+    overflow:auto;
+    margin-top:20px;
+    width: 57%;
+  }
+  #table-wrapper table {
+    width:100%;
+
+  }
+  #table-wrapper table * {
+    text-align: center;
+  }
+  #table-wrapper table thead th .text {
+    position:absolute;
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid red;
+  }
+  img.post-image-list {
+    width: 150px;
+    height: 150px;
+  }
+  #table-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .list-item {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 50%;
+  }
+  .close-icon {
+    float: right;
+    margin-top: 13px;
+    background-color: #000;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    color: #fff;
+    margin-left: 7px;
+    margin-right: 8px;
+  }
+  #select-data-scroll{
+    height:950px;
+    overflow:auto;
+    width: 57%;
+
+  }
+  #select-data-wrapper{
+    position:relative;width: 175%;}
+
+  #select-data-scroll td:nth-child(2) {width: 150px;}
+  #select-data-scroll img {max-width: 100%;}
+  #select-data-scroll td {padding:5px !important;}
+  #select-data-scroll td:nth-child(3) {width: 270px;}
+  #table-scroll table {width: 100% !important;table-layout: fixed;}
+  #table-scroll td {padding:5px !important;}
+  #table-scroll td:nth-child(3) img {width: 100%;}
+  #table-scroll img {max-width: 100%;}
+  #table-scroll td:nth-child(3) {width: 150px;}
+  #table-scroll td:nth-child(4) {width: 200px;}
+</style>
+
+<script>
+    $(document).ready(function(){
+        /*search button*/
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        /*Check box checked*/
+        $(".checkbox-envt").click(function(){
+            var id = $(this).val();
+            var image_url = $(this).attr('img_data_src');
+            var name = $(this).attr('data_name');
+
+            if($(this).prop("checked") == true){
+                var html_demo = '<tr id="sectio'+id+'"><td> <lable> '+id+' </lable></td> <td><img src="'+image_url+'" class="post-image-list"/> <td> '+name+' </td> <td><span class="close-icon" onclick="close_data('+id+')">X</span> </td> </tr>'
+                $("#sortable").append(html_demo);
+            }
+            else if($(this).prop("checked") == false){
+                $("#sectio"+id).remove();
+            }
+        });
+    });
+    /*Check box unchecked*/
+    function close_data(id) {
+        if ( $('#sortable tbody tr').length > 1) {
+            $("#sectio"+id).remove();
+            $("#"+id). prop("checked", false);
+        }else{
+            alert("Can't remove all post");
+        }
+
+    }
+</script>
