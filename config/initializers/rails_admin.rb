@@ -193,6 +193,23 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Note do
+    list do
+      field :id
+      field :formula_note
+      field :simple_note
+      field :photos
+      field :contact
+      field :products
+    end
+    edit do
+      field :formula_note
+      field :simple_note
+      field :photos
+      field :contact
+    end
+  end
+
   config.model Category do
     edit do
       field :name do

@@ -1,8 +1,8 @@
 class Api::V2::CartsController < ApplicationController
-	
+
 	before_action :authenticate_with_token!
 
-	def index		
+	def index
 		@cart = Cart.where(user_id: current_user.id).order(created_at: :desc)
 		render json: @cart, status:201
 	end
@@ -38,7 +38,7 @@ class Api::V2::CartsController < ApplicationController
 			end
 		end
 	end
-	
+
 	def update_cart
 		if params[:unique_codes].present?
 			response = check_valid_unique_code(params[:unique_codes])
@@ -50,7 +50,7 @@ class Api::V2::CartsController < ApplicationController
 			render json: { errors: "Out Of Stock" }, status:422
 		else
 			cart = Cart.where(product_id: params[:product_id])
-			cart = cart.where(user_id: current_user.id)			
+			cart = cart.where(user_id: current_user.id)
 			cart.update(quantity: params[:cart][:quantity])
 			assign_unique_code_to_cart(cart.first, params[:unique_codes])
 			render json: cart, status:200
@@ -80,9 +80,17 @@ class Api::V2::CartsController < ApplicationController
 		unique_codes.each do |unique_code|
 			refer = Refer.find_by(unique_code: unique_code)
 			next unless refer.present?
-			if refer.post.product_ids.include? cart.product_id
-				unless cart.user.orders.joins(:order_unique_codes).where(order_unique_codes: { refer_id: refer.id }).any?
-					cart.cart_unique_codes.find_or_create_by(unique_code: unique_code)
+			if refer.post.present?
+				if refer.post.product_ids.include? cart.product_id
+					unless cart.user.orders.joins(:order_unique_codes).where(order_unique_codes: { refer_id: refer.id }).any?
+						cart.cart_unique_codes.find_or_create_by(unique_code: unique_code)
+					end
+				end
+			else
+				if refer.note.product_ids.include? cart.product_id
+					unless cart.user.orders.joins(:order_unique_codes).where(order_unique_codes: { refer_id: refer.id }).any?
+						cart.cart_unique_codes.find_or_create_by(unique_code: unique_code)
+					end
 				end
 			end
 		end

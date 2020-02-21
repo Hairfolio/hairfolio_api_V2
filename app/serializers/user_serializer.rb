@@ -13,6 +13,7 @@ class UserSerializer < ActiveModel::Serializer
   #has_many :posts
 
   has_many :addresses
+  # has_many :notes
 
 
   def auth_token

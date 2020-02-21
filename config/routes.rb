@@ -180,8 +180,9 @@ Rails.application.routes.draw do
       resources :wallet_payment_transaction_histories, only: :index
       resources :mobile_store_banners, only: :index
 
+      # resources :notes
+      # resources :shared_logs, only: :create
     end
-
     namespace :v2 do
       # scope module: :v2, constraints: ApiConstraints.new(version: 2, default: true) do
         # root to: 'home#index', as: 'api_home'
@@ -360,6 +361,8 @@ Rails.application.routes.draw do
         resources :wallet_payment_transaction_histories, only: :index
         resources :mobile_store_banners, only: :index
 
+        resources :notes
+        resources :shared_logs, only: :create
       # end
 
     end
@@ -370,6 +373,9 @@ Rails.application.routes.draw do
   get "pages/:slug" => "pages#show"   
   get "/view_post_meta/:id" => "api/v1/refers#view_post_meta"
   get "/v2/view_post_meta/:id" => "api/v2/refers#view_post_meta"
+  post '/v2/email_share_log' => 'api/v2/shared_logs#email_share_log'
+  get  '/v2/angular_log_web_page/:id' => 'api/v2/shared_logs#angular_log_web_page'
+  get  '/v2/shared_log_meta_data/:unique_code/:id' => 'api/v2/shared_logs#shared_log_meta_data'
 
   #Errors
   get "/404" => "api/v1/errors#not_found"

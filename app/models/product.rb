@@ -26,6 +26,7 @@ class Product < ApplicationRecord
   has_many :store_shop_its, dependent: :destroy
   has_many :order_details, dependent: :destroy
 
+  # notes related
   has_and_belongs_to_many :posts
 
   has_many :relations

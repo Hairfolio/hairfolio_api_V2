@@ -1,6 +1,8 @@
 class Photo < ApplicationRecord
   #mount_uploader :asset_url, AttachmentUploader
   belongs_to :post
+  # note related
+  belongs_to :note
 
   has_many :labels, dependent: :destroy
   has_many :tags, through: :labels

@@ -62,6 +62,9 @@ class User < ApplicationRecord
   has_many :referrers, class_name: 'ReferralHistory', foreign_key: :referrer_id, dependent: :destroy
   has_many :referral_recipientS, class_name: 'ReferralHistory', foreign_key: :referral_recipient_id, dependent: :destroy
   has_many :wallet_payment_transaction_histories, dependent: :destroy
+  # note related
+  # has_many :notes, dependent: :destroy
+
 
   has_and_belongs_to_many :experiences
   has_and_belongs_to_many :certificates

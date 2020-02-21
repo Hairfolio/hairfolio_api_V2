@@ -11,4 +11,10 @@ class UserMailer < ActionMailer::Base
   	mail(to: email, subject: "I’d like to add you on Hairfolio")
   end
 
+  def share_note(email,log,url)
+    @url = url
+    @log = log
+    @user = log.note.contact.user
+    mail(to: email, subject: "Your stylist's Recommendation")
+  end
 end
